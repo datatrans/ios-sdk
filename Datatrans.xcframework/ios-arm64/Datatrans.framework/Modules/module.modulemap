@@ -1,0 +1,11 @@
+framework module Datatrans {
+  umbrella header "Datatrans.h"
+
+  export *
+  module * { export * }
+}
+
+module Datatrans.Swift {
+    header "Datatrans-Swift.h"
+    requires objc
+}
