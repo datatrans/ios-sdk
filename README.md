@@ -3,7 +3,7 @@
 [![License](https://img.shields.io/badge/License-Datatrans-lightgrey)](https://raw.githubusercontent.com/datatrans/ios-sdk/master/LICENSE)
 [![Platform](https://img.shields.io/badge/platform-ios-0BAF73)](https://github.com/datatrans/ios-sdk)
 
-Accept payments on your iOS or Android apps: Our mobile SDKs support your entire payment and registration process and simplify the integration of any payment method in your mobile apps. Completely outsource your payment processes to us from inside your native apps. We also take care of redirecting your users to 3D Secure processes and enable smooth app-switches to other payment applications including PayPal, Twint, and PostFinance.
+Accept payments on your iOS apps: Our mobile SDKs support your entire payment and registration process and simplify the integration of any payment method in your mobile apps. Completely outsource your payment processes to us from inside your native apps. We also take care of redirecting your users to 3D Secure processes and enable smooth app-switches to other payment applications including PayPal, Twint, and PostFinance.
 
 ## **Features**
 **Easy Integration**: Integrate many of our payment methods easily to your iOS projects. Smart, modern and secure UI components to master online payments in your apps.
@@ -18,8 +18,8 @@ Accept payments on your iOS or Android apps: Our mobile SDKs support your entire
 
 **Theme Support**: Style various items according to your corporate identity if needed. We also support the iOS dark theme.
 
-## **Requirements**
-The Datatrans iOS SDK requires Xcode 12 or later and is compatible with apps targeting iOS 11 or above.
-
 ## **Integration**
 Get started with our [integration guide](https://docs.datatrans.ch/docs/mobile-sdk-2) and the [API reference](https://datatrans.github.io/ios-sdk/).
+
+## **Requirements**
+The Datatrans iOS SDK requires Xcode 12 or later and is compatible with apps targeting iOS 11 or above.
