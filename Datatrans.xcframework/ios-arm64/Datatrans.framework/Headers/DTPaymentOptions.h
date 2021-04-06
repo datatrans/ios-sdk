@@ -9,13 +9,6 @@
 #import <Foundation/Foundation.h>
 
 typedef enum {
-	DTPaymentReturnsCreditCardNever = 1,
-	DTPaymentReturnsCreditCardSelectableDefaultNo,
-	DTPaymentReturnsCreditCardSelectableDefaultYes,
-	DTPaymentReturnsCreditCardAlways
-} DTPaymentReturnsCreditCard;
-
-typedef enum {
 	DTPaymentCardholderHidden = 0,
 	DTPaymentCardholderOptional,
 	DTPaymentCardholderRequired
@@ -32,7 +25,6 @@ typedef enum {
 @property (nonatomic, assign) BOOL testing;
 @property (nonatomic, assign) BOOL hideToolbarSecurityInfo;
 @property (nonatomic, assign) BOOL showBackButtonOnFirstScreen;
-@property (nonatomic, assign) DTPaymentReturnsCreditCard returnsCreditCard;
 @property (nonatomic, assign) BOOL returnsAlias;
 @property (nonatomic, assign) BOOL displayShippingDetails;
 @property (nonatomic, assign) BOOL useWebCreditCardInput;

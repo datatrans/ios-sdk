@@ -238,15 +238,16 @@ SWIFT_CLASS_NAMED("ApplePayConfig")
 + (BOOL)hasApplePayWithSupportedNetworks:(NSArray<PKPaymentNetwork> * _Nonnull)supportedNetworks SWIFT_WARN_UNUSED_RESULT;
 /// Creates a new Apple Pay configuration object with an Apple Pay country code.
 /// If no countryCode is specified, the SDK will set Switzerland as the country code.
-/// \param merchantIdentifier The merchant Identifier for Apple Pay.
+/// \param applePayMerchantId The merchant identifier (Merchant ID) at Apple,
+/// which you created together with the CSR file provided by Datatrans.
 ///
 /// \param supportedNetworks Supported card acquirers.
 ///
 /// \param countryCode Apple Pay country code
 ///
-- (nonnull instancetype)initWithMerchantIdentifier:(NSString * _Nonnull)merchantIdentifier supportedNetworks:(NSArray<PKPaymentNetwork> * _Nonnull)supportedNetworks countryCode:(NSString * _Nonnull)countryCode OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithApplePayMerchantId:(NSString * _Nonnull)applePayMerchantId supportedNetworks:(NSArray<PKPaymentNetwork> * _Nonnull)supportedNetworks countryCode:(NSString * _Nonnull)countryCode OBJC_DESIGNATED_INITIALIZER;
 /// :nodoc:
-- (nonnull instancetype)initWithMerchantIdentifier:(NSString * _Nonnull)merchantIdentifier supportedNetworks:(NSArray<PKPaymentNetwork> * _Nonnull)supportedNetworks;
+- (nonnull instancetype)initWithApplePayMerchantId:(NSString * _Nonnull)applePayMerchantId supportedNetworks:(NSArray<PKPaymentNetwork> * _Nonnull)supportedNetworks;
 /// Refer to the <code>NSCopying</code> protocol
 - (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -254,11 +255,12 @@ SWIFT_CLASS_NAMED("ApplePayConfig")
 @end
 
 enum DTPaymentMethodType : NSInteger;
+@class NSCoder;
 
 /// This is the base class for payment methods. It contains a type to identify the
 /// payment method, e.g. Visa or Mastercard.
 SWIFT_CLASS_NAMED("PaymentMethod")
-@interface DTPaymentMethod : NSObject <NSCopying>
+@interface DTPaymentMethod : NSObject <NSCoding, NSCopying>
 /// Payment method type, e.g. Visa
 @property (nonatomic, readonly) enum DTPaymentMethodType type;
 /// This init method initializes a <code>PaymentMethod</code> object with the
@@ -268,6 +270,10 @@ SWIFT_CLASS_NAMED("PaymentMethod")
 - (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type OBJC_DESIGNATED_INITIALIZER;
 /// Refer to the <code>NSCopying</code> protocol
 - (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
+/// Refer to the <code>NSCoding</code> protocol
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+/// Refer to the <code>NSCoding</code> protocol
+- (void)encodeWithCoder:(NSCoder * _Nonnull)coder;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -298,6 +304,8 @@ SWIFT_CLASS_NAMED("Card")
 /// \param cardholder Cardholder’s name
 ///
 - (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type number:(NSString * _Nonnull)number expiryDate:(DTCardExpiryDate * _Nonnull)expiryDate cvv:(NSString * _Nullable)cvv cardholder:(NSString * _Nullable)cardholder OBJC_DESIGNATED_INITIALIZER;
+/// Refer to the <code>NSCoding</code> protocol
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type SWIFT_UNAVAILABLE;
 @end
 
@@ -363,12 +371,25 @@ SWIFT_CLASS_NAMED("PaymentMethodToken")
 /// \param jsonString String of JSON encoded data
 ///
 + (DTPaymentMethodToken * _Nullable)createWithJsonString:(NSString * _Nonnull)jsonString SWIFT_WARN_UNUSED_RESULT SWIFT_AVAILABILITY(ios,deprecated=13.0,message="Use create(data:decoder:) instead.");
+/// Creates a <code>PaymentMethodToken</code> from data encoded by the old payment library.
+/// \param legacyTokenData Data encoded by
+/// <code>DTRecurringPaymentMethod.data()</code>, <code>DTCreditCard.data()</code>,
+/// <code>DTPostFinanceCard.data()</code>, <code>DTReka.data()</code> or <code>DTPayPal.data()</code>.
+///
+///
+/// returns:
+/// The decoded <code>PaymentMethodToken</code>, <code>CardToken</code>,
+/// <code>PostFinanceCardToken</code>, <code>RekaToken</code> or <code>PayPalToken</code>, if successful,
+/// nil if <code>legacyTokenData</code> is invalid.
++ (DTPaymentMethodToken * _Nullable)createWithLegacyTokenData:(NSData * _Nonnull)legacyTokenData SWIFT_WARN_UNUSED_RESULT;
 /// This function checks if the payment method token is valid. This function
 /// will also be used to tell you if data (e.g. expiry date) from the token
 /// subclasses is correct or not.
 - (BOOL)isValid SWIFT_WARN_UNUSED_RESULT;
 /// Refer to the <code>NSObject</code> protocol
 @property (nonatomic, readonly, copy) NSString * _Nonnull description;
+/// Refer to the <code>NSCoding</code> protocol
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 /// Refer to the <code>NSCopying</code> protocol
 - (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type SWIFT_UNAVAILABLE;
@@ -412,6 +433,8 @@ SWIFT_CLASS_NAMED("CardToken")
 @property (nonatomic, readonly, copy) NSString * _Nullable accessibilityTitle;
 /// Checks if the expiration date is in the future or not.
 - (BOOL)isValid SWIFT_WARN_UNUSED_RESULT;
+/// Refer to the <code>NSCoding</code> protocol
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 /// Refer to the <code>NSObject</code> protocol
 @property (nonatomic, readonly, copy) NSString * _Nonnull description;
 /// Refer to the <code>NSCopying</code> protocol
@@ -442,6 +465,8 @@ SWIFT_CLASS_NAMED("PayPalToken")
 @property (nonatomic, readonly, copy) NSString * _Nonnull displayTitle;
 /// For VoiceOver this title is used instead of displayTitle.
 @property (nonatomic, readonly, copy) NSString * _Nullable accessibilityTitle;
+/// Refer to the <code>NSCoding</code> protocol
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 /// Refer to the <code>NSCopying</code> protocol
 - (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type token:(NSString * _Nonnull)token SWIFT_UNAVAILABLE;
@@ -541,6 +566,8 @@ SWIFT_CLASS_NAMED("PostFinanceCardToken")
 /// \param cardholder Cardholder’s name
 ///
 - (nonnull instancetype)initWithToken:(NSString * _Nonnull)token cardExpiryDate:(DTCardExpiryDate * _Nullable)cardExpiryDate maskedCardNumber:(NSString * _Nullable)maskedCardNumber cardholder:(NSString * _Nullable)cardholder OBJC_DESIGNATED_INITIALIZER;
+/// Refer to the <code>NSCoding</code> protocol
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 /// Refer to the <code>NSCopying</code> protocol
 - (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type token:(NSString * _Nonnull)token cardExpiryDate:(DTCardExpiryDate * _Nullable)cardExpiryDate maskedCardNumber:(NSString * _Nullable)maskedCardNumber cardholder:(NSString * _Nullable)cardholder SWIFT_UNAVAILABLE;
@@ -570,6 +597,7 @@ SWIFT_CLASS_NAMED("RekaToken")
 /// Refer to the <code>NSCopying</code> protocol
 - (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type token:(NSString * _Nonnull)token cardExpiryDate:(DTCardExpiryDate * _Nullable)cardExpiryDate maskedCardNumber:(NSString * _Nullable)maskedCardNumber cardholder:(NSString * _Nullable)cardholder OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -605,6 +633,7 @@ SWIFT_CLASS_NAMED("SEPAToken")
 /// Refer to the <code>NSCopying</code> protocol
 - (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type token:(NSString * _Nonnull)token OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 @class UIColor;
@@ -690,7 +719,7 @@ SWIFT_CLASS_NAMED("Transaction")
 /// used to present the user interface during an on-going transaction
 ///
 - (void)startWithPresentingController:(UIViewController * _Nonnull)presentingController;
-/// This function is called when an error occurred during a transaction.
+/// :nodoc:
 - (void)didHandleError:(NSError * _Nonnull)error;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -740,7 +769,6 @@ SWIFT_PROTOCOL_NAMED("TransactionDelegate")
 @end
 
 @class NSNumber;
-@class NSCoder;
 
 /// This class includes the error message and other details of a transaction.
 SWIFT_CLASS_NAMED("TransactionError")
@@ -767,9 +795,7 @@ SWIFT_CLASS_NAMED("TransactionOptions")
 /// Specify the <code>ApplePayConfig</code> object here. This is mandatory
 /// for Apple Pay transactions.
 @property (nonatomic, strong) DTApplePayConfig * _Nullable applePayConfig;
-/// A set of merchant-defined key-value pairs of type <code>String</code>.
-/// Properties are sent along with the transaction requests and
-/// posted to the merchant’s PostURL.
+/// :nodoc:
 @property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nullable merchantProperties;
 /// Use this setting to display or hide critical and transaction errors.
 @property (nonatomic) BOOL suppressTransactionErrorDialog;
