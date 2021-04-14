@@ -520,6 +520,8 @@ typedef SWIFT_ENUM_NAMED(NSInteger, DTPaymentMethodType, "PaymentMethodType", op
   DTPaymentMethodTypePowerpay = 20,
 /// Paysafecard payment method
   DTPaymentMethodTypePaysafecard = 21,
+/// Boncard (Lunch-Check) payment method
+  DTPaymentMethodTypeBoncard = 22,
 };
 
 

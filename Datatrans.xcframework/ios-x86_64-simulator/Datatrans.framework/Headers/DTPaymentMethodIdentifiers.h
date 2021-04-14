@@ -25,10 +25,10 @@ extern NSString* const DTPaymentMethodTwint;
 extern NSString* const DTPaymentMethodApplePay;
 extern NSString* const DTPaymentMethodReka;
 extern NSString* const DTPaymentMethodByjuno;
-extern NSString* const DTPaymentMethodByjunoDirectInvoice;
 extern NSString* const DTPaymentMethodSwissPass;
 extern NSString* const DTPaymentMethodPowerpay;
 extern NSString* const DTPaymentMethodPaysafecard;
+extern NSString* const DTPaymentMethodBoncard;
 
 // reka alternative identifiers
 extern NSString* const DTPaymentMethodRekaRail;

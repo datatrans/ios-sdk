@@ -80,6 +80,7 @@ import WebKit
   case SwissPass
   case Powerpay
   case Paysafecard
+  case Boncard
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get

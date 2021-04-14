@@ -34,9 +34,20 @@
 
 @interface DTByjunoPaymentInfo : NSObject<NSCopying>
 
-@property (nonatomic, copy) NSString* deviceFingerprintId;
-@property (nonatomic, copy) NSString* verifiedDocument1Number;
-@property (nonatomic, copy) NSString* verifiedDocument1Issuer;
-@property (nonatomic, copy) NSString* verifiedDocument1Type;
+@property (nullable, nonatomic, copy) NSString* subtype; // "INVOICE", "INSTALLMENT", "BYJUNO_INVOICE" or "MONTHLY_INVOICE"
+@property (nullable, nonatomic, copy) NSNumber* customerEmailConfirmed; // BOOL
+@property (nullable, nonatomic, copy) NSString* customerInfo1;
+@property (nullable, nonatomic, copy) NSString* customerInfo2;
+@property (nullable, nonatomic, copy) NSString* deliveryMethod; // "POST", "SHOP" or "HLD"
+@property (nullable, nonatomic, copy) NSString* deviceFingerprintId;
+@property (nullable, nonatomic, copy) NSNumber* paperInvoice; // BOOL
+@property (nullable, nonatomic, copy) NSNumber* repaymentType; // Integer 1-20
+@property (nullable, nonatomic, copy) NSString* riskOwner; // "IJ" or "CLIENT"
+@property (nullable, nonatomic, copy) NSString* siteId;
+@property (nullable, nonatomic, copy) NSString* verifiedDocument1Type;
+@property (nullable, nonatomic, copy) NSString* verifiedDocument1Number;
+@property (nullable, nonatomic, copy) NSString* verifiedDocument1Issuer;
+@property (nullable, nonatomic, copy) NSArray<NSString *>* customData; // Up to 10 entries
+@property (nullable, nonatomic, copy) NSNumber* firstRateAmount; // Integer
 
 @end
