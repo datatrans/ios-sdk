@@ -15,11 +15,8 @@ typedef enum {
 	DTPaymentMethodNeedsCardExpiration		= 1 << 1,
 	DTPaymentMethodNeedsCardVerification	= 1 << 2,
 	DTPaymentMethodNeedsCardholder			= 1 << 3,
-	DTPaymentMethodHasTransparentBackground	= 1 << 4,
 	DTPaymentMethodWebPayment               = 1 << 5,
-	DTPaymentMethodHasCardScan              = 1 << 6,
     DTPaymentMethodWebPaymentExternal       = 1 << 7,
-	DTPaymentMethodNoLogoShadow             = 1 << 8,
 } DTPaymentMethodFlags;
 
 @interface DTPaymentMethodInfo : NSObject

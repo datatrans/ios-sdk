@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		7zaHlHnGyQ/3In4kVC5f5OlPS9E=
+		nquRn9Oiz/4a0riWd/VAxL+py7w=
 		</data>
 		<key>Headers/CardIOCreditCardInfo.h</key>
 		<data>
@@ -130,7 +130,7 @@
 		</data>
 		<key>Headers/DTPaymentMethodInfo.h</key>
 		<data>
-		wy2IxH+o/zVUMiRaQKTdMmJXUaM=
+		JzuI04Ps1NBd49kulsHpCCA4RSo=
 		</data>
 		<key>Headers/DTPaymentModel.h</key>
 		<data>
@@ -138,7 +138,7 @@
 		</data>
 		<key>Headers/DTPaymentOptions.h</key>
 		<data>
-		tHFzykH3cqBavaclCVmzvd1zbp4=
+		WiU8HoTsnwqKV2jcCo9PBlg4c70=
 		</data>
 		<key>Headers/DTPaymentRequest.h</key>
 		<data>
@@ -214,7 +214,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		iOOppqPOh1CgYZrSnKwJ3JugGYM=
+		IjsyJ8sd1CywRXQS6z7xsCYb0uM=
 		</data>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -226,7 +226,7 @@
 		</data>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		bp1ddQbJ6Wm+G7IACGsMyb2xKSA=
+		tejUNEY9HBLte96yEm6vMdYrjy8=
 		</data>
 		<key>Modules/Datatrans.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -238,7 +238,7 @@
 		</data>
 		<key>Modules/Datatrans.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		bp1ddQbJ6Wm+G7IACGsMyb2xKSA=
+		tejUNEY9HBLte96yEm6vMdYrjy8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -287,7 +287,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			lZlkQQMB4xjK7kBrXxC5kZ4cXX04u9RllDTSO1p63sY=
+			24ACHChP03/v04yw5rnY+g2Oogq6SBHOUxriqB4VETI=
 			</data>
 		</dict>
 		<key>Headers/CardIOCreditCardInfo.h</key>
@@ -504,7 +504,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			RgTRJxBZkqWGt3t+HixIihhA6D/3JnXvRZ87UQHHveg=
+			kWp9BI7FvxSs2SHlKbTt3Pi6eM14tck6EABCLjRKl8Q=
 			</data>
 		</dict>
 		<key>Headers/DTPaymentModel.h</key>
@@ -518,7 +518,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			o9l1qrnvRm6meUCAS6MEkYssBljglq89WWWg42B90QQ=
+			NT0wDXUXrmfbXPEZgVvn6fIDXfbbsEhGkFPzy75pccM=
 			</data>
 		</dict>
 		<key>Headers/DTPaymentRequest.h</key>
@@ -665,7 +665,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			78EqL/fUkqDmO3l/MBNhOcQH3o/isUuafOW64foJTKk=
+			KzFZdQr53ySsMfaPUEw8DttWQPtLcdmQvfcUQPwsLR4=
 			</data>
 		</dict>
 		<key>Modules/Datatrans.swiftmodule/x86_64.swiftdoc</key>
@@ -686,7 +686,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			78EqL/fUkqDmO3l/MBNhOcQH3o/isUuafOW64foJTKk=
+			KzFZdQr53ySsMfaPUEw8DttWQPtLcdmQvfcUQPwsLR4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

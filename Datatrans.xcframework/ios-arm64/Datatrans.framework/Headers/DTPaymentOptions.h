@@ -29,26 +29,26 @@ typedef enum {
 @property (nonatomic, assign) BOOL displayShippingDetails;
 @property (nonatomic, assign) BOOL useWebCreditCardInput;
 @property (nonatomic, assign) BOOL useWebELVInput;
-@property (nonatomic, copy) NSString* easypayTitle;
-@property (nonatomic, copy) NSString* easypayDescription;
-@property (nonatomic, copy) NSString* easypayPaymentInfo;
+@property (nullable, nonatomic, copy) NSString* easypayTitle;
+@property (nullable, nonatomic, copy) NSString* easypayDescription;
+@property (nullable, nonatomic, copy) NSString* easypayPaymentInfo;
 @property (nonatomic, assign) BOOL easypayPresentedAsNATELPay;
 @property (nonatomic, assign) BOOL autoSettlement;
 @property (nonatomic, assign) BOOL certificatePinning;
 @property (nonatomic, assign) DTPaymentCardholder cardholder;
-@property (nonatomic, copy) NSDictionary<NSString *, NSString *>* merchantProperties;
-@property (nonatomic, copy) NSString* creditCardInputLocalizedDoneButtonTitle;
-@property (nonatomic, copy) NSString* language; // ISO 639-1 code (also supports ISO 3166-1 alpha-2 code addon as per Apple spec)
+@property (nullable, nonatomic, copy) NSDictionary<NSString *, NSString *>* merchantProperties;
+@property (nullable, nonatomic, copy) NSString* creditCardInputLocalizedDoneButtonTitle;
+@property (nullable, nonatomic, copy) NSString* language; // ISO 639-1 code (also supports ISO 3166-1 alpha-2 code addon as per Apple spec)
 @property (nonatomic, assign) BOOL creditCardScanningEnabled;
-@property (nonatomic, copy) DTSwissBillingPaymentInfo* swissBillingPaymentInfo;
-@property (nonatomic, copy) NSString* appCallbackScheme;
+@property (nullable, nonatomic, copy) DTSwissBillingPaymentInfo* swissBillingPaymentInfo;
+@property (nullable, nonatomic, copy) NSString* appCallbackScheme;
 @property (nonatomic, assign) BOOL suppressTransactionErrorDialog;
-@property (nonatomic, copy) NSString* applePayMerchantIdentifier;
-@property (nonatomic, copy) DTApplePayConfig* applePayConfig;
+@property (nullable, nonatomic, copy) NSString* applePayMerchantIdentifier;
+@property (nullable, nonatomic, copy) DTApplePayConfig* applePayConfig;
 @property (nonatomic, assign) BOOL skipAuthorizationCompletion;
-@property (nonatomic, copy) DTByjunoPaymentInfo* byjunoPaymentInfo;
-@property (nonatomic, copy) DTCustomer* customer;
-@property (nonatomic, copy) DTSwissPassPaymentInfo* swissPassPaymentInfo;
-@property (nonatomic, copy) NSString* paysafecardMerchantClientId;
+@property (nullable, nonatomic, copy) DTByjunoPaymentInfo* byjunoPaymentInfo;
+@property (nullable, nonatomic, copy) DTCustomer* customer;
+@property (nullable, nonatomic, copy) DTSwissPassPaymentInfo* swissPassPaymentInfo;
+@property (nullable, nonatomic, copy) NSString* paysafecardMerchantClientId;
 
 @end
