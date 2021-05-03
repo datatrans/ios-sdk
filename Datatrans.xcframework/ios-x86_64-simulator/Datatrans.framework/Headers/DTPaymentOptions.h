@@ -42,7 +42,7 @@ typedef enum {
 @property (nonatomic, assign) BOOL creditCardScanningEnabled;
 @property (nullable, nonatomic, copy) DTSwissBillingPaymentInfo* swissBillingPaymentInfo;
 @property (nullable, nonatomic, copy) NSString* appCallbackScheme;
-@property (nonatomic, assign) BOOL suppressTransactionErrorDialog;
+@property (nonatomic, assign) BOOL suppressCriticalErrorDialog;
 @property (nullable, nonatomic, copy) NSString* applePayMerchantIdentifier;
 @property (nullable, nonatomic, copy) DTApplePayConfig* applePayConfig;
 @property (nonatomic, assign) BOOL skipAuthorizationCompletion;

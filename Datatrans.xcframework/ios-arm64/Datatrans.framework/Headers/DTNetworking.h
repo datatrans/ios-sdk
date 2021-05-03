@@ -53,6 +53,7 @@ typedef enum {
 - (void)requestInitialTransaction:(NSString *)mobileToken idempotencyKey:(NSString *)idempotencyKey completion:(void (^)(NSData *, NSError *))completion;
 - (void)requestAliasForMerchantId:(NSString *)merchantId cardNo:(NSString *)cardNo completion:(void (^)(DTAliasRequestResponse *, NSError *))completion;
 - (void)requestStatusForMerchantId:(NSString *)merchantId alias:(NSString *)alias currencyCode:(NSString *)currencyCode isAliasRequest:(BOOL)isAliasRequest completion:(void(^)(DTStatusRequestResponse *, NSError *))completion;
+- (void)requestTokenizationWithJSONBody:(NSData *)body completion:(void (^)(NSData *, NSError *))completion;
 - (void)authorizeAliasPaymentRequest:(DTAliasPaymentAuthorizationRequest *)authorizationRequest completion:(void (^)(DTAuthorizationRequestResponse *, NSError *))completion;
 - (void)authorizePaymentRequest:(DTPaymentAuthorizationRequest *)authorizationRequest completion:(void (^)(DTAuthorizationRequestResponse *, NSError *))completion; // split web payment
 - (void)startTokenRequest:(DTPaymentRequest *)paymentRequest paymentMethod:(NSString *)paymentMethod completion:(void (^)(DTStartTokenRequestResponse *, NSError *))completion;

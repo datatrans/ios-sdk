@@ -313,6 +313,10 @@ SWIFT_CLASS_NAMED("Card")
 /// Class to be used to represent the card expiry date (month and year).
 SWIFT_CLASS_NAMED("CardExpiryDate")
 @interface DTCardExpiryDate : NSObject <NSCopying>
+/// Formats the month to a two digit string.
+@property (nonatomic, readonly, copy) NSString * _Nonnull formattedMonth;
+/// Formats the year to a two digit string.
+@property (nonatomic, readonly, copy) NSString * _Nonnull formattedYear;
 /// Card expiry month, [1, 12], e.g. 1 for January or 12 for December
 @property (nonatomic) NSInteger month;
 /// Card expiry year, 2 or 4 digits, e.g. 30 or 2030
@@ -670,9 +674,124 @@ SWIFT_CLASS_NAMED("ThemeConfiguration")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@protocol DTTokenizationRequestDelegate;
+@class DTTokenizationOptions;
+@class NSNumber;
+@class UIViewController;
+
+/// Use this class to start a tokenization request. After the tokenization request has been
+/// completed - regardless if successful or not - <code>delegate</code> will be called with some basic
+/// information about the success or failure.
+SWIFT_CLASS_NAMED("TokenizationRequest")
+@interface DTTokenizationRequest : NSObject
+/// This delegate will be notified after a tokenization request has been finished,
+/// successfully or not.
+@property (nonatomic, weak) id <DTTokenizationRequestDelegate> _Nullable delegate;
+/// The available options for how a tokenization request is handled by the mobile SDK.
+@property (nonatomic, strong) DTTokenizationOptions * _Nonnull options;
+/// The theme to be used by the SDK.
+@property (nonatomic, strong) DTThemeConfiguration * _Nonnull theme;
+/// Use this init method if you use your own UI and already have a <code>Card</code> instance with the
+/// card data to be tokenized. After this class is initialized, you should define its <code>delegate</code>,
+/// the <code>options</code> properties and a <code>theme</code> if desired.
+/// \param merchantId Your merchantId.
+///
+/// \param card Card object to tokenize.
+///
+- (nonnull instancetype)initWithMerchantId:(NSString * _Nonnull)merchantId card:(DTCard * _Nonnull)card OBJC_DESIGNATED_INITIALIZER;
+/// Use this init method to allow the user to enter the  card data to be tokenized. After this
+/// class is initialized, you should define its <code>delegate</code>, the <code>options</code> properties
+/// and a <code>theme</code> if desired.
+/// This initializer is for use from Objective-C only. Instead of <code>[PaymentMethodType]</code>, it
+/// takes <code>[NSNumber]</code> containing <code>rawValue</code>s of <code>PaymentMethodType</code>.
+/// Example:
+/// <code>[[DTTokenizationRequest alloc] initWithMerchantId:@"..." paymentMethodTypes:@[@(DTPaymentMethodTypeVisa), @(DTPaymentMethodTypeMasterCard)]];</code>
+/// \param merchantId Your merchantId.
+///
+/// \param paymentMethodTypesObjc The allowed credit or debit card types.
+///
+- (nonnull instancetype)initWithMerchantId:(NSString * _Nonnull)merchantId paymentMethodTypes:(NSArray<NSNumber *> * _Nonnull)paymentMethodTypesObjc;
+/// Starts the SDK and displays any needed user interface using the provided
+/// <code>presentingController</code>. Note that a tokenization request can only
+/// be started once.
+/// \param presentingController <code>UIViewController</code>
+/// used to present the user interface during an on-going tokenization request.
+///
+- (void)startWithPresentingController:(UIViewController * _Nonnull)presentingController;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class DTTokenizationRequestError;
+
+/// Implement TokenizationRequestDelegate to be notified when a tokenization
+/// request ends. TokenizationRequestDelegate will notify you about the success,
+/// error or cancel state of the processed tokenization request.
+SWIFT_PROTOCOL_NAMED("TokenizationRequestDelegate")
+@protocol DTTokenizationRequestDelegate
+/// This is called after a tokenization request has been successfully
+/// completed. This callback provides details about the tokenization request.
+/// \param tokenizationRequest The object containing the information
+/// of the completed tokenization request.
+///
+/// \param tokenizationId The resulting tokenizationId.
+///
+- (void)tokenizationRequestDidFinish:(DTTokenizationRequest * _Nonnull)tokenizationRequest tokenizationId:(NSString * _Nonnull)tokenizationId;
+/// This is called after a tokenization request fails or encounters an error.
+/// Keep in mind that the SDK shows the error to the user before
+/// this is invoked. Therefore, this callback can be used to cancel
+/// any on-going process involving the tokenization request.
+/// You may also use the error details provided here and display it
+/// the way you want when suppressing the error message within
+/// the <code>TokenizationRequestOptions</code>.
+/// \param tokenizationRequest The object containing the information
+/// of the failed tokenization request.
+///
+/// \param error The error that occurred.
+///
+- (void)tokenizationRequestDidFail:(DTTokenizationRequest * _Nonnull)tokenizationRequest error:(DTTokenizationRequestError * _Nonnull)error;
+@optional
+/// This is called after a tokenization request has been cancelled. This callback
+/// can be used to cancel any on-going process involving the tokenization request.
+/// \param tokenizationRequest The object containing the
+/// information of the cancelled tokenization request.
+///
+- (void)tokenizationRequestDidCancel:(DTTokenizationRequest * _Nonnull)tokenizationRequest;
+@end
+
+
+/// This class includes the error message of a tokenization request.
+SWIFT_CLASS_NAMED("TokenizationRequestError")
+@interface DTTokenizationRequestError : NSError
+- (nonnull instancetype)initWithDomain:(NSString * _Nonnull)domain code:(NSInteger)code userInfo:(NSDictionary<NSString *, id> * _Nullable)dict OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+/// This class can be used to specify miscellaneous options related to the tokenization request.
+SWIFT_CLASS_NAMED("TokenizationRequestOptions")
+@interface DTTokenizationOptions : NSObject
+/// Use this setting to change the UI language. If this is not
+/// specified, the default language determined by the system will be used.
+/// The supported values are <code>de</code>, <code>en</code>, <code>fr</code>, <code>it</code> and <code>nil</code>.
+@property (nonatomic, copy) NSString * _Nullable language;
+/// Use this setting to display or hide critical errors.
+@property (nonatomic) BOOL suppressCriticalErrorDialog;
+/// Use this setting to switch from production to sandbox. If not specified,
+/// the SDK will call the Datatrans production environment.
+@property (nonatomic) BOOL testing;
+/// Whether secure connections to Datatrans servers require a certificate
+/// chain signed with a specific CA private key. The device’s trust settings
+/// are explicitly ignored, i.e. custom installed/white-listed certificates
+/// and/or CAs will not work.
+/// Please be advised that enabling this option will break your app in many
+/// corporate networks with anti-malware/-theft/-espionage SSL proxying.
+@property (nonatomic) BOOL useCertificatePinning;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @protocol DTTransactionDelegate;
 @class DTTransactionOptions;
-@class UIViewController;
 
 /// Use this class to start a transaction with a <code>mobileToken</code> that has previously been initialized
 /// with a server-to-server init call. This class is the main class to start any operation with the SDK.
@@ -770,7 +889,6 @@ SWIFT_PROTOCOL_NAMED("TransactionDelegate")
 - (void)transactionDidCancel:(DTTransaction * _Nonnull)transaction;
 @end
 
-@class NSNumber;
 
 /// This class includes the error message and other details of a transaction.
 SWIFT_CLASS_NAMED("TransactionError")
@@ -800,7 +918,7 @@ SWIFT_CLASS_NAMED("TransactionOptions")
 /// :nodoc:
 @property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nullable merchantProperties;
 /// Use this setting to display or hide critical and transaction errors.
-@property (nonatomic) BOOL suppressTransactionErrorDialog;
+@property (nonatomic) BOOL suppressCriticalErrorDialog;
 /// Use this setting to switch from production to sandbox. If not specified,
 /// the SDK will call the Datatrans production environment.
 @property (nonatomic) BOOL testing;

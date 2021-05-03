@@ -7,11 +7,10 @@
 
 @protocol DTErrorHandlerDelegate;
 @protocol DTErrorPresenter;
-@class DTUrls;
 
 @interface DTErrorHandler : NSObject
 
-- (nonnull instancetype)initWithDelegate:(nonnull id<DTErrorHandlerDelegate>)delegate errorPresenter:(nonnull id<DTErrorPresenter>)errorPresenter urls:(nonnull DTUrls *)urls suppressTransactionErrorDialog:(BOOL)suppressTransactionErrorDialog;
+- (nonnull instancetype)initWithDelegate:(nonnull id<DTErrorHandlerDelegate>)delegate errorPresenter:(nonnull id<DTErrorPresenter>)errorPresenter suppressCriticalErrorDialog:(BOOL)suppressCriticalErrorDialog;
 
 - (void)handleTechnicalError:(nonnull NSError *)error;
 - (void)handleTechnicalError:(nonnull NSError *)error retryBlock:(void (^_Nullable)(void))retryBlock;

@@ -117,6 +117,9 @@
               <li class="nav-group-task">
                 <a href="../Protocols/TokenizationRequestDelegate.html">TokenizationRequestDelegate</a>
               </li>
+              <li class="nav-group-task">
+                <a href="../Tokenization%20Request.html#/c:@M@Datatrans@objc(cs)DTTokenizationRequestError">TokenizationRequestError</a>
+              </li>
             </ul>
           </li>
         </ul>
@@ -129,13 +132,13 @@
                 <div class="language">
                   
                   <pre class="highlight swift"><code><span class="kd">@objc(DTTokenizationRequest)</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="kt">TokenizationRequest</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">DTErrorHandlerDelegate</span></code></pre>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">TokenizationRequest</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
 
                 </div>
               </div>
-            <p>Use this class to start a tokenization request.
-After the tokenization request has been completed - regardless if successful or not - <code>delegate</code> will
-be called with some basic information about the success or failure.</p>
+            <p>Use this class to start a tokenization request. After the tokenization request has been
+completed - regardless if successful or not - <code>delegate</code> will be called with some basic
+information about the success or failure.</p>
 
           </section>
           <section class="section task-group-section">
@@ -154,7 +157,7 @@ be called with some basic information about the success or failure.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This delegate will be notified after a tokenization request  has been finished,
+                        <p>This delegate will be notified after a tokenization request has been finished,
 successfully or not.</p>
 
                       </div>
@@ -229,6 +232,67 @@ successfully or not.</p>
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/c:@M@Datatrans@objc(cs)DTTokenizationRequest(im)initWithMerchantId:card:"></a>
+                    <a name="//apple_ref/swift/Method/init(merchantId:card:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTTokenizationRequest(im)initWithMerchantId:card:">init(merchantId:<wbr>card:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Use this init method if you use your own UI and already have a <code><a href="../Classes/Card.html">Card</a></code> instance with the
+card data to be tokenized. After this class is initialized, you should define its <code><a href="../Classes/TokenizationRequest.html#/c:@M@Datatrans@objc(cs)DTTokenizationRequest(py)delegate">delegate</a></code>,
+the <code><a href="../Classes/TokenizationRequest.html#/c:@M@Datatrans@objc(cs)DTTokenizationRequest(py)options">options</a></code> properties and a <code><a href="../Classes/TokenizationRequest.html#/c:@M@Datatrans@objc(cs)DTTokenizationRequest(py)theme">theme</a></code> if desired.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">merchantId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">card</span><span class="p">:</span> <span class="kt"><a href="../Classes/Card.html">Card</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>merchantId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Your merchantId.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>card</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Card object to tokenize.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:9Datatrans19TokenizationRequestC10merchantId18paymentMethodTypesACSS_SayAA07PaymentG4TypeOGtcfc"></a>
                     <a name="//apple_ref/swift/Method/init(merchantId:paymentMethodTypes:)" class="dashAnchor"></a>
                     <a class="token" href="#/s:9Datatrans19TokenizationRequestC10merchantId18paymentMethodTypesACSS_SayAA07PaymentG4TypeOGtcfc">init(merchantId:<wbr>paymentMethodTypes:<wbr>)</a>
@@ -239,8 +303,8 @@ successfully or not.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Use this init method to allow the user to enter the card data to be tokenized.
-After this class is initialized, you should define its <code><a href="../Classes/TokenizationRequest.html#/c:@M@Datatrans@objc(cs)DTTokenizationRequest(py)delegate">delegate</a></code>, the <code><a href="../Classes/TokenizationRequest.html#/c:@M@Datatrans@objc(cs)DTTokenizationRequest(py)options">options</a></code> properties
+                        <p>Use this init method to allow the user to enter the card data to be tokenized. After this
+class is initialized, you should define its <code><a href="../Classes/TokenizationRequest.html#/c:@M@Datatrans@objc(cs)DTTokenizationRequest(py)delegate">delegate</a></code>, the <code><a href="../Classes/TokenizationRequest.html#/c:@M@Datatrans@objc(cs)DTTokenizationRequest(py)options">options</a></code> properties
 and a <code><a href="../Classes/TokenizationRequest.html#/c:@M@Datatrans@objc(cs)DTTokenizationRequest(py)theme">theme</a></code> if desired.</p>
 
                       </div>
@@ -299,8 +363,8 @@ and a <code><a href="../Classes/TokenizationRequest.html#/c:@M@Datatrans@objc(cs
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Use this init method to allow the user to enter the  card data to be tokenized.
-After this class is initialized, you should define its <code><a href="../Classes/TokenizationRequest.html#/c:@M@Datatrans@objc(cs)DTTokenizationRequest(py)delegate">delegate</a></code>, the <code><a href="../Classes/TokenizationRequest.html#/c:@M@Datatrans@objc(cs)DTTokenizationRequest(py)options">options</a></code> properties
+                        <p>Use this init method to allow the user to enter the  card data to be tokenized. After this
+class is initialized, you should define its <code><a href="../Classes/TokenizationRequest.html#/c:@M@Datatrans@objc(cs)DTTokenizationRequest(py)delegate">delegate</a></code>, the <code><a href="../Classes/TokenizationRequest.html#/c:@M@Datatrans@objc(cs)DTTokenizationRequest(py)options">options</a></code> properties
 and a <code><a href="../Classes/TokenizationRequest.html#/c:@M@Datatrans@objc(cs)DTTokenizationRequest(py)theme">theme</a></code> if desired.</p>
 
 <p>This initializer is for use from Objective-C only. Instead of <code>[PaymentMethodType]</code>, it
@@ -356,68 +420,6 @@ takes <code>[NSNumber]</code> containing <code>rawValue</code>s of <code><a href
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@Datatrans@objc(cs)DTTokenizationRequest(im)initWithMerchantId:card:"></a>
-                    <a name="//apple_ref/swift/Method/init(merchantId:card:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTTokenizationRequest(im)initWithMerchantId:card:">init(merchantId:<wbr>card:<wbr>)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Use this init method if you use your own UI and already have a <code><a href="../Classes/Card.html">Card</a></code> instance with the
-card data to be tokenized.
-After this class is initialized, you should define its <code><a href="../Classes/TokenizationRequest.html#/c:@M@Datatrans@objc(cs)DTTokenizationRequest(py)delegate">delegate</a></code>, the <code><a href="../Classes/TokenizationRequest.html#/c:@M@Datatrans@objc(cs)DTTokenizationRequest(py)options">options</a></code> properties
-and a <code><a href="../Classes/TokenizationRequest.html#/c:@M@Datatrans@objc(cs)DTTokenizationRequest(py)theme">theme</a></code> if desired.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@objc</span>
-<span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">merchantId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">card</span><span class="p">:</span> <span class="kt"><a href="../Classes/Card.html">Card</a></span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>merchantId</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Your merchantId.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>card</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Card object to tokenize.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
                     <a name="/c:@M@Datatrans@objc(cs)DTTokenizationRequest(im)startWithPresentingController:"></a>
                     <a name="//apple_ref/swift/Method/start(presentingController:)" class="dashAnchor"></a>
                     <a class="token" href="#/c:@M@Datatrans@objc(cs)DTTokenizationRequest(im)startWithPresentingController:">start(presentingController:<wbr>)</a>
@@ -428,9 +430,9 @@ and a <code><a href="../Classes/TokenizationRequest.html#/c:@M@Datatrans@objc(cs
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Starts the SDK and displays any needed user interface using the
-provided <code>presentingController</code>. Note that a tokenization request
-can only be started once.</p>
+                        <p>Starts the SDK and displays any needed user interface using the provided
+<code>presentingController</code>. Note that a tokenization request can only
+be started once.</p>
 
                       </div>
                       <div class="declaration">
@@ -470,7 +472,7 @@ used to present the user interface during an on-going tokenization request.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2021 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2021-04-20)</p>
+          <p>&copy; 2021 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2021-05-03)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

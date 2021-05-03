@@ -47,11 +47,32 @@ import WebKit
   @objc override public init(type: Datatrans.PaymentMethodType, token: Swift.String, cardExpiryDate: Datatrans.CardExpiryDate?, maskedCardNumber: Swift.String?, cardholder: Swift.String?)
   @objc required public init?(coder: Foundation.NSCoder)
 }
+@_inheritsConvenienceInitializers @objc(DTTokenizationRequestError) public class TokenizationRequestError : Foundation.NSError {
+  @objc deinit
+  @objc override dynamic public init(domain: Swift.String, code: Swift.Int, userInfo dict: [Swift.String : Any]? = nil)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
 @_inheritsConvenienceInitializers @objc(DTTransactionOptions) @objcMembers public class TransactionOptions : ObjectiveC.NSObject {
   @objc public var appCallbackScheme: Swift.String?
   @objc public var applePayConfig: Datatrans.ApplePayConfig?
   @objc public var merchantProperties: [Swift.String : Swift.String]?
-  @objc public var suppressTransactionErrorDialog: Swift.Bool
+  @objc public var suppressCriticalErrorDialog: Swift.Bool
+  @objc public var testing: Swift.Bool
+  @objc public var useCertificatePinning: Swift.Bool
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc(DTTokenizationRequestDelegate) public protocol TokenizationRequestDelegate : AnyObject {
+  @objc func tokenizationRequestDidFinish(_ tokenizationRequest: Datatrans.TokenizationRequest, tokenizationId: Swift.String)
+  @objc func tokenizationRequestDidFail(_ tokenizationRequest: Datatrans.TokenizationRequest, error: Datatrans.TokenizationRequestError)
+  @objc optional func tokenizationRequestDidCancel(_ tokenizationRequest: Datatrans.TokenizationRequest)
+}
+@_inheritsConvenienceInitializers @objc(DTTokenizationOptions) @objcMembers public class TokenizationRequestOptions : ObjectiveC.NSObject {
+  @objc public var language: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc public var suppressCriticalErrorDialog: Swift.Bool
   @objc public var testing: Swift.Bool
   @objc public var useCertificatePinning: Swift.Bool
   @objc deinit
@@ -195,6 +216,17 @@ import WebKit
   @objc deinit
   @objc override dynamic public init()
 }
+@objc(DTTokenizationRequest) public class TokenizationRequest : ObjectiveC.NSObject {
+  @objc weak public var delegate: Datatrans.TokenizationRequestDelegate?
+  @objc public var options: Datatrans.TokenizationRequestOptions
+  @objc public var theme: Datatrans.ThemeConfiguration
+  @objc public init(merchantId: Swift.String, card: Datatrans.Card)
+  public init(merchantId: Swift.String, paymentMethodTypes: [Datatrans.PaymentMethodType])
+  @objc(initWithMerchantId:paymentMethodTypes:) convenience public init(merchantId: Swift.String, paymentMethodTypesObjc: [Foundation.NSNumber])
+  @objc public func start(presentingController: UIKit.UIViewController)
+  @objc deinit
+  @objc override dynamic public init()
+}
 @objc(DTPaymentMethod) @objcMembers public class PaymentMethod : ObjectiveC.NSObject, Swift.Codable, Foundation.NSCoding, Foundation.NSCopying {
   @objc final public let type: Datatrans.PaymentMethodType
   @objc public init(type: Datatrans.PaymentMethodType)
@@ -207,6 +239,12 @@ import WebKit
   @objc deinit
 }
 @objc(DTCardExpiryDate) @objcMembers public class CardExpiryDate : ObjectiveC.NSObject, Swift.Codable, Foundation.NSCopying {
+  @objc public var formattedMonth: Swift.String {
+    @objc get
+  }
+  @objc public var formattedYear: Swift.String {
+    @objc get
+  }
   @objc public var month: Swift.Int {
     @objc get
     @objc set

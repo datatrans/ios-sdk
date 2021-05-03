@@ -21,6 +21,7 @@
 - (nonnull NSString *)getCancelUrl;
 - (nonnull NSString *)getInitialTransactionRequestUrl;
 - (nonnull NSString *)getPaymentPostUrl:(BOOL)isResumed;
+- (nonnull NSString *)getTokenizationRequestUrl;
 - (nonnull NSString *)getTWINTRegistrationUrl;
 - (nonnull NSString *)getTWINTStatusUrl;
 
