@@ -225,6 +225,8 @@ SWIFT_CLASS_NAMED("ApplePayConfig")
 /// The request object for further configuration of Apple Pay. Please refer to
 /// the official Apple Pay documentation for more information.
 @property (nonatomic, readonly, strong) PKPaymentRequest * _Nonnull request;
+/// Shows Apple Pay additionally on the token selection screen as  a <code>token</code>.
+@property (nonatomic) BOOL showApplePayAsToken;
 /// Use this option to show Apple Pay as a payment button instead of a
 /// listed payment method.
 @property (nonatomic) BOOL showLargeButton;

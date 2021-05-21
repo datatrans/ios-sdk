@@ -208,6 +208,7 @@ import WebKit
   @objc public var request: PassKit.PKPaymentRequest {
     get
   }
+  @objc public var showApplePayAsToken: Swift.Bool
   @objc public var showLargeButton: Swift.Bool
   @objc public class func hasApplePay(withSupportedNetworks supportedNetworks: [PassKit.PKPaymentNetwork]) -> Swift.Bool
   @objc public init(applePayMerchantId: Swift.String, supportedNetworks: [PassKit.PKPaymentNetwork], countryCode: Swift.String)
