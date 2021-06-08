@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		XQCuiqGAqN18iXVSF4J0gHgm6CA=
+		0i72KOlgtJiGcHnu+scTsOvAhTQ=
 		</data>
 		<key>Headers/CardIOCreditCardInfo.h</key>
 		<data>
@@ -138,7 +138,7 @@
 		</data>
 		<key>Headers/DTPaymentOptions.h</key>
 		<data>
-		CZAZYXJkiUWCpES7sfC5GOz8RT8=
+		8Hafss4Xs6i0YLLItvb8xBpzRsQ=
 		</data>
 		<key>Headers/DTPaymentRequest.h</key>
 		<data>
@@ -214,7 +214,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		IjsyJ8sd1CywRXQS6z7xsCYb0uM=
+		1OxMjRUBXUzhC0AqxjtbA6aSu6U=
 		</data>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -226,7 +226,7 @@
 		</data>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		GrPwsDLVkxY2M4hX4tHEh4W/E5s=
+		NfCTf6Cde6V8GEsXSnCj/r37BwU=
 		</data>
 		<key>Modules/Datatrans.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -238,7 +238,7 @@
 		</data>
 		<key>Modules/Datatrans.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		GrPwsDLVkxY2M4hX4tHEh4W/E5s=
+		NfCTf6Cde6V8GEsXSnCj/r37BwU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -287,7 +287,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			kk2GpyBJswCAIJ6NY2NUM82jLaSv2vj7lcmM/68FtOs=
+			Z1iG/IHSlvg4JmS+/4KBbGRFaOB1/JXmuK8fGdA6kWI=
 			</data>
 		</dict>
 		<key>Headers/CardIOCreditCardInfo.h</key>
@@ -518,7 +518,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			tLdtpcoH3sWKxekZYxef1N3I1emV0lS9ZtJ+lXMFXYE=
+			SUAo6vJ0EPZCy7NkC+7PGyZiJ1KW0d1/zoKj0iADDBQ=
 			</data>
 		</dict>
 		<key>Headers/DTPaymentRequest.h</key>
@@ -665,7 +665,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			u5Ieiq4sUzeHR1tXETCbvMX8zw1qIfm3D3o72bsXAZw=
+			2+DL2w/xy2RzjYHKBSkOFMNY4ZjpH+gVhKhZbNJe1iA=
 			</data>
 		</dict>
 		<key>Modules/Datatrans.swiftmodule/x86_64.swiftdoc</key>
@@ -686,7 +686,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			u5Ieiq4sUzeHR1tXETCbvMX8zw1qIfm3D3o72bsXAZw=
+			2+DL2w/xy2RzjYHKBSkOFMNY4ZjpH+gVhKhZbNJe1iA=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
