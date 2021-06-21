@@ -7,11 +7,21 @@ let package = Package(
     products: [
         .library(
             name: "Datatrans",
-            targets: ["Datatrans"]),
+            targets: ["Datatrans"]
+        ),
+        .library(
+            name: "PPRiskMagnes",
+            targets: ["PPRiskMagnes"]
+        )
     ],
-	targets: [
+    targets: [
         .binaryTarget(
             name: "Datatrans",
-            path: "Datatrans.xcframework")
+            path: "Datatrans.xcframework"
+        ),
+        .binaryTarget(
+            name: "PPRiskMagnes",
+            path: "PPRiskMagnes.xcframework"
+        )
     ]
 )
