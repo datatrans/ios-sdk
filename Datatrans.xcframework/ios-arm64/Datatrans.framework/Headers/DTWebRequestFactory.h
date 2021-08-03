@@ -18,12 +18,10 @@
 
 @interface DTWebRequestFactory : NSObject
 
-- (nonnull instancetype)initWithPaymentOptions:(nonnull DTPaymentOptions *)options urls:(nonnull DTUrls *)urls callbackUrls:(nonnull DTWebCallbackUrls *)callbackUrls;
+- (nonnull instancetype)initWithUrls:(nonnull DTUrls *)urls callbackUrls:(nonnull DTWebCallbackUrls *)callbackUrls;
 
 - (nonnull NSURLRequest *)aliasInputRequestForRequest:(nonnull DTAliasRequest *)aliasRequest transactionModel:(nonnull id<DTTransactionModel>)transactionModel;
-- (nonnull NSURLRequest *)aliasInputRequestForRequest:(nonnull DTAliasRequest *)aliasRequest transactionModel:(nonnull id<DTTransactionModel>)transactionModel params:(nonnull NSDictionary *)params;
-- (nonnull NSURLRequest *)authenticate3DRequestForRequest:(nonnull DTPaymentRequest *)paymentRequest creditCard:(nonnull DTCardToken *)creditCard transactionId:(nonnull NSString *)transactionId;
+- (nonnull NSURLRequest *)authenticate3DRequestForRequest:(nonnull DTPaymentRequest *)paymentRequest creditCard:(nonnull DTCardToken *)creditCard transactionId:(nonnull NSString *)transactionId testing:(BOOL)testing;
 - (nonnull NSURLRequest *)paymentInputRequestForRequest:(nonnull DTPaymentRequest *)paymentRequest transactionModel:(nonnull id<DTTransactionModel>)transactionModel;
-- (nonnull NSURLRequest *)paymentInputRequestForRequest:(nonnull DTPaymentRequest *)paymentRequest transactionModel:(nonnull id<DTTransactionModel>)transactionModel params:(nonnull NSDictionary *)params;
 
 @end

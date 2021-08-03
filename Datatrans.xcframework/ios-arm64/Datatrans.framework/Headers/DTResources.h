@@ -18,7 +18,7 @@
 + (nonnull NSBundle *)bundle;
 
 + (nonnull NSBundle *)languageBundle;
-+ (nonnull NSBundle *)languageBundleForLanguage:(nullable NSString *)language;
++ (void)selectLanguageBundleForLanguage:(nullable NSString *)language;
 
 + (nonnull NSString *)localizedStringForKey:(nonnull NSString *)key;
 

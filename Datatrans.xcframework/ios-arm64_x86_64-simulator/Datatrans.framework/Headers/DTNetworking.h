@@ -40,29 +40,25 @@ typedef enum {
 //                       internal and parsing errors of DTNetworkingErrorDomain defined by DTNetworkingErrorCode.
 //   - Invalid HTTP status codes: positive error codes of domain kGDataHTTPFetcherErrorDomain
 //   - Transaction errors: all non-technical error codes of DTNetworkingErrorDomain as defined by DTNetworkingErrorCode
-@interface DTNetworking : NSObject {
-@protected
-    BOOL _testingEnabled;
-    DTPaymentOptions* _options;
-}
+@interface DTNetworking : NSObject
 
 + (BOOL)isTechnicalError:(NSError *)error;
 + (BOOL)isSSLError:(NSError *)error;
 
-- (instancetype)initWithMobileToken:(NSString *)mobileToken options:(DTPaymentOptions *)paymentOptions urls:(DTUrls *)urls;
+- (instancetype)initWithMobileToken:(NSString *)mobileToken urls:(DTUrls *)urls certificatePinning:(BOOL)certificatePinning;
 
 - (void)requestInitialTransaction:(NSString *)mobileToken idempotencyKey:(NSString *)idempotencyKey completion:(void (^)(NSData *, NSError *))completion;
-- (void)requestCardTokenForMerchantId:(NSString *)merchantId card:(DTCard *)card completion:(void (^)(DTCardTokenRequestResponse *, NSError *))completion;
+- (void)requestCardTokenForMerchantId:(NSString *)merchantId card:(DTCard *)card options:(DTPaymentOptions *)options completion:(void (^)(DTCardTokenRequestResponse *, NSError *))completion;
 - (void)requestStatusForMerchantId:(NSString *)merchantId alias:(NSString *)alias currencyCode:(NSString *)currencyCode isAliasRequest:(BOOL)isAliasRequest completion:(void(^)(DTStatusRequestResponse *, NSError *))completion;
 - (void)requestTokenizationWithJSONBody:(NSData *)body completion:(void (^)(NSData *, NSError *))completion;
 - (void)authorizeAliasPaymentRequest:(DTAliasPaymentAuthorizationRequest *)authorizationRequest completion:(void (^)(DTAuthorizationRequestResponse *, NSError *))completion;
 - (void)authorizePaymentRequest:(DTPaymentAuthorizationRequest *)authorizationRequest completion:(void (^)(DTAuthorizationRequestResponse *, NSError *))completion; // split web payment
-- (void)startTokenRequest:(DTPaymentRequest *)paymentRequest paymentMethod:(NSString *)paymentMethod completion:(void (^)(DTStartTokenRequestResponse *, NSError *))completion;
-- (void)startTokenRequestForAlias:(DTAliasRequest *)aliasRequest paymentMethod:(NSString *)paymentMethod completion:(void (^)(DTStartTokenRequestResponse *, NSError *))completion;
-- (void)startTWINTAliasRequest:(DTAliasRequest *)aliasRequest completion:(void (^)(DTStartTWINTRequestResponse *, NSError *))completion;
-- (void)TWINTStatusRequestForMerchantId:(NSString *)merchantId transactionId:(NSString *)transactionId completion:(void (^)(DTTWINTStatusRequestResponse *, NSError *))completion;
+- (void)startTokenRequest:(DTPaymentRequest *)paymentRequest paymentMethod:(NSString *)paymentMethod options:(DTPaymentOptions *)options completion:(void (^)(DTStartTokenRequestResponse *, NSError *))completion;
+- (void)startTokenRequestForAlias:(DTAliasRequest *)aliasRequest paymentMethod:(NSString *)paymentMethod options:(DTPaymentOptions *)options completion:(void (^)(DTStartTokenRequestResponse *, NSError *))completion;
+- (void)startTWINTAliasRequest:(DTAliasRequest *)aliasRequest options:(DTPaymentOptions *)options completion:(void (^)(DTStartTWINTRequestResponse *, NSError *))completion;
+- (void)TWINTStatusRequestForMerchantId:(NSString *)merchantId transactionId:(NSString *)transactionId options:(DTPaymentOptions *)options completion:(void (^)(DTTWINTStatusRequestResponse *, NSError *))completion;
 - (void)cancelRequest:(DTPaymentRequest *)paymentRequest transactionId:(NSString *)transactionId;
-- (void)startApplePayRequest:(DTPaymentRequest *)paymentRequest token:(NSString *)token completion:(void (^)(DTStartApplePayRequestResponse *, NSError *))completion;
+- (void)startApplePayRequest:(DTPaymentRequest *)paymentRequest token:(NSString *)token options:(DTPaymentOptions *)options completion:(void (^)(DTStartApplePayRequestResponse *, NSError *))completion;
 
 #pragma mark - Management
 typedef void (^DTManagementCompletion)(NSError* error);

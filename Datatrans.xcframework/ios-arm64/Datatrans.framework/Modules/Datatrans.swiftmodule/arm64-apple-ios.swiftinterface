@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
 // swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Datatrans
 import AVFoundation
 import Combine
@@ -26,7 +26,7 @@ import WebKit
   @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@objc(DTTransactionDelegate) public protocol TransactionDelegate : AnyObject {
+@objc(DTTransactionDelegate) public protocol TransactionDelegate {
   @objc func transactionDidFinish(_ transaction: Datatrans.Transaction, result: Datatrans.TransactionSuccess)
   @objc func transactionDidFail(_ transaction: Datatrans.Transaction, error: Datatrans.TransactionError)
   @objc optional func transactionDidCancel(_ transaction: Datatrans.Transaction)
@@ -38,20 +38,20 @@ import WebKit
   @objc public var cardholder: Swift.String?
   @objc public init(type: Datatrans.PaymentMethodType, number: Swift.String, expiryDate: Datatrans.CardExpiryDate, cvv: Swift.String?, cardholder: Swift.String?)
   @objc required public init?(coder: Foundation.NSCoder)
-  @objc deinit
   @objc override public init(type: Datatrans.PaymentMethodType)
+  @objc deinit
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(DTRekaToken) @objcMembers public class RekaToken : Datatrans.CardToken {
   @objc convenience public init(token: Swift.String, cardExpiryDate: Datatrans.CardExpiryDate, maskedCardNumber: Swift.String?, cardholder: Swift.String?)
   @objc override public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
-  @objc deinit
   @objc override public init(type: Datatrans.PaymentMethodType, token: Swift.String, cardExpiryDate: Datatrans.CardExpiryDate?, maskedCardNumber: Swift.String?, cardholder: Swift.String?)
   @objc required public init?(coder: Foundation.NSCoder)
+  @objc deinit
 }
 @_inheritsConvenienceInitializers @objc(DTTokenizationRequestError) public class TokenizationRequestError : Foundation.NSError {
-  @objc deinit
   @objc override dynamic public init(domain: Swift.String, code: Swift.Int, userInfo dict: [Swift.String : Any]? = nil)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
 }
 @_inheritsConvenienceInitializers @objc(DTTransactionOptions) @objcMembers public class TransactionOptions : ObjectiveC.NSObject {
   @objc public var appCallbackScheme: Swift.String?
@@ -60,10 +60,10 @@ import WebKit
   @objc public var suppressCriticalErrorDialog: Swift.Bool
   @objc public var testing: Swift.Bool
   @objc public var useCertificatePinning: Swift.Bool
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
-@objc(DTTokenizationRequestDelegate) public protocol TokenizationRequestDelegate : AnyObject {
+@objc(DTTokenizationRequestDelegate) public protocol TokenizationRequestDelegate {
   @objc func tokenizationRequestDidFinish(_ tokenizationRequest: Datatrans.TokenizationRequest, tokenizationId: Swift.String)
   @objc func tokenizationRequestDidFail(_ tokenizationRequest: Datatrans.TokenizationRequest, error: Datatrans.TokenizationRequestError)
   @objc optional func tokenizationRequestDidCancel(_ tokenizationRequest: Datatrans.TokenizationRequest)
@@ -76,8 +76,8 @@ import WebKit
   @objc public var suppressCriticalErrorDialog: Swift.Bool
   @objc public var testing: Swift.Bool
   @objc public var useCertificatePinning: Swift.Bool
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc(DTPaymentMethodType) public enum PaymentMethodType : Swift.Int {
   case Visa
@@ -103,11 +103,11 @@ import WebKit
   case Powerpay
   case Paysafecard
   case Boncard
+  public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
-  public init?(rawValue: Swift.Int)
 }
 @objc(DTTransaction) public class Transaction : ObjectiveC.NSObject, Datatrans.DTErrorHandlerDelegate {
   @objc weak public var delegate: Datatrans.TransactionDelegate?
@@ -118,8 +118,8 @@ import WebKit
   @objc public init(mobileToken: Swift.String, paymentMethodTokens: [Datatrans.PaymentMethodToken])
   @objc public func start(presentingController: UIKit.UIViewController)
   @objc public func didHandleError(_ error: Swift.Error)
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(DTSEPAToken) @objcMembers public class SEPAToken : Datatrans.PaymentMethodToken {
   @objc public var bankCode: Swift.String? {
@@ -138,22 +138,22 @@ import WebKit
     @objc get
   }
   @objc override public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
-  @objc deinit
   @objc override public init(type: Datatrans.PaymentMethodType, token: Swift.String)
   @objc required public init?(coder: Foundation.NSCoder)
+  @objc deinit
 }
 @_inheritsConvenienceInitializers @objc(DTPaymentMethodTypeMapper) @objcMembers public class PaymentMethodTypeMapper : ObjectiveC.NSObject {
   @objc public static func toType(identifier: Swift.String) -> Datatrans.PaymentMethodType
   @objc public static func toIdentifier(type: Datatrans.PaymentMethodType) -> Swift.String
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc(DTPostFinanceCardToken) @objcMembers public class PostFinanceCardToken : Datatrans.CardToken {
   @objc public init(token: Swift.String, cardExpiryDate: Datatrans.CardExpiryDate?, maskedCardNumber: Swift.String?, cardholder: Swift.String?)
   @objc required public init?(coder: Foundation.NSCoder)
   @objc override public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
-  @objc deinit
   @objc override public init(type: Datatrans.PaymentMethodType, token: Swift.String, cardExpiryDate: Datatrans.CardExpiryDate?, maskedCardNumber: Swift.String?, cardholder: Swift.String?)
+  @objc deinit
 }
 @_inheritsConvenienceInitializers @objc(DTThemeConfiguration) @objcMembers public class ThemeConfiguration : ObjectiveC.NSObject {
   @objc public var barBackgroundColor: UIKit.UIColor?
@@ -215,8 +215,8 @@ import WebKit
   @objc public init(applePayMerchantId: Swift.String, supportedNetworks: [PassKit.PKPaymentNetwork], countryCode: Swift.String)
   @objc convenience public init(applePayMerchantId: Swift.String, supportedNetworks: [PassKit.PKPaymentNetwork])
   @objc public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc(DTTokenizationRequest) public class TokenizationRequest : ObjectiveC.NSObject {
   @objc weak public var delegate: Datatrans.TokenizationRequestDelegate?
@@ -226,8 +226,8 @@ import WebKit
   public init(merchantId: Swift.String, paymentMethodTypes: [Datatrans.PaymentMethodType])
   @objc(initWithMerchantId:paymentMethodTypes:) convenience public init(merchantId: Swift.String, paymentMethodTypesObjc: [Foundation.NSNumber])
   @objc public func start(presentingController: UIKit.UIViewController)
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc(DTPaymentMethod) @objcMembers public class PaymentMethod : ObjectiveC.NSObject, Swift.Codable, Foundation.NSCoding, Foundation.NSCopying {
   @objc final public let type: Datatrans.PaymentMethodType
@@ -302,8 +302,8 @@ import WebKit
   override public func encode(to encoder: Swift.Encoder) throws
   @objc required public init?(coder: Foundation.NSCoder)
   @objc override public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
-  @objc deinit
   @objc override public init(type: Datatrans.PaymentMethodType, token: Swift.String)
+  @objc deinit
 }
 extension Datatrans.PaymentMethodType : Swift.Equatable {}
 extension Datatrans.PaymentMethodType : Swift.Hashable {}
