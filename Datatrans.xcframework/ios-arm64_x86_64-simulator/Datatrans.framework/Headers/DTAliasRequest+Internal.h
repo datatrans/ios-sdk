@@ -12,7 +12,5 @@
 
 @property (nonatomic, readonly) NSString* merchantId;
 @property (nonatomic, readonly) NSString* currencyCode;
-@property (nonatomic, copy) DTCard* card;
-@property (nonatomic, readonly) NSArray<NSString *>* paymentMethodIdents;
 
 @end

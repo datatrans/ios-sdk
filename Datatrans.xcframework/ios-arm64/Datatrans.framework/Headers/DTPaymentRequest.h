@@ -15,8 +15,7 @@
 	NSString* _refno;
 	NSString* _currencyCode;
 	NSUInteger _amountInSmallestCurrencyUnit;
-	NSString* _signature;
-	
+
 	NSString *_localizedPriceDescription;
 }
 
@@ -24,7 +23,6 @@
 @property (nonatomic, copy) NSString* refno;
 @property (nonatomic, copy) NSString* currencyCode;
 @property (nonatomic, assign) NSUInteger amountInSmallestCurrencyUnit;
-@property (nonatomic, copy) NSString* signature;
 
 @property (nonatomic, copy) NSString* localizedPriceDescription;
 

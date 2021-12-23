@@ -11,8 +11,8 @@
 #import <Datatrans/DTUrls.h>
 
 @class DTAliasRequest;
-@class DTCardToken;
 @class DTPaymentOptions;
+@class DTSavedCard;
 @class DTWebCallbackUrls;
 @protocol DTTransactionModel;
 
@@ -21,7 +21,7 @@
 - (nonnull instancetype)initWithUrls:(nonnull DTUrls *)urls callbackUrls:(nonnull DTWebCallbackUrls *)callbackUrls;
 
 - (nonnull NSURLRequest *)aliasInputRequestForRequest:(nonnull DTAliasRequest *)aliasRequest transactionModel:(nonnull id<DTTransactionModel>)transactionModel;
-- (nonnull NSURLRequest *)authenticate3DRequestForRequest:(nonnull DTPaymentRequest *)paymentRequest creditCard:(nonnull DTCardToken *)creditCard transactionId:(nonnull NSString *)transactionId testing:(BOOL)testing;
+- (nonnull NSURLRequest *)authenticate3DRequestForRequest:(nonnull DTPaymentRequest *)paymentRequest creditCard:(nonnull DTSavedCard *)creditCard transactionId:(nonnull NSString *)transactionId testing:(BOOL)testing;
 - (nonnull NSURLRequest *)paymentInputRequestForRequest:(nonnull DTPaymentRequest *)paymentRequest transactionModel:(nonnull id<DTTransactionModel>)transactionModel;
 
 @end

@@ -11,7 +11,6 @@ extern NSString* const DTPaymentMethodMasterCard;
 extern NSString* const DTPaymentMethodDinersClub;
 extern NSString* const DTPaymentMethodAmericanExpress;
 extern NSString* const DTPaymentMethodJCB;
-extern NSString* const DTPaymentMethodMyOne;
 extern NSString* const DTPaymentMethodUATP;
 extern NSString* const DTPaymentMethodDiscover;
 extern NSString* const DTPaymentMethodSupercard;

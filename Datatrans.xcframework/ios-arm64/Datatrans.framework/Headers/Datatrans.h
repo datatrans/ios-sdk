@@ -34,7 +34,7 @@ FOUNDATION_EXPORT const unsigned char DatatransVersionString[];
 #import <Datatrans/DTAuthorizationRequestResponse.h>
 #import <Datatrans/DTBasketItem.h>
 #import <Datatrans/DTByjunoPaymentInfo.h>
-#import <Datatrans/DTCardTokenRequestResponse.h>
+#import <Datatrans/DTCardAliasRequestResponse.h>
 #import <Datatrans/DTCustomer.h>
 #import <Datatrans/DTDate.h>
 #import <Datatrans/DTErrorHandler.h>

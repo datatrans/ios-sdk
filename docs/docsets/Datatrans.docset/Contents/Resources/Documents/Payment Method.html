@@ -17,19 +17,19 @@
     <a title="Payment Method  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">Datatrans 1.4.1 Docs</a></p>
-        <p class="header-right"><a href="https://github.com/datatrans/ios-sdk"><img src="img/gh.png"/>View on GitHub</a></p>
-        <p class="header-right">
+        <p><a href="index.html">Datatrans 1.5.0 Docs</a></p>
+        <p class="header-right"><a href="https://github.com/datatrans/ios-sdk"><img src="img/gh.png" alt="GitHub"/>View on GitHub</a></p>
+        <div class="header-right">
           <form role="search" action="search.json">
             <input type="text" placeholder="Search documentation" data-typeahead>
           </form>
-        </p>
+        </div>
       </div>
     </header>
     <div class="content-wrapper">
       <p id="breadcrumbs">
         <a href="index.html">Datatrans Reference</a>
-        <img id="carat" src="img/carat.png" />
+        <img id="carat" src="img/carat.png" alt=""/>
         Payment Method  Reference
       </p>
     </div>
@@ -77,19 +77,7 @@
                 <a href="Classes/CardExpiryDate.html">CardExpiryDate</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/CardToken.html">CardToken</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/SEPAToken.html">SEPAToken</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/PayPalToken.html">PayPalToken</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="Classes/PaymentMethod.html">PaymentMethod</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/PaymentMethodToken.html">PaymentMethodToken</a>
               </li>
               <li class="nav-group-task">
                 <a href="Enums/PaymentMethodType.html">PaymentMethodType</a>
@@ -98,27 +86,39 @@
                 <a href="Classes/PaymentMethodTypeMapper.html">PaymentMethodTypeMapper</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/PostFinanceCardToken.html">PostFinanceCardToken</a>
+                <a href="Classes/SavedCard.html">SavedCard</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/RekaToken.html">RekaToken</a>
+                <a href="Classes/SavedPaymentMethod.html">SavedPaymentMethod</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/SavedPayPal.html">SavedPayPal</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/SavedPostFinanceCard.html">SavedPostFinanceCard</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/SavedReka.html">SavedReka</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/SavedSEPA.html">SavedSEPA</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Tokenization%20Request.html">Tokenization Request</a>
+            <a href="PCI%20Proxy.html">PCI Proxy</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Classes/TokenizationRequest.html">TokenizationRequest</a>
+                <a href="Classes/PCIPTokenizationRequest.html">PCIPTokenizationRequest</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/TokenizationRequestOptions.html">TokenizationRequestOptions</a>
+                <a href="Classes/PCIPTokenizationRequestOptions.html">PCIPTokenizationRequestOptions</a>
               </li>
               <li class="nav-group-task">
-                <a href="Protocols/TokenizationRequestDelegate.html">TokenizationRequestDelegate</a>
+                <a href="Protocols/PCIPTokenizationRequestDelegate.html">PCIPTokenizationRequestDelegate</a>
               </li>
               <li class="nav-group-task">
-                <a href="Tokenization%20Request.html#/c:@M@Datatrans@objc(cs)DTTokenizationRequestError">TokenizationRequestError</a>
+                <a href="PCI%20Proxy.html#/c:@M@Datatrans@objc(cs)DTPCIPTokenizationRequestError">PCIPTokenizationRequestError</a>
               </li>
             </ul>
           </li>
@@ -227,111 +227,6 @@ this class if your app takes over the user interface for the card input fields.<
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@Datatrans@objc(cs)DTCardToken"></a>
-                    <a name="//apple_ref/swift/Class/CardToken" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTCardToken">CardToken</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>This class contains the token information about a credit or debit card registration
-from a previously completed transaction. Just like any other <code><a href="Classes/PaymentMethodToken.html">PaymentMethodToken</a></code>
-subclass, this class can be used to finalize a payment without user interaction or
-to display a selection of saved token payments to the user for fast checkouts.
-A token can be returned after completing a successful card payment or with a
-dedicated registration.</p>
-
-                        <a href="Classes/CardToken.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@objc(DTCardToken)</span>
-<span class="kd">@objcMembers</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="kt">CardToken</span> <span class="p">:</span> <span class="kt"><a href="Classes/PaymentMethodToken.html">PaymentMethodToken</a></span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@Datatrans@objc(cs)DTSEPAToken"></a>
-                    <a name="//apple_ref/swift/Class/SEPAToken" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTSEPAToken">SEPAToken</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>This class contains the token information about a SEPA (ELV) registration from
-a previously completed transaction. Just like any other <code><a href="Classes/PaymentMethodToken.html">PaymentMethodToken</a></code>
-subclass, this class can be used to finalize a payment without user interaction
-or to show a selection of saved token payments to the user for fast checkouts.
-A token can be returned after completing a successful SEPA payment or with a
-dedicated registration.</p>
-
-                        <a href="Classes/SEPAToken.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@objc(DTSEPAToken)</span>
-<span class="kd">@objcMembers</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="kt">SEPAToken</span> <span class="p">:</span> <span class="kt"><a href="Classes/PaymentMethodToken.html">PaymentMethodToken</a></span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@Datatrans@objc(cs)DTPayPalToken"></a>
-                    <a name="//apple_ref/swift/Class/PayPalToken" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTPayPalToken">PayPalToken</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>This class contains the token information about a PayPal registration from
-a previously completed transaction. Just like any other <code><a href="Classes/PaymentMethodToken.html">PaymentMethodToken</a></code>
-subclass, this class can be used to finalize a payment without user interaction
-or to show a selection of saved token payments to the user for fast checkouts.
-A token can be returned after completing a successful PayPal payment or with a
-dedicated registration.</p>
-
-                        <a href="Classes/PayPalToken.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@objc(DTPayPalToken)</span>
-<span class="kd">@objcMembers</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="kt">PayPalToken</span> <span class="p">:</span> <span class="kt"><a href="Classes/PaymentMethodToken.html">PaymentMethodToken</a></span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
                     <a name="/c:@M@Datatrans@objc(cs)DTPaymentMethod"></a>
                     <a name="//apple_ref/swift/Class/PaymentMethod" class="dashAnchor"></a>
                     <a class="token" href="#/c:@M@Datatrans@objc(cs)DTPaymentMethod">PaymentMethod</a>
@@ -354,52 +249,6 @@ payment method, e.g. Visa or Mastercard.</p>
                           <pre class="highlight swift"><code><span class="kd">@objc(DTPaymentMethod)</span>
 <span class="kd">@objcMembers</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="kt">PaymentMethod</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">NSCoding</span><span class="p">,</span> <span class="kt">NSCopying</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@Datatrans@objc(cs)DTPaymentMethodToken"></a>
-                    <a name="//apple_ref/swift/Class/PaymentMethodToken" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTPaymentMethodToken">PaymentMethodToken</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>This class is the base token class to gather token information and process
-recurring payments or fast checkouts with any payment method. This class
-is sufficient to process payments with tokens of some payment methods
-(e.g. Twint). More complex payment methods require you to specify some
-more details in their token subclasses (e.g. card payments, PostFinance, etc.).
-Please refer to the list below to see if you need to call an additional token
-subclass for your payments.</p>
-
-<ul>
-<li>Easy payment methods: Swisscom Easypay, SEPA (ELV), Twint,
-Apple Pay, Byjuno, SwissPass, Powerpay Invoice</li>
-<li>Complex payment methods (requiring token subclass): Card payments,
-PayPal, PostFinance, Reka</li>
-</ul>
-
-<p>Please refer to the Datatrans documentation to see if you can register a
-token during payment or require a dedicated registration.</p>
-
-                        <a href="Classes/PaymentMethodToken.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@objc(DTPaymentMethodToken)</span>
-<span class="kd">@objcMembers</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="kt">PaymentMethodToken</span> <span class="p">:</span> <span class="kt"><a href="Classes/PaymentMethod.html">PaymentMethod</a></span></code></pre>
 
                         </div>
                       </div>
@@ -457,7 +306,6 @@ token during payment or require a dedicated registration.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@objc(DTPaymentMethodTypeMapper)</span>
-<span class="kd">@objcMembers</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="kt">PaymentMethodTypeMapper</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
 
                         </div>
@@ -468,9 +316,9 @@ token during payment or require a dedicated registration.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@Datatrans@objc(cs)DTPostFinanceCardToken"></a>
-                    <a name="//apple_ref/swift/Class/PostFinanceCardToken" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTPostFinanceCardToken">PostFinanceCardToken</a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTSavedCard"></a>
+                    <a name="//apple_ref/swift/Class/SavedCard" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTSavedCard">SavedCard</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -478,22 +326,24 @@ token during payment or require a dedicated registration.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This class contains the token information about a PostFinance Card  registration from
-a previously completed transaction. Just like any other <code><a href="Classes/PaymentMethodToken.html">PaymentMethodToken</a></code>
-subclass, this class can be used to finalize a payment without user interaction
-or to show a selection of saved token payments to the user for fast checkouts.
-A token can be returned after completing a successful PostFinance Card payment or
+                        <p>This class contains saved credit or debit card payment method details.</p>
+
+<p>Just like any other <code><a href="Classes/SavedPaymentMethod.html">SavedPaymentMethod</a></code> subclass, this class can be used
+to finalize a payment without user interaction or to display a selection of saved
+payment methods to the user for fast checkouts.</p>
+
+<p>A <code>SavedCard</code> can be created by successfully completing a card payment or
 with a dedicated registration.</p>
 
-                        <a href="Classes/PostFinanceCardToken.html" class="slightly-smaller">See more</a>
+                        <a href="Classes/SavedCard.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@objc(DTPostFinanceCardToken)</span>
+                          <pre class="highlight swift"><code><span class="kd">@objc(DTSavedCard)</span>
 <span class="kd">@objcMembers</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="kt">PostFinanceCardToken</span> <span class="p">:</span> <span class="kt"><a href="Classes/CardToken.html">CardToken</a></span></code></pre>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">SavedCard</span> <span class="p">:</span> <span class="kt"><a href="Classes/SavedPaymentMethod.html">SavedPaymentMethod</a></span></code></pre>
 
                         </div>
                       </div>
@@ -503,9 +353,9 @@ with a dedicated registration.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@Datatrans@objc(cs)DTRekaToken"></a>
-                    <a name="//apple_ref/swift/Class/RekaToken" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTRekaToken">RekaToken</a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTSavedPaymentMethod"></a>
+                    <a name="//apple_ref/swift/Class/SavedPaymentMethod" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTSavedPaymentMethod">SavedPaymentMethod</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -513,22 +363,182 @@ with a dedicated registration.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This class contains the token information about a Reka card registration from
-a previously completed transaction. Just like any other <code><a href="Classes/PaymentMethodToken.html">PaymentMethodToken</a></code>
-subclass, this class can be used to finalize a payment without user interaction
-or to show a selection of saved token payments to the user for fast checkouts.
-A token can be returned after completing a successful Reka payment or with a
-dedicated registration.</p>
+                        <p>This is the base class to save a payment method and use it to process recurring payments
+or fast checkouts.</p>
 
-                        <a href="Classes/RekaToken.html" class="slightly-smaller">See more</a>
+<p>This class is sufficient for some payment methods (e.g. Twint). More complex payment
+methods require you to specify additional details in their <code>SavedPaymentMethod</code>
+subclass (e.g. card payments, PostFinance, etc.).</p>
+
+<p>Please refer to this list to see if you need to use one of the subclasses for your payments:</p>
+
+<ul>
+<li>Easy payment methods: Swisscom Easypay, SEPA (ELV), Twint,
+Apple Pay, Byjuno, SwissPass, Powerpay Invoice</li>
+<li>Complex payment methods (requiring a <code>SavedPaymentMethod</code> subclass): Card payments,
+PayPal, PostFinance, Reka</li>
+</ul>
+
+<p>Please refer to the Datatrans documentation to see if you can register a payment method
+during payment or require a dedicated registration.</p>
+
+                        <a href="Classes/SavedPaymentMethod.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@objc(DTRekaToken)</span>
+                          <pre class="highlight swift"><code><span class="kd">@objc(DTSavedPaymentMethod)</span>
 <span class="kd">@objcMembers</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="kt">RekaToken</span> <span class="p">:</span> <span class="kt"><a href="Classes/CardToken.html">CardToken</a></span></code></pre>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">SavedPaymentMethod</span> <span class="p">:</span> <span class="kt"><a href="Classes/PaymentMethod.html">PaymentMethod</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Datatrans@objc(cs)DTSavedPayPal"></a>
+                    <a name="//apple_ref/swift/Class/SavedPayPal" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTSavedPayPal">SavedPayPal</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This class contains saved PayPal payment method details.</p>
+
+<p>Just like any other <code><a href="Classes/SavedPaymentMethod.html">SavedPaymentMethod</a></code> subclass, this class can be used
+to finalize a payment without user interaction or to display a selection of saved
+payment methods to the user for fast checkouts.</p>
+
+<p>A <code>SavedPayPal</code> can be created by successfully completing a PayPal payment or
+with a dedicated registration.</p>
+
+                        <a href="Classes/SavedPayPal.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc(DTSavedPayPal)</span>
+<span class="kd">@objcMembers</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">SavedPayPal</span> <span class="p">:</span> <span class="kt"><a href="Classes/SavedPaymentMethod.html">SavedPaymentMethod</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Datatrans@objc(cs)DTSavedPostFinanceCard"></a>
+                    <a name="//apple_ref/swift/Class/SavedPostFinanceCard" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTSavedPostFinanceCard">SavedPostFinanceCard</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This class contains saved PostFinance Card payment method details.</p>
+
+<p>Just like any other <code><a href="Classes/SavedPaymentMethod.html">SavedPaymentMethod</a></code> subclass, this class can be used
+to finalize a payment without user interaction or to display a selection of saved
+payment methods to the user for fast checkouts.</p>
+
+<p>A <code>SavedPostFinanceCard</code> can be created by successfully completing a
+PostFinance Card payment or with a dedicated registration.</p>
+
+                        <a href="Classes/SavedPostFinanceCard.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc(DTSavedPostFinanceCard)</span>
+<span class="kd">@objcMembers</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">SavedPostFinanceCard</span> <span class="p">:</span> <span class="kt"><a href="Classes/SavedCard.html">SavedCard</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Datatrans@objc(cs)DTSavedReka"></a>
+                    <a name="//apple_ref/swift/Class/SavedReka" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTSavedReka">SavedReka</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This class contains saved Reka card payment method details.</p>
+
+<p>Just like any other <code><a href="Classes/SavedPaymentMethod.html">SavedPaymentMethod</a></code> subclass, this class can be used
+to finalize a payment without user interaction or to display a selection of saved
+payment methods to the user for fast checkouts.</p>
+
+<p>A <code>SavedReka</code> can be created by successfully completing a Reka payment or
+with a dedicated registration.</p>
+
+                        <a href="Classes/SavedReka.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc(DTSavedReka)</span>
+<span class="kd">@objcMembers</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">SavedReka</span> <span class="p">:</span> <span class="kt"><a href="Classes/SavedCard.html">SavedCard</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Datatrans@objc(cs)DTSavedSEPA"></a>
+                    <a name="//apple_ref/swift/Class/SavedSEPA" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTSavedSEPA">SavedSEPA</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This class contains saved SEPA (ELV) payment method details.</p>
+
+<p>Just like any other <code><a href="Classes/SavedPaymentMethod.html">SavedPaymentMethod</a></code> subclass, this class can be used
+to finalize a payment without user interaction or to display a selection of saved
+payment methods to the user for fast checkouts.</p>
+
+<p>A <code>SavedSEPA</code> can be created by successfully completing a SEPA payment or
+with a dedicated registration.</p>
+
+                        <a href="Classes/SavedSEPA.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc(DTSavedSEPA)</span>
+<span class="kd">@objcMembers</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">SavedSEPA</span> <span class="p">:</span> <span class="kt"><a href="Classes/SavedPaymentMethod.html">SavedPaymentMethod</a></span></code></pre>
 
                         </div>
                       </div>
@@ -540,11 +550,10 @@ dedicated registration.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2021 <a class="link" href="https://github.com/datatrans/ios-sdk" target="_blank" rel="external">ieffects ag</a>. All rights reserved. (Last updated: 2021-08-03)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2021 <a class="link" href="https://github.com/datatrans/ios-sdk" target="_blank" rel="external noopener">ieffects ag</a>. All rights reserved. (Last updated: 2021-12-23)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>
     </div>
   </body>
-</div>
 </html>

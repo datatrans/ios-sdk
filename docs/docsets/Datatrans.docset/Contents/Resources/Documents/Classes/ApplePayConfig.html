@@ -17,19 +17,19 @@
     <a title="ApplePayConfig Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">Datatrans 1.4.1 Docs</a></p>
-        <p class="header-right"><a href="https://github.com/datatrans/ios-sdk"><img src="../img/gh.png"/>View on GitHub</a></p>
-        <p class="header-right">
+        <p><a href="../index.html">Datatrans 1.5.0 Docs</a></p>
+        <p class="header-right"><a href="https://github.com/datatrans/ios-sdk"><img src="../img/gh.png" alt="GitHub"/>View on GitHub</a></p>
+        <div class="header-right">
           <form role="search" action="../search.json">
             <input type="text" placeholder="Search documentation" data-typeahead>
           </form>
-        </p>
+        </div>
       </div>
     </header>
     <div class="content-wrapper">
       <p id="breadcrumbs">
         <a href="../index.html">Datatrans Reference</a>
-        <img id="carat" src="../img/carat.png" />
+        <img id="carat" src="../img/carat.png" alt=""/>
         ApplePayConfig Class Reference
       </p>
     </div>
@@ -77,19 +77,7 @@
                 <a href="../Classes/CardExpiryDate.html">CardExpiryDate</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/CardToken.html">CardToken</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/SEPAToken.html">SEPAToken</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/PayPalToken.html">PayPalToken</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Classes/PaymentMethod.html">PaymentMethod</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/PaymentMethodToken.html">PaymentMethodToken</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Enums/PaymentMethodType.html">PaymentMethodType</a>
@@ -98,27 +86,39 @@
                 <a href="../Classes/PaymentMethodTypeMapper.html">PaymentMethodTypeMapper</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/PostFinanceCardToken.html">PostFinanceCardToken</a>
+                <a href="../Classes/SavedCard.html">SavedCard</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/RekaToken.html">RekaToken</a>
+                <a href="../Classes/SavedPaymentMethod.html">SavedPaymentMethod</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SavedPayPal.html">SavedPayPal</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SavedPostFinanceCard.html">SavedPostFinanceCard</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SavedReka.html">SavedReka</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SavedSEPA.html">SavedSEPA</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Tokenization%20Request.html">Tokenization Request</a>
+            <a href="../PCI%20Proxy.html">PCI Proxy</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Classes/TokenizationRequest.html">TokenizationRequest</a>
+                <a href="../Classes/PCIPTokenizationRequest.html">PCIPTokenizationRequest</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/TokenizationRequestOptions.html">TokenizationRequestOptions</a>
+                <a href="../Classes/PCIPTokenizationRequestOptions.html">PCIPTokenizationRequestOptions</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Protocols/TokenizationRequestDelegate.html">TokenizationRequestDelegate</a>
+                <a href="../Protocols/PCIPTokenizationRequestDelegate.html">PCIPTokenizationRequestDelegate</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Tokenization%20Request.html#/c:@M@Datatrans@objc(cs)DTTokenizationRequestError">TokenizationRequestError</a>
+                <a href="../PCI%20Proxy.html#/c:@M@Datatrans@objc(cs)DTPCIPTokenizationRequestError">PCIPTokenizationRequestError</a>
               </li>
             </ul>
           </li>
@@ -230,9 +230,9 @@ the official Apple Pay documentation for more information.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@Datatrans@objc(cs)DTApplePayConfig(py)showApplePayAsToken"></a>
-                    <a name="//apple_ref/swift/Property/showApplePayAsToken" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTApplePayConfig(py)showApplePayAsToken">showApplePayAsToken</a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTApplePayConfig(py)showApplePayAsSavedPaymentMethod"></a>
+                    <a name="//apple_ref/swift/Property/showApplePayAsSavedPaymentMethod" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTApplePayConfig(py)showApplePayAsSavedPaymentMethod">showApplePayAsSavedPaymentMethod</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -240,14 +240,14 @@ the official Apple Pay documentation for more information.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Shows Apple Pay additionally on the token selection screen as  a <code>token</code>.</p>
+                        <p>Shows Apple Pay additionally on the saved payment method selection screen.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">showApplePayAsToken</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">showApplePayAsSavedPaymentMethod</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
@@ -405,43 +405,15 @@ which you created together with the CSR file provided by Datatrans.</p>
                     </section>
                   </div>
                 </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@Datatrans@objc(cs)DTApplePayConfig(im)copyWithZone:"></a>
-                    <a name="//apple_ref/swift/Method/copy(with:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTApplePayConfig(im)copyWithZone:">copy(with:<wbr>)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Refer to the <code>NSCopying</code> protocol</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">copy</span><span class="p">(</span><span class="n">with</span> <span class="nv">zone</span><span class="p">:</span> <span class="kt">NSZone</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Any</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
               </ul>
             </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2021 <a class="link" href="https://github.com/datatrans/ios-sdk" target="_blank" rel="external">ieffects ag</a>. All rights reserved. (Last updated: 2021-08-03)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2021 <a class="link" href="https://github.com/datatrans/ios-sdk" target="_blank" rel="external noopener">ieffects ag</a>. All rights reserved. (Last updated: 2021-12-23)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>
     </div>
   </body>
-</div>
 </html>

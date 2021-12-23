@@ -1,5 +1,5 @@
 # **Datatrans iOS SDK**
-![Version](https://img.shields.io/badge/Version-1.4.1-5B728F)
+![Version](https://img.shields.io/badge/Version-1.5.0-5B728F)
 [![License](https://img.shields.io/badge/License-Datatrans-lightgrey)](https://raw.githubusercontent.com/datatrans/ios-sdk/master/LICENSE)
 [![Platform](https://img.shields.io/badge/platform-ios-0BAF73)](https://github.com/datatrans/ios-sdk)
 
@@ -14,7 +14,7 @@ Accept payments on your iOS apps: Our mobile SDKs support your entire payment an
 
 **Smooth App-Switch**: Do you offer payment methods like Twint or PayPal that require the user to confirm the payment in a separate mobile app? The library switches smoothly to external apps and back to the SDK.
 
-**Tokens and Fast Checkouts**: Save your customers' payment information for later use and offer fast checkouts in your app. Delegate the token selection to the library.
+**Saved Payment Methods and Fast Checkouts**: Save your customers' payment information for later use and offer fast checkouts in your app. Delegate the saved payment method selection to the library.
 
 **Theme Support**: Style various items according to your corporate identity if needed. We also support the iOS dark theme.
 

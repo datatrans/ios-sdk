@@ -7,12 +7,11 @@
 
 @interface DTWebCallbackUrls : NSObject
 
+- (nonnull instancetype)init NS_UNAVAILABLE;
 - (nonnull instancetype)initWithCallbackScheme:(nullable NSString *)scheme testing:(BOOL)testing;
 
 - (nonnull NSURL *)cancelURL;
 - (nonnull NSURL *)errorURL;
 - (nonnull NSURL *)successURL;
-
-- (void)setCancelURL:(nonnull NSString *)cancelUrl errorURL:(nonnull NSString *)errorURL successURL:(nonnull NSString *)successURL;
 
 @end

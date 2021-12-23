@@ -29,17 +29,14 @@ typedef enum {
 @property (nonatomic, readonly) BOOL needsCardExpiration;
 @property (nonatomic, readonly) BOOL needsCardVerification;
 @property (nonatomic, readonly) BOOL needsCardholder;
-@property (nonatomic, readonly) BOOL hasTransparentBackground;
-@property (nonatomic, readonly) BOOL hasTokenSupport;
-@property (nonatomic, readonly) BOOL hasCardScan;
-@property (nonatomic, readonly) BOOL hasLogoShadow;
+@property (nonatomic, readonly) BOOL hasSavedPaymentMethodSupport;
 
 @property (nonatomic, readonly) NSString* _Nullable viewPortAdjustment;
 
 @property (nonatomic, readonly) NSString* _Nonnull title;
 @property (nonatomic, readonly) NSString* _Nonnull identifier;
 @property (nonatomic, readonly) NSString* _Nonnull imageName;
-@property (nonatomic, readonly) Class _Nullable tokenPaymentMethodClass;
+@property (nonatomic, readonly) Class _Nullable savedPaymentMethodClass;
 
 @property (nonatomic, readonly) NSRange creditCardVerificationLengthRange;
 @property (nonatomic, readonly) NSRange creditCardNumberLengthRange;
@@ -51,7 +48,7 @@ typedef enum {
 - (nullable UIImage *)imageForSize:(CGSize)size;
 
 - (void)updateWithOptions:(nonnull DTPaymentOptions *)options;
-- (void)validateOptions:(nonnull DTPaymentOptions *)options isTokenPayment:(BOOL)isTokenPayment;
+- (nullable NSString *)validateOptions:(nonnull DTPaymentOptions *)options isAliasPayment:(BOOL)isAliasPayment;
 
 + (nullable DTPaymentMethodInfo *)uniqueMethodInMethods:(nonnull NSArray<DTPaymentMethodInfo *> *)methods forNumberStartingWith:(nonnull NSString *)number;
 + (nonnull NSSet<DTPaymentMethodInfo *> *)methodsInMethods:(nonnull NSArray<DTPaymentMethodInfo *> *)methods forNumberStartingWith:(nonnull NSString *)number;

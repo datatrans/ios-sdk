@@ -17,19 +17,19 @@
     <a title="Transaction Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">Datatrans 1.4.1 Docs</a></p>
-        <p class="header-right"><a href="https://github.com/datatrans/ios-sdk"><img src="../img/gh.png"/>View on GitHub</a></p>
-        <p class="header-right">
+        <p><a href="../index.html">Datatrans 1.5.0 Docs</a></p>
+        <p class="header-right"><a href="https://github.com/datatrans/ios-sdk"><img src="../img/gh.png" alt="GitHub"/>View on GitHub</a></p>
+        <div class="header-right">
           <form role="search" action="../search.json">
             <input type="text" placeholder="Search documentation" data-typeahead>
           </form>
-        </p>
+        </div>
       </div>
     </header>
     <div class="content-wrapper">
       <p id="breadcrumbs">
         <a href="../index.html">Datatrans Reference</a>
-        <img id="carat" src="../img/carat.png" />
+        <img id="carat" src="../img/carat.png" alt=""/>
         Transaction Class Reference
       </p>
     </div>
@@ -77,19 +77,7 @@
                 <a href="../Classes/CardExpiryDate.html">CardExpiryDate</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/CardToken.html">CardToken</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/SEPAToken.html">SEPAToken</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/PayPalToken.html">PayPalToken</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Classes/PaymentMethod.html">PaymentMethod</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/PaymentMethodToken.html">PaymentMethodToken</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Enums/PaymentMethodType.html">PaymentMethodType</a>
@@ -98,27 +86,39 @@
                 <a href="../Classes/PaymentMethodTypeMapper.html">PaymentMethodTypeMapper</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/PostFinanceCardToken.html">PostFinanceCardToken</a>
+                <a href="../Classes/SavedCard.html">SavedCard</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/RekaToken.html">RekaToken</a>
+                <a href="../Classes/SavedPaymentMethod.html">SavedPaymentMethod</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SavedPayPal.html">SavedPayPal</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SavedPostFinanceCard.html">SavedPostFinanceCard</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SavedReka.html">SavedReka</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SavedSEPA.html">SavedSEPA</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Tokenization%20Request.html">Tokenization Request</a>
+            <a href="../PCI%20Proxy.html">PCI Proxy</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Classes/TokenizationRequest.html">TokenizationRequest</a>
+                <a href="../Classes/PCIPTokenizationRequest.html">PCIPTokenizationRequest</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/TokenizationRequestOptions.html">TokenizationRequestOptions</a>
+                <a href="../Classes/PCIPTokenizationRequestOptions.html">PCIPTokenizationRequestOptions</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Protocols/TokenizationRequestDelegate.html">TokenizationRequestDelegate</a>
+                <a href="../Protocols/PCIPTokenizationRequestDelegate.html">PCIPTokenizationRequestDelegate</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Tokenization%20Request.html#/c:@M@Datatrans@objc(cs)DTTokenizationRequestError">TokenizationRequestError</a>
+                <a href="../PCI%20Proxy.html#/c:@M@Datatrans@objc(cs)DTPCIPTokenizationRequestError">PCIPTokenizationRequestError</a>
               </li>
             </ul>
           </li>
@@ -137,7 +137,9 @@
                 </div>
               </div>
             <p>Use this class to start a transaction with a <code>mobileToken</code> that has previously been initialized
-with a server-to-server init call. This class is the main class to start any operation with the SDK.
+with a server-to-server init call.</p>
+
+<p>This class is the main class to start any operation with the SDK.
 After the transaction has been completed - regardless if successful or not - <code>delegate</code> will
 be called with some basic information about the success or failure.</p>
 
@@ -244,7 +246,9 @@ successfully or not.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Use this init method to start the SDK with a mobile token obtained after a server-to-server init
-call. After this class is initialized, you should define its delegate, the <code><a href="../Classes/Transaction.html#/c:@M@Datatrans@objc(cs)DTTransaction(py)options">options</a></code> properties
+call.</p>
+
+<p>After this class is initialized, you should define its delegate, the <code><a href="../Classes/Transaction.html#/c:@M@Datatrans@objc(cs)DTTransaction(py)options">options</a></code> properties
 and a <code><a href="../Classes/Transaction.html#/c:@M@Datatrans@objc(cs)DTTransaction(py)theme">theme</a></code> if desired.</p>
 
                       </div>
@@ -293,10 +297,10 @@ been initialized with a server-to-server init call.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Use this init method to start the SDK with a mobile token just like in <code><a href="../Classes/Transaction.html#/c:@M@Datatrans@objc(cs)DTTransaction(im)initWithMobileToken:">init(mobileToken:)</a></code>
-and the provided <code>card</code> for the transaction. For this to work, you can only
-send one payment method in your server-to-server init call. Use this init method if
-you use your own UI fields for the card information.</p>
+                        <p>Use this init method to start the SDK with a mobile token and the provided <code>card</code> for the transaction.</p>
+
+<p>For this to work, you can only send one payment method in your server-to-server init call.
+Use this init method if you use your own UI fields for the card information.</p>
 
                       </div>
                       <div class="declaration">
@@ -346,9 +350,9 @@ been initialized with a server-to-server init call.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@Datatrans@objc(cs)DTTransaction(im)initWithMobileToken:paymentMethodTokens:"></a>
-                    <a name="//apple_ref/swift/Method/init(mobileToken:paymentMethodTokens:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTTransaction(im)initWithMobileToken:paymentMethodTokens:">init(mobileToken:<wbr>paymentMethodTokens:<wbr>)</a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTTransaction(im)initWithMobileToken:savedPaymentMethod:"></a>
+                    <a name="//apple_ref/swift/Method/init(mobileToken:savedPaymentMethod:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTTransaction(im)initWithMobileToken:savedPaymentMethod:">init(mobileToken:<wbr>savedPaymentMethod:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -356,9 +360,9 @@ been initialized with a server-to-server init call.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Use this init method to start the SDK with a mobile token obtained after a server-to-server init
-call and display the selection of one or more saved tokens. The user will then be able to click
-on their desired saved token to finalize the payment.</p>
+                        <p>Use this init method to start the SDK with a mobile token and a single saved payment method.</p>
+
+<p>The payment will be started with this saved payment method.</p>
 
                       </div>
                       <div class="declaration">
@@ -366,7 +370,7 @@ on their desired saved token to finalize the payment.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@objc</span>
-<span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">mobileToken</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">paymentMethodTokens</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/PaymentMethodToken.html">PaymentMethodToken</a></span><span class="p">])</span></code></pre>
+<span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">mobileToken</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">savedPaymentMethod</span><span class="p">:</span> <span class="kt"><a href="../Classes/SavedPaymentMethod.html">SavedPaymentMethod</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -390,12 +394,75 @@ been initialized with a server-to-server init call.</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>paymentMethodTokens</em>
+                                <em>savedPaymentMethod</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>Specify here the tokens that are
+                                  <p>The saved payment method to use for this payment.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Datatrans@objc(cs)DTTransaction(im)initWithMobileToken:savedPaymentMethods:"></a>
+                    <a name="//apple_ref/swift/Method/init(mobileToken:savedPaymentMethods:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTTransaction(im)initWithMobileToken:savedPaymentMethods:">init(mobileToken:<wbr>savedPaymentMethods:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Use this init method to start the SDK with a mobile token and a selection of one or more saved
+payment methods to display.</p>
+
+<p>The user will then be able to tap on their desired saved payment method to finalize the payment.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">mobileToken</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">savedPaymentMethods</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/SavedPaymentMethod.html">SavedPaymentMethod</a></span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mobileToken</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The mobileToken that has previously
+been initialized with a server-to-server init call.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>savedPaymentMethods</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Specify here the saved payment methods that are
 available for selection to the user.</p>
                                 </div>
                               </td>
@@ -461,11 +528,10 @@ used to present the user interface during an on-going transaction</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2021 <a class="link" href="https://github.com/datatrans/ios-sdk" target="_blank" rel="external">ieffects ag</a>. All rights reserved. (Last updated: 2021-08-03)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2021 <a class="link" href="https://github.com/datatrans/ios-sdk" target="_blank" rel="external noopener">ieffects ag</a>. All rights reserved. (Last updated: 2021-12-23)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>
     </div>
   </body>
-</div>
 </html>

@@ -4,7 +4,7 @@
 @class DTByjunoPaymentInfo;
 @class DTPaymentMethodInfo;
 @class DTPaymentRequest;
-@class DTPaymentMethodToken;
+@class DTSavedPaymentMethod;
 
 @interface DTAliasPaymentAuthorizationRequest : NSObject
 
@@ -15,8 +15,7 @@
 @property (nonatomic, nonnull, copy) DTPaymentRequest* paymentRequest;
 @property (nonatomic, nullable, copy) NSString* payPalPairingId;
 @property (nonatomic, nonnull, copy) NSString* reqType;
-@property (nonatomic, nonnull, copy) DTPaymentMethodToken* paymentMethodToken;
-@property (nonatomic, assign) BOOL returnAlias;
+@property (nonatomic, nonnull, copy) DTSavedPaymentMethod* savedPaymentMethod;
 @property (nonatomic, nullable, copy) NSString* transactionId;
 
 @end

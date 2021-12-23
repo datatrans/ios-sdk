@@ -227,8 +227,8 @@ SWIFT_CLASS_NAMED("ApplePayConfig")
 /// The request object for further configuration of Apple Pay. Please refer to
 /// the official Apple Pay documentation for more information.
 @property (nonatomic, readonly, strong) PKPaymentRequest * _Nonnull request;
-/// Shows Apple Pay additionally on the token selection screen as  a <code>token</code>.
-@property (nonatomic) BOOL showApplePayAsToken;
+/// Shows Apple Pay additionally on the saved payment method selection screen.
+@property (nonatomic) BOOL showApplePayAsSavedPaymentMethod;
 /// Use this option to show Apple Pay as a payment button instead of a
 /// listed payment method.
 @property (nonatomic) BOOL showLargeButton;
@@ -252,7 +252,7 @@ SWIFT_CLASS_NAMED("ApplePayConfig")
 - (nonnull instancetype)initWithApplePayMerchantId:(NSString * _Nonnull)applePayMerchantId supportedNetworks:(NSArray<PKPaymentNetwork> * _Nonnull)supportedNetworks countryCode:(NSString * _Nonnull)countryCode OBJC_DESIGNATED_INITIALIZER;
 /// :nodoc:
 - (nonnull instancetype)initWithApplePayMerchantId:(NSString * _Nonnull)applePayMerchantId supportedNetworks:(NSArray<PKPaymentNetwork> * _Nonnull)supportedNetworks;
-/// Refer to the <code>NSCopying</code> protocol
+/// :nodoc:
 - (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -272,11 +272,11 @@ SWIFT_CLASS_NAMED("PaymentMethod")
 /// \param type Payment method type, e.g. Visa
 ///
 - (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type OBJC_DESIGNATED_INITIALIZER;
-/// Refer to the <code>NSCopying</code> protocol
+/// :nodoc:
 - (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
-/// Refer to the <code>NSCoding</code> protocol
+/// :nodoc:
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-/// Refer to the <code>NSCoding</code> protocol
+/// :nodoc:
 - (void)encodeWithCoder:(NSCoder * _Nonnull)coder;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -308,7 +308,7 @@ SWIFT_CLASS_NAMED("Card")
 /// \param cardholder Cardholder’s name
 ///
 - (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type number:(NSString * _Nonnull)number expiryDate:(DTCardExpiryDate * _Nonnull)expiryDate cvv:(NSString * _Nullable)cvv cardholder:(NSString * _Nullable)cardholder OBJC_DESIGNATED_INITIALIZER;
-/// Refer to the <code>NSCoding</code> protocol
+/// :nodoc:
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type SWIFT_UNAVAILABLE;
 @end
@@ -331,156 +331,135 @@ SWIFT_CLASS_NAMED("CardExpiryDate")
 /// \param year Card expiry year, 2 or 4 digits, e.g. 30 or 2030
 ///
 - (nonnull instancetype)initWithMonth:(NSInteger)month year:(NSInteger)year OBJC_DESIGNATED_INITIALIZER;
-/// Refer to the <code>NSObject</code> protocol
+/// :nodoc:
 @property (nonatomic, readonly, copy) NSString * _Nonnull description;
-/// Refer to the <code>NSCopying</code> protocol
+/// :nodoc:
 - (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class NSData;
 
-/// This class is the base token class to gather token information and process
-/// recurring payments or fast checkouts with any payment method. This class
-/// is sufficient to process payments with tokens of some payment methods
-/// (e.g. Twint). More complex payment methods require you to specify some
-/// more details in their token subclasses (e.g. card payments, PostFinance, etc.).
-/// Please refer to the list below to see if you need to call an additional token
-/// subclass for your payments.
-/// <ul>
-///   <li>
-///     Easy payment methods: Swisscom Easypay, SEPA (ELV), Twint,
-///     Apple Pay, Byjuno, SwissPass, Powerpay Invoice
-///   </li>
-///   <li>
-///     Complex payment methods (requiring token subclass): Card payments,
-///     PayPal, PostFinance, Reka
-///   </li>
-/// </ul>
-/// Please refer to the Datatrans documentation to see if you can register a
-/// token during payment or require a dedicated registration.
-SWIFT_CLASS_NAMED("PaymentMethodToken")
-@interface DTPaymentMethodToken : DTPaymentMethod
-/// The token that can be used to process recurring payments or fast checkouts.
-@property (nonatomic, copy) NSString * _Nonnull token;
-/// A human readable title.
-@property (nonatomic, readonly, copy) NSString * _Nonnull displayTitle;
-/// For VoiceOver this title is used instead of displayTitle.
-@property (nonatomic, readonly, copy) NSString * _Nullable accessibilityTitle;
-/// This init method has to be used to initialize a payment object.
-/// \param type Payment method type, e.g. PayPal or Twint
+
+@protocol DTPCIPTokenizationRequestDelegate;
+@class DTPCIPTokenizationRequestOptions;
+@class DTThemeConfiguration;
+@class UIViewController;
+
+/// Use this class to start a PCI Proxy tokenization request.
+/// After the tokenization request has been completed - regardless if
+/// successful or not - <code>delegate</code> will be called with some basic
+/// information about the success or failure.
+/// warning:
+/// Only use this API if you are a PCI Proxy customer. Use <code>Transaction</code>
+/// if you want to register a saved payment method.
+SWIFT_CLASS_NAMED("PCIPTokenizationRequest")
+@interface DTPCIPTokenizationRequest : NSObject
+/// This delegate will be notified after a tokenization request has been finished,
+/// successfully or not.
+@property (nonatomic, weak) id <DTPCIPTokenizationRequestDelegate> _Nullable delegate;
+/// The available options for how a tokenization request is handled by the mobile SDK.
+@property (nonatomic, strong) DTPCIPTokenizationRequestOptions * _Nonnull options;
+/// The theme to be used by the SDK.
+@property (nonatomic, strong) DTThemeConfiguration * _Nonnull theme;
+/// Use this init method if you use your own UI and already have a <code>Card</code> instance with the
+/// card data to be tokenized. After this class is initialized, you should define its <code>delegate</code>,
+/// the <code>options</code> properties and a <code>theme</code> if desired.
+/// \param merchantId Your merchantId.
 ///
-/// \param token The token that can be used to process recurring payments or fast checkouts.
+/// \param card Card object to tokenize.
 ///
-- (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type token:(NSString * _Nonnull)token OBJC_DESIGNATED_INITIALIZER;
-/// Creates a <code>PaymentMethodToken</code> from a JSON string.
-/// Note that this function should only be used for iOS 12 and earlier.  Use
-/// <code>create(data:decoder:)</code> for later versions.
-/// \param jsonString String of JSON encoded data
+- (nonnull instancetype)initWithMerchantId:(NSString * _Nonnull)merchantId card:(DTCard * _Nonnull)card OBJC_DESIGNATED_INITIALIZER;
+/// Use this init method to allow the user to enter the  card data to be tokenized. After this
+/// class is initialized, you should define its <code>delegate</code>, the <code>options</code> properties
+/// and a <code>theme</code> if desired.
+/// This initializer is for use from Objective-C only. Instead of <code>[PaymentMethodType]</code>, it
+/// takes <code>[NSNumber]</code> containing <code>rawValue</code>s of <code>PaymentMethodType</code>.
+/// Example:
+/// <code>[[DTPCIPTokenizationRequest alloc] initWithMerchantId:@"..." paymentMethodTypes:@[@(DTPaymentMethodTypeVisa), @(DTPaymentMethodTypeMasterCard)]];</code>
+/// \param merchantId Your merchantId.
 ///
-+ (DTPaymentMethodToken * _Nullable)createWithJsonString:(NSString * _Nonnull)jsonString SWIFT_WARN_UNUSED_RESULT SWIFT_AVAILABILITY(ios,deprecated=13.0,message="Use create(data:decoder:) instead.");
-/// Creates a <code>PaymentMethodToken</code> from data encoded by the old payment library.
-/// \param legacyTokenData Data encoded by
-/// <code>DTRecurringPaymentMethod.data()</code>, <code>DTCreditCard.data()</code>,
-/// <code>DTPostFinanceCard.data()</code>, <code>DTReka.data()</code> or <code>DTPayPal.data()</code>.
+/// \param paymentMethodTypesObjc The allowed credit or debit card types.
 ///
+- (nonnull instancetype)initWithMerchantId:(NSString * _Nonnull)merchantId paymentMethodTypes:(NSArray<NSNumber *> * _Nonnull)paymentMethodTypesObjc;
+/// Starts the SDK and displays any needed user interface using the provided
+/// <code>presentingController</code>. Note that a tokenization request can only
+/// be started once.
+/// \param presentingController <code>UIViewController</code>
+/// used to present the user interface during an on-going tokenization request.
 ///
-/// returns:
-/// The decoded <code>PaymentMethodToken</code>, <code>CardToken</code>,
-/// <code>PostFinanceCardToken</code>, <code>RekaToken</code> or <code>PayPalToken</code>, if successful,
-/// nil if <code>legacyTokenData</code> is invalid.
-+ (DTPaymentMethodToken * _Nullable)createWithLegacyTokenData:(NSData * _Nonnull)legacyTokenData SWIFT_WARN_UNUSED_RESULT;
-/// This function checks if the payment method token is valid. This function
-/// will also be used to tell you if data (e.g. expiry date) from the token
-/// subclasses is correct or not.
-- (BOOL)isValid SWIFT_WARN_UNUSED_RESULT;
-/// Refer to the <code>NSObject</code> protocol
-@property (nonatomic, readonly, copy) NSString * _Nonnull description;
-/// Refer to the <code>NSCoding</code> protocol
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-/// Refer to the <code>NSCopying</code> protocol
-- (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type SWIFT_UNAVAILABLE;
+- (void)startWithPresentingController:(UIViewController * _Nonnull)presentingController;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class DTPCIPTokenizationRequestError;
+
+/// Implement PCIPTokenizationRequestDelegate to be notified when a tokenization
+/// request ends. PCIPTokenizationRequestDelegate will notify you about the success,
+/// error or cancel state of the processed tokenization request.
+SWIFT_PROTOCOL_NAMED("PCIPTokenizationRequestDelegate")
+@protocol DTPCIPTokenizationRequestDelegate
+/// This is called after a tokenization request has been successfully
+/// completed. This callback provides details about the tokenization request.
+/// \param tokenizationRequest The object containing the information
+/// of the completed tokenization request.
+///
+/// \param tokenizationId The resulting tokenizationId.
+///
+- (void)tokenizationRequestDidFinish:(DTPCIPTokenizationRequest * _Nonnull)tokenizationRequest tokenizationId:(NSString * _Nonnull)tokenizationId;
+/// This is called after a tokenization request fails or encounters an error.
+/// Keep in mind that the SDK shows the error to the user before
+/// this is invoked. Therefore, this callback can be used to cancel
+/// any on-going process involving the tokenization request.
+/// You may also use the error details provided here and display it
+/// the way you want when suppressing the error message within
+/// the <code>PCIPTokenizationRequestOptions</code>.
+/// \param tokenizationRequest The object containing the information
+/// of the failed tokenization request.
+///
+/// \param error The error that occurred.
+///
+- (void)tokenizationRequestDidFail:(DTPCIPTokenizationRequest * _Nonnull)tokenizationRequest error:(DTPCIPTokenizationRequestError * _Nonnull)error;
+@optional
+/// This is called after a tokenization request has been cancelled. This callback
+/// can be used to cancel any on-going process involving the tokenization request.
+/// \param tokenizationRequest The object containing the
+/// information of the cancelled tokenization request.
+///
+- (void)tokenizationRequestDidCancel:(DTPCIPTokenizationRequest * _Nonnull)tokenizationRequest;
 @end
 
 
-/// This class contains the token information about a credit or debit card registration
-/// from a previously completed transaction. Just like any other <code>PaymentMethodToken</code>
-/// subclass, this class can be used to finalize a payment without user interaction or
-/// to display a selection of saved token payments to the user for fast checkouts.
-/// A token can be returned after completing a successful card payment or with a
-/// dedicated registration.
-SWIFT_CLASS_NAMED("CardToken")
-@interface DTCardToken : DTPaymentMethodToken
-/// Expiry date
-@property (nonatomic, readonly, strong) DTCardExpiryDate * _Nullable cardExpiryDate;
-/// The masked card number you can use to display that specific card in your app.
-/// The masked card number shows the first 6 digits and the last 4 digits of the card,
-/// e.g. 432930xxxxxx6095.
-@property (nonatomic, readonly, copy) NSString * _Nullable maskedCardNumber;
-/// Cardholder’s name
-@property (nonatomic, copy) NSString * _Nullable cardholder;
-/// Initializes a <code>CardToken</code> object with the given card data.
-/// \param type Payment method type, e.g. Visa
-///
-/// \param token This is the token for the card, also known as alias.
-/// This can be used to debit the card without further customer interaction.
-///
-/// \param cardExpiryDate Expiry date
-///
-/// \param maskedCardNumber The masked card number you can use to display
-/// that specific card in your app. The masked card number shows the first 6
-/// digits and the last 4 digits of the card, e.g. 432930xxxxxx6095.
-///
-/// \param cardholder Cardholder’s name
-///
-- (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type token:(NSString * _Nonnull)token cardExpiryDate:(DTCardExpiryDate * _Nullable)cardExpiryDate maskedCardNumber:(NSString * _Nullable)maskedCardNumber cardholder:(NSString * _Nullable)cardholder OBJC_DESIGNATED_INITIALIZER;
-/// A human readable title e.g. ‘•••• 6095’.
-@property (nonatomic, readonly, copy) NSString * _Nonnull displayTitle;
-/// For VoiceOver this title is used instead of displayTitle.
-@property (nonatomic, readonly, copy) NSString * _Nullable accessibilityTitle;
-/// Checks if the expiration date is in the future or not.
-- (BOOL)isValid SWIFT_WARN_UNUSED_RESULT;
-/// Refer to the <code>NSCoding</code> protocol
+/// This class includes the error message of a tokenization request.
+SWIFT_CLASS_NAMED("PCIPTokenizationRequestError")
+@interface DTPCIPTokenizationRequestError : NSError
+- (nonnull instancetype)initWithDomain:(NSString * _Nonnull)domain code:(NSInteger)code userInfo:(NSDictionary<NSString *, id> * _Nullable)dict OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-/// Refer to the <code>NSObject</code> protocol
-@property (nonatomic, readonly, copy) NSString * _Nonnull description;
-/// Refer to the <code>NSCopying</code> protocol
-- (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type token:(NSString * _Nonnull)token SWIFT_UNAVAILABLE;
 @end
 
 
-
-
-/// This class contains the token information about a PayPal registration from
-/// a previously completed transaction. Just like any other <code>PaymentMethodToken</code>
-/// subclass, this class can be used to finalize a payment without user interaction
-/// or to show a selection of saved token payments to the user for fast checkouts.
-/// A token can be returned after completing a successful PayPal payment or with a
-/// dedicated registration.
-SWIFT_CLASS_NAMED("PayPalToken")
-@interface DTPayPalToken : DTPaymentMethodToken
-/// PayPal e-mail address. This will be used for displaying purposes.
-@property (nonatomic, copy) NSString * _Nullable payPalEmail;
-/// This init method has to be used to initialize a PayPal payment object.
-/// \param token Token for a PayPal account.
-///
-/// \param payPalEmail PayPal e-mail address. This will be used for displaying purposes.
-///
-- (nonnull instancetype)initWithToken:(NSString * _Nonnull)token payPalEmail:(NSString * _Nullable)payPalEmail OBJC_DESIGNATED_INITIALIZER;
-/// A human readable title.
-@property (nonatomic, readonly, copy) NSString * _Nonnull displayTitle;
-/// For VoiceOver this title is used instead of displayTitle.
-@property (nonatomic, readonly, copy) NSString * _Nullable accessibilityTitle;
-/// Refer to the <code>NSCoding</code> protocol
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-/// Refer to the <code>NSCopying</code> protocol
-- (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type token:(NSString * _Nonnull)token SWIFT_UNAVAILABLE;
+/// This class can be used to specify miscellaneous options related to the tokenization request.
+SWIFT_CLASS_NAMED("PCIPTokenizationRequestOptions")
+@interface DTPCIPTokenizationRequestOptions : NSObject
+/// Use this setting to change the UI language. If this is not
+/// specified, the default language determined by the system will be used.
+/// The supported values are <code>de</code>, <code>en</code>, <code>fr</code>, <code>it</code> and <code>nil</code>.
+@property (nonatomic, copy) NSString * _Nullable language;
+/// Use this setting to display or hide critical errors.
+@property (nonatomic) BOOL suppressCriticalErrorDialog;
+/// Use this setting to switch from production to sandbox. If not specified,
+/// the SDK will call the Datatrans production environment.
+@property (nonatomic) BOOL testing;
+/// Whether secure connections to Datatrans servers require a certificate
+/// chain signed with a specific CA private key. The device’s trust settings
+/// are explicitly ignored, i.e. custom installed/white-listed certificates
+/// and/or CAs will not work.
+/// Please be advised that enabling this option will break your app in many
+/// corporate networks with anti-malware/-theft/-espionage SSL proxying.
+@property (nonatomic) BOOL useCertificatePinning;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
-
 
 
 /// The payment method used during the transaction.
@@ -495,42 +474,40 @@ typedef SWIFT_ENUM_NAMED(NSInteger, DTPaymentMethodType, "PaymentMethodType", op
   DTPaymentMethodTypeAmericanExpress = 3,
 /// JCB payment method
   DTPaymentMethodTypeJCB = 4,
-/// MyOne payment method
-  DTPaymentMethodTypeMyOne = 5,
 /// UATP payment method
-  DTPaymentMethodTypeUATP = 6,
+  DTPaymentMethodTypeUATP = 5,
 /// Discover payment method
-  DTPaymentMethodTypeDiscover = 7,
+  DTPaymentMethodTypeDiscover = 6,
 /// SUPERCARD payment method
-  DTPaymentMethodTypeSupercard = 8,
+  DTPaymentMethodTypeSupercard = 7,
 /// PostFinance Card payment method
-  DTPaymentMethodTypePostFinanceCard = 9,
+  DTPaymentMethodTypePostFinanceCard = 8,
 /// PostFinance E-Finance payment method
-  DTPaymentMethodTypePostFinanceEFinance = 10,
+  DTPaymentMethodTypePostFinanceEFinance = 9,
 /// PayPal payment method
-  DTPaymentMethodTypePayPal = 11,
+  DTPaymentMethodTypePayPal = 10,
 /// Easypay payment method
-  DTPaymentMethodTypeEasypay = 12,
+  DTPaymentMethodTypeEasypay = 11,
 /// SEPA (ELV) payment method
-  DTPaymentMethodTypeSEPA = 13,
+  DTPaymentMethodTypeSEPA = 12,
 /// SwissBilling payment method
-  DTPaymentMethodTypeSwissBilling = 14,
+  DTPaymentMethodTypeSwissBilling = 13,
 /// Twint payment method
-  DTPaymentMethodTypeTwint = 15,
+  DTPaymentMethodTypeTwint = 14,
 /// Apple Pay payment method
-  DTPaymentMethodTypeApplePay = 16,
+  DTPaymentMethodTypeApplePay = 15,
 /// Reka payment method
-  DTPaymentMethodTypeReka = 17,
+  DTPaymentMethodTypeReka = 16,
 /// Byjuno payment method
-  DTPaymentMethodTypeByjuno = 18,
+  DTPaymentMethodTypeByjuno = 17,
 /// SwissPass payment method
-  DTPaymentMethodTypeSwissPass = 19,
+  DTPaymentMethodTypeSwissPass = 18,
 /// Powerpay payment method
-  DTPaymentMethodTypePowerpay = 20,
+  DTPaymentMethodTypePowerpay = 19,
 /// Paysafecard payment method
-  DTPaymentMethodTypePaysafecard = 21,
+  DTPaymentMethodTypePaysafecard = 20,
 /// Boncard (Lunch-Check) payment method
-  DTPaymentMethodTypeBoncard = 22,
+  DTPaymentMethodTypeBoncard = 21,
 };
 
 
@@ -539,12 +516,14 @@ SWIFT_CLASS_NAMED("PaymentMethodTypeMapper")
 @interface DTPaymentMethodTypeMapper : NSObject
 /// This function returns the <code>PaymentMethodType</code> based on the Datatrans
 /// payment method identifier.
+/// This is for use from Objective-C only. The returned <code>NSNumber</code> contains the
+/// <code>rawValue</code> of a <code>DTPaymentMethodType</code>.
 /// \param identifier The payment method identifier from Datatrans
 ///
 ///
 /// returns:
-/// The payment method type, e.g. Visa
-+ (enum DTPaymentMethodType)toTypeWithIdentifier:(NSString * _Nonnull)identifier SWIFT_WARN_UNUSED_RESULT;
+/// The payment method type, e.g. Visa, or nil if <code>identifier</code> is invalid
++ (NSNumber * _Nullable)toTypeWithIdentifier:(NSString * _Nonnull)identifier SWIFT_WARN_UNUSED_RESULT;
 /// This function returns the payment method identifier based on the
 /// <code>PaymentMethodType</code>.
 /// \param type The payment method type, e.g. Visa
@@ -556,17 +535,168 @@ SWIFT_CLASS_NAMED("PaymentMethodTypeMapper")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class NSData;
 
-/// This class contains the token information about a PostFinance Card  registration from
-/// a previously completed transaction. Just like any other <code>PaymentMethodToken</code>
-/// subclass, this class can be used to finalize a payment without user interaction
-/// or to show a selection of saved token payments to the user for fast checkouts.
-/// A token can be returned after completing a successful PostFinance Card payment or
+/// This is the base class to save a payment method and use it to process recurring payments
+/// or fast checkouts.
+/// This class is sufficient for some payment methods (e.g. Twint). More complex payment
+/// methods require you to specify additional details in their <code>SavedPaymentMethod</code>
+/// subclass (e.g. card payments, PostFinance, etc.).
+/// Please refer to this list to see if you need to use one of the subclasses for your payments:
+/// <ul>
+///   <li>
+///     Easy payment methods: Swisscom Easypay, SEPA (ELV), Twint,
+///     Apple Pay, Byjuno, SwissPass, Powerpay Invoice
+///   </li>
+///   <li>
+///     Complex payment methods (requiring a <code>SavedPaymentMethod</code> subclass): Card payments,
+///     PayPal, PostFinance, Reka
+///   </li>
+/// </ul>
+/// Please refer to the Datatrans documentation to see if you can register a payment method
+/// during payment or require a dedicated registration.
+SWIFT_CLASS_NAMED("SavedPaymentMethod")
+@interface DTSavedPaymentMethod : DTPaymentMethod
+/// The alias that can be used to process recurring payments or fast checkouts.
+@property (nonatomic, copy) NSString * _Nonnull alias;
+/// A human readable title.
+@property (nonatomic, readonly, copy) NSString * _Nonnull displayTitle;
+/// For VoiceOver this title is used instead of displayTitle.
+@property (nonatomic, readonly, copy) NSString * _Nullable accessibilityTitle;
+/// This init method has to be used to initialize a saved payment method.
+/// \param type Payment method type, e.g. PayPal or Twint
+///
+/// \param alias The alias that can be used to process recurring payments or fast checkouts.
+///
+- (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type alias:(NSString * _Nonnull)alias OBJC_DESIGNATED_INITIALIZER;
+/// Creates a <code>SavedPaymentMethod</code> from a JSON string.
+/// Use this method to deserialize a saved payment method. It takes a JSON string that has been
+/// created with <code>toJson()</code>.
+/// The JSON string is compatible with the Android version of the Datatrans SDK.
+/// \param jsonString The JSON string representation
+///
+///
+/// returns:
+/// The decoded <code>SavedPaymentMethod</code> or one of its subclasses, if successful,
+/// nil if <code>jsonString</code> is invalid.
++ (DTSavedPaymentMethod * _Nullable)createWithJsonString:(NSString * _Nonnull)jsonString SWIFT_WARN_UNUSED_RESULT;
+/// Creates a <code>SavedPaymentMethod</code> from data encoded by the old payment library.
+/// \param legacySavedPaymentMethodData Data encoded by
+/// <code>DTRecurringPaymentMethod.data()</code>, <code>DTCreditCard.data()</code>,
+/// <code>DTPostFinanceCard.data()</code>, <code>DTReka.data()</code>, <code>DTPayPal.data()</code> or <code>DTELV.data()</code>.
+///
+///
+/// returns:
+/// The decoded <code>SavedPaymentMethod</code> or one of its subclasses, if successful,
+/// nil if <code>legacySavedPaymentMethodData</code> is invalid.
++ (DTSavedPaymentMethod * _Nullable)createWithLegacySavedPaymentMethodData:(NSData * _Nonnull)legacySavedPaymentMethodData SWIFT_WARN_UNUSED_RESULT;
+/// Returns a JSON string representation of this saved payment method object.
+/// Use this method to serialize a saved payment method. The resulting JSON string can be deserialized with
+/// <code>create(jsonString:)</code>.
+/// The JSON string is compatible with the Android version of the Datatrans SDK.
+///
+/// returns:
+/// The JSON string representation
+- (NSString * _Nonnull)toJson SWIFT_WARN_UNUSED_RESULT;
+/// This function checks if the saved payment method is valid.
+/// When e.g. called on a <code>SavedCard</code> it tells you if the expiration date is in the future or not.
+- (BOOL)isValid SWIFT_WARN_UNUSED_RESULT;
+/// :nodoc:
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
+/// :nodoc:
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+/// :nodoc:
+- (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type SWIFT_UNAVAILABLE;
+@end
+
+
+/// This class contains saved credit or debit card payment method details.
+/// Just like any other <code>SavedPaymentMethod</code> subclass, this class can be used
+/// to finalize a payment without user interaction or to display a selection of saved
+/// payment methods to the user for fast checkouts.
+/// A <code>SavedCard</code> can be created by successfully completing a card payment or
 /// with a dedicated registration.
-SWIFT_CLASS_NAMED("PostFinanceCardToken")
-@interface DTPostFinanceCardToken : DTCardToken
-/// This init method has to be used to initialize a PostFinance Card payment object.
-/// \param token Token for a PostFinance Card.
+SWIFT_CLASS_NAMED("SavedCard")
+@interface DTSavedCard : DTSavedPaymentMethod
+/// Expiry date
+@property (nonatomic, readonly, strong) DTCardExpiryDate * _Nullable cardExpiryDate;
+/// The masked card number you can use to display that specific card in your app.
+/// The masked card number shows the first 6 digits and the last 4 digits of the card,
+/// e.g. 432930xxxxxx6095.
+@property (nonatomic, readonly, copy) NSString * _Nullable maskedCardNumber;
+/// Cardholder’s name
+@property (nonatomic, copy) NSString * _Nullable cardholder;
+/// Initializes a <code>SavedCard</code> object with the given card data.
+/// \param type Payment method type, e.g. Visa
+///
+/// \param alias This is the alias for the card, also known as token.
+/// This can be used to debit the card without further customer interaction.
+///
+/// \param cardExpiryDate Expiry date
+///
+/// \param maskedCardNumber The masked card number you can use to display
+/// that specific card in your app. The masked card number shows the first 6
+/// digits and the last 4 digits of the card, e.g. 432930xxxxxx6095.
+///
+/// \param cardholder Cardholder’s name
+///
+- (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type alias:(NSString * _Nonnull)alias cardExpiryDate:(DTCardExpiryDate * _Nullable)cardExpiryDate maskedCardNumber:(NSString * _Nullable)maskedCardNumber cardholder:(NSString * _Nullable)cardholder OBJC_DESIGNATED_INITIALIZER;
+/// A human readable title e.g. ‘•••• 6095’.
+@property (nonatomic, readonly, copy) NSString * _Nonnull displayTitle;
+/// For VoiceOver this title is used instead of displayTitle.
+@property (nonatomic, readonly, copy) NSString * _Nullable accessibilityTitle;
+/// Checks if the expiration date is in the future or not.
+- (BOOL)isValid SWIFT_WARN_UNUSED_RESULT;
+/// :nodoc:
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+/// :nodoc:
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
+/// :nodoc:
+- (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type alias:(NSString * _Nonnull)alias SWIFT_UNAVAILABLE;
+@end
+
+
+/// This class contains saved PayPal payment method details.
+/// Just like any other <code>SavedPaymentMethod</code> subclass, this class can be used
+/// to finalize a payment without user interaction or to display a selection of saved
+/// payment methods to the user for fast checkouts.
+/// A <code>SavedPayPal</code> can be created by successfully completing a PayPal payment or
+/// with a dedicated registration.
+SWIFT_CLASS_NAMED("SavedPayPal")
+@interface DTSavedPayPal : DTSavedPaymentMethod
+/// PayPal e-mail address. This will be used for displaying purposes.
+@property (nonatomic, copy) NSString * _Nullable payPalEmail;
+/// This init method has to be used to initialize a saved PayPal payment method.
+/// \param alias Alias for a PayPal account.
+///
+/// \param payPalEmail PayPal e-mail address. This will be used for displaying purposes.
+///
+- (nonnull instancetype)initWithAlias:(NSString * _Nonnull)alias payPalEmail:(NSString * _Nullable)payPalEmail OBJC_DESIGNATED_INITIALIZER;
+/// A human readable title.
+@property (nonatomic, readonly, copy) NSString * _Nonnull displayTitle;
+/// For VoiceOver this title is used instead of displayTitle.
+@property (nonatomic, readonly, copy) NSString * _Nullable accessibilityTitle;
+/// :nodoc:
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+/// :nodoc:
+- (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type alias:(NSString * _Nonnull)alias SWIFT_UNAVAILABLE;
+@end
+
+
+
+/// This class contains saved PostFinance Card payment method details.
+/// Just like any other <code>SavedPaymentMethod</code> subclass, this class can be used
+/// to finalize a payment without user interaction or to display a selection of saved
+/// payment methods to the user for fast checkouts.
+/// A <code>SavedPostFinanceCard</code> can be created by successfully completing a
+/// PostFinance Card payment or with a dedicated registration.
+SWIFT_CLASS_NAMED("SavedPostFinanceCard")
+@interface DTSavedPostFinanceCard : DTSavedCard
+/// This init method has to be used to initialize a saved PostFinance Card payment method.
+/// \param alias Alias for a PostFinance Card.
 ///
 /// \param cardExpiryDate Expiry date
 ///
@@ -576,25 +706,25 @@ SWIFT_CLASS_NAMED("PostFinanceCardToken")
 ///
 /// \param cardholder Cardholder’s name
 ///
-- (nonnull instancetype)initWithToken:(NSString * _Nonnull)token cardExpiryDate:(DTCardExpiryDate * _Nullable)cardExpiryDate maskedCardNumber:(NSString * _Nullable)maskedCardNumber cardholder:(NSString * _Nullable)cardholder OBJC_DESIGNATED_INITIALIZER;
-/// Refer to the <code>NSCoding</code> protocol
+- (nonnull instancetype)initWithAlias:(NSString * _Nonnull)alias cardExpiryDate:(DTCardExpiryDate * _Nullable)cardExpiryDate maskedCardNumber:(NSString * _Nullable)maskedCardNumber cardholder:(NSString * _Nullable)cardholder OBJC_DESIGNATED_INITIALIZER;
+/// :nodoc:
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-/// Refer to the <code>NSCopying</code> protocol
+/// :nodoc:
 - (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type token:(NSString * _Nonnull)token cardExpiryDate:(DTCardExpiryDate * _Nullable)cardExpiryDate maskedCardNumber:(NSString * _Nullable)maskedCardNumber cardholder:(NSString * _Nullable)cardholder SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type alias:(NSString * _Nonnull)alias cardExpiryDate:(DTCardExpiryDate * _Nullable)cardExpiryDate maskedCardNumber:(NSString * _Nullable)maskedCardNumber cardholder:(NSString * _Nullable)cardholder SWIFT_UNAVAILABLE;
 @end
 
 
-/// This class contains the token information about a Reka card registration from
-/// a previously completed transaction. Just like any other <code>PaymentMethodToken</code>
-/// subclass, this class can be used to finalize a payment without user interaction
-/// or to show a selection of saved token payments to the user for fast checkouts.
-/// A token can be returned after completing a successful Reka payment or with a
-/// dedicated registration.
-SWIFT_CLASS_NAMED("RekaToken")
-@interface DTRekaToken : DTCardToken
-/// This init method has to be used to initialize a Reka payment object.
-/// \param token Token for a Reka card.
+/// This class contains saved Reka card payment method details.
+/// Just like any other <code>SavedPaymentMethod</code> subclass, this class can be used
+/// to finalize a payment without user interaction or to display a selection of saved
+/// payment methods to the user for fast checkouts.
+/// A <code>SavedReka</code> can be created by successfully completing a Reka payment or
+/// with a dedicated registration.
+SWIFT_CLASS_NAMED("SavedReka")
+@interface DTSavedReka : DTSavedCard
+/// This init method has to be used to initialize a saved Reka payment method.
+/// \param alias Alias for a Reka card.
 ///
 /// \param cardExpiryDate Expiry date
 ///
@@ -604,46 +734,46 @@ SWIFT_CLASS_NAMED("RekaToken")
 ///
 /// \param cardholder Cardholder’s name
 ///
-- (nonnull instancetype)initWithToken:(NSString * _Nonnull)token cardExpiryDate:(DTCardExpiryDate * _Nonnull)cardExpiryDate maskedCardNumber:(NSString * _Nullable)maskedCardNumber cardholder:(NSString * _Nullable)cardholder;
-/// Refer to the <code>NSCopying</code> protocol
+- (nonnull instancetype)initWithAlias:(NSString * _Nonnull)alias cardExpiryDate:(DTCardExpiryDate * _Nonnull)cardExpiryDate maskedCardNumber:(NSString * _Nullable)maskedCardNumber cardholder:(NSString * _Nullable)cardholder;
+/// :nodoc:
 - (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type token:(NSString * _Nonnull)token cardExpiryDate:(DTCardExpiryDate * _Nullable)cardExpiryDate maskedCardNumber:(NSString * _Nullable)maskedCardNumber cardholder:(NSString * _Nullable)cardholder OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type alias:(NSString * _Nonnull)alias cardExpiryDate:(DTCardExpiryDate * _Nullable)cardExpiryDate maskedCardNumber:(NSString * _Nullable)maskedCardNumber cardholder:(NSString * _Nullable)cardholder OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
-/// This class contains the token information about a SEPA (ELV) registration from
-/// a previously completed transaction. Just like any other <code>PaymentMethodToken</code>
-/// subclass, this class can be used to finalize a payment without user interaction
-/// or to show a selection of saved token payments to the user for fast checkouts.
-/// A token can be returned after completing a successful SEPA payment or with a
-/// dedicated registration.
-SWIFT_CLASS_NAMED("SEPAToken")
-@interface DTSEPAToken : DTPaymentMethodToken
+/// This class contains saved SEPA (ELV) payment method details.
+/// Just like any other <code>SavedPaymentMethod</code> subclass, this class can be used
+/// to finalize a payment without user interaction or to display a selection of saved
+/// payment methods to the user for fast checkouts.
+/// A <code>SavedSEPA</code> can be created by successfully completing a SEPA payment or
+/// with a dedicated registration.
+SWIFT_CLASS_NAMED("SavedSEPA")
+@interface DTSavedSEPA : DTSavedPaymentMethod
 /// A bank code (German: Bankleitzahl) is a unique identification code for a
-/// particular bank. This is required for tokens created before April 15th 2015.
+/// particular bank. This is required for aliases created before April 15th 2015.
 @property (nonatomic, readonly, copy) NSString * _Nullable bankCode;
-/// Token for SEPA (ELV).
-@property (nonatomic, copy) NSString * _Nonnull token;
-/// This init method has to be used to initialize a SEPA (ELV) payment object.
-/// \param token Token for SEPA (ELV).
+/// Alias for SEPA (ELV).
+@property (nonatomic, copy) NSString * _Nonnull alias;
+/// This init method has to be used to initialize a saved SEPA (ELV) payment method.
+/// \param alias Alias for SEPA (ELV).
 ///
-- (nonnull instancetype)initWithToken:(NSString * _Nonnull)token;
-/// This init method has to be used with SEPA (ELV) tokens created before April 15th 2015.
-/// Please refer to <code>init(token:)</code> for newer tokens.
-/// \param token Token for SEPA (ELV). This value was returned for tokens created before April 15th 2015.
+- (nonnull instancetype)initWithAlias:(NSString * _Nonnull)alias;
+/// This init method has to be used with SEPA (ELV) aliases created before April 15th 2015.
+/// Please refer to <code>init(alias:)</code> for newer aliases.
+/// \param alias Alias for SEPA (ELV). This value was returned for aliases created before April 15th 2015.
 ///
 /// \param bankCode A bank code (German: Bankleitzahl) is a unique identification
-/// code for a particular bank. This is required for tokens created before April 15th 2015.
+/// code for a particular bank. This is required for aliases created before April 15th 2015.
 ///
-- (nonnull instancetype)initWithToken:(NSString * _Nonnull)token bankCode:(NSString * _Nonnull)bankCode;
+- (nonnull instancetype)initWithAlias:(NSString * _Nonnull)alias bankCode:(NSString * _Nonnull)bankCode;
 /// A human readable title.
 @property (nonatomic, readonly, copy) NSString * _Nonnull displayTitle;
 /// For VoiceOver this title is used instead of displayTitle.
 @property (nonatomic, readonly, copy) NSString * _Nullable accessibilityTitle;
-/// Refer to the <code>NSCopying</code> protocol
+/// :nodoc:
 - (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type token:(NSString * _Nonnull)token OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type alias:(NSString * _Nonnull)alias OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -679,126 +809,12 @@ SWIFT_CLASS_NAMED("ThemeConfiguration")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@protocol DTTokenizationRequestDelegate;
-@class DTTokenizationOptions;
-@class UIViewController;
-
-/// Use this class to start a tokenization request. After the tokenization request has been
-/// completed - regardless if successful or not - <code>delegate</code> will be called with some basic
-/// information about the success or failure.
-SWIFT_CLASS_NAMED("TokenizationRequest")
-@interface DTTokenizationRequest : NSObject
-/// This delegate will be notified after a tokenization request has been finished,
-/// successfully or not.
-@property (nonatomic, weak) id <DTTokenizationRequestDelegate> _Nullable delegate;
-/// The available options for how a tokenization request is handled by the mobile SDK.
-@property (nonatomic, strong) DTTokenizationOptions * _Nonnull options;
-/// The theme to be used by the SDK.
-@property (nonatomic, strong) DTThemeConfiguration * _Nonnull theme;
-/// Use this init method if you use your own UI and already have a <code>Card</code> instance with the
-/// card data to be tokenized. After this class is initialized, you should define its <code>delegate</code>,
-/// the <code>options</code> properties and a <code>theme</code> if desired.
-/// \param merchantId Your merchantId.
-///
-/// \param card Card object to tokenize.
-///
-- (nonnull instancetype)initWithMerchantId:(NSString * _Nonnull)merchantId card:(DTCard * _Nonnull)card OBJC_DESIGNATED_INITIALIZER;
-/// Use this init method to allow the user to enter the  card data to be tokenized. After this
-/// class is initialized, you should define its <code>delegate</code>, the <code>options</code> properties
-/// and a <code>theme</code> if desired.
-/// This initializer is for use from Objective-C only. Instead of <code>[PaymentMethodType]</code>, it
-/// takes <code>[NSNumber]</code> containing <code>rawValue</code>s of <code>PaymentMethodType</code>.
-/// Example:
-/// <code>[[DTTokenizationRequest alloc] initWithMerchantId:@"..." paymentMethodTypes:@[@(DTPaymentMethodTypeVisa), @(DTPaymentMethodTypeMasterCard)]];</code>
-/// \param merchantId Your merchantId.
-///
-/// \param paymentMethodTypesObjc The allowed credit or debit card types.
-///
-- (nonnull instancetype)initWithMerchantId:(NSString * _Nonnull)merchantId paymentMethodTypes:(NSArray<NSNumber *> * _Nonnull)paymentMethodTypesObjc;
-/// Starts the SDK and displays any needed user interface using the provided
-/// <code>presentingController</code>. Note that a tokenization request can only
-/// be started once.
-/// \param presentingController <code>UIViewController</code>
-/// used to present the user interface during an on-going tokenization request.
-///
-- (void)startWithPresentingController:(UIViewController * _Nonnull)presentingController;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-@class DTTokenizationRequestError;
-
-/// Implement TokenizationRequestDelegate to be notified when a tokenization
-/// request ends. TokenizationRequestDelegate will notify you about the success,
-/// error or cancel state of the processed tokenization request.
-SWIFT_PROTOCOL_NAMED("TokenizationRequestDelegate")
-@protocol DTTokenizationRequestDelegate
-/// This is called after a tokenization request has been successfully
-/// completed. This callback provides details about the tokenization request.
-/// \param tokenizationRequest The object containing the information
-/// of the completed tokenization request.
-///
-/// \param tokenizationId The resulting tokenizationId.
-///
-- (void)tokenizationRequestDidFinish:(DTTokenizationRequest * _Nonnull)tokenizationRequest tokenizationId:(NSString * _Nonnull)tokenizationId;
-/// This is called after a tokenization request fails or encounters an error.
-/// Keep in mind that the SDK shows the error to the user before
-/// this is invoked. Therefore, this callback can be used to cancel
-/// any on-going process involving the tokenization request.
-/// You may also use the error details provided here and display it
-/// the way you want when suppressing the error message within
-/// the <code>TokenizationRequestOptions</code>.
-/// \param tokenizationRequest The object containing the information
-/// of the failed tokenization request.
-///
-/// \param error The error that occurred.
-///
-- (void)tokenizationRequestDidFail:(DTTokenizationRequest * _Nonnull)tokenizationRequest error:(DTTokenizationRequestError * _Nonnull)error;
-@optional
-/// This is called after a tokenization request has been cancelled. This callback
-/// can be used to cancel any on-going process involving the tokenization request.
-/// \param tokenizationRequest The object containing the
-/// information of the cancelled tokenization request.
-///
-- (void)tokenizationRequestDidCancel:(DTTokenizationRequest * _Nonnull)tokenizationRequest;
-@end
-
-
-/// This class includes the error message of a tokenization request.
-SWIFT_CLASS_NAMED("TokenizationRequestError")
-@interface DTTokenizationRequestError : NSError
-- (nonnull instancetype)initWithDomain:(NSString * _Nonnull)domain code:(NSInteger)code userInfo:(NSDictionary<NSString *, id> * _Nullable)dict OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-/// This class can be used to specify miscellaneous options related to the tokenization request.
-SWIFT_CLASS_NAMED("TokenizationRequestOptions")
-@interface DTTokenizationOptions : NSObject
-/// Use this setting to change the UI language. If this is not
-/// specified, the default language determined by the system will be used.
-/// The supported values are <code>de</code>, <code>en</code>, <code>fr</code>, <code>it</code> and <code>nil</code>.
-@property (nonatomic, copy) NSString * _Nullable language;
-/// Use this setting to display or hide critical errors.
-@property (nonatomic) BOOL suppressCriticalErrorDialog;
-/// Use this setting to switch from production to sandbox. If not specified,
-/// the SDK will call the Datatrans production environment.
-@property (nonatomic) BOOL testing;
-/// Whether secure connections to Datatrans servers require a certificate
-/// chain signed with a specific CA private key. The device’s trust settings
-/// are explicitly ignored, i.e. custom installed/white-listed certificates
-/// and/or CAs will not work.
-/// Please be advised that enabling this option will break your app in many
-/// corporate networks with anti-malware/-theft/-espionage SSL proxying.
-@property (nonatomic) BOOL useCertificatePinning;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
 @protocol DTTransactionDelegate;
 @class DTTransactionOptions;
 
 /// Use this class to start a transaction with a <code>mobileToken</code> that has previously been initialized
-/// with a server-to-server init call. This class is the main class to start any operation with the SDK.
+/// with a server-to-server init call.
+/// This class is the main class to start any operation with the SDK.
 /// After the transaction has been completed - regardless if successful or not - <code>delegate</code> will
 /// be called with some basic information about the success or failure.
 SWIFT_CLASS_NAMED("Transaction")
@@ -811,32 +827,40 @@ SWIFT_CLASS_NAMED("Transaction")
 /// The theme to be used by the SDK.
 @property (nonatomic, strong) DTThemeConfiguration * _Nonnull theme;
 /// Use this init method to start the SDK with a mobile token obtained after a server-to-server init
-/// call. After this class is initialized, you should define its delegate, the <code>options</code> properties
+/// call.
+/// After this class is initialized, you should define its delegate, the <code>options</code> properties
 /// and a <code>theme</code> if desired.
 /// \param mobileToken The mobileToken that has previously
 /// been initialized with a server-to-server init call.
 ///
 - (nonnull instancetype)initWithMobileToken:(NSString * _Nonnull)mobileToken OBJC_DESIGNATED_INITIALIZER;
-/// Use this init method to start the SDK with a mobile token just like in <code>init(mobileToken:)</code>
-/// and the provided <code>card</code> for the transaction. For this to work, you can only
-/// send one payment method in your server-to-server init call. Use this init method if
-/// you use your own UI fields for the card information.
+/// Use this init method to start the SDK with a mobile token and the provided <code>card</code> for the transaction.
+/// For this to work, you can only send one payment method in your server-to-server init call.
+/// Use this init method if you use your own UI fields for the card information.
 /// \param mobileToken The mobileToken that has previously
 /// been initialized with a server-to-server init call.
 ///
 /// \param card Card object used for the transaction.
 ///
 - (nonnull instancetype)initWithMobileToken:(NSString * _Nonnull)mobileToken card:(DTCard * _Nonnull)card OBJC_DESIGNATED_INITIALIZER;
-/// Use this init method to start the SDK with a mobile token obtained after a server-to-server init
-/// call and display the selection of one or more saved tokens. The user will then be able to click
-/// on their desired saved token to finalize the payment.
+/// Use this init method to start the SDK with a mobile token and a single saved payment method.
+/// The payment will be started with this saved payment method.
 /// \param mobileToken The mobileToken that has previously
 /// been initialized with a server-to-server init call.
 ///
-/// \param paymentMethodTokens Specify here the tokens that are
+/// \param savedPaymentMethod The saved payment method to use for this payment.
+///
+- (nonnull instancetype)initWithMobileToken:(NSString * _Nonnull)mobileToken savedPaymentMethod:(DTSavedPaymentMethod * _Nonnull)savedPaymentMethod OBJC_DESIGNATED_INITIALIZER;
+/// Use this init method to start the SDK with a mobile token and a selection of one or more saved
+/// payment methods to display.
+/// The user will then be able to tap on their desired saved payment method to finalize the payment.
+/// \param mobileToken The mobileToken that has previously
+/// been initialized with a server-to-server init call.
+///
+/// \param savedPaymentMethods Specify here the saved payment methods that are
 /// available for selection to the user.
 ///
-- (nonnull instancetype)initWithMobileToken:(NSString * _Nonnull)mobileToken paymentMethodTokens:(NSArray<DTPaymentMethodToken *> * _Nonnull)paymentMethodTokens OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithMobileToken:(NSString * _Nonnull)mobileToken savedPaymentMethods:(NSArray<DTSavedPaymentMethod *> * _Nonnull)savedPaymentMethods OBJC_DESIGNATED_INITIALIZER;
 /// Starts the SDK and displays any needed user interface using the
 /// provided <code>presentingController</code>. Note that a transaction
 /// can only be started once.
@@ -903,7 +927,7 @@ SWIFT_CLASS_NAMED("TransactionError")
 @property (nonatomic, readonly, strong) NSNumber * _Nullable paymentMethodType;
 /// The identifier of the failed transaction
 @property (nonatomic, readonly, copy) NSString * _Nullable transactionId;
-/// Refer to the <code>NSCopying</code> protocol
+/// :nodoc:
 - (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)initWithDomain:(NSString * _Nonnull)domain code:(NSInteger)code userInfo:(NSDictionary<NSString *, id> * _Nullable)dict OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
@@ -944,10 +968,10 @@ SWIFT_CLASS_NAMED("TransactionSuccess")
 @interface DTTransactionSuccess : NSObject
 /// The payment method used during the transaction.
 @property (nonatomic, readonly) enum DTPaymentMethodType paymentMethodType;
-/// Object containing the token details of the payment method.
-/// The token details are also returned to your webhook and can
-/// be accessed with a status server-to-server request.
-@property (nonatomic, readonly, strong) DTPaymentMethodToken * _Nullable paymentMethodToken;
+/// Object containing the saved payment method details.
+/// The saved payment method details are also returned to your webhook
+/// and can be accessed with a status server-to-server request.
+@property (nonatomic, readonly, strong) DTSavedPaymentMethod * _Nullable savedPaymentMethod;
 /// The transactionId that you can use for operations after the
 /// transaction (eg. settlement, cancel or refund requests).
 @property (nonatomic, readonly, copy) NSString * _Nonnull transactionId;

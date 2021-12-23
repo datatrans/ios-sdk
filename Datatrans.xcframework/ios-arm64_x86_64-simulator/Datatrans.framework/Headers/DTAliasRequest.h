@@ -8,16 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@class DTCard;
-
 @interface DTAliasRequest : NSObject <NSCopying>
 
-// hidden mode card alias request
-- (id)initWithMerchantId:(NSString *)merchantId
-            currencyCode:(NSString *)currencyCode
-                    card:(DTCard *)card;
-
-// standard mode alias request
-- (id)initWithMerchantId:(NSString *)merchantId currencyCode:(NSString *)currencyCode paymentMethods:(NSArray *)paymentMethods;
+- (id)initWithMerchantId:(NSString *)merchantId currencyCode:(NSString *)currencyCode;
 
 @end

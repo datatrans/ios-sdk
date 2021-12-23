@@ -9,7 +9,7 @@
 @class DTAliasRequest;
 @class DTPaymentOptions;
 @class DTPaymentRequest;
-@class DTPaymentMethodToken;
+@class DTSavedPaymentMethod;
 
 
 @interface DTInitialTransaction : NSObject
@@ -18,14 +18,11 @@
 - (nonnull instancetype)initWithDictionary:(nonnull NSDictionary *)jsonObject;
 
 - (void)addOptionsToPaymentOptions:(nonnull DTPaymentOptions *)paymentOptions;
-- (nullable NSString *)cancelURL;
-- (nullable NSString *)errorURL;
-- (nullable NSString *)successURL;
 
 - (nonnull DTAliasRequest *)aliasRequest;
 - (nonnull NSArray<NSString *> *)paymentMethods;
 - (nonnull DTPaymentRequest *)paymentRequest;
-- (nullable DTPaymentMethodToken *)paymentMethodToken;
+- (nullable DTSavedPaymentMethod *)savedPaymentMethod;
 - (BOOL)isPayment;
 
 @end

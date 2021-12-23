@@ -18,7 +18,6 @@
 
 + (uint32_t)libraryVersion;
 + (NSString *)libraryVersionString;
-+ (NSString *)libraryVersionStringWithDeviceType;
 
 + (NSMutableDictionary *)statsProperties;
 

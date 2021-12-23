@@ -9,7 +9,6 @@
 
 @interface DTStartTokenRequestResponse : NSObject<DTResponse>
 
-@property (nonatomic, assign) NSInteger responseCode;
 @property (nonatomic, copy) NSString* token;
 @property (nonatomic, copy) NSString* transactionId;
 
