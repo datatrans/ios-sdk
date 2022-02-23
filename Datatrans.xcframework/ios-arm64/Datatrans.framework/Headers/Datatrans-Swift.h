@@ -921,6 +921,22 @@ SWIFT_PROTOCOL_NAMED("TransactionDelegate")
 /// This class includes the error message and other details of a transaction.
 SWIFT_CLASS_NAMED("TransactionError")
 @interface DTTransactionError : NSError
+/// The error code for technical errors.
+/// Use this constant to compare it to a <code>TransactionError</code>’s <code>code</code>.
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger technical;)
++ (NSInteger)technical SWIFT_WARN_UNUSED_RESULT;
+/// The error code for validation errors.
+/// Use this constant to compare it to a <code>TransactionError</code>’s <code>code</code>.
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger validation;)
++ (NSInteger)validation SWIFT_WARN_UNUSED_RESULT;
+/// The error code for authentication errors.
+/// Use this constant to compare it to a <code>TransactionError</code>’s <code>code</code>.
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger authentication;)
++ (NSInteger)authentication SWIFT_WARN_UNUSED_RESULT;
+/// The error code for authorization errors.
+/// Use this constant to compare it to a <code>TransactionError</code>’s <code>code</code>.
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger authorization;)
++ (NSInteger)authorization SWIFT_WARN_UNUSED_RESULT;
 /// The payment method used during the transaction.
 /// This is for use from Objective-C only. This property wraps the
 /// <code>rawValue</code> of a <code>DTPaymentMethodType</code> in an <code>NSNumber</code>.

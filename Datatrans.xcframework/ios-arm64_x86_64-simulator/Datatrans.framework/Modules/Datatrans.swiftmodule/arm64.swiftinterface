@@ -10,6 +10,10 @@ import Swift
 import UIKit
 import WebKit
 @_inheritsConvenienceInitializers @objc(DTTransactionError) public class TransactionError : Foundation.NSError {
+  @objc public static let technical: Swift.Int
+  @objc public static let validation: Swift.Int
+  @objc public static let authentication: Swift.Int
+  @objc public static let authorization: Swift.Int
   public var paymentMethodType: Datatrans.PaymentMethodType? {
     get
   }
