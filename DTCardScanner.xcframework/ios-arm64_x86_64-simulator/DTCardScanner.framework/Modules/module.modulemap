@@ -1,0 +1,6 @@
+framework module DTCardScanner {
+  umbrella header "DTCardScanner.h"
+
+  export *
+  module * { export * }
+}

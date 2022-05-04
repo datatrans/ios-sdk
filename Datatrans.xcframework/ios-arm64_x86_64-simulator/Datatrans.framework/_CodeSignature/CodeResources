@@ -4,29 +4,45 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>AMX.pdf</key>
+		<data>
+		oZvhqF/bn8l7z2UgxRXAGK9F3xo=
+		</data>
+		<key>APL.pdf</key>
+		<data>
+		RGc2mhsoEImPMZ83S4AQxU/EmcM=
+		</data>
 		<key>Assets.car</key>
 		<data>
-		9KW04jgOpLhQD09/JfXsbkDWQrs=
+		3IjPDUteLv4lQx6t+u3XD/AC9fM=
 		</data>
-		<key>Headers/CardIOCreditCardInfo.h</key>
+		<key>BON.pdf</key>
 		<data>
-		6pDBO5GtU9yybwZAdebzVuHjV0Y=
+		feaeddCPwEQj0MCeVBXkR6b10ik=
 		</data>
-		<key>Headers/CardIODetectionMode.h</key>
+		<key>CC_generic.pdf</key>
 		<data>
-		0VmZRU+jbPoq+dozCwt2ARRFFdM=
+		5xtJCJnNXBrZxGPlpLdQFTcbcU4=
 		</data>
-		<key>Headers/CardIOUtilities.h</key>
+		<key>DIN.pdf</key>
 		<data>
-		s7GTGd5u5RMS8MyUP1UqvU/Q3Lo=
+		IoqdeIAWjo5nHGPmOJP0yrS06dA=
 		</data>
-		<key>Headers/CardIOView.h</key>
+		<key>DIS.pdf</key>
 		<data>
-		hKa4klLYb8yNbBH8LsiSkg0WSqQ=
+		RBpH85Ey52v/1dyGVpol+MqpF/Y=
 		</data>
-		<key>Headers/CardIOViewDelegate.h</key>
+		<key>ECA.pdf</key>
 		<data>
-		ErycEG6ibtqP9cC437R4xIPQEQc=
+		eeOfKiubTBGPVs+hh/D0q3crZlQ=
+		</data>
+		<key>ELV.pdf</key>
+		<data>
+		8PT0zgffXvxTuXAS6e11Cm07D9E=
+		</data>
+		<key>ESY.pdf</key>
+		<data>
+		4QfgdvF2SpA6Ney2NOY+hJov9M0=
 		</data>
 		<key>Headers/DTAddress.h</key>
 		<data>
@@ -116,6 +132,10 @@
 		<data>
 		MBIoWVKFQlomrPewQdM1qu9226w=
 		</data>
+		<key>Headers/DTPPRiskComponentManager.h</key>
+		<data>
+		1EbiMGL2qD3SzjBuAnNAoWfYXPY=
+		</data>
 		<key>Headers/DTPaymentAuthorizationRequest.h</key>
 		<data>
 		Z5ZEEB2lAKdK9N4/A3HrkJTqRZ8=
@@ -126,7 +146,7 @@
 		</data>
 		<key>Headers/DTPaymentMethodInfo.h</key>
 		<data>
-		nKdkKvX1xlr6ONoAXSsk2fUCLIo=
+		klavTsBit/NiEGAyMcSOpf/AzfY=
 		</data>
 		<key>Headers/DTPaymentModel.h</key>
 		<data>
@@ -206,11 +226,23 @@
 		</data>
 		<key>Headers/Datatrans.h</key>
 		<data>
-		9ibWHQ6meZGzn47+SyVsaaCeRv8=
+		6xE7IteRNjuxkD9CZnMYsglFBqo=
+		</data>
+		<key>INT.pdf</key>
+		<data>
+		pQDA29NDVdJdIJbFFsQwbbifkSs=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Hpix4fTASTlfVB219i5v0CVjru8=
+		e9BlOcLITz1hJXcm4PD8SFbUYIQ=
+		</data>
+		<key>JCB.pdf</key>
+		<data>
+		wpdNekvZessvDqN5pu29nP+B6rc=
+		</data>
+		<key>MFX.pdf</key>
+		<data>
+		p1DGb3rxpg08jV/B37M98yMfGbU=
 		</data>
 		<key>Modules/Datatrans.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -222,7 +254,7 @@
 		</data>
 		<key>Modules/Datatrans.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		AngFS+4AfVc5ljCcv1IKs16wC5A=
+		Yzpr+Wyf4V2Yjz/limjFIKBYTx8=
 		</data>
 		<key>Modules/Datatrans.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -234,7 +266,7 @@
 		</data>
 		<key>Modules/Datatrans.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		AngFS+4AfVc5ljCcv1IKs16wC5A=
+		Yzpr+Wyf4V2Yjz/limjFIKBYTx8=
 		</data>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -246,7 +278,7 @@
 		</data>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		eRpnaY/RG1nuVJoCPUbxJ6iVdxE=
+		zFYOi4uF2a85gets8U78P7vLC8k=
 		</data>
 		<key>Modules/Datatrans.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -258,11 +290,55 @@
 		</data>
 		<key>Modules/Datatrans.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		eRpnaY/RG1nuVJoCPUbxJ6iVdxE=
+		zFYOi4uF2a85gets8U78P7vLC8k=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		sse55gfJDLdTUwZp/G1e3H7oNHc=
+		</data>
+		<key>PAP.pdf</key>
+		<data>
+		RUnUc1aqLwXYF6UrO1i4yHRZIE8=
+		</data>
+		<key>PEF.pdf</key>
+		<data>
+		JsB6cyN750XFQsg7Sp1FrYyCttY=
+		</data>
+		<key>PFC.pdf</key>
+		<data>
+		cm2APEiWwx8X0oS1qqg1bP8ZREA=
+		</data>
+		<key>PSC.pdf</key>
+		<data>
+		b1+UhCRd/BIB4EowBLCfEgiMPCU=
+		</data>
+		<key>REK.pdf</key>
+		<data>
+		Rueu8RzMcFhBfRyHjWz8BEzJ6DY=
+		</data>
+		<key>SCX.pdf</key>
+		<data>
+		DVnptqD3cZ4vEJagDfAzh56P+BU=
+		</data>
+		<key>SWB.pdf</key>
+		<data>
+		R3haxg8+efOMK4JE7lxQdKKD8Ec=
+		</data>
+		<key>SWP.pdf</key>
+		<data>
+		jdEJ1VqPOxH/Nrkr07upM+mROgE=
+		</data>
+		<key>TWI.pdf</key>
+		<data>
+		Qs1Kbt7IhGl/zneoLJSiB03GAcE=
+		</data>
+		<key>UAP.pdf</key>
+		<data>
+		sRFzn9wFCpAeCagf1tHgWt7GxgA=
+		</data>
+		<key>VIS.pdf</key>
+		<data>
+		Q9fY89Wl97afM9GPeijzzZ6toNM=
 		</data>
 		<key>de.lproj/Localizable.strings</key>
 		<dict>
@@ -300,49 +376,81 @@
 			<key>optional</key>
 			<true/>
 		</dict>
+		<key>unknownCard.pdf</key>
+		<data>
+		yIIXlCwRidegUS9R4YonDNsVGH8=
+		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>AMX.pdf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			lLcE3G1gFK8zCeYzmNFK59FjMnAduyFqNO1RmGXEHvM=
+			</data>
+		</dict>
+		<key>APL.pdf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			waG6+YeDoqEGlRSFzA98IECHgs7+YMRBAUtke1IyZHY=
+			</data>
+		</dict>
 		<key>Assets.car</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			JQxEJeSGfrrg79YtafdRwEjOqgTPoKyuL8VIKOOP/Ls=
+			PsOIQGZcbZrKRUQv403k2syEzX5lMxPjYiqBvqPRHR8=
 			</data>
 		</dict>
-		<key>Headers/CardIOCreditCardInfo.h</key>
+		<key>BON.pdf</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			aIwL6ZgUCrIivM45vsDt+1zTihbPexpNwm3RqXYXOSE=
+			PLiPK0XRPNOramZ41UI+IcpButenKfoXgEaM3XdG2Q0=
 			</data>
 		</dict>
-		<key>Headers/CardIODetectionMode.h</key>
+		<key>CC_generic.pdf</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fC12oI4r4HV5kKrrN+E3x3LL/W3gyl80aWcWUzPazhE=
+			qwWIpYi0VDf7cIjADw5HJgKsXIE22zncdSk4/VO+Bv0=
 			</data>
 		</dict>
-		<key>Headers/CardIOUtilities.h</key>
+		<key>DIN.pdf</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			hyQX6DSByYOoJIJhsLxluo8da1jbhdIXNs0SefqSt2U=
+			KPCpOBQIufvmSasELBdX8zxusxyQr+63WXFPpZ4hPOk=
 			</data>
 		</dict>
-		<key>Headers/CardIOView.h</key>
+		<key>DIS.pdf</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			cT3XFy2MSeRaCWbkNhgqjrBQOdIz37SzPD5Xpv1+VCo=
+			h9d02BMHTTaHPFGqplXGIQ7MNaXiKckc67tcmqeoSik=
 			</data>
 		</dict>
-		<key>Headers/CardIOViewDelegate.h</key>
+		<key>ECA.pdf</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			SMq+iIc0WjFFFGTdic+azEdrRiJjKI2OgzmHEVUIk/s=
+			nw2hkkpql3p7Bs+54Ll1m3qL+vg7UlxhLzcNO3QkIDY=
+			</data>
+		</dict>
+		<key>ELV.pdf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			6eKdfBJvLLplWnMZ3cisqCkxqpKdoeoZMSwigTk1/F8=
+			</data>
+		</dict>
+		<key>ESY.pdf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			dxQvVBxyBz6TqqZ1ry0mN6BrXTE28o6WFuwWD/Tgl+8=
 			</data>
 		</dict>
 		<key>Headers/DTAddress.h</key>
@@ -499,6 +607,13 @@
 			lt7fCctXnqLwO5m4dYPjo1dFO2CHBCUsSJ7BqRLZS/c=
 			</data>
 		</dict>
+		<key>Headers/DTPPRiskComponentManager.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			f+rA1fm1z25U9HNUAizwrTsOOKcdqiCuYobPB+JGAQk=
+			</data>
+		</dict>
 		<key>Headers/DTPaymentAuthorizationRequest.h</key>
 		<dict>
 			<key>hash2</key>
@@ -517,7 +632,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			FvEmR2iEzhfQgtpptmE/CuyoBc6+2kt7Dnriq3BO3Ho=
+			rt+QEU68cHiwEmykUi/CAZjDLc+3sFigcSQ01CK9w/s=
 			</data>
 		</dict>
 		<key>Headers/DTPaymentModel.h</key>
@@ -657,7 +772,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Ou+HcecIZoLq+HgCC6OjhlLb5J2je3197THeoyiMwrs=
+			c3xpdYz96BPJaTKQjv2UrMOmXyLcmzmMQzjQI7hD6+o=
+			</data>
+		</dict>
+		<key>INT.pdf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			EEtnktjdJ8uQdHV8spZhZjtSx2QsEFOnwokBR78cW7Q=
+			</data>
+		</dict>
+		<key>JCB.pdf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			4bNS2uPhHWzkfjHY4zOd0qluxliBsCssLoYW5meGiyE=
+			</data>
+		</dict>
+		<key>MFX.pdf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			t8h1lT1cGgyrzKHEpwp/z31LiP4Na/cVlTM+fEfh7iE=
 			</data>
 		</dict>
 		<key>Modules/Datatrans.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -678,7 +814,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			jQGW9GAdKVvdv5p5wMdqjdDJGYQ1uTsw9+N58+3gFbk=
+			1TymlwdpglzxUjHdZljENWGJ+i5VehtLqWqGuB8zgjQ=
 			</data>
 		</dict>
 		<key>Modules/Datatrans.swiftmodule/arm64.swiftdoc</key>
@@ -699,7 +835,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			jQGW9GAdKVvdv5p5wMdqjdDJGYQ1uTsw9+N58+3gFbk=
+			1TymlwdpglzxUjHdZljENWGJ+i5VehtLqWqGuB8zgjQ=
 			</data>
 		</dict>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -720,7 +856,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			MAV6OenLXteaAwyFqH0LSLHa5bHxjkEEs6PxwhvCUwg=
+			HtJtXAQfyH+EvOBZyIaFn7xWGqz+mZ63opY6FH6ksp0=
 			</data>
 		</dict>
 		<key>Modules/Datatrans.swiftmodule/x86_64.swiftdoc</key>
@@ -741,7 +877,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			MAV6OenLXteaAwyFqH0LSLHa5bHxjkEEs6PxwhvCUwg=
+			HtJtXAQfyH+EvOBZyIaFn7xWGqz+mZ63opY6FH6ksp0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -749,6 +885,83 @@
 			<key>hash2</key>
 			<data>
 			7p+OrvkdTNT8JtiV0n0N5IBDfhiyo+zyxBdAJEaJ9sA=
+			</data>
+		</dict>
+		<key>PAP.pdf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			3GoCaz7ulQoVbVsh9uCfNQaqOuUaRLJadHNqDk0OkEs=
+			</data>
+		</dict>
+		<key>PEF.pdf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			6qDb1vMPsqSDtQ/bt6WSQJ2DoirvAafzlIdbnB5ZaEM=
+			</data>
+		</dict>
+		<key>PFC.pdf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			tJPXyMTJATuJOWcrdVylNo8IYlHov9xN8jW08ft5We0=
+			</data>
+		</dict>
+		<key>PSC.pdf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			HDVc4uLwDm/3vWTqxfC+9pbowiVZILnZRVTC1jR3wEs=
+			</data>
+		</dict>
+		<key>REK.pdf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			6OSN4Kj9MXpL7kpMksI7t0k8b1yrUpbWLT+25lfheso=
+			</data>
+		</dict>
+		<key>SCX.pdf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			fRCgnjamTHkX28wU1rFflv+xmGpHwNN/+9252IZmh+E=
+			</data>
+		</dict>
+		<key>SWB.pdf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			CIAVV735wkVvZkTnGY6KGqH9dpKIxzWKIK4meeOU6dA=
+			</data>
+		</dict>
+		<key>SWP.pdf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			FIP2koXKXM/zOXgNURSPNfX8AAjL07wWRuZ6+ihUcrw=
+			</data>
+		</dict>
+		<key>TWI.pdf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			iX4loiDClWjdLcWXtAsY8yRnNka+ffkTNmDTjrGmfx0=
+			</data>
+		</dict>
+		<key>UAP.pdf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			2/Au8CT0NnnkSCqj30YoRYeN+KlsdbzDfZjcgjhwHN0=
+			</data>
+		</dict>
+		<key>VIS.pdf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			rEUAhsCBjadVBqSilnepNzZw/DVqxKBTW9U12pnvOag=
 			</data>
 		</dict>
 		<key>de.lproj/Localizable.strings</key>
@@ -786,6 +999,13 @@
 			</data>
 			<key>optional</key>
 			<true/>
+		</dict>
+		<key>unknownCard.pdf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			yXSR9jaXfBfA3+kIvqeVFgIv8rDcMJ77Km6auTXgMFs=
+			</data>
 		</dict>
 	</dict>
 	<key>rules</key>

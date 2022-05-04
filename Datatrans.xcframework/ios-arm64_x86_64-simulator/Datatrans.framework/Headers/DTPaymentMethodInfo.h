@@ -45,8 +45,6 @@ typedef enum {
 
 - (nullable NSString *)commonPrefix;
 
-- (nullable UIImage *)imageForSize:(CGSize)size;
-
 - (void)updateWithOptions:(nonnull DTPaymentOptions *)options;
 - (nullable NSString *)validateOptions:(nonnull DTPaymentOptions *)options isAliasPayment:(BOOL)isAliasPayment;
 

@@ -21,11 +21,6 @@ FOUNDATION_EXPORT const unsigned char DatatransVersionString[];
 #import <Datatrans/DTPaymentMethodInfo.h>
 
 // Private
-#import <Datatrans/CardIOCreditCardInfo.h>
-#import <Datatrans/CardIODetectionMode.h>
-#import <Datatrans/CardIOUtilities.h>
-#import <Datatrans/CardIOView.h>
-#import <Datatrans/CardIOViewDelegate.h>
 #import <Datatrans/DTAddress.h>
 #import <Datatrans/DTAliasPaymentAuthorizationRequest.h>
 #import <Datatrans/DTAliasRequest.h>
@@ -51,6 +46,7 @@ FOUNDATION_EXPORT const unsigned char DatatransVersionString[];
 #import <Datatrans/DTPaymentOptions.h>
 #import <Datatrans/DTPaymentRequest.h>
 #import <Datatrans/DTPostFinanceRequestHandler.h>
+#import <Datatrans/DTPPRiskComponentManager.h>
 #import <Datatrans/DTResources.h>
 #import <Datatrans/DTResponse.h>
 #import <Datatrans/DTStartTokenRequestResponse.h>
