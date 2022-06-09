@@ -21,17 +21,13 @@ FOUNDATION_EXPORT const unsigned char DatatransVersionString[];
 #import <Datatrans/DTPaymentMethodInfo.h>
 
 // Private
-#import <Datatrans/DTAddress.h>
 #import <Datatrans/DTAliasPaymentAuthorizationRequest.h>
 #import <Datatrans/DTAliasRequest.h>
 #import <Datatrans/DTAliasRequest+Internal.h>
 #import <Datatrans/DTApplePayProcess.h>
 #import <Datatrans/DTAuthorizationRequestResponse.h>
-#import <Datatrans/DTBasketItem.h>
 #import <Datatrans/DTByjunoPaymentInfo.h>
 #import <Datatrans/DTCardAliasRequestResponse.h>
-#import <Datatrans/DTCustomer.h>
-#import <Datatrans/DTDate.h>
 #import <Datatrans/DTErrorHandler.h>
 #import <Datatrans/DTErrorPresenter.h>
 #import <Datatrans/DTExternalWebAppDelegateProxy.h>
@@ -51,8 +47,6 @@ FOUNDATION_EXPORT const unsigned char DatatransVersionString[];
 #import <Datatrans/DTResponse.h>
 #import <Datatrans/DTStartTokenRequestResponse.h>
 #import <Datatrans/DTStatusRequestResponse.h>
-#import <Datatrans/DTSwissBillingPaymentInfo.h>
-#import <Datatrans/DTSwissPassPaymentInfo.h>
 #import <Datatrans/DTTransactionModel.h>
 #import <Datatrans/DTTwintProcess.h>
 #import <Datatrans/DTUrls.h>

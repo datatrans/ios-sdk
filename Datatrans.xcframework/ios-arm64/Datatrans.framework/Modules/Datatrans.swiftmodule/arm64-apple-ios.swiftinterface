@@ -133,12 +133,6 @@ import WebKit
   }
   @objc convenience public init(alias: Swift.String)
   @objc convenience public init(alias: Swift.String, bankCode: Swift.String)
-  @objc override public var displayTitle: Swift.String {
-    @objc get
-  }
-  @objc override public var accessibilityTitle: Swift.String? {
-    @objc get
-  }
   @objc override public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
   @objc override public init(type: Datatrans.PaymentMethodType, alias: Swift.String)
   @objc required public init?(coder: Foundation.NSCoder)
@@ -190,12 +184,6 @@ import WebKit
   }
   @objc public var cardholder: Swift.String?
   @objc public init(type: Datatrans.PaymentMethodType, alias: Swift.String, cardExpiryDate: Datatrans.CardExpiryDate?, maskedCardNumber: Swift.String?, cardholder: Swift.String?)
-  @objc override public var displayTitle: Swift.String {
-    @objc get
-  }
-  @objc override public var accessibilityTitle: Swift.String? {
-    @objc get
-  }
   @objc override public func isValid() -> Swift.Bool
   override public func encode(to encoder: Swift.Encoder) throws
   @objc required public init?(coder: Foundation.NSCoder)
@@ -273,7 +261,7 @@ import WebKit
   @objc public var displayTitle: Swift.String {
     @objc get
   }
-  @objc public var accessibilityTitle: Swift.String? {
+  @objc public var accessibilityTitle: Swift.String {
     @objc get
   }
   @objc public init(type: Datatrans.PaymentMethodType, alias: Swift.String)
@@ -293,12 +281,6 @@ import WebKit
 @_hasMissingDesignatedInitializers @objc(DTSavedPayPal) @objcMembers public class SavedPayPal : Datatrans.SavedPaymentMethod {
   @objc public var payPalEmail: Swift.String?
   @objc public init(alias: Swift.String, payPalEmail: Swift.String?)
-  @objc override public var displayTitle: Swift.String {
-    @objc get
-  }
-  @objc override public var accessibilityTitle: Swift.String? {
-    @objc get
-  }
   override public func encode(to encoder: Swift.Encoder) throws
   @objc required public init?(coder: Foundation.NSCoder)
   @objc override public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any

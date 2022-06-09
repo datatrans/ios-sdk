@@ -562,7 +562,7 @@ SWIFT_CLASS_NAMED("SavedPaymentMethod")
 /// A human readable title.
 @property (nonatomic, readonly, copy) NSString * _Nonnull displayTitle;
 /// For VoiceOver this title is used instead of displayTitle.
-@property (nonatomic, readonly, copy) NSString * _Nullable accessibilityTitle;
+@property (nonatomic, readonly, copy) NSString * _Nonnull accessibilityTitle;
 /// This init method has to be used to initialize a saved payment method.
 /// \param type Payment method type, e.g. PayPal or Twint
 ///
@@ -642,10 +642,6 @@ SWIFT_CLASS_NAMED("SavedCard")
 /// \param cardholder Cardholder’s name
 ///
 - (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type alias:(NSString * _Nonnull)alias cardExpiryDate:(DTCardExpiryDate * _Nullable)cardExpiryDate maskedCardNumber:(NSString * _Nullable)maskedCardNumber cardholder:(NSString * _Nullable)cardholder OBJC_DESIGNATED_INITIALIZER;
-/// A human readable title e.g. ‘•••• 6095’.
-@property (nonatomic, readonly, copy) NSString * _Nonnull displayTitle;
-/// For VoiceOver this title is used instead of displayTitle.
-@property (nonatomic, readonly, copy) NSString * _Nullable accessibilityTitle;
 /// Checks if the expiration date is in the future or not.
 - (BOOL)isValid SWIFT_WARN_UNUSED_RESULT;
 /// :nodoc:
@@ -674,10 +670,6 @@ SWIFT_CLASS_NAMED("SavedPayPal")
 /// \param payPalEmail PayPal e-mail address. This will be used for displaying purposes.
 ///
 - (nonnull instancetype)initWithAlias:(NSString * _Nonnull)alias payPalEmail:(NSString * _Nullable)payPalEmail OBJC_DESIGNATED_INITIALIZER;
-/// A human readable title.
-@property (nonatomic, readonly, copy) NSString * _Nonnull displayTitle;
-/// For VoiceOver this title is used instead of displayTitle.
-@property (nonatomic, readonly, copy) NSString * _Nullable accessibilityTitle;
 /// :nodoc:
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 /// :nodoc:
@@ -767,10 +759,6 @@ SWIFT_CLASS_NAMED("SavedSEPA")
 /// code for a particular bank. This is required for aliases created before April 15th 2015.
 ///
 - (nonnull instancetype)initWithAlias:(NSString * _Nonnull)alias bankCode:(NSString * _Nonnull)bankCode;
-/// A human readable title.
-@property (nonatomic, readonly, copy) NSString * _Nonnull displayTitle;
-/// For VoiceOver this title is used instead of displayTitle.
-@property (nonatomic, readonly, copy) NSString * _Nullable accessibilityTitle;
 /// :nodoc:
 - (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type alias:(NSString * _Nonnull)alias OBJC_DESIGNATED_INITIALIZER;
