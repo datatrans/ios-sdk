@@ -70,6 +70,20 @@ import WebKit
   @objc func tokenizationRequestDidFail(_ tokenizationRequest: Datatrans.PCIPTokenizationRequest, error: Datatrans.PCIPTokenizationRequestError)
   @objc optional func tokenizationRequestDidCancel(_ tokenizationRequest: Datatrans.PCIPTokenizationRequest)
 }
+@_hasMissingDesignatedInitializers @objc(DTBinRange) public class BinRange : ObjectiveC.NSObject {
+  @objc public class func range(start: Swift.String, end: Swift.String) -> Datatrans.BinRange
+  @objc public class func prefix(_ prefix: Swift.String) -> Datatrans.BinRange
+  @objc public func match(_ number: Swift.String) -> Datatrans.BinRangeMatch?
+  @objc public func commonPrefix(with number: Swift.String) -> Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc(DTBinRangeMatch) public class BinRangeMatch : ObjectiveC.NSObject {
+  @objc final public let matchLength: Swift.Int
+  @objc final public let complete: Swift.Bool
+  @objc override dynamic public init()
+  @objc deinit
+}
 @_inheritsConvenienceInitializers @objc(DTPCIPTokenizationRequestOptions) @objcMembers public class PCIPTokenizationRequestOptions : ObjectiveC.NSObject {
   @objc public var language: Swift.String? {
     @objc get
@@ -104,6 +118,8 @@ import WebKit
   case Powerpay
   case Paysafecard
   case Boncard
+  case Elo
+  case Hipercard
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {

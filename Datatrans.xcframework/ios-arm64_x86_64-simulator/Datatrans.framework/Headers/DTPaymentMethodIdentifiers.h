@@ -28,6 +28,8 @@ extern NSString* const DTPaymentMethodSwissPass;
 extern NSString* const DTPaymentMethodPowerpay;
 extern NSString* const DTPaymentMethodPaysafecard;
 extern NSString* const DTPaymentMethodBoncard;
+extern NSString* const DTPaymentMethodElo;
+extern NSString* const DTPaymentMethodHipercard;
 
 // reka alternative identifiers
 extern NSString* const DTPaymentMethodRekaRail;

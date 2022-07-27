@@ -260,6 +260,27 @@ SWIFT_CLASS_NAMED("ApplePayConfig")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+@class DTBinRangeMatch;
+
+SWIFT_CLASS_NAMED("BinRange")
+@interface DTBinRange : NSObject
++ (DTBinRange * _Nonnull)rangeWithStart:(NSString * _Nonnull)start end:(NSString * _Nonnull)end SWIFT_WARN_UNUSED_RESULT;
++ (DTBinRange * _Nonnull)prefix:(NSString * _Nonnull)prefix SWIFT_WARN_UNUSED_RESULT;
+- (DTBinRangeMatch * _Nullable)match:(NSString * _Nonnull)number SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nonnull)commonPrefixWith:(NSString * _Nonnull)number SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS_NAMED("BinRangeMatch")
+@interface DTBinRangeMatch : NSObject
+@property (nonatomic, readonly) NSInteger matchLength;
+@property (nonatomic, readonly) BOOL complete;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 enum DTPaymentMethodType : NSInteger;
 @class NSCoder;
 
@@ -510,6 +531,10 @@ typedef SWIFT_ENUM_NAMED(NSInteger, DTPaymentMethodType, "PaymentMethodType", op
   DTPaymentMethodTypePaysafecard = 20,
 /// Boncard (Lunch-Check) payment method
   DTPaymentMethodTypeBoncard = 21,
+/// Elo card payment method
+  DTPaymentMethodTypeElo = 22,
+/// Hipercard payment method
+  DTPaymentMethodTypeHipercard = 23,
 };
 
 
@@ -1258,6 +1283,27 @@ SWIFT_CLASS_NAMED("ApplePayConfig")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+@class DTBinRangeMatch;
+
+SWIFT_CLASS_NAMED("BinRange")
+@interface DTBinRange : NSObject
++ (DTBinRange * _Nonnull)rangeWithStart:(NSString * _Nonnull)start end:(NSString * _Nonnull)end SWIFT_WARN_UNUSED_RESULT;
++ (DTBinRange * _Nonnull)prefix:(NSString * _Nonnull)prefix SWIFT_WARN_UNUSED_RESULT;
+- (DTBinRangeMatch * _Nullable)match:(NSString * _Nonnull)number SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nonnull)commonPrefixWith:(NSString * _Nonnull)number SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS_NAMED("BinRangeMatch")
+@interface DTBinRangeMatch : NSObject
+@property (nonatomic, readonly) NSInteger matchLength;
+@property (nonatomic, readonly) BOOL complete;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 enum DTPaymentMethodType : NSInteger;
 @class NSCoder;
 
@@ -1508,6 +1554,10 @@ typedef SWIFT_ENUM_NAMED(NSInteger, DTPaymentMethodType, "PaymentMethodType", op
   DTPaymentMethodTypePaysafecard = 20,
 /// Boncard (Lunch-Check) payment method
   DTPaymentMethodTypeBoncard = 21,
+/// Elo card payment method
+  DTPaymentMethodTypeElo = 22,
+/// Hipercard payment method
+  DTPaymentMethodTypeHipercard = 23,
 };
 
 

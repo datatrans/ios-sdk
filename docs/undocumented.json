@@ -1,6 +1,61 @@
 {
   "warnings": [
-
+    {
+      "file": "/Volumes/Development/ieffects/projects/datatrans/datatrans/iOS/datatrans-iphone/Classes/PaymentMethods/BinRange.swift",
+      "line": 4,
+      "symbol": "BinRange",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Volumes/Development/ieffects/projects/datatrans/datatrans/iOS/datatrans-iphone/Classes/PaymentMethods/BinRange.swift",
+      "line": 9,
+      "symbol": "BinRange.range(start:end:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Volumes/Development/ieffects/projects/datatrans/datatrans/iOS/datatrans-iphone/Classes/PaymentMethods/BinRange.swift",
+      "line": 14,
+      "symbol": "BinRange.prefix(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Volumes/Development/ieffects/projects/datatrans/datatrans/iOS/datatrans-iphone/Classes/PaymentMethods/BinRange.swift",
+      "line": 24,
+      "symbol": "BinRange.match(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Volumes/Development/ieffects/projects/datatrans/datatrans/iOS/datatrans-iphone/Classes/PaymentMethods/BinRange.swift",
+      "line": 49,
+      "symbol": "BinRange.commonPrefix(with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Volumes/Development/ieffects/projects/datatrans/datatrans/iOS/datatrans-iphone/Classes/PaymentMethods/BinRange.swift",
+      "line": 56,
+      "symbol": "BinRangeMatch",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Volumes/Development/ieffects/projects/datatrans/datatrans/iOS/datatrans-iphone/Classes/PaymentMethods/BinRange.swift",
+      "line": 57,
+      "symbol": "BinRangeMatch.matchLength",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Volumes/Development/ieffects/projects/datatrans/datatrans/iOS/datatrans-iphone/Classes/PaymentMethods/BinRange.swift",
+      "line": 58,
+      "symbol": "BinRangeMatch.complete",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    }
   ],
-  "source_directory": "/Users/sebastian_ieffects/Bitbucket/datatrans/datatrans/iOS/datatrans-iphone"
+  "source_directory": "/Volumes/Development/ieffects/projects/datatrans/datatrans/iOS/datatrans-iphone"
 }

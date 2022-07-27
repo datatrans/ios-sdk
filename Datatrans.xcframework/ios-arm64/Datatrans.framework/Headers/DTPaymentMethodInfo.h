@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class DTPaymentOptions;
+@class DTBinRange;
 
 typedef enum {
 	DTPaymentMethodCreditCard				= 1 << 0,
@@ -40,7 +41,7 @@ typedef enum {
 
 @property (nonatomic, readonly) NSRange creditCardVerificationLengthRange;
 @property (nonatomic, readonly) NSRange creditCardNumberLengthRange;
-@property (nonatomic, readonly) NSArray<NSString *>* _Nullable creditCardNumberPrefixes;
+@property (nonatomic, readonly) NSArray<DTBinRange *>* _Nullable creditCardNumberRanges;
 @property (nonatomic, readonly) NSArray<NSNumber *>* _Nullable creditCardNumberSpaces;
 
 - (nullable NSString *)commonPrefix;
