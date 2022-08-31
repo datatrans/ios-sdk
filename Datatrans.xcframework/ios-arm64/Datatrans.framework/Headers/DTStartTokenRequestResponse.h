@@ -9,6 +9,7 @@
 
 @interface DTStartTokenRequestResponse : NSObject<DTResponse>
 
+@property (nonatomic, copy) NSString* paymentMethodCategories; // Klarna only
 @property (nonatomic, copy) NSString* token;
 @property (nonatomic, copy) NSString* transactionId;
 

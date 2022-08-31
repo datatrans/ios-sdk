@@ -17,7 +17,7 @@
     <a title="Payment Method  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">Datatrans 2.1.0 Docs</a></p>
+        <p><a href="index.html">Datatrans 2.2.0 Docs</a></p>
         <p class="header-right"><a href="https://github.com/datatrans/ios-sdk"><img src="img/gh.png" alt="GitHub"/>View on GitHub</a></p>
         <div class="header-right">
           <form role="search" action="search.json">
@@ -71,10 +71,19 @@
                 <a href="Classes/ApplePayConfig.html">ApplePayConfig</a>
               </li>
               <li class="nav-group-task">
+                <a href="Classes/BoncardConfig.html">BoncardConfig</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/BoncardType.html">BoncardType</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Classes/Card.html">Card</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/CardExpiryDate.html">CardExpiryDate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/CardLabelType.html">CardLabelType</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/PaymentMethod.html">PaymentMethod</a>
@@ -84,6 +93,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="Classes/PaymentMethodTypeMapper.html">PaymentMethodTypeMapper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/SavedBoncard.html">SavedBoncard</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/SavedCard.html">SavedCard</a>
@@ -122,17 +134,6 @@
               </li>
             </ul>
           </li>
-          <li class="nav-group-name">
-            <a href="Other%20Classes.html">Other Classes</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Classes/BinRange.html">BinRange</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/BinRangeMatch.html">BinRangeMatch</a>
-              </li>
-            </ul>
-          </li>
         </ul>
       </nav>
       <article class="main-content">
@@ -168,6 +169,65 @@
                           <pre class="highlight swift"><code><span class="kd">@objc(DTApplePayConfig)</span>
 <span class="kd">@objcMembers</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="kt">ApplePayConfig</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">NSCopying</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Datatrans@objc(cs)DTBoncardConfig"></a>
+                    <a name="//apple_ref/swift/Class/BoncardConfig" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTBoncardConfig">BoncardConfig</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Configuration object for Boncard transactions.</p>
+
+                        <a href="Classes/BoncardConfig.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc(DTBoncardConfig)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">BoncardConfig</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">NSCopying</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Datatrans@E@DTBoncardType"></a>
+                    <a name="//apple_ref/swift/Enum/BoncardType" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Datatrans@E@DTBoncardType">BoncardType</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The different types of Boncard, for determining how the <code><a href="Enums/PaymentMethodType.html#/c:@M@Datatrans@E@DTPaymentMethodType@DTPaymentMethodTypeBoncard">PaymentMethodType.Boncard</a></code>
+payment method type is displayed in the payment selection.</p>
+
+                        <a href="Enums/BoncardType.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc(DTBoncardType)</span>
+<span class="kd">public</span> <span class="kd">enum</span> <span class="kt">BoncardType</span> <span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="kt">CaseIterable</span></code></pre>
 
                         </div>
                       </div>
@@ -229,6 +289,36 @@ this class if your app takes over the user interface for the card input fields.<
                           <pre class="highlight swift"><code><span class="kd">@objc(DTCardExpiryDate)</span>
 <span class="kd">@objcMembers</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="kt">CardExpiryDate</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">NSCopying</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Datatrans@E@DTCardLabelType"></a>
+                    <a name="//apple_ref/swift/Enum/CardLabelType" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Datatrans@E@DTCardLabelType">CardLabelType</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Use this to choose which label to display for the card option
+in the payment method selection.</p>
+
+                        <a href="Enums/CardLabelType.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc(DTCardLabelType)</span>
+<span class="kd">public</span> <span class="kd">enum</span> <span class="kt">CardLabelType</span> <span class="p">:</span> <span class="kt">Int</span></code></pre>
 
                         </div>
                       </div>
@@ -327,6 +417,43 @@ payment method, e.g. Visa or Mastercard.</p>
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/c:@M@Datatrans@objc(cs)DTSavedBoncard"></a>
+                    <a name="//apple_ref/swift/Class/SavedBoncard" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTSavedBoncard">SavedBoncard</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This class contains saved Boncard payment method details.</p>
+
+<p>Just like any other <code><a href="Classes/SavedPaymentMethod.html">SavedPaymentMethod</a></code> subclass, this class can be used
+to finalize a payment without user interaction or to display a selection of saved
+payment methods to the user for fast checkouts.</p>
+
+<p>A <code>SavedBoncard</code> can be created by successfully completing a Boncard payment or
+with a dedicated registration.</p>
+
+                        <a href="Classes/SavedBoncard.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc(DTSavedBoncard)</span>
+<span class="kd">@objcMembers</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">SavedBoncard</span> <span class="p">:</span> <span class="kt"><a href="Classes/SavedPaymentMethod.html">SavedPaymentMethod</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/c:@M@Datatrans@objc(cs)DTSavedCard"></a>
                     <a name="//apple_ref/swift/Class/SavedCard" class="dashAnchor"></a>
                     <a class="token" href="#/c:@M@Datatrans@objc(cs)DTSavedCard">SavedCard</a>
@@ -384,10 +511,10 @@ subclass (e.g. card payments, PostFinance, etc.).</p>
 <p>Please refer to this list to see if you need to use one of the subclasses for your payments:</p>
 
 <ul>
-<li>Easy payment methods: Swisscom Easypay, SEPA (ELV), Twint,
+<li>Easy payment methods: Swisscom Pay, SEPA (ELV), Twint,
 Apple Pay, Byjuno, SwissPass, Powerpay Invoice</li>
 <li>Complex payment methods (requiring a <code>SavedPaymentMethod</code> subclass): Card payments,
-PayPal, PostFinance, Reka</li>
+PayPal, PostFinance, Reka, Boncard</li>
 </ul>
 
 <p>Please refer to the Datatrans documentation to see if you can register a payment method

@@ -17,7 +17,7 @@
     <a title="TransactionOptions Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">Datatrans 2.1.0 Docs</a></p>
+        <p><a href="../index.html">Datatrans 2.2.0 Docs</a></p>
         <p class="header-right"><a href="https://github.com/datatrans/ios-sdk"><img src="../img/gh.png" alt="GitHub"/>View on GitHub</a></p>
         <div class="header-right">
           <form role="search" action="../search.json">
@@ -71,10 +71,19 @@
                 <a href="../Classes/ApplePayConfig.html">ApplePayConfig</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Classes/BoncardConfig.html">BoncardConfig</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/BoncardType.html">BoncardType</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Classes/Card.html">Card</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/CardExpiryDate.html">CardExpiryDate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/CardLabelType.html">CardLabelType</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/PaymentMethod.html">PaymentMethod</a>
@@ -84,6 +93,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/PaymentMethodTypeMapper.html">PaymentMethodTypeMapper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SavedBoncard.html">SavedBoncard</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/SavedCard.html">SavedCard</a>
@@ -119,17 +131,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="../PCI%20Proxy.html#/c:@M@Datatrans@objc(cs)DTPCIPTokenizationRequestError">PCIPTokenizationRequestError</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="../Other%20Classes.html">Other Classes</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Classes/BinRange.html">BinRange</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/BinRangeMatch.html">BinRangeMatch</a>
               </li>
             </ul>
           </li>
@@ -204,6 +205,94 @@ for Apple Pay transactions.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">applePayConfig</span><span class="p">:</span> <span class="kt"><a href="../Classes/ApplePayConfig.html">ApplePayConfig</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Datatrans@objc(cs)DTTransactionOptions(py)boncardConfig"></a>
+                    <a name="//apple_ref/swift/Property/boncardConfig" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTTransactionOptions(py)boncardConfig">boncardConfig</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Specify the <code><a href="../Classes/BoncardConfig.html">BoncardConfig</a></code> object here. This can be used to configure
+how the <code><a href="../Enums/PaymentMethodType.html#/c:@M@Datatrans@E@DTPaymentMethodType@DTPaymentMethodTypeBoncard">PaymentMethodType.Boncard</a></code> payment method type
+should be displayed in the SDK. If not specified, a default value will be used.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">boncardConfig</span><span class="p">:</span> <span class="kt"><a href="../Classes/BoncardConfig.html">BoncardConfig</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Datatrans@objc(cs)DTTransactionOptions(py)cardLabelType"></a>
+                    <a name="//apple_ref/swift/Property/cardLabelType" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTTransactionOptions(py)cardLabelType">cardLabelType</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Use this setting to choose which label to display for the card option
+in the payment method selection: &ldquo;Credit card&rdquo;, &ldquo;Debit card&rdquo;, or &ldquo;Credit or debit card&rdquo;.
+The latter is used by default.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">cardLabelType</span><span class="p">:</span> <span class="kt"><a href="../Enums/CardLabelType.html">CardLabelType</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Datatrans@objc(cs)DTTransactionOptions(py)customKlarnaPaymentMethodName"></a>
+                    <a name="//apple_ref/swift/Property/customKlarnaPaymentMethodName" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTTransactionOptions(py)customKlarnaPaymentMethodName">customKlarnaPaymentMethodName</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Use this to change the name of the Klarna payment method, to
+e.g. &ldquo;Lastschrift&rdquo;.</p>
+
+<p>If not specified, the name is &ldquo;Klarna&rdquo;.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">customKlarnaPaymentMethodName</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>

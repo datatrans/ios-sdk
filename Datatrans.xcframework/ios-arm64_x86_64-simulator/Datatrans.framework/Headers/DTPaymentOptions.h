@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @class DTApplePayConfig;
+@class DTBoncardConfig;
 @class DTByjunoPaymentInfo;
+@class DTKlarnaPaymentInfo;
 @class DTSwissBillingPaymentInfo;
 @class DTSwissPassPaymentInfo;
 @class DTCustomer;
@@ -21,14 +23,18 @@
 @property (nullable, nonatomic, copy) NSString* easypayTitle;
 @property (nullable, nonatomic, copy) NSString* easypayDescription;
 @property (nullable, nonatomic, copy) NSString* easypayPaymentInfo;
+@property (nonatomic, assign) NSInteger cardLabelType; // DTCardLabelType, see https://stackoverflow.com/questions/53649526
 @property (nonatomic, assign) BOOL autoSettlement;
 @property (nonatomic, assign) BOOL certificatePinning;
+@property (nullable, nonatomic, copy) NSString* customKlarnaPaymentMethodName;
+@property (nullable, nonatomic, strong) DTKlarnaPaymentInfo* klarnaPaymentInfo;
 @property (nullable, nonatomic, copy) NSDictionary<NSString *, NSString *>* merchantProperties;
 @property (nullable, nonatomic, copy) NSString* language; // ISO 639-1 code (also supports ISO 3166-1 alpha-2 code addon as per Apple spec)
 @property (nullable, nonatomic, copy) DTSwissBillingPaymentInfo* swissBillingPaymentInfo;
 @property (nullable, nonatomic, copy) NSString* appCallbackScheme;
 @property (nonatomic, assign) BOOL suppressCriticalErrorDialog;
 @property (nullable, nonatomic, copy) DTApplePayConfig* applePayConfig;
+@property (nullable, nonatomic, copy) DTBoncardConfig* boncardConfig;
 @property (nonatomic, assign) BOOL authenticationOnly;
 @property (nullable, nonatomic, copy) DTByjunoPaymentInfo* byjunoPaymentInfo;
 @property (nullable, nonatomic, copy) DTCustomer* customer;

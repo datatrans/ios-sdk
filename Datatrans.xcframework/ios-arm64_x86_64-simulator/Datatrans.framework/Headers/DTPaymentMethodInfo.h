@@ -44,12 +44,9 @@ typedef enum {
 @property (nonatomic, readonly) NSArray<DTBinRange *>* _Nullable creditCardNumberRanges;
 @property (nonatomic, readonly) NSArray<NSNumber *>* _Nullable creditCardNumberSpaces;
 
-- (nullable NSString *)commonPrefix;
-
 - (void)updateWithOptions:(nonnull DTPaymentOptions *)options;
 - (nullable NSString *)validateOptions:(nonnull DTPaymentOptions *)options isAliasPayment:(BOOL)isAliasPayment;
 
-+ (nullable DTPaymentMethodInfo *)uniqueMethodInMethods:(nonnull NSArray<DTPaymentMethodInfo *> *)methods forNumberStartingWith:(nonnull NSString *)number;
 + (nonnull NSSet<DTPaymentMethodInfo *> *)methodsInMethods:(nonnull NSArray<DTPaymentMethodInfo *> *)methods forNumberStartingWith:(nonnull NSString *)number;
 
 @end

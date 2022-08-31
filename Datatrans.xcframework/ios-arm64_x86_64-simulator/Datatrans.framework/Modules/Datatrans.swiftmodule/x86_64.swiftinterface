@@ -43,6 +43,20 @@ import WebKit
   @objc override public init(type: Datatrans.PaymentMethodType)
   @objc deinit
 }
+@objc(DTBoncardType) public enum BoncardType : Swift.Int, Swift.CaseIterable {
+  case giftCard
+  case boncard
+  case lunchCheck
+  public init?(rawValue: Swift.Int)
+  public typealias AllCases = [Datatrans.BoncardType]
+  public typealias RawValue = Swift.Int
+  public static var allCases: [Datatrans.BoncardType] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(DTSavedReka) @objcMembers public class SavedReka : Datatrans.SavedCard {
   @objc convenience public init(alias: Swift.String, cardExpiryDate: Datatrans.CardExpiryDate, maskedCardNumber: Swift.String?, cardholder: Swift.String?)
   @objc override public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
@@ -58,6 +72,9 @@ import WebKit
 @_inheritsConvenienceInitializers @objc(DTTransactionOptions) @objcMembers public class TransactionOptions : ObjectiveC.NSObject {
   @objc public var appCallbackScheme: Swift.String?
   @objc public var applePayConfig: Datatrans.ApplePayConfig?
+  @objc public var boncardConfig: Datatrans.BoncardConfig?
+  @objc public var cardLabelType: Datatrans.CardLabelType
+  @objc public var customKlarnaPaymentMethodName: Swift.String?
   @objc public var merchantProperties: [Swift.String : Swift.String]?
   @objc public var suppressCriticalErrorDialog: Swift.Bool
   @objc public var testing: Swift.Bool
@@ -74,7 +91,6 @@ import WebKit
   @objc public class func range(start: Swift.String, end: Swift.String) -> Datatrans.BinRange
   @objc public class func prefix(_ prefix: Swift.String) -> Datatrans.BinRange
   @objc public func match(_ number: Swift.String) -> Datatrans.BinRangeMatch?
-  @objc public func commonPrefix(with number: Swift.String) -> Swift.String
   @objc override dynamic public init()
   @objc deinit
 }
@@ -82,6 +98,21 @@ import WebKit
   @objc final public let matchLength: Swift.Int
   @objc final public let complete: Swift.Bool
   @objc override dynamic public init()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc(DTSavedBoncard) @objcMembers public class SavedBoncard : Datatrans.SavedPaymentMethod {
+  @objc final public let boncardType: Datatrans.BoncardType
+  @objc public var maskedCardNumber: Swift.String? {
+    get
+  }
+  @objc public init(alias: Swift.String, maskedCardNumber: Swift.String?, boncardType: Datatrans.BoncardType)
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  override public func encode(to encoder: Swift.Encoder) throws
+  @objc required public init?(coder: Foundation.NSCoder)
+  @objc override public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
+  @objc override public init(type: Datatrans.PaymentMethodType, alias: Swift.String)
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc(DTPCIPTokenizationRequestOptions) @objcMembers public class PCIPTokenizationRequestOptions : ObjectiveC.NSObject {
@@ -120,6 +151,7 @@ import WebKit
   case Boncard
   case Elo
   case Hipercard
+  case Klarna
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
@@ -191,6 +223,13 @@ import WebKit
   @objc override dynamic public init()
   @objc deinit
 }
+@objc(DTBoncardConfig) public class BoncardConfig : ObjectiveC.NSObject, Foundation.NSCopying {
+  public init(boncardTypes: [Datatrans.BoncardType])
+  @objc(initWithBoncardTypes:) convenience public init(boncardTypesObjc: [Foundation.NSNumber])
+  @objc public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
+  @objc override dynamic public init()
+  @objc deinit
+}
 @_hasMissingDesignatedInitializers @objc(DTSavedCard) @objcMembers public class SavedCard : Datatrans.SavedPaymentMethod {
   @objc public var cardExpiryDate: Datatrans.CardExpiryDate? {
     get
@@ -224,6 +263,16 @@ import WebKit
   @objc public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
   @objc override dynamic public init()
   @objc deinit
+}
+@objc(DTCardLabelType) public enum CardLabelType : Swift.Int {
+  case creditOrDebitCard
+  case creditCard
+  case debitCard
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
 }
 @objc(DTPCIPTokenizationRequest) public class PCIPTokenizationRequest : ObjectiveC.NSObject {
   @objc weak public var delegate: Datatrans.PCIPTokenizationRequestDelegate?
@@ -303,6 +352,12 @@ import WebKit
   @objc override public init(type: Datatrans.PaymentMethodType, alias: Swift.String)
   @objc deinit
 }
+extension Datatrans.BoncardType : Swift.Equatable {}
+extension Datatrans.BoncardType : Swift.Hashable {}
+extension Datatrans.BoncardType : Swift.RawRepresentable {}
 extension Datatrans.PaymentMethodType : Swift.Equatable {}
 extension Datatrans.PaymentMethodType : Swift.Hashable {}
 extension Datatrans.PaymentMethodType : Swift.RawRepresentable {}
+extension Datatrans.CardLabelType : Swift.Equatable {}
+extension Datatrans.CardLabelType : Swift.Hashable {}
+extension Datatrans.CardLabelType : Swift.RawRepresentable {}

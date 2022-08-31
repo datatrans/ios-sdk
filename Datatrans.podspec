@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name                 = "Datatrans"
-  spec.version              = "2.1.0"
+  spec.version              = "2.2.0"
   spec.summary              = "Datatrans iOS SDK - Accept payments on your iOS apps"
   spec.description          = <<-DESC
     Accept payments on your iOS apps: Our mobile SDKs support your entire payment and
@@ -17,5 +17,5 @@ Pod::Spec.new do |spec|
   spec.platform             = :ios, "11.0"
 
   spec.source               = { :git => "https://github.com/datatrans/ios-sdk.git", :tag => "#{spec.version}" }
-  spec.vendored_frameworks  = "Datatrans.xcframework", "DTCardScanner.xcframework", "PPRiskMagnes.xcframework"
+  spec.vendored_frameworks  = "Datatrans.xcframework", "DTCardScanner.xcframework", "DTKlarna.xcframework", "KlarnaMobileSDK.xcframework", "PPRiskMagnes.xcframework"
 end

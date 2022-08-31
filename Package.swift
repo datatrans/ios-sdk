@@ -14,6 +14,10 @@ let package = Package(
             targets: ["DTCardScanner"]
         ),
         .library(
+            name: "KlarnaMobileSDK",
+            targets: ["DTKlarna", "KlarnaMobileSDK"]
+        ),
+        .library(
             name: "PPRiskMagnes",
             targets: ["PPRiskMagnes"]
         )
@@ -26,6 +30,14 @@ let package = Package(
         .binaryTarget(
             name: "DTCardScanner",
             path: "DTCardScanner.xcframework"
+        ),
+        .binaryTarget(
+            name: "DTKlarna",
+            path: "DTKlarna.xcframework"
+        ),
+        .binaryTarget(
+            name: "KlarnaMobileSDK",
+            path: "KlarnaMobileSDK.xcframework"
         ),
         .binaryTarget(
             name: "PPRiskMagnes",

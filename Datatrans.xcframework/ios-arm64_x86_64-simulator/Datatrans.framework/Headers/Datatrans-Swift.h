@@ -262,17 +262,18 @@ SWIFT_CLASS_NAMED("ApplePayConfig")
 
 @class DTBinRangeMatch;
 
+/// :nodoc:
 SWIFT_CLASS_NAMED("BinRange")
 @interface DTBinRange : NSObject
 + (DTBinRange * _Nonnull)rangeWithStart:(NSString * _Nonnull)start end:(NSString * _Nonnull)end SWIFT_WARN_UNUSED_RESULT;
 + (DTBinRange * _Nonnull)prefix:(NSString * _Nonnull)prefix SWIFT_WARN_UNUSED_RESULT;
 - (DTBinRangeMatch * _Nullable)match:(NSString * _Nonnull)number SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nonnull)commonPrefixWith:(NSString * _Nonnull)number SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 
+/// :nodoc:
 SWIFT_CLASS_NAMED("BinRangeMatch")
 @interface DTBinRangeMatch : NSObject
 @property (nonatomic, readonly) NSInteger matchLength;
@@ -280,6 +281,37 @@ SWIFT_CLASS_NAMED("BinRangeMatch")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
+
+/// Configuration object for Boncard transactions.
+SWIFT_CLASS_NAMED("BoncardConfig")
+@interface DTBoncardConfig : NSObject <NSCopying>
+/// Creates a new Boncard configuration object.
+/// This initializer is for use from Objective-C only. Instead of <code>[BoncardType]</code>, it
+/// takes <code>[NSNumber]</code> containing <code>rawValue</code>s of <code>BoncardType</code>.
+/// Example:
+/// <code>[[DTBoncardConfig alloc] initWithBoncardTypes:@[@(DTBoncardTypeGiftCard), @(DTBoncardTypeBoncard)]];</code>
+/// \param boncardTypesObjc The types of Boncard (and their order) to
+/// display in the payment method selection for the <code>PaymentMethodType.Boncard</code>
+/// payment method type.
+///
+- (nonnull instancetype)initWithBoncardTypes:(NSArray<NSNumber *> * _Nonnull)boncardTypesObjc;
+/// :nodoc:
+- (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+/// The different types of Boncard, for determining how the <code>PaymentMethodType.Boncard</code>
+/// payment method type is displayed in the payment selection.
+typedef SWIFT_ENUM_NAMED(NSInteger, DTBoncardType, "BoncardType", open) {
+/// Displays as “Gift card” with a generic gift card icon
+  DTBoncardTypeGiftCard = 0,
+/// Displays as “Boncard”
+  DTBoncardTypeBoncard = 1,
+/// Displays as “Lunch-Check” with the Lunch-Check logo
+  DTBoncardTypeLunchCheck = 2,
+};
 
 enum DTPaymentMethodType : NSInteger;
 @class NSCoder;
@@ -361,6 +393,17 @@ SWIFT_CLASS_NAMED("CardExpiryDate")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
+/// Use this to choose which label to display for the card option
+/// in the payment method selection.
+typedef SWIFT_ENUM_NAMED(NSInteger, DTCardLabelType, "CardLabelType", open) {
+/// Displays as “Credit or debit card”.
+  DTCardLabelTypeCreditOrDebitCard = 0,
+/// Displays as “Credit card”.
+  DTCardLabelTypeCreditCard = 1,
+/// Displays as “Debit card”.
+  DTCardLabelTypeDebitCard = 2,
+};
 
 
 
@@ -509,7 +552,7 @@ typedef SWIFT_ENUM_NAMED(NSInteger, DTPaymentMethodType, "PaymentMethodType", op
   DTPaymentMethodTypePostFinanceEFinance = 9,
 /// PayPal payment method
   DTPaymentMethodTypePayPal = 10,
-/// Easypay payment method
+/// Swisscom Pay payment method
   DTPaymentMethodTypeEasypay = 11,
 /// SEPA (ELV) payment method
   DTPaymentMethodTypeSEPA = 12,
@@ -529,12 +572,14 @@ typedef SWIFT_ENUM_NAMED(NSInteger, DTPaymentMethodType, "PaymentMethodType", op
   DTPaymentMethodTypePowerpay = 19,
 /// Paysafecard payment method
   DTPaymentMethodTypePaysafecard = 20,
-/// Boncard (Lunch-Check) payment method
+/// Gift card / Boncard / Lunch-Check payment method
   DTPaymentMethodTypeBoncard = 21,
 /// Elo card payment method
   DTPaymentMethodTypeElo = 22,
 /// Hipercard payment method
   DTPaymentMethodTypeHipercard = 23,
+/// Klarna payment method
+  DTPaymentMethodTypeKlarna = 24,
 };
 
 
@@ -572,12 +617,12 @@ SWIFT_CLASS_NAMED("PaymentMethodTypeMapper")
 /// Please refer to this list to see if you need to use one of the subclasses for your payments:
 /// <ul>
 ///   <li>
-///     Easy payment methods: Swisscom Easypay, SEPA (ELV), Twint,
+///     Easy payment methods: Swisscom Pay, SEPA (ELV), Twint,
 ///     Apple Pay, Byjuno, SwissPass, Powerpay Invoice
 ///   </li>
 ///   <li>
 ///     Complex payment methods (requiring a <code>SavedPaymentMethod</code> subclass): Card payments,
-///     PayPal, PostFinance, Reka
+///     PayPal, PostFinance, Reka, Boncard
 ///   </li>
 /// </ul>
 /// Please refer to the Datatrans documentation to see if you can register a payment method
@@ -635,6 +680,38 @@ SWIFT_CLASS_NAMED("SavedPaymentMethod")
 /// :nodoc:
 - (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type SWIFT_UNAVAILABLE;
+@end
+
+
+/// This class contains saved Boncard payment method details.
+/// Just like any other <code>SavedPaymentMethod</code> subclass, this class can be used
+/// to finalize a payment without user interaction or to display a selection of saved
+/// payment methods to the user for fast checkouts.
+/// A <code>SavedBoncard</code> can be created by successfully completing a Boncard payment or
+/// with a dedicated registration.
+SWIFT_CLASS_NAMED("SavedBoncard")
+@interface DTSavedBoncard : DTSavedPaymentMethod
+/// The specific subtype of card, which affects the title and logo that is displayed for the card.
+@property (nonatomic, readonly) enum DTBoncardType boncardType;
+/// The masked card number you can use to display that specific card in your app.
+@property (nonatomic, readonly, copy) NSString * _Nullable maskedCardNumber;
+/// This init method has to be used to initialize a saved Boncard payment method.
+/// \param alias Alias for a Boncard
+///
+/// \param maskedCardNumber The masked card number you can use to display that
+/// specific card in your app.
+///
+/// \param boncardType The specific subtype of card, which affects the title and logo
+/// that is displayed for the card.
+///
+- (nonnull instancetype)initWithAlias:(NSString * _Nonnull)alias maskedCardNumber:(NSString * _Nullable)maskedCardNumber boncardType:(enum DTBoncardType)boncardType OBJC_DESIGNATED_INITIALIZER;
+/// :nodoc:
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
+/// :nodoc:
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+/// :nodoc:
+- (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type alias:(NSString * _Nonnull)alias SWIFT_UNAVAILABLE;
 @end
 
 
@@ -974,6 +1051,18 @@ SWIFT_CLASS_NAMED("TransactionOptions")
 /// Specify the <code>ApplePayConfig</code> object here. This is mandatory
 /// for Apple Pay transactions.
 @property (nonatomic, strong) DTApplePayConfig * _Nullable applePayConfig;
+/// Specify the <code>BoncardConfig</code> object here. This can be used to configure
+/// how the <code>PaymentMethodType.Boncard</code> payment method type
+/// should be displayed in the SDK. If not specified, a default value will be used.
+@property (nonatomic, strong) DTBoncardConfig * _Nullable boncardConfig;
+/// Use this setting to choose which label to display for the card option
+/// in the payment method selection: “Credit card”, “Debit card”, or “Credit or debit card”.
+/// The latter is used by default.
+@property (nonatomic) enum DTCardLabelType cardLabelType;
+/// Use this to change the name of the Klarna payment method, to
+/// e.g. “Lastschrift”.
+/// If not specified, the name is “Klarna”.
+@property (nonatomic, copy) NSString * _Nullable customKlarnaPaymentMethodName;
 /// :nodoc:
 @property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nullable merchantProperties;
 /// Use this setting to display or hide critical and transaction errors.
@@ -1285,17 +1374,18 @@ SWIFT_CLASS_NAMED("ApplePayConfig")
 
 @class DTBinRangeMatch;
 
+/// :nodoc:
 SWIFT_CLASS_NAMED("BinRange")
 @interface DTBinRange : NSObject
 + (DTBinRange * _Nonnull)rangeWithStart:(NSString * _Nonnull)start end:(NSString * _Nonnull)end SWIFT_WARN_UNUSED_RESULT;
 + (DTBinRange * _Nonnull)prefix:(NSString * _Nonnull)prefix SWIFT_WARN_UNUSED_RESULT;
 - (DTBinRangeMatch * _Nullable)match:(NSString * _Nonnull)number SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nonnull)commonPrefixWith:(NSString * _Nonnull)number SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 
+/// :nodoc:
 SWIFT_CLASS_NAMED("BinRangeMatch")
 @interface DTBinRangeMatch : NSObject
 @property (nonatomic, readonly) NSInteger matchLength;
@@ -1303,6 +1393,37 @@ SWIFT_CLASS_NAMED("BinRangeMatch")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
+
+/// Configuration object for Boncard transactions.
+SWIFT_CLASS_NAMED("BoncardConfig")
+@interface DTBoncardConfig : NSObject <NSCopying>
+/// Creates a new Boncard configuration object.
+/// This initializer is for use from Objective-C only. Instead of <code>[BoncardType]</code>, it
+/// takes <code>[NSNumber]</code> containing <code>rawValue</code>s of <code>BoncardType</code>.
+/// Example:
+/// <code>[[DTBoncardConfig alloc] initWithBoncardTypes:@[@(DTBoncardTypeGiftCard), @(DTBoncardTypeBoncard)]];</code>
+/// \param boncardTypesObjc The types of Boncard (and their order) to
+/// display in the payment method selection for the <code>PaymentMethodType.Boncard</code>
+/// payment method type.
+///
+- (nonnull instancetype)initWithBoncardTypes:(NSArray<NSNumber *> * _Nonnull)boncardTypesObjc;
+/// :nodoc:
+- (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+/// The different types of Boncard, for determining how the <code>PaymentMethodType.Boncard</code>
+/// payment method type is displayed in the payment selection.
+typedef SWIFT_ENUM_NAMED(NSInteger, DTBoncardType, "BoncardType", open) {
+/// Displays as “Gift card” with a generic gift card icon
+  DTBoncardTypeGiftCard = 0,
+/// Displays as “Boncard”
+  DTBoncardTypeBoncard = 1,
+/// Displays as “Lunch-Check” with the Lunch-Check logo
+  DTBoncardTypeLunchCheck = 2,
+};
 
 enum DTPaymentMethodType : NSInteger;
 @class NSCoder;
@@ -1384,6 +1505,17 @@ SWIFT_CLASS_NAMED("CardExpiryDate")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
+/// Use this to choose which label to display for the card option
+/// in the payment method selection.
+typedef SWIFT_ENUM_NAMED(NSInteger, DTCardLabelType, "CardLabelType", open) {
+/// Displays as “Credit or debit card”.
+  DTCardLabelTypeCreditOrDebitCard = 0,
+/// Displays as “Credit card”.
+  DTCardLabelTypeCreditCard = 1,
+/// Displays as “Debit card”.
+  DTCardLabelTypeDebitCard = 2,
+};
 
 
 
@@ -1532,7 +1664,7 @@ typedef SWIFT_ENUM_NAMED(NSInteger, DTPaymentMethodType, "PaymentMethodType", op
   DTPaymentMethodTypePostFinanceEFinance = 9,
 /// PayPal payment method
   DTPaymentMethodTypePayPal = 10,
-/// Easypay payment method
+/// Swisscom Pay payment method
   DTPaymentMethodTypeEasypay = 11,
 /// SEPA (ELV) payment method
   DTPaymentMethodTypeSEPA = 12,
@@ -1552,12 +1684,14 @@ typedef SWIFT_ENUM_NAMED(NSInteger, DTPaymentMethodType, "PaymentMethodType", op
   DTPaymentMethodTypePowerpay = 19,
 /// Paysafecard payment method
   DTPaymentMethodTypePaysafecard = 20,
-/// Boncard (Lunch-Check) payment method
+/// Gift card / Boncard / Lunch-Check payment method
   DTPaymentMethodTypeBoncard = 21,
 /// Elo card payment method
   DTPaymentMethodTypeElo = 22,
 /// Hipercard payment method
   DTPaymentMethodTypeHipercard = 23,
+/// Klarna payment method
+  DTPaymentMethodTypeKlarna = 24,
 };
 
 
@@ -1595,12 +1729,12 @@ SWIFT_CLASS_NAMED("PaymentMethodTypeMapper")
 /// Please refer to this list to see if you need to use one of the subclasses for your payments:
 /// <ul>
 ///   <li>
-///     Easy payment methods: Swisscom Easypay, SEPA (ELV), Twint,
+///     Easy payment methods: Swisscom Pay, SEPA (ELV), Twint,
 ///     Apple Pay, Byjuno, SwissPass, Powerpay Invoice
 ///   </li>
 ///   <li>
 ///     Complex payment methods (requiring a <code>SavedPaymentMethod</code> subclass): Card payments,
-///     PayPal, PostFinance, Reka
+///     PayPal, PostFinance, Reka, Boncard
 ///   </li>
 /// </ul>
 /// Please refer to the Datatrans documentation to see if you can register a payment method
@@ -1658,6 +1792,38 @@ SWIFT_CLASS_NAMED("SavedPaymentMethod")
 /// :nodoc:
 - (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type SWIFT_UNAVAILABLE;
+@end
+
+
+/// This class contains saved Boncard payment method details.
+/// Just like any other <code>SavedPaymentMethod</code> subclass, this class can be used
+/// to finalize a payment without user interaction or to display a selection of saved
+/// payment methods to the user for fast checkouts.
+/// A <code>SavedBoncard</code> can be created by successfully completing a Boncard payment or
+/// with a dedicated registration.
+SWIFT_CLASS_NAMED("SavedBoncard")
+@interface DTSavedBoncard : DTSavedPaymentMethod
+/// The specific subtype of card, which affects the title and logo that is displayed for the card.
+@property (nonatomic, readonly) enum DTBoncardType boncardType;
+/// The masked card number you can use to display that specific card in your app.
+@property (nonatomic, readonly, copy) NSString * _Nullable maskedCardNumber;
+/// This init method has to be used to initialize a saved Boncard payment method.
+/// \param alias Alias for a Boncard
+///
+/// \param maskedCardNumber The masked card number you can use to display that
+/// specific card in your app.
+///
+/// \param boncardType The specific subtype of card, which affects the title and logo
+/// that is displayed for the card.
+///
+- (nonnull instancetype)initWithAlias:(NSString * _Nonnull)alias maskedCardNumber:(NSString * _Nullable)maskedCardNumber boncardType:(enum DTBoncardType)boncardType OBJC_DESIGNATED_INITIALIZER;
+/// :nodoc:
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
+/// :nodoc:
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+/// :nodoc:
+- (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type alias:(NSString * _Nonnull)alias SWIFT_UNAVAILABLE;
 @end
 
 
@@ -1997,6 +2163,18 @@ SWIFT_CLASS_NAMED("TransactionOptions")
 /// Specify the <code>ApplePayConfig</code> object here. This is mandatory
 /// for Apple Pay transactions.
 @property (nonatomic, strong) DTApplePayConfig * _Nullable applePayConfig;
+/// Specify the <code>BoncardConfig</code> object here. This can be used to configure
+/// how the <code>PaymentMethodType.Boncard</code> payment method type
+/// should be displayed in the SDK. If not specified, a default value will be used.
+@property (nonatomic, strong) DTBoncardConfig * _Nullable boncardConfig;
+/// Use this setting to choose which label to display for the card option
+/// in the payment method selection: “Credit card”, “Debit card”, or “Credit or debit card”.
+/// The latter is used by default.
+@property (nonatomic) enum DTCardLabelType cardLabelType;
+/// Use this to change the name of the Klarna payment method, to
+/// e.g. “Lastschrift”.
+/// If not specified, the name is “Klarna”.
+@property (nonatomic, copy) NSString * _Nullable customKlarnaPaymentMethodName;
 /// :nodoc:
 @property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nullable merchantProperties;
 /// Use this setting to display or hide critical and transaction errors.
