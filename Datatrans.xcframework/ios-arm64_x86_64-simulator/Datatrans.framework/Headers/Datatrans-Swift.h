@@ -407,6 +407,36 @@ typedef SWIFT_ENUM_NAMED(NSInteger, DTCardLabelType, "CardLabelType", open) {
 
 
 
+
+/// This class represents a (credit or debit) card which was used for PCI Proxy tokenization.
+SWIFT_CLASS_NAMED("PCIPCardInfo")
+@interface DTPCIPCardInfo : NSObject
+/// The brand of the card, e.g. “VISA”
+@property (nonatomic, readonly, copy) NSString * _Nullable brand;
+/// The country of the card, e.g. “US”
+@property (nonatomic, readonly, copy) NSString * _Nullable countryCode;
+/// The issuer of the card, e.g. “U.S. REGION”
+@property (nonatomic, readonly, copy) NSString * _Nullable issuer;
+/// The masked card number, e.g. “489537xxxxxx6287”
+@property (nonatomic, readonly, copy) NSString * _Nonnull maskedCardNumber;
+/// The type of the card, e.g. “debit”
+@property (nonatomic, readonly, copy) NSString * _Nullable type;
+/// The usage of the card, e.g. “consumer”
+@property (nonatomic, readonly, copy) NSString * _Nullable usage;
+/// :nodoc:
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// This class includes the error message of a tokenization request.
+SWIFT_CLASS_NAMED("PCIPTokenizationError")
+@interface DTPCIPTokenizationError : NSError
+- (nonnull instancetype)initWithDomain:(NSString * _Nonnull)domain code:(NSInteger)code userInfo:(NSDictionary<NSString *, id> * _Nullable)dict OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @protocol DTPCIPTokenizationRequestDelegate;
 @class DTPCIPTokenizationRequestOptions;
 @class DTThemeConfiguration;
@@ -459,7 +489,7 @@ SWIFT_CLASS_NAMED("PCIPTokenizationRequest")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class DTPCIPTokenizationRequestError;
+@class DTPCIPTokenizationSuccess;
 
 /// Implement PCIPTokenizationRequestDelegate to be notified when a tokenization
 /// request ends. PCIPTokenizationRequestDelegate will notify you about the success,
@@ -471,9 +501,10 @@ SWIFT_PROTOCOL_NAMED("PCIPTokenizationRequestDelegate")
 /// \param tokenizationRequest The object containing the information
 /// of the completed tokenization request.
 ///
-/// \param tokenizationId The resulting tokenizationId.
+/// \param result The result object containing the tokenization ID and
+/// other useful information, e.g. about the card.
 ///
-- (void)tokenizationRequestDidFinish:(DTPCIPTokenizationRequest * _Nonnull)tokenizationRequest tokenizationId:(NSString * _Nonnull)tokenizationId;
+- (void)tokenizationRequestDidFinish:(DTPCIPTokenizationRequest * _Nonnull)tokenizationRequest result:(DTPCIPTokenizationSuccess * _Nonnull)result;
 /// This is called after a tokenization request fails or encounters an error.
 /// Keep in mind that the SDK shows the error to the user before
 /// this is invoked. Therefore, this callback can be used to cancel
@@ -486,7 +517,7 @@ SWIFT_PROTOCOL_NAMED("PCIPTokenizationRequestDelegate")
 ///
 /// \param error The error that occurred.
 ///
-- (void)tokenizationRequestDidFail:(DTPCIPTokenizationRequest * _Nonnull)tokenizationRequest error:(DTPCIPTokenizationRequestError * _Nonnull)error;
+- (void)tokenizationRequestDidFail:(DTPCIPTokenizationRequest * _Nonnull)tokenizationRequest error:(DTPCIPTokenizationError * _Nonnull)error;
 @optional
 /// This is called after a tokenization request has been cancelled. This callback
 /// can be used to cancel any on-going process involving the tokenization request.
@@ -494,14 +525,6 @@ SWIFT_PROTOCOL_NAMED("PCIPTokenizationRequestDelegate")
 /// information of the cancelled tokenization request.
 ///
 - (void)tokenizationRequestDidCancel:(DTPCIPTokenizationRequest * _Nonnull)tokenizationRequest;
-@end
-
-
-/// This class includes the error message of a tokenization request.
-SWIFT_CLASS_NAMED("PCIPTokenizationRequestError")
-@interface DTPCIPTokenizationRequestError : NSError
-- (nonnull instancetype)initWithDomain:(NSString * _Nonnull)domain code:(NSInteger)code userInfo:(NSDictionary<NSString *, id> * _Nullable)dict OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -526,6 +549,22 @@ SWIFT_CLASS_NAMED("PCIPTokenizationRequestOptions")
 @property (nonatomic) BOOL useCertificatePinning;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
+
+/// This class aggregates the results of a successful PCI Proxy tokenization request.
+SWIFT_CLASS_NAMED("PCIPTokenizationSuccess")
+@interface DTPCIPTokenizationSuccess : NSObject
+/// Object representing the (credit or debit) card which was used
+/// for this PCI Proxy tokenization.
+@property (nonatomic, readonly, strong) DTPCIPCardInfo * _Nonnull cardInfo;
+/// The payment method used for this PCI Proxy tokenization.
+@property (nonatomic, readonly) enum DTPaymentMethodType paymentMethodType;
+/// The resulting tokenizationId.
+@property (nonatomic, readonly, copy) NSString * _Nonnull tokenizationId;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 
 
 /// The payment method used during the transaction.
@@ -1519,6 +1558,36 @@ typedef SWIFT_ENUM_NAMED(NSInteger, DTCardLabelType, "CardLabelType", open) {
 
 
 
+
+/// This class represents a (credit or debit) card which was used for PCI Proxy tokenization.
+SWIFT_CLASS_NAMED("PCIPCardInfo")
+@interface DTPCIPCardInfo : NSObject
+/// The brand of the card, e.g. “VISA”
+@property (nonatomic, readonly, copy) NSString * _Nullable brand;
+/// The country of the card, e.g. “US”
+@property (nonatomic, readonly, copy) NSString * _Nullable countryCode;
+/// The issuer of the card, e.g. “U.S. REGION”
+@property (nonatomic, readonly, copy) NSString * _Nullable issuer;
+/// The masked card number, e.g. “489537xxxxxx6287”
+@property (nonatomic, readonly, copy) NSString * _Nonnull maskedCardNumber;
+/// The type of the card, e.g. “debit”
+@property (nonatomic, readonly, copy) NSString * _Nullable type;
+/// The usage of the card, e.g. “consumer”
+@property (nonatomic, readonly, copy) NSString * _Nullable usage;
+/// :nodoc:
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// This class includes the error message of a tokenization request.
+SWIFT_CLASS_NAMED("PCIPTokenizationError")
+@interface DTPCIPTokenizationError : NSError
+- (nonnull instancetype)initWithDomain:(NSString * _Nonnull)domain code:(NSInteger)code userInfo:(NSDictionary<NSString *, id> * _Nullable)dict OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @protocol DTPCIPTokenizationRequestDelegate;
 @class DTPCIPTokenizationRequestOptions;
 @class DTThemeConfiguration;
@@ -1571,7 +1640,7 @@ SWIFT_CLASS_NAMED("PCIPTokenizationRequest")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class DTPCIPTokenizationRequestError;
+@class DTPCIPTokenizationSuccess;
 
 /// Implement PCIPTokenizationRequestDelegate to be notified when a tokenization
 /// request ends. PCIPTokenizationRequestDelegate will notify you about the success,
@@ -1583,9 +1652,10 @@ SWIFT_PROTOCOL_NAMED("PCIPTokenizationRequestDelegate")
 /// \param tokenizationRequest The object containing the information
 /// of the completed tokenization request.
 ///
-/// \param tokenizationId The resulting tokenizationId.
+/// \param result The result object containing the tokenization ID and
+/// other useful information, e.g. about the card.
 ///
-- (void)tokenizationRequestDidFinish:(DTPCIPTokenizationRequest * _Nonnull)tokenizationRequest tokenizationId:(NSString * _Nonnull)tokenizationId;
+- (void)tokenizationRequestDidFinish:(DTPCIPTokenizationRequest * _Nonnull)tokenizationRequest result:(DTPCIPTokenizationSuccess * _Nonnull)result;
 /// This is called after a tokenization request fails or encounters an error.
 /// Keep in mind that the SDK shows the error to the user before
 /// this is invoked. Therefore, this callback can be used to cancel
@@ -1598,7 +1668,7 @@ SWIFT_PROTOCOL_NAMED("PCIPTokenizationRequestDelegate")
 ///
 /// \param error The error that occurred.
 ///
-- (void)tokenizationRequestDidFail:(DTPCIPTokenizationRequest * _Nonnull)tokenizationRequest error:(DTPCIPTokenizationRequestError * _Nonnull)error;
+- (void)tokenizationRequestDidFail:(DTPCIPTokenizationRequest * _Nonnull)tokenizationRequest error:(DTPCIPTokenizationError * _Nonnull)error;
 @optional
 /// This is called after a tokenization request has been cancelled. This callback
 /// can be used to cancel any on-going process involving the tokenization request.
@@ -1606,14 +1676,6 @@ SWIFT_PROTOCOL_NAMED("PCIPTokenizationRequestDelegate")
 /// information of the cancelled tokenization request.
 ///
 - (void)tokenizationRequestDidCancel:(DTPCIPTokenizationRequest * _Nonnull)tokenizationRequest;
-@end
-
-
-/// This class includes the error message of a tokenization request.
-SWIFT_CLASS_NAMED("PCIPTokenizationRequestError")
-@interface DTPCIPTokenizationRequestError : NSError
-- (nonnull instancetype)initWithDomain:(NSString * _Nonnull)domain code:(NSInteger)code userInfo:(NSDictionary<NSString *, id> * _Nullable)dict OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -1638,6 +1700,22 @@ SWIFT_CLASS_NAMED("PCIPTokenizationRequestOptions")
 @property (nonatomic) BOOL useCertificatePinning;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
+
+/// This class aggregates the results of a successful PCI Proxy tokenization request.
+SWIFT_CLASS_NAMED("PCIPTokenizationSuccess")
+@interface DTPCIPTokenizationSuccess : NSObject
+/// Object representing the (credit or debit) card which was used
+/// for this PCI Proxy tokenization.
+@property (nonatomic, readonly, strong) DTPCIPCardInfo * _Nonnull cardInfo;
+/// The payment method used for this PCI Proxy tokenization.
+@property (nonatomic, readonly) enum DTPaymentMethodType paymentMethodType;
+/// The resulting tokenizationId.
+@property (nonatomic, readonly, copy) NSString * _Nonnull tokenizationId;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 
 
 /// The payment method used during the transaction.

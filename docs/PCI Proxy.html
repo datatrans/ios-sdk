@@ -17,7 +17,7 @@
     <a title="PCI Proxy  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">Datatrans 2.2.0 Docs</a></p>
+        <p><a href="index.html">Datatrans 2.3.0 Docs</a></p>
         <p class="header-right"><a href="https://github.com/datatrans/ios-sdk"><img src="img/gh.png" alt="GitHub"/>View on GitHub</a></p>
         <div class="header-right">
           <form role="search" action="search.json">
@@ -121,6 +121,12 @@
             <a href="PCI%20Proxy.html">PCI Proxy</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="Classes/PCIPCardInfo.html">PCIPCardInfo</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="PCI%20Proxy.html#/c:@M@Datatrans@objc(cs)DTPCIPTokenizationError">PCIPTokenizationError</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Classes/PCIPTokenizationRequest.html">PCIPTokenizationRequest</a>
               </li>
               <li class="nav-group-task">
@@ -130,7 +136,7 @@
                 <a href="Protocols/PCIPTokenizationRequestDelegate.html">PCIPTokenizationRequestDelegate</a>
               </li>
               <li class="nav-group-task">
-                <a href="PCI%20Proxy.html#/c:@M@Datatrans@objc(cs)DTPCIPTokenizationRequestError">PCIPTokenizationRequestError</a>
+                <a href="Classes/PCIPTokenizationSuccess.html">PCIPTokenizationSuccess</a>
               </li>
             </ul>
           </li>
@@ -149,6 +155,64 @@
           <section class="section task-group-section">
             <div class="task-group">
               <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Datatrans@objc(cs)DTPCIPCardInfo"></a>
+                    <a name="//apple_ref/swift/Class/PCIPCardInfo" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTPCIPCardInfo">PCIPCardInfo</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This class represents a (credit or debit) card which was used for PCI Proxy tokenization.</p>
+
+                        <a href="Classes/PCIPCardInfo.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc(DTPCIPCardInfo)</span>
+<span class="kd">@objcMembers</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">PCIPCardInfo</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Datatrans@objc(cs)DTPCIPTokenizationError"></a>
+                    <a name="//apple_ref/swift/Class/PCIPTokenizationError" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTPCIPTokenizationError">PCIPTokenizationError</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This class includes the error message of a tokenization request.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc(DTPCIPTokenizationError)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">PCIPTokenizationError</span> <span class="p">:</span> <span class="kt">NSError</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
                 <li class="item">
                   <div>
                     <code>
@@ -252,9 +316,9 @@ error or cancel state of the processed tokenization request.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@Datatrans@objc(cs)DTPCIPTokenizationRequestError"></a>
-                    <a name="//apple_ref/swift/Class/PCIPTokenizationRequestError" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTPCIPTokenizationRequestError">PCIPTokenizationRequestError</a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTPCIPTokenizationSuccess"></a>
+                    <a name="//apple_ref/swift/Class/PCIPTokenizationSuccess" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTPCIPTokenizationSuccess">PCIPTokenizationSuccess</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -262,15 +326,17 @@ error or cancel state of the processed tokenization request.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This class includes the error message of a tokenization request.</p>
+                        <p>This class aggregates the results of a successful PCI Proxy tokenization request.</p>
 
+                        <a href="Classes/PCIPTokenizationSuccess.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@objc(DTPCIPTokenizationRequestError)</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="kt">PCIPTokenizationRequestError</span> <span class="p">:</span> <span class="kt">NSError</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc(DTPCIPTokenizationSuccess)</span>
+<span class="kd">@objcMembers</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">PCIPTokenizationSuccess</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
 
                         </div>
                       </div>

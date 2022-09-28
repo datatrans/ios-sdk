@@ -28,6 +28,19 @@ import WebKit
   @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
+@_hasMissingDesignatedInitializers @objc(DTPCIPCardInfo) @objcMembers public class PCIPCardInfo : ObjectiveC.NSObject {
+  @objc final public let brand: Swift.String?
+  @objc final public let countryCode: Swift.String?
+  @objc final public let issuer: Swift.String?
+  @objc final public let maskedCardNumber: Swift.String
+  @objc final public let type: Swift.String?
+  @objc final public let usage: Swift.String?
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+}
 @objc(DTTransactionDelegate) public protocol TransactionDelegate {
   @objc func transactionDidFinish(_ transaction: Datatrans.Transaction, result: Datatrans.TransactionSuccess)
   @objc func transactionDidFail(_ transaction: Datatrans.Transaction, error: Datatrans.TransactionError)
@@ -64,7 +77,7 @@ import WebKit
   @objc required public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(DTPCIPTokenizationRequestError) public class PCIPTokenizationRequestError : Foundation.NSError {
+@_inheritsConvenienceInitializers @objc(DTPCIPTokenizationError) public class PCIPTokenizationError : Foundation.NSError {
   @objc override dynamic public init(domain: Swift.String, code: Swift.Int, userInfo dict: [Swift.String : Any]? = nil)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
@@ -83,8 +96,8 @@ import WebKit
   @objc deinit
 }
 @objc(DTPCIPTokenizationRequestDelegate) public protocol PCIPTokenizationRequestDelegate {
-  @objc func tokenizationRequestDidFinish(_ tokenizationRequest: Datatrans.PCIPTokenizationRequest, tokenizationId: Swift.String)
-  @objc func tokenizationRequestDidFail(_ tokenizationRequest: Datatrans.PCIPTokenizationRequest, error: Datatrans.PCIPTokenizationRequestError)
+  @objc func tokenizationRequestDidFinish(_ tokenizationRequest: Datatrans.PCIPTokenizationRequest, result: Datatrans.PCIPTokenizationSuccess)
+  @objc func tokenizationRequestDidFail(_ tokenizationRequest: Datatrans.PCIPTokenizationRequest, error: Datatrans.PCIPTokenizationError)
   @objc optional func tokenizationRequestDidCancel(_ tokenizationRequest: Datatrans.PCIPTokenizationRequest)
 }
 @_hasMissingDesignatedInitializers @objc(DTBinRange) public class BinRange : ObjectiveC.NSObject {
@@ -210,16 +223,17 @@ import WebKit
   @objc override dynamic public init()
   @objc deinit
 }
+@_hasMissingDesignatedInitializers @objc(DTPCIPTokenizationSuccess) @objcMembers public class PCIPTokenizationSuccess : ObjectiveC.NSObject {
+  @objc final public let cardInfo: Datatrans.PCIPCardInfo
+  @objc final public let paymentMethodType: Datatrans.PaymentMethodType
+  @objc final public let tokenizationId: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
 @_hasMissingDesignatedInitializers @objc(DTTransactionSuccess) @objcMembers public class TransactionSuccess : ObjectiveC.NSObject {
-  @objc public var paymentMethodType: Datatrans.PaymentMethodType {
-    @objc get
-  }
-  @objc public var savedPaymentMethod: Datatrans.SavedPaymentMethod? {
-    @objc get
-  }
-  @objc public var transactionId: Swift.String {
-    @objc get
-  }
+  @objc final public let paymentMethodType: Datatrans.PaymentMethodType
+  @objc final public let savedPaymentMethod: Datatrans.SavedPaymentMethod?
+  @objc final public let transactionId: Swift.String
   @objc override dynamic public init()
   @objc deinit
 }
