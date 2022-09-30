@@ -95,10 +95,10 @@ import WebKit
   @objc override dynamic public init()
   @objc deinit
 }
-@objc(DTPCIPTokenizationRequestDelegate) public protocol PCIPTokenizationRequestDelegate {
-  @objc func tokenizationRequestDidFinish(_ tokenizationRequest: Datatrans.PCIPTokenizationRequest, result: Datatrans.PCIPTokenizationSuccess)
-  @objc func tokenizationRequestDidFail(_ tokenizationRequest: Datatrans.PCIPTokenizationRequest, error: Datatrans.PCIPTokenizationError)
-  @objc optional func tokenizationRequestDidCancel(_ tokenizationRequest: Datatrans.PCIPTokenizationRequest)
+@objc(DTPCIPTokenizationDelegate) public protocol PCIPTokenizationDelegate {
+  @objc func tokenizationDidFinish(_ tokenization: Datatrans.PCIPTokenization, result: Datatrans.PCIPTokenizationSuccess)
+  @objc func tokenizationDidFail(_ tokenization: Datatrans.PCIPTokenization, error: Datatrans.PCIPTokenizationError)
+  @objc optional func tokenizationDidCancel(_ tokenization: Datatrans.PCIPTokenization)
 }
 @_hasMissingDesignatedInitializers @objc(DTBinRange) public class BinRange : ObjectiveC.NSObject {
   @objc public class func range(start: Swift.String, end: Swift.String) -> Datatrans.BinRange
@@ -128,7 +128,7 @@ import WebKit
   @objc override public init(type: Datatrans.PaymentMethodType, alias: Swift.String)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(DTPCIPTokenizationRequestOptions) @objcMembers public class PCIPTokenizationRequestOptions : ObjectiveC.NSObject {
+@_inheritsConvenienceInitializers @objc(DTPCIPTokenizationOptions) @objcMembers public class PCIPTokenizationOptions : ObjectiveC.NSObject {
   @objc public var language: Swift.String? {
     @objc get
     @objc set
@@ -288,9 +288,9 @@ import WebKit
     get
   }
 }
-@objc(DTPCIPTokenizationRequest) public class PCIPTokenizationRequest : ObjectiveC.NSObject {
-  @objc weak public var delegate: Datatrans.PCIPTokenizationRequestDelegate?
-  @objc public var options: Datatrans.PCIPTokenizationRequestOptions
+@objc(DTPCIPTokenization) public class PCIPTokenization : ObjectiveC.NSObject {
+  @objc weak public var delegate: Datatrans.PCIPTokenizationDelegate?
+  @objc public var options: Datatrans.PCIPTokenizationOptions
   @objc public var theme: Datatrans.ThemeConfiguration
   @objc public init(merchantId: Swift.String, card: Datatrans.Card)
   public init(merchantId: Swift.String, paymentMethodTypes: [Datatrans.PaymentMethodType])

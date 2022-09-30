@@ -1,5 +1,5 @@
 # **Datatrans iOS SDK**
-![Version](https://img.shields.io/badge/Version-2.3.0-5B728F)
+![Version](https://img.shields.io/badge/Version-2.3.1-5B728F)
 [![License](https://img.shields.io/badge/License-Datatrans-lightgrey)](https://raw.githubusercontent.com/datatrans/ios-sdk/master/LICENSE)
 [![Platform](https://img.shields.io/badge/platform-ios-0BAF73)](https://github.com/datatrans/ios-sdk)
 

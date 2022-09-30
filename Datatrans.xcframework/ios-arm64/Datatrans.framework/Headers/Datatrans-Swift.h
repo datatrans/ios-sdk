@@ -427,33 +427,25 @@ SWIFT_CLASS_NAMED("PCIPCardInfo")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-
-/// This class includes the error message of a tokenization request.
-SWIFT_CLASS_NAMED("PCIPTokenizationError")
-@interface DTPCIPTokenizationError : NSError
-- (nonnull instancetype)initWithDomain:(NSString * _Nonnull)domain code:(NSInteger)code userInfo:(NSDictionary<NSString *, id> * _Nullable)dict OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-@protocol DTPCIPTokenizationRequestDelegate;
-@class DTPCIPTokenizationRequestOptions;
+@protocol DTPCIPTokenizationDelegate;
+@class DTPCIPTokenizationOptions;
 @class DTThemeConfiguration;
 @class UIViewController;
 
-/// Use this class to start a PCI Proxy tokenization request.
-/// After the tokenization request has been completed - regardless if
+/// Use this class to start a PCI Proxy tokenization.
+/// After the tokenization has been completed - regardless if
 /// successful or not - <code>delegate</code> will be called with some basic
 /// information about the success or failure.
 /// warning:
 /// Only use this API if you are a PCI Proxy customer. Use <code>Transaction</code>
 /// if you want to register a saved payment method.
-SWIFT_CLASS_NAMED("PCIPTokenizationRequest")
-@interface DTPCIPTokenizationRequest : NSObject
-/// This delegate will be notified after a tokenization request has been finished,
+SWIFT_CLASS_NAMED("PCIPTokenization")
+@interface DTPCIPTokenization : NSObject
+/// This delegate will be notified after a tokenization has been finished,
 /// successfully or not.
-@property (nonatomic, weak) id <DTPCIPTokenizationRequestDelegate> _Nullable delegate;
-/// The available options for how a tokenization request is handled by the mobile SDK.
-@property (nonatomic, strong) DTPCIPTokenizationRequestOptions * _Nonnull options;
+@property (nonatomic, weak) id <DTPCIPTokenizationDelegate> _Nullable delegate;
+/// The available options for how a tokenization is handled by the mobile SDK.
+@property (nonatomic, strong) DTPCIPTokenizationOptions * _Nonnull options;
 /// The theme to be used by the SDK.
 @property (nonatomic, strong) DTThemeConfiguration * _Nonnull theme;
 /// Use this init method if you use your own UI and already have a <code>Card</code> instance with the
@@ -470,17 +462,17 @@ SWIFT_CLASS_NAMED("PCIPTokenizationRequest")
 /// This initializer is for use from Objective-C only. Instead of <code>[PaymentMethodType]</code>, it
 /// takes <code>[NSNumber]</code> containing <code>rawValue</code>s of <code>PaymentMethodType</code>.
 /// Example:
-/// <code>[[DTPCIPTokenizationRequest alloc] initWithMerchantId:@"..." paymentMethodTypes:@[@(DTPaymentMethodTypeVisa), @(DTPaymentMethodTypeMasterCard)]];</code>
+/// <code>[[DTPCIPTokenization alloc] initWithMerchantId:@"..." paymentMethodTypes:@[@(DTPaymentMethodTypeVisa), @(DTPaymentMethodTypeMasterCard)]];</code>
 /// \param merchantId Your merchantId.
 ///
 /// \param paymentMethodTypesObjc The allowed credit or debit card types.
 ///
 - (nonnull instancetype)initWithMerchantId:(NSString * _Nonnull)merchantId paymentMethodTypes:(NSArray<NSNumber *> * _Nonnull)paymentMethodTypesObjc;
 /// Starts the SDK and displays any needed user interface using the provided
-/// <code>presentingController</code>. Note that a tokenization request can only
+/// <code>presentingController</code>. Note that a tokenization can only
 /// be started once.
 /// \param presentingController <code>UIViewController</code>
-/// used to present the user interface during an on-going tokenization request.
+/// used to present the user interface during an on-going tokenization.
 ///
 - (void)startWithPresentingController:(UIViewController * _Nonnull)presentingController;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -488,47 +480,56 @@ SWIFT_CLASS_NAMED("PCIPTokenizationRequest")
 @end
 
 @class DTPCIPTokenizationSuccess;
+@class DTPCIPTokenizationError;
 
-/// Implement PCIPTokenizationRequestDelegate to be notified when a tokenization
-/// request ends. PCIPTokenizationRequestDelegate will notify you about the success,
-/// error or cancel state of the processed tokenization request.
-SWIFT_PROTOCOL_NAMED("PCIPTokenizationRequestDelegate")
-@protocol DTPCIPTokenizationRequestDelegate
-/// This is called after a tokenization request has been successfully
-/// completed. This callback provides details about the tokenization request.
-/// \param tokenizationRequest The object containing the information
-/// of the completed tokenization request.
+/// Implement PCIPTokenizationDelegate to be notified when a tokenization
+/// ends. PCIPTokenizationDelegate will notify you about the success,
+/// error or cancel state of the processed tokenization.
+SWIFT_PROTOCOL_NAMED("PCIPTokenizationDelegate")
+@protocol DTPCIPTokenizationDelegate
+/// This is called after a tokenization has been successfully
+/// completed. This callback provides details about the tokenization.
+/// \param tokenization The object containing the information
+/// of the completed tokenization.
 ///
 /// \param result The result object containing the tokenization ID and
 /// other useful information, e.g. about the card.
 ///
-- (void)tokenizationRequestDidFinish:(DTPCIPTokenizationRequest * _Nonnull)tokenizationRequest result:(DTPCIPTokenizationSuccess * _Nonnull)result;
-/// This is called after a tokenization request fails or encounters an error.
+- (void)tokenizationDidFinish:(DTPCIPTokenization * _Nonnull)tokenization result:(DTPCIPTokenizationSuccess * _Nonnull)result;
+/// This is called after a tokenization fails or encounters an error.
 /// Keep in mind that the SDK shows the error to the user before
 /// this is invoked. Therefore, this callback can be used to cancel
-/// any on-going process involving the tokenization request.
+/// any on-going process involving the tokenization.
 /// You may also use the error details provided here and display it
 /// the way you want when suppressing the error message within
-/// the <code>PCIPTokenizationRequestOptions</code>.
-/// \param tokenizationRequest The object containing the information
-/// of the failed tokenization request.
+/// the <code>PCIPTokenizationOptions</code>.
+/// \param tokenization The object containing the information
+/// of the failed tokenization.
 ///
 /// \param error The error that occurred.
 ///
-- (void)tokenizationRequestDidFail:(DTPCIPTokenizationRequest * _Nonnull)tokenizationRequest error:(DTPCIPTokenizationError * _Nonnull)error;
+- (void)tokenizationDidFail:(DTPCIPTokenization * _Nonnull)tokenization error:(DTPCIPTokenizationError * _Nonnull)error;
 @optional
-/// This is called after a tokenization request has been cancelled. This callback
-/// can be used to cancel any on-going process involving the tokenization request.
-/// \param tokenizationRequest The object containing the
-/// information of the cancelled tokenization request.
+/// This is called after a tokenization has been cancelled. This callback
+/// can be used to cancel any on-going process involving the tokenization.
+/// \param tokenization The object containing the
+/// information of the cancelled tokenization.
 ///
-- (void)tokenizationRequestDidCancel:(DTPCIPTokenizationRequest * _Nonnull)tokenizationRequest;
+- (void)tokenizationDidCancel:(DTPCIPTokenization * _Nonnull)tokenization;
 @end
 
 
-/// This class can be used to specify miscellaneous options related to the tokenization request.
-SWIFT_CLASS_NAMED("PCIPTokenizationRequestOptions")
-@interface DTPCIPTokenizationRequestOptions : NSObject
+/// This class includes the error message of a failed tokenization.
+SWIFT_CLASS_NAMED("PCIPTokenizationError")
+@interface DTPCIPTokenizationError : NSError
+- (nonnull instancetype)initWithDomain:(NSString * _Nonnull)domain code:(NSInteger)code userInfo:(NSDictionary<NSString *, id> * _Nullable)dict OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+/// This class can be used to specify miscellaneous options related to the tokenization.
+SWIFT_CLASS_NAMED("PCIPTokenizationOptions")
+@interface DTPCIPTokenizationOptions : NSObject
 /// Use this setting to change the UI language. If this is not
 /// specified, the default language determined by the system will be used.
 /// The supported values are <code>de</code>, <code>en</code>, <code>fr</code>, <code>it</code> and <code>nil</code>.
@@ -549,7 +550,7 @@ SWIFT_CLASS_NAMED("PCIPTokenizationRequestOptions")
 @end
 
 
-/// This class aggregates the results of a successful PCI Proxy tokenization request.
+/// This class aggregates the results of a successful PCI Proxy tokenization.
 SWIFT_CLASS_NAMED("PCIPTokenizationSuccess")
 @interface DTPCIPTokenizationSuccess : NSObject
 /// Object representing the (credit or debit) card which was used
