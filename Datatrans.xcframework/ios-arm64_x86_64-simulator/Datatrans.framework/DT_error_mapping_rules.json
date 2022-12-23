@@ -1,0 +1,311 @@
+[
+    {
+        "Code": "-901",
+        "Name": "BLOCKED_BY_VELOCITY_CHECKER"
+    },
+    {
+        "Code": "-890",
+        "Message": "CVV-alias service is not supported",
+        "Name": "INVALID_SETUP"
+    },
+    {
+        "Code": "-888",
+        "Name": "INVALID_ALIAS"
+    },
+    {
+        "Code": "-100",
+        "Message": "Declined",
+        "Detail": "Declined - 3rd party error",
+        "Name": "THIRD_PARTY_ERROR"
+    },
+    {
+        "Code": "-100",
+        "Message": "Declined",
+        "Detail": "\"Payment-API error\"",
+        "Name": "THIRD_PARTY_ERROR"
+    },
+    {
+        "Code": "-100",
+        "Message": "Declined",
+        "Detail": "\"Could not process request due to technical\"",
+        "Name": "THIRD_PARTY_ERROR"
+    },
+    {
+        "Code": "-100",
+        "Message": "Declined",
+        "Name": "DECLINED"
+    },
+    {
+        "Code": "-98",
+        "Message": "TRANSACTION CANNOT BE COMPLETED",
+        "Detail": "ACS challenge required",
+        "Name": "INVALID_TRANSACTION_STATUS"
+    },
+    {
+        "Code": "-98",
+        "Message": "Duplicate invoice",
+        "Name": "DUPLICATE_REFNO"
+    },
+    {
+        "Code": "-98",
+        "Name": "DECLINED"
+    },
+    {
+        "Code": "-89",
+        "Name": "SERVER_ERROR"
+    },
+    {
+        "Code": "-87",
+        "Name": "DECLINED"
+    },
+    {
+        "Code": "-59",
+        "Message": "REFERRAL trx",
+        "Name": "REFERRAL"
+    },
+    {
+        "Code": "-49",
+        "Message": "Declined - do not retry card",
+        "Name": "BLOCKED_CARD"
+    },
+    {
+        "Code": "-48",
+        "Name": "DECLINED"
+    },
+    {
+        "Code": "-42",
+        "Message": "Declined - card blocked",
+        "Name": "BLOCKED_CARD"
+    },
+    {
+        "Code": "401",
+        "Message": "UNAUTHORIZED",
+        "Name": "INVALID_SETUP"
+    },
+    {
+        "Code": "403",
+        "Message": "BLOCKED_CARD",
+        "Name": "BLOCKED_CARD"
+    },
+    {
+        "Code": "1002",
+        "Message": "wrong expiration date",
+        "Name": "INVALID_PROPERTY"
+    },
+    {
+        "Code": "1002",
+        "Message": "transaction error",
+        "Detail": "3D uncomplete",
+        "Name": "INVALID_TRANSACTION_STATUS"
+    },
+    {
+        "Code": "1002",
+        "Message": "transaction error",
+        "Detail": "basic checks fail",
+        "Name": "INVALID_PROPERTY"
+    },
+    {
+        "Code": "1002",
+        "Message": "Invalid Cartridge",
+        "Name": "INVALID_SETUP"
+    },
+    {
+        "Code": "1002",
+        "Message": "\"Communication to URL:\"",
+        "Name": "THIRD_PARTY_ERROR"
+    },
+    {
+        "Code": "1002",
+        "Message": "\"3D status U - auth. is not allowed\"",
+        "Name": "DECLINED"
+    },
+    {
+        "Code": "1004",
+        "Name": "INVALID_CARD"
+    },
+    {
+        "Code": "1007",
+        "Message": "access denied",
+        "Detail": "sign/security control",
+        "Name": "INVALID_SIGN"
+    },
+    {
+        "Code": "1009",
+        "Message": "transaction error",
+        "Detail": "basic checks fail",
+        "Name": "SERVER_ERROR"
+    },
+    {
+        "Code": "1009",
+        "Message": "payment method is not active",
+        "Name": "INVALID_SETUP"
+    },
+    {
+        "Code": "1009",
+        "Message": "payment acquirer does not exist",
+        "Name": "INVALID_PROPERTY"
+    },
+    {
+        "Code": "1009",
+        "Message": "CC range init error",
+        "Detail": "card brand missing in merchant setup",
+        "Name": "UNSUPPORTED_CARD"
+    },
+    {
+        "Code": "1010",
+        "Message": "method is not allowed",
+        "Detail": "only CAA is supported",
+        "Name": "INVALID_PROPERTY"
+    },
+    {
+        "Code": "1010",
+        "Message": "action not allowed",
+        "Name": "INVALID_TRANSACTION_STATUS"
+    },
+    {
+        "Code": "1201",
+        "Message": "\"connection error:\"",
+        "Name": "THIRD_PARTY_ERROR"
+    },
+    {
+        "Code": "1201",
+        "Message": "\"Communication to Host:\"",
+        "Name": "THIRD_PARTY_ERROR"
+    },
+    {
+        "Code": "1201",
+        "Name": "SERVER_ERROR"
+    },
+    {
+        "Code": "1402",
+        "Name": "EXPIRED_CARD"
+    },
+    {
+        "Code": "1403",
+        "Message": "declined",
+        "Detail": "unknown alias",
+        "Name": "INVALID_ALIAS"
+    },
+    {
+        "Code": "1403",
+        "Message": "declined",
+        "Detail": "REFERRAL trx",
+        "Name": "REFERRAL"
+    },
+    {
+        "Code": "1403",
+        "Message": "declined",
+        "Detail": "InvalidAlias",
+        "Name": "INVALID_ALIAS"
+    },
+    {
+        "Code": "1403",
+        "Message": "declined",
+        "Detail": "\"TwintAlias not found\"",
+        "Name": "INVALID_ALIAS"
+    },
+    {
+        "Code": "1403",
+        "Message": "declined",
+        "Name": "DECLINED"
+    },
+    {
+        "Code": "1404",
+        "Message": "\"blocked\"",
+        "Name": "BLOCKED_CARD"
+    },
+    {
+        "Code": "1407",
+        "Name": "SOFT_DECLINED"
+    },
+    {
+        "Code": "1412",
+        "Name": "DECLINED"
+    },
+    {
+        "Code": "2000",
+        "Name": "UNAUTHORIZED"
+    },
+    {
+        "Code": "2021",
+        "Message": "missing value",
+        "Detail": "cvv code",
+        "Name": "INVALID_CVV"
+    },
+    {
+        "Code": "2021",
+        "Message": "missing value",
+        "Detail": "CC-alias",
+        "Name": "INVALID_ALIAS"
+    },
+    {
+        "Code": "2021",
+        "Message": "missing value",
+        "Detail": "\"PayPalBillingAgreementId/aliasCC\"",
+        "Name": "INVALID_ALIAS"
+    },
+    {
+        "Code": "2021",
+        "Message": "missing value",
+        "Name": "INVALID_PROPERTY"
+    },
+    {
+        "Code": "2022",
+        "Message": "invalid value",
+        "Detail": "merchantId does not match",
+        "Name": "TRANSACTION_NOT_FOUND"
+    },
+    {
+        "Code": "2022",
+        "Message": "invalid value",
+        "Detail": "could not retrieve the PayPal order id from aliasCC",
+        "Name": "TRANSACTION_NOT_FOUND"
+    },
+    {
+        "Code": "2022",
+        "Message": "invalid value",
+        "Detail": "aliasCVV",
+        "Name": "INVALID_CVV"
+    },
+    {
+        "Code": "2022",
+        "Message": "invalid value",
+        "Name": "INVALID_PROPERTY"
+    },
+    {
+        "Code": "2051",
+        "Message": "initialization UPP record not found",
+        "Name": "TRANSACTION_NOT_FOUND"
+    },
+    {
+        "Code": "2097",
+        "Name": "SERVER_ERROR"
+    },
+    {
+        "Code": "2098",
+        "Name": "SERVER_ERROR"
+    },
+    {
+        "Code": "2099",
+        "Name": "SERVER_ERROR"
+    },
+    {
+        "Code": "3001...3099",
+        "Name": "DECLINED"
+    },
+    {
+        "Message": "expired card",
+        "Name": "EXPIRED_CARD"
+    },
+    {
+        "Message": "declined",
+        "Name": "DECLINED"
+    },
+    {
+        "Message": "card expired",
+        "Name": "EXPIRED_CARD"
+    },
+    {
+        "Name": "UNKNOWN_ERROR"
+    }
+]

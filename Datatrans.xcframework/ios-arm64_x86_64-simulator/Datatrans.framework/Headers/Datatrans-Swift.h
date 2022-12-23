@@ -266,6 +266,20 @@ SWIFT_CLASS_NAMED("ApplePayConfig")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+@class NSCoder;
+
+/// This class includes the Datatrans error name
+SWIFT_CLASS_NAMED("BackendError")
+@interface DTBackendError : NSError
+/// Datatrans error name
+@property (nonatomic, readonly, copy) NSString * _Nonnull name;
+/// :nodoc:
+- (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)initWithDomain:(NSString * _Nonnull)domain code:(NSInteger)code userInfo:(NSDictionary<NSString *, id> * _Nullable)dict OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 @class DTBinRangeMatch;
 
 /// :nodoc:
@@ -321,7 +335,6 @@ typedef SWIFT_ENUM_NAMED(NSInteger, DTBoncardType, "BoncardType", open) {
 };
 
 enum DTPaymentMethodType : NSInteger;
-@class NSCoder;
 
 /// This is the base class for payment methods. It contains a type to identify the
 /// payment method, e.g. Visa or Mastercard.
@@ -559,6 +572,16 @@ SWIFT_PROTOCOL_NAMED("PCIPTokenizationDelegate")
 /// This class includes the error message of a failed tokenization.
 SWIFT_CLASS_NAMED("PCIPTokenizationError")
 @interface DTPCIPTokenizationError : NSError
+/// The error code for technical errors.
+/// Use this constant to compare it to a <code>PCIPTokenizationError</code>’s <code>code</code>.
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger technical;)
++ (NSInteger)technical SWIFT_WARN_UNUSED_RESULT;
+/// The error code for validation errors.
+/// Use this constant to compare it to a <code>PCIPTokenizationError</code>’s <code>code</code>.
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger validation;)
++ (NSInteger)validation SWIFT_WARN_UNUSED_RESULT;
+/// The BackendError that contains the Datatrans error name
+@property (nonatomic, readonly, strong) DTBackendError * _Nullable backendError;
 - (nonnull instancetype)initWithDomain:(NSString * _Nonnull)domain code:(NSInteger)code userInfo:(NSDictionary<NSString *, id> * _Nullable)dict OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -1110,6 +1133,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger authorizat
 @property (nonatomic, readonly, strong) NSNumber * _Nullable paymentMethodType;
 /// The identifier of the failed transaction
 @property (nonatomic, readonly, copy) NSString * _Nullable transactionId;
+/// The BackendError that contains the Datatrans error name
+@property (nonatomic, readonly, strong) DTBackendError * _Nullable backendError;
 /// :nodoc:
 - (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)initWithDomain:(NSString * _Nonnull)domain code:(NSInteger)code userInfo:(NSDictionary<NSString *, id> * _Nullable)dict OBJC_DESIGNATED_INITIALIZER;
@@ -1453,6 +1478,20 @@ SWIFT_CLASS_NAMED("ApplePayConfig")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+@class NSCoder;
+
+/// This class includes the Datatrans error name
+SWIFT_CLASS_NAMED("BackendError")
+@interface DTBackendError : NSError
+/// Datatrans error name
+@property (nonatomic, readonly, copy) NSString * _Nonnull name;
+/// :nodoc:
+- (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)initWithDomain:(NSString * _Nonnull)domain code:(NSInteger)code userInfo:(NSDictionary<NSString *, id> * _Nullable)dict OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 @class DTBinRangeMatch;
 
 /// :nodoc:
@@ -1508,7 +1547,6 @@ typedef SWIFT_ENUM_NAMED(NSInteger, DTBoncardType, "BoncardType", open) {
 };
 
 enum DTPaymentMethodType : NSInteger;
-@class NSCoder;
 
 /// This is the base class for payment methods. It contains a type to identify the
 /// payment method, e.g. Visa or Mastercard.
@@ -1746,6 +1784,16 @@ SWIFT_PROTOCOL_NAMED("PCIPTokenizationDelegate")
 /// This class includes the error message of a failed tokenization.
 SWIFT_CLASS_NAMED("PCIPTokenizationError")
 @interface DTPCIPTokenizationError : NSError
+/// The error code for technical errors.
+/// Use this constant to compare it to a <code>PCIPTokenizationError</code>’s <code>code</code>.
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger technical;)
++ (NSInteger)technical SWIFT_WARN_UNUSED_RESULT;
+/// The error code for validation errors.
+/// Use this constant to compare it to a <code>PCIPTokenizationError</code>’s <code>code</code>.
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger validation;)
++ (NSInteger)validation SWIFT_WARN_UNUSED_RESULT;
+/// The BackendError that contains the Datatrans error name
+@property (nonatomic, readonly, strong) DTBackendError * _Nullable backendError;
 - (nonnull instancetype)initWithDomain:(NSString * _Nonnull)domain code:(NSInteger)code userInfo:(NSDictionary<NSString *, id> * _Nullable)dict OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -2297,6 +2345,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger authorizat
 @property (nonatomic, readonly, strong) NSNumber * _Nullable paymentMethodType;
 /// The identifier of the failed transaction
 @property (nonatomic, readonly, copy) NSString * _Nullable transactionId;
+/// The BackendError that contains the Datatrans error name
+@property (nonatomic, readonly, strong) DTBackendError * _Nullable backendError;
 /// :nodoc:
 - (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)initWithDomain:(NSString * _Nonnull)domain code:(NSInteger)code userInfo:(NSDictionary<NSString *, id> * _Nullable)dict OBJC_DESIGNATED_INITIALIZER;

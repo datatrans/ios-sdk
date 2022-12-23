@@ -40,6 +40,10 @@
 		<data>
 		RBpH85Ey52v/1dyGVpol+MqpF/Y=
 		</data>
+		<key>DT_error_mapping_rules.json</key>
+		<data>
+		pbsncQvXOKpjXCecn+iyOFFLtFI=
+		</data>
 		<key>ECA.pdf</key>
 		<data>
 		eeOfKiubTBGPVs+hh/D0q3crZlQ=
@@ -66,11 +70,11 @@
 		</data>
 		<key>Headers/DTAliasRequest+Internal.h</key>
 		<data>
-		MDIQdrqdVgsmucSOf56SR76UbKs=
+		2kz2+ghFjmmmvZXxDTOjdeswYRU=
 		</data>
 		<key>Headers/DTAliasRequest.h</key>
 		<data>
-		1aurFJbj5M18iQXdMDbA1ymYWZY=
+		9wg3JfQGBRwc9TRJRPmAk6/aDxY=
 		</data>
 		<key>Headers/DTApplePayDelegate.h</key>
 		<data>
@@ -94,7 +98,7 @@
 		</data>
 		<key>Headers/DTErrorHandler.h</key>
 		<data>
-		EeJHNQF2UJ2f08FwYeyXwF84CUY=
+		+kiv6EGNdwYcn4GoDTgsVuLBouI=
 		</data>
 		<key>Headers/DTErrorHandlerDelegate.h</key>
 		<data>
@@ -110,7 +114,7 @@
 		</data>
 		<key>Headers/DTFakePaymentRequestFactory.h</key>
 		<data>
-		s9HhCrj+nNOnpLLQOZUee6aupEs=
+		o4w+H1cGFwjFpG6cx6u3VFjUvfA=
 		</data>
 		<key>Headers/DTInitialTransaction.h</key>
 		<data>
@@ -138,7 +142,7 @@
 		</data>
 		<key>Headers/DTPaymentAuthorizationRequest.h</key>
 		<data>
-		KuJgtDdANNimXvSc2wBuRRcwc2M=
+		xZwNPxsNpObcHGKxViWcSebQEeU=
 		</data>
 		<key>Headers/DTPaymentMethodIdentifiers.h</key>
 		<data>
@@ -158,7 +162,7 @@
 		</data>
 		<key>Headers/DTPaymentRequest.h</key>
 		<data>
-		4/3KDYzhVDgaRp91Aw4XyOpAgC0=
+		7RduSwJcqbXOF0T3g+R3A5kzqRY=
 		</data>
 		<key>Headers/DTPostFinanceRequestHandler.h</key>
 		<data>
@@ -206,7 +210,7 @@
 		</data>
 		<key>Headers/DTWebProcess.h</key>
 		<data>
-		Bx8OOqfSGrp9TkscYt8L4+2TCM0=
+		y8slUl7pBOqT1LEvMWRf2Sv0XPg=
 		</data>
 		<key>Headers/DTWebRequestFactory.h</key>
 		<data>
@@ -214,7 +218,7 @@
 		</data>
 		<key>Headers/Datatrans-Swift.h</key>
 		<data>
-		R4P/2fXjaMcl0+6xJUsRPvNSMyE=
+		2MNboZH+sdwlASCRM21o17y80bI=
 		</data>
 		<key>Headers/Datatrans.h</key>
 		<data>
@@ -242,27 +246,27 @@
 		</data>
 		<key>Modules/Datatrans.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		TdTy6FT+1ndtX3P15gJUYa5aAyo=
+		KHTDN4ubyPSlnNQdh/qBNR523o0=
 		</data>
 		<key>Modules/Datatrans.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		WHNTSn6TZLgltuO06O1uN8S4O8s=
+		ffnkF6sGU0d+9h3f9/fLU3if93k=
 		</data>
 		<key>Modules/Datatrans.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		L1yKZX0wt4uPCZvylXPDMufu1tc=
+		kC25QR+6jsuM9AUJkx4jhsiFsQ4=
 		</data>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		krr/dNMOqxvXiNFNzgd8PchRYBE=
+		tf1UTKFC9whTtKHWNsEUWao0KJk=
 		</data>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		TGFwGf3BkP7Bha3PC+yXr7hCvHs=
+		WxKFc58xexe4544auD5Z9bCLWb8=
 		</data>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		VmxBlD6ubqbu1WvWSCff7uKWHig=
+		CypvRX/8++ygF8IjBF6qGxAfxAw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -316,7 +320,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			4QBBCq8QEUCHvpeOYn297PzIw64=
+			1HJUZlSd97k6Pf75nUmyNNYLXUU=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -325,7 +329,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Pt9sH7pDDJbr8QC+xsdDeOPb6J8=
+			hpbN1jUgz+0DSFhFe2k4MafHeL8=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -334,7 +338,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			NuGgU1apn5G3ckyTRZGRqaUmGiM=
+			rkLh/jPIjjp2Y5MbvbIy9LXyQOM=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -343,7 +347,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			4QDRZHuac22kJAHqtg8iZEFI+8M=
+			X2kiVy3Rl1xLbC0ZHsN9Qo6HzZg=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -418,6 +422,13 @@
 			h9d02BMHTTaHPFGqplXGIQ7MNaXiKckc67tcmqeoSik=
 			</data>
 		</dict>
+		<key>DT_error_mapping_rules.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			lWjv84R94HsB2meJHGIJyJ+cCFrop+m40E+A24cdeiw=
+			</data>
+		</dict>
 		<key>ECA.pdf</key>
 		<dict>
 			<key>hash2</key>
@@ -464,14 +475,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			SF1W9caHkvH42NNUXJLZEI/t0wT7KlM01/I6Ve+eOh8=
+			JSnx30KlBO6QmxmFlcGyJD7+rwtlhE/kU8kul7HxtHU=
 			</data>
 		</dict>
 		<key>Headers/DTAliasRequest.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			slVZ9nB7KUO7NSs29zG0VB+qdUsgKGa+LRIGXnntZmc=
+			q5na+c//08z0aTSRuEfNnTUn9PvHRILG/MqDRwn2RBE=
 			</data>
 		</dict>
 		<key>Headers/DTApplePayDelegate.h</key>
@@ -513,7 +524,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			67dbJxkCSy4CK3S5RKuzgheeCvOYNaltSYo8YAw0Qg4=
+			wIsg6u9V57GcgTVlH2Y5hqkMk3TK5kBFYEIXR3nE8BA=
 			</data>
 		</dict>
 		<key>Headers/DTErrorHandlerDelegate.h</key>
@@ -541,7 +552,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			+C+A39+7UsqKRxG43Y+6nEIAiMOizwvvNNyF+VTCNx4=
+			apc9cOXKE/OClRPuMp/nkKZAoXaUBwxaspJuD+hX+dg=
 			</data>
 		</dict>
 		<key>Headers/DTInitialTransaction.h</key>
@@ -590,7 +601,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			VlRLdcyU7pt4Z0N0zU1LH/C0loj7BE2f/g47MnpKQ5s=
+			7yD/lfO0X67dvru2hGtZNFjBuYmWGcuvNSg5K5vxXhM=
 			</data>
 		</dict>
 		<key>Headers/DTPaymentMethodIdentifiers.h</key>
@@ -625,7 +636,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			EeaD4/s0cKl4F9JBCvsTaYm47RzGyEsJPbH128X36GM=
+			bFQAbb3eN+QrRW/yx8nzdD2ux/IWvSRd4adhyNH6eNY=
 			</data>
 		</dict>
 		<key>Headers/DTPostFinanceRequestHandler.h</key>
@@ -709,7 +720,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			R9OR1x5uQNDwPS/dyJv/oIfBiirmkM79/R66tjdLWOc=
+			rwSUgEmDeQBS/Rav0qdC0nyDAZDJZAcpyCVcTssyjFE=
 			</data>
 		</dict>
 		<key>Headers/DTWebRequestFactory.h</key>
@@ -723,7 +734,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Ju12SJHv0KGxs37VpDxv9ogWp1oHiUK7PYVTv6rp794=
+			Jt8GC2a+5uMa2jHOjQ7U7WvaVi8aJjw7xefc6luBJyc=
 			</data>
 		</dict>
 		<key>Headers/Datatrans.h</key>
@@ -765,42 +776,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			GoWys7v55KorD+mGpoSsXM6ObP7CZU/Us8f3vVVVLNw=
+			bgCl+679PrDuVdWx6vVhsAEZnwYwmfDgoDtcnkBUf9w=
 			</data>
 		</dict>
 		<key>Modules/Datatrans.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			WAmNuVfOlvUemTvja4Rf+94eTUlEWbpoTOVoRPBDnbk=
+			XXdbFGZfIRJIW2EhECNzmAujUKrQuCsjcavE71DWjy4=
 			</data>
 		</dict>
 		<key>Modules/Datatrans.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/HncaYloFaNupKNNmxGiUr3GXxUSlhB3fC/EGY+tPtc=
+			Q1Co3T1t5BeMjcPraUi0qTSiwb2EoYCe+XwMq4lxm1Q=
 			</data>
 		</dict>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			iwvh46BbjxL7nJNztFTzVF6IBHTfCjILryeaZ2WO88c=
+			DMVCSU+WGtd9JhxKT4H5tD2Nl1J3+ue0xEoptt3spdw=
 			</data>
 		</dict>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			FUFF2wzW1LCxBR6SiqmW78GyXrFkczXLaoHADVsx1rc=
+			UZCoAVFSWg93p7osB6IazV0STsN3+MMH0I7DxYW9CC4=
 			</data>
 		</dict>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			haFcvSpbar99Ob6FPp3O71g7GhwX7TiP/OESNTnJ+WM=
+			6qFYHaq6fhyUOLZWzT1x0Wf3MVxh0e4qR6oQ+tZKYLo=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -891,7 +902,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			XKBfWvIisk4mPq6sfsMx6hz+nXIXN84nUdsAZKfZnGc=
+			O7dKgTyQtsB7xk5BcX0kv1sG9HAfXqX++mHBYiJnyQI=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -900,7 +911,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			u2Ud0WEqVaa7WyafKbwAfi3WZE/SNsbfK0h5rI9w+9I=
+			WuRNJSnP+RRHm+5U1JtWw78ZGKRFyyZuzmBDqvSpXFc=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -909,7 +920,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			GYwevwXeejYRMvMzZZHuqpZsRND84qBPJhLySLClPq4=
+			1dGCCX3/VodOEzf4Scot9RJ1mMLTva2va/Mx/BAB7Tg=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -918,7 +929,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			oDiINBAjTGsrwvLUpr83pFedTx/H67W+4NJidRDykik=
+			cJMCytehTMR/DV0Qc9U+RKU8PIa1L5OVmilczkYwMCE=
 			</data>
 			<key>optional</key>
 			<true/>

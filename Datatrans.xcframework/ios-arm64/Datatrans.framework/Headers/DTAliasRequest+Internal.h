@@ -10,7 +10,10 @@
 
 @interface DTAliasRequest (Internal)
 
-@property (nonatomic, readonly) NSString* merchantId;
-@property (nonatomic, readonly) NSString* currencyCode;
+@property (nonnull, nonatomic, readonly) NSString* merchantId;
+@property (nonnull, nonatomic, readonly) NSString* currencyCode;
+@property (nonnull, nonatomic, readonly) NSString* refno;
+@property (nullable, nonatomic, readonly) NSString* refno2;
+@property (nullable, nonatomic, readonly) NSString* refno3;
 
 @end

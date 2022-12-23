@@ -5,6 +5,8 @@
 //  Created by Patrick Fompeyrine on 02.10.20.
 //
 
+@class DTTransactionError;
+
 @protocol DTErrorHandlerDelegate;
 @protocol DTErrorPresenter;
 
@@ -15,7 +17,7 @@
 - (void)handleTechnicalError:(nonnull NSError *)error;
 - (void)handleTechnicalError:(nonnull NSError *)error retryBlock:(void (^_Nullable)(void))retryBlock;
 - (void)handleTechnicalError:(nonnull NSError *)error dismissBlock:(void (^_Nullable)(void))dismissBlock retryBlock:(void (^_Nullable)(void))retryBlock;
-- (void)handleCriticalWebError:(nonnull NSError *)error isPayment:(BOOL)isPayment;
+- (void)handleCriticalWebError:(nonnull DTTransactionError *)error isPayment:(BOOL)isPayment;
 - (void)showAliasRegistrationError:(nonnull NSError *)error returnAuthorizationError:(BOOL)returnAuthorizationError;
 - (void)showAuthenticationError:(nonnull NSError *)error;
 - (void)showAuthorizationError:(nonnull NSError *)error;

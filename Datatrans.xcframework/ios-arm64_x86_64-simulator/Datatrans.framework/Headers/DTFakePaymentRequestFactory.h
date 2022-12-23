@@ -6,11 +6,10 @@
 //
 
 @class DTAliasRequest;
-@class DTPaymentOptions;
 @class DTPaymentRequest;
 
 @interface DTFakePaymentRequestFactory : NSObject
 
-+ (nonnull DTPaymentRequest *)createFakePayment:(nonnull DTAliasRequest *)aliasRequest options:(nonnull DTPaymentOptions *)options;
++ (nonnull DTPaymentRequest *)createFakePayment:(nonnull DTAliasRequest *)aliasRequest;
 
 @end

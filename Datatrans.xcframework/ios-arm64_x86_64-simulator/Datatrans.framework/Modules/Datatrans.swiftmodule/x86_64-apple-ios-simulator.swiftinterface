@@ -24,6 +24,9 @@ import _Concurrency
   @objc public var transactionId: Swift.String? {
     get
   }
+  @objc public var backendError: Datatrans.BackendError? {
+    @objc get
+  }
   @objc override dynamic public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
   @objc override dynamic public init(domain: Swift.String, code: Swift.Int, userInfo dict: [Swift.String : Any]? = nil)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
@@ -83,6 +86,11 @@ import _Concurrency
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc(DTPCIPTokenizationError) public class PCIPTokenizationError : Foundation.NSError {
+  @objc public static let technical: Swift.Int
+  @objc public static let validation: Swift.Int
+  @objc public var backendError: Datatrans.BackendError? {
+    @objc get
+  }
   @objc override dynamic public init(domain: Swift.String, code: Swift.Int, userInfo dict: [Swift.String : Any]? = nil)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
@@ -114,6 +122,15 @@ import _Concurrency
 @_hasMissingDesignatedInitializers @objc(DTBinRangeMatch) public class BinRangeMatch : ObjectiveC.NSObject {
   @objc final public let matchLength: Swift.Int
   @objc final public let complete: Swift.Bool
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(DTBackendError) public class BackendError : Foundation.NSError {
+  @objc public var name: Swift.String {
+    @objc get
+  }
+  @objc override dynamic public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
+  @objc override dynamic public init(domain: Swift.String, code: Swift.Int, userInfo dict: [Swift.String : Any]? = nil)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc(DTSavedBoncard) @objcMembers public class SavedBoncard : Datatrans.SavedPaymentMethod {

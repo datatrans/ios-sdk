@@ -10,6 +10,6 @@
 
 @interface DTAliasRequest : NSObject <NSCopying>
 
-- (id)initWithMerchantId:(NSString *)merchantId currencyCode:(NSString *)currencyCode;
+- (id)initWithMerchantId:(NSString *)merchantId currencyCode:(NSString *)currencyCode refno:(NSString *)refno refno2:(NSString *)refno2 refno3:(NSString *)refno3;
 
 @end
