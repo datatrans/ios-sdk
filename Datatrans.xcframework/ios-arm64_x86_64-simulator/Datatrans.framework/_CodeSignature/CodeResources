@@ -150,7 +150,7 @@
 		</data>
 		<key>Headers/DTPaymentMethodInfo.h</key>
 		<data>
-		lIYJoXCs2lCvwSF2irtDBl/0zZA=
+		ROMOQ8hudlQsJqw1A4buNZEInlc=
 		</data>
 		<key>Headers/DTPaymentModel.h</key>
 		<data>
@@ -218,7 +218,7 @@
 		</data>
 		<key>Headers/Datatrans-Swift.h</key>
 		<data>
-		2MNboZH+sdwlASCRM21o17y80bI=
+		g0fnxR0wFnros2oK2P0K7ea6qFU=
 		</data>
 		<key>Headers/Datatrans.h</key>
 		<data>
@@ -246,27 +246,27 @@
 		</data>
 		<key>Modules/Datatrans.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		KHTDN4ubyPSlnNQdh/qBNR523o0=
+		E7ewq2Jp/PAhQY6BrPSfD0vToRU=
 		</data>
 		<key>Modules/Datatrans.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		ffnkF6sGU0d+9h3f9/fLU3if93k=
+		9P8YprDerxwWIWt5iSCBlcTh+cw=
 		</data>
 		<key>Modules/Datatrans.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		kC25QR+6jsuM9AUJkx4jhsiFsQ4=
+		u4VyuXIaPb2/EG6kNOyxvyS6oV8=
 		</data>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		tf1UTKFC9whTtKHWNsEUWao0KJk=
+		jN7yjsZ14uDEgMYszs+VdTtW4Uc=
 		</data>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		WxKFc58xexe4544auD5Z9bCLWb8=
+		BTMNrU+FH03kvgECjcOILUTCqrI=
 		</data>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		CypvRX/8++ygF8IjBF6qGxAfxAw=
+		aQfUszr/vzy1VXd8qd9DP2zwqVI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -316,6 +316,15 @@
 		<data>
 		Q9fY89Wl97afM9GPeijzzZ6toNM=
 		</data>
+		<key>da.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			PRwid7AiDJGfZSVe6JibYllSAgg=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 		<key>de.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
@@ -334,6 +343,24 @@
 			<key>optional</key>
 			<true/>
 		</dict>
+		<key>es.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			aKk1Q8iW1IA9BdotTuWZ+yv92rU=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>fi.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Yvo6gVJ1fgPdhK+IvatWy4Ez8Z8=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 		<key>fr.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
@@ -348,6 +375,33 @@
 			<key>hash</key>
 			<data>
 			X2kiVy3Rl1xLbC0ZHsN9Qo6HzZg=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>no.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			R12iUQaCtprQQcnu1y4hOlzzuzA=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>pt.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			AZdqxw9q6040RoNvzcTT8W0q4Uc=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>sv.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			m4tsmiby2lpXx+zYfLb9WN/NO6w=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -615,7 +669,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8ZVfbfP0G3N9N/z8jmD1MJPVpr5PYZnVu51Kwo64j2s=
+			FJ25mln+8VYvLF582ATIv+vtSmnrEEccniasVHK31/0=
 			</data>
 		</dict>
 		<key>Headers/DTPaymentModel.h</key>
@@ -734,7 +788,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Jt8GC2a+5uMa2jHOjQ7U7WvaVi8aJjw7xefc6luBJyc=
+			YazzIn65XoKXcT9gA3UbCi9mnfLlCbXV0PYGnnPhWQs=
 			</data>
 		</dict>
 		<key>Headers/Datatrans.h</key>
@@ -776,42 +830,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			bgCl+679PrDuVdWx6vVhsAEZnwYwmfDgoDtcnkBUf9w=
+			x1sN2g7sl1dLGFQD4OLNHP1BsTMKlfbx9Cm4kGet0l4=
 			</data>
 		</dict>
 		<key>Modules/Datatrans.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			XXdbFGZfIRJIW2EhECNzmAujUKrQuCsjcavE71DWjy4=
+			+7mzREV1x0UXIceor8UPR1CpYPhHgDZQyCGhm3ES2Kw=
 			</data>
 		</dict>
 		<key>Modules/Datatrans.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Q1Co3T1t5BeMjcPraUi0qTSiwb2EoYCe+XwMq4lxm1Q=
+			cj/WW0elttxXwk4/WgprWEs4JTKsRENi8gyVEWswKLk=
 			</data>
 		</dict>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DMVCSU+WGtd9JhxKT4H5tD2Nl1J3+ue0xEoptt3spdw=
+			p3PInQvF5c6/3Xf8+Frcv0jp52mGZgCzPiCvYzCL530=
 			</data>
 		</dict>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			UZCoAVFSWg93p7osB6IazV0STsN3+MMH0I7DxYW9CC4=
+			Nblxr6jhLAbnxtoDx1E4EsIiy31iOepqltAE3H06GD0=
 			</data>
 		</dict>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6qFYHaq6fhyUOLZWzT1x0Wf3MVxh0e4qR6oQ+tZKYLo=
+			RezlwDYoR3vaX7n338XaEUu1dT46MFQXBJXsh3eN0yY=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -898,6 +952,15 @@
 			rEUAhsCBjadVBqSilnepNzZw/DVqxKBTW9U12pnvOag=
 			</data>
 		</dict>
+		<key>da.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			dQfsg4HsltyBsPO+cbw8100lL76552MhQESKr7a1cQE=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 		<key>de.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
@@ -916,6 +979,24 @@
 			<key>optional</key>
 			<true/>
 		</dict>
+		<key>es.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Q5QGvZfX6HU84GPe0U5yuEHi5iZ/7KyLtd4u4J2/pzg=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>fi.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			SBNeRc+yn+3ZscUz/DRaeLYQA9a9ogjXij7CePxiG/M=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 		<key>fr.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
@@ -930,6 +1011,33 @@
 			<key>hash2</key>
 			<data>
 			cJMCytehTMR/DV0Qc9U+RKU8PIa1L5OVmilczkYwMCE=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>no.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			eJOyYbVDYQMVXRFd2TY1cZSiTJc1U8sazTIP7L/A3wM=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>pt.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			wMZGXjX9SZKso51ErZ0tDDxjuCFMZlk707uI/kCAgrE=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>sv.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			MNd2UadbdN8yvYb1QrPyVpZm4YyZFU4+/cOkjru70UQ=
 			</data>
 			<key>optional</key>
 			<true/>

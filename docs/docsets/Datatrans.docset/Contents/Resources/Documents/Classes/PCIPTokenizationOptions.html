@@ -17,7 +17,7 @@
     <a title="PCIPTokenizationOptions Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">Datatrans 2.5.0 Docs</a></p>
+        <p><a href="../index.html">Datatrans 2.6.0 Docs</a></p>
         <p class="header-right"><a href="https://github.com/datatrans/ios-sdk"><img src="../img/gh.png" alt="GitHub"/>View on GitHub</a></p>
         <div class="header-right">
           <form role="search" action="../search.json">
@@ -151,6 +151,14 @@
               </li>
             </ul>
           </li>
+          <li class="nav-group-name">
+            <a href="../Other%20Protocols.html">Other Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/InitialLoaderDelegate.html">InitialLoaderDelegate</a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <article class="main-content">
@@ -188,7 +196,7 @@
                         <p>Use this setting to change the UI language. If this is not
 specified, the default language determined by the system will be used.</p>
 
-<p>The supported values are <code>de</code>, <code>en</code>, <code>fr</code>, <code>it</code> and <code>nil</code>.</p>
+<p>The supported values are <code>en</code>, <code>da</code>, <code>de</code>, <code>es</code>, <code>fi</code>, <code>fr</code>, <code>it</code>, <code>no</code>, <code>pt</code>, <code>sv</code> and <code>nil</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -284,6 +292,38 @@ corporate networks with anti-malware/-theft/-espionage SSL proxying.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">useCertificatePinning</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Datatrans@objc(cs)DTPCIPTokenizationOptions(py)customInitialLoaderDelegate"></a>
+                    <a name="//apple_ref/swift/Property/customInitialLoaderDelegate" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTPCIPTokenizationOptions(py)customInitialLoaderDelegate">customInitialLoaderDelegate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Use this option when no card data is entered in our SDK and you want to show your own loading animation during the SDK&rsquo;s initial network requests.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    Your loader must be visible before starting the SDK. Be aware that the SDK blocks user input. Your loading screen can not have a cancel button or give the impression that users can still interact with the UI.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">customInitialLoaderDelegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/InitialLoaderDelegate.html">InitialLoaderDelegate</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>

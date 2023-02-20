@@ -425,6 +425,16 @@ typedef SWIFT_ENUM_NAMED(NSInteger, DTCardLabelType, "CardLabelType", open) {
 
 
 
+/// Callback invoked by the SDK when the custom initial loader must be dismissed.
+/// important:
+/// The SDK does not invoke the callback when nothing has to be shown throughout the process. Make sure you dismiss the loading animation at the end of the transaction if the SDK hasn’t done so already.
+SWIFT_PROTOCOL_NAMED("InitialLoaderDelegate")
+@protocol DTInitialLoaderDelegate
+/// Invoked when SDK content needs to be presented. The app must dismiss/hide its custom loading animation immediately. For the remainder of the process the SDK’s loading animation is used.
+- (void)dismissLoader;
+@end
+
+
 
 /// This class represents a previously tokenized card used in the CVV-only tokenization/verification flow.
 SWIFT_CLASS_NAMED("PCIPCVVOnlyCard")
@@ -590,7 +600,7 @@ SWIFT_CLASS_NAMED("PCIPTokenizationOptions")
 @interface DTPCIPTokenizationOptions : NSObject
 /// Use this setting to change the UI language. If this is not
 /// specified, the default language determined by the system will be used.
-/// The supported values are <code>de</code>, <code>en</code>, <code>fr</code>, <code>it</code> and <code>nil</code>.
+/// The supported values are <code>en</code>, <code>da</code>, <code>de</code>, <code>es</code>, <code>fi</code>, <code>fr</code>, <code>it</code>, <code>no</code>, <code>pt</code>, <code>sv</code> and <code>nil</code>.
 @property (nonatomic, copy) NSString * _Nullable language;
 /// Use this setting to display or hide critical errors.
 @property (nonatomic) BOOL suppressCriticalErrorDialog;
@@ -604,6 +614,10 @@ SWIFT_CLASS_NAMED("PCIPTokenizationOptions")
 /// Please be advised that enabling this option will break your app in many
 /// corporate networks with anti-malware/-theft/-espionage SSL proxying.
 @property (nonatomic) BOOL useCertificatePinning;
+/// Use this option when no card data is entered in our SDK and you want to show your own loading animation during the SDK’s initial network requests.
+/// important:
+/// Your loader must be visible before starting the SDK. Be aware that the SDK blocks user input. Your loading screen can not have a cancel button or give the impression that users can still interact with the UI.
+@property (nonatomic, weak) id <DTInitialLoaderDelegate> _Nullable customInitialLoaderDelegate;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1175,6 +1189,10 @@ SWIFT_CLASS_NAMED("TransactionOptions")
 /// Please be advised that enabling this option will break your app in many
 /// corporate networks with anti-malware/-theft/-espionage SSL proxying.
 @property (nonatomic) BOOL useCertificatePinning;
+/// Sometimes, apps display a loading animation before starting the SDK. You can set the <code>customInitialLoaderDelegate</code> option if you want to keep showing this animation instead of the SDK’s loader during initial SDK network requests.
+/// important:
+/// Your loader must be visible before starting the SDK. Be aware that the SDK blocks user input. Your loading screen can not have a cancel button or give the impression that users can still interact with the UI.
+@property (nonatomic, weak) id <DTInitialLoaderDelegate> _Nullable customInitialLoaderDelegate;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 

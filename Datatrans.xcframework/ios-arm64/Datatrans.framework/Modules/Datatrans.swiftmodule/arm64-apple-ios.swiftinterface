@@ -58,6 +58,9 @@ import _Concurrency
   @objc required public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
+@objc(DTInitialLoaderDelegate) public protocol InitialLoaderDelegate {
+  @objc func dismissLoader()
+}
 @objc(DTBoncardType) public enum BoncardType : Swift.Int, Swift.CaseIterable {
   case giftCard
   case boncard
@@ -105,6 +108,7 @@ import _Concurrency
   @objc public var suppressCriticalErrorDialog: Swift.Bool
   @objc public var testing: Swift.Bool
   @objc public var useCertificatePinning: Swift.Bool
+  @objc weak public var customInitialLoaderDelegate: Datatrans.InitialLoaderDelegate?
   @objc override dynamic public init()
   @objc deinit
 }
@@ -155,6 +159,7 @@ import _Concurrency
   @objc public var suppressCriticalErrorDialog: Swift.Bool
   @objc public var testing: Swift.Bool
   @objc public var useCertificatePinning: Swift.Bool
+  @objc weak public var customInitialLoaderDelegate: Datatrans.InitialLoaderDelegate?
   @objc override dynamic public init()
   @objc deinit
 }

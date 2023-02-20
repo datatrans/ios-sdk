@@ -17,7 +17,7 @@
     <a title="TransactionOptions Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">Datatrans 2.5.0 Docs</a></p>
+        <p><a href="../index.html">Datatrans 2.6.0 Docs</a></p>
         <p class="header-right"><a href="https://github.com/datatrans/ios-sdk"><img src="../img/gh.png" alt="GitHub"/>View on GitHub</a></p>
         <div class="header-right">
           <form role="search" action="../search.json">
@@ -148,6 +148,14 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Classes/BackendError.html">BackendError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other%20Protocols.html">Other Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/InitialLoaderDelegate.html">InitialLoaderDelegate</a>
               </li>
             </ul>
           </li>
@@ -398,6 +406,38 @@ corporate networks with anti-malware/-theft/-espionage SSL proxying.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">useCertificatePinning</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Datatrans@objc(cs)DTTransactionOptions(py)customInitialLoaderDelegate"></a>
+                    <a name="//apple_ref/swift/Property/customInitialLoaderDelegate" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTTransactionOptions(py)customInitialLoaderDelegate">customInitialLoaderDelegate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sometimes, apps display a loading animation before starting the SDK. You can set the <code>customInitialLoaderDelegate</code> option if you want to keep showing this animation instead of the SDK&rsquo;s loader during initial SDK network requests.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    Your loader must be visible before starting the SDK. Be aware that the SDK blocks user input. Your loading screen can not have a cancel button or give the impression that users can still interact with the UI.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">customInitialLoaderDelegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/InitialLoaderDelegate.html">InitialLoaderDelegate</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
