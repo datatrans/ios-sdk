@@ -15,6 +15,7 @@
 @class DTSwissBillingPaymentInfo;
 @class DTSwissPassPaymentInfo;
 @class DTCustomer;
+@class DTPaycardPaymentInfo;
 
 @interface DTPaymentOptions : NSObject <NSCopying>
 
@@ -40,5 +41,6 @@
 @property (nullable, nonatomic, copy) DTCustomer* customer;
 @property (nullable, nonatomic, copy) DTSwissPassPaymentInfo* swissPassPaymentInfo;
 @property (nullable, nonatomic, copy) NSString* paysafecardMerchantClientId;
+@property (nullable, nonatomic, strong) DTPaycardPaymentInfo* paycardPaymentInfo;
 
 @end

@@ -37,6 +37,7 @@ import _Concurrency
   @objc final public let countryCode: Swift.String?
   @objc final public let issuer: Swift.String?
   @objc final public let maskedCardNumber: Swift.String
+  @objc final public let expiryDate: Datatrans.CardExpiryDate
   @objc final public let type: Swift.String?
   @objc final public let usage: Swift.String?
   @objc override dynamic public var description: Swift.String {
@@ -184,6 +185,7 @@ import _Concurrency
   case Byjuno
   case SwissPass
   case Powerpay
+  case Paycard
   case Paysafecard
   case Boncard
   case Elo

@@ -469,6 +469,8 @@ SWIFT_CLASS_NAMED("PCIPCardInfo")
 @property (nonatomic, readonly, copy) NSString * _Nullable issuer;
 /// The masked card number, e.g. “489537xxxxxx6287”
 @property (nonatomic, readonly, copy) NSString * _Nonnull maskedCardNumber;
+/// Expiry date
+@property (nonatomic, readonly, strong) DTCardExpiryDate * _Nonnull expiryDate;
 /// The type of the card, e.g. “debit”
 @property (nonatomic, readonly, copy) NSString * _Nullable type;
 /// The usage of the card, e.g. “consumer”
@@ -682,16 +684,18 @@ typedef SWIFT_ENUM_NAMED(NSInteger, DTPaymentMethodType, "PaymentMethodType", op
   DTPaymentMethodTypeSwissPass = 18,
 /// Powerpay payment method
   DTPaymentMethodTypePowerpay = 19,
+/// Paycard payment method
+  DTPaymentMethodTypePaycard = 20,
 /// Paysafecard payment method
-  DTPaymentMethodTypePaysafecard = 20,
+  DTPaymentMethodTypePaysafecard = 21,
 /// Gift card / Boncard / Lunch-Check payment method
-  DTPaymentMethodTypeBoncard = 21,
+  DTPaymentMethodTypeBoncard = 22,
 /// Elo card payment method
-  DTPaymentMethodTypeElo = 22,
+  DTPaymentMethodTypeElo = 23,
 /// Hipercard payment method
-  DTPaymentMethodTypeHipercard = 23,
+  DTPaymentMethodTypeHipercard = 24,
 /// Klarna payment method
-  DTPaymentMethodTypeKlarna = 24,
+  DTPaymentMethodTypeKlarna = 25,
 };
 
 
@@ -1699,6 +1703,8 @@ SWIFT_CLASS_NAMED("PCIPCardInfo")
 @property (nonatomic, readonly, copy) NSString * _Nullable issuer;
 /// The masked card number, e.g. “489537xxxxxx6287”
 @property (nonatomic, readonly, copy) NSString * _Nonnull maskedCardNumber;
+/// Expiry date
+@property (nonatomic, readonly, strong) DTCardExpiryDate * _Nonnull expiryDate;
 /// The type of the card, e.g. “debit”
 @property (nonatomic, readonly, copy) NSString * _Nullable type;
 /// The usage of the card, e.g. “consumer”
@@ -1912,16 +1918,18 @@ typedef SWIFT_ENUM_NAMED(NSInteger, DTPaymentMethodType, "PaymentMethodType", op
   DTPaymentMethodTypeSwissPass = 18,
 /// Powerpay payment method
   DTPaymentMethodTypePowerpay = 19,
+/// Paycard payment method
+  DTPaymentMethodTypePaycard = 20,
 /// Paysafecard payment method
-  DTPaymentMethodTypePaysafecard = 20,
+  DTPaymentMethodTypePaysafecard = 21,
 /// Gift card / Boncard / Lunch-Check payment method
-  DTPaymentMethodTypeBoncard = 21,
+  DTPaymentMethodTypeBoncard = 22,
 /// Elo card payment method
-  DTPaymentMethodTypeElo = 22,
+  DTPaymentMethodTypeElo = 23,
 /// Hipercard payment method
-  DTPaymentMethodTypeHipercard = 23,
+  DTPaymentMethodTypeHipercard = 24,
 /// Klarna payment method
-  DTPaymentMethodTypeKlarna = 24,
+  DTPaymentMethodTypeKlarna = 25,
 };
 
 

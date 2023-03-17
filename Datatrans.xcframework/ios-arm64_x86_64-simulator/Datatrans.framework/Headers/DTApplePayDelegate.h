@@ -1,9 +1,7 @@
 //
 //  DTApplePayDelegate.h
 //
-//  DTApplePayDelegate methods can be implemented to customize Apple Pay payments. All methods have been copied
-//  verbatim from PKPaymentAuthorizationViewControllerDelegate and are optional. Please refer to the official
-//  Apple Pay developer documentation for more information.
+//  DTApplePayDelegate methods can be implemented to customize Apple Pay payments. All methods are optional.
 //
 
 #import <PassKit/PassKit.h>
@@ -12,6 +10,25 @@
 @protocol DTApplePayDelegate <NSObject>
 
 @optional
+
+// Sent when the user has authorized a payment and before the authorization is sent to acquirers. The information
+// passed corresponds to what has been requested in PKPaymentRequest.
+//
+// The delegate should send this information to their backend in order to link it with the transaction once it is
+// complete and the webhook is received. Note that the transaction can still fail after this call.
+//
+// The delegate must invoke the completion block after processing the information. If the delegate completes with
+// an error, the process is aborted and the error is sent to the TransactionDelegate (transactionDidFail) as
+// underlying error. The Apple Pay flow is not continued until the completion block is invoked.
+- (void)userDidAuthorizedPaymentWithBillingContact:(PKContact *)billingContact
+								   shippingContact:(PKContact *)shippingContact
+									shippingMethod:(PKShippingMethod *)shippingMethod
+										completion:(void (^)(BOOL isSuccess, NSError *error))completion;
+
+#pragma mark -
+// All methods below have been copied verbatim from PKPaymentAuthorizationViewControllerDelegate. Please refer to
+// the official Apple Pay developer documentation for more information.
+
 // Sent when the user has selected a new shipping method.  The delegate should determine
 // shipping costs based on the shipping method and either the shipping address supplied in the original
 // PKPaymentRequest or the address fragment provided by the last call to paymentAuthorizationViewController:

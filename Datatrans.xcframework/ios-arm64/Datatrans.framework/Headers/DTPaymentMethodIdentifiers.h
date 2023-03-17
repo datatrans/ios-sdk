@@ -26,6 +26,7 @@ extern NSString* const DTPaymentMethodReka;
 extern NSString* const DTPaymentMethodByjuno;
 extern NSString* const DTPaymentMethodSwissPass;
 extern NSString* const DTPaymentMethodPowerpay;
+extern NSString* const DTPaymentMethodPaycard;
 extern NSString* const DTPaymentMethodPaysafecard;
 extern NSString* const DTPaymentMethodBoncard;
 extern NSString* const DTPaymentMethodElo;
