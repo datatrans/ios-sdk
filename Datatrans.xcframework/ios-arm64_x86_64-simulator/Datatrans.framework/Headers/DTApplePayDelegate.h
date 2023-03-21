@@ -20,10 +20,10 @@
 // The delegate must invoke the completion block after processing the information. If the delegate completes with
 // an error, the process is aborted and the error is sent to the TransactionDelegate (transactionDidFail) as
 // underlying error. The Apple Pay flow is not continued until the completion block is invoked.
-- (void)userDidAuthorizedPaymentWithBillingContact:(PKContact *)billingContact
-								   shippingContact:(PKContact *)shippingContact
-									shippingMethod:(PKShippingMethod *)shippingMethod
-										completion:(void (^)(BOOL isSuccess, NSError *error))completion;
+- (void)userDidAuthorizePaymentWithBillingContact:(PKContact *)billingContact
+								  shippingContact:(PKContact *)shippingContact
+								   shippingMethod:(PKShippingMethod *)shippingMethod
+									   completion:(void (^)(BOOL isSuccess, NSError *error))completion;
 
 #pragma mark -
 // All methods below have been copied verbatim from PKPaymentAuthorizationViewControllerDelegate. Please refer to
