@@ -42,5 +42,6 @@
 @property (nullable, nonatomic, copy) DTSwissPassPaymentInfo* swissPassPaymentInfo;
 @property (nullable, nonatomic, copy) NSString* paysafecardMerchantClientId;
 @property (nullable, nonatomic, strong) DTPaycardPaymentInfo* paycardPaymentInfo;
+@property (nonatomic, assign) BOOL isPayment;
 
 @end

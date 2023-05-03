@@ -10,10 +10,6 @@ let package = Package(
             targets: ["Datatrans"]
         ),
         .library(
-            name: "DTCardScanner",
-            targets: ["DTCardScanner"]
-        ),
-        .library(
             name: "KlarnaMobileSDK",
             targets: ["DTKlarna", "KlarnaMobileSDK"]
         ),
@@ -26,10 +22,6 @@ let package = Package(
         .binaryTarget(
             name: "Datatrans",
             path: "Datatrans.xcframework"
-        ),
-        .binaryTarget(
-            name: "DTCardScanner",
-            path: "DTCardScanner.xcframework"
         ),
         .binaryTarget(
             name: "DTKlarna",

@@ -602,7 +602,7 @@ SWIFT_CLASS_NAMED("PCIPTokenizationOptions")
 @interface DTPCIPTokenizationOptions : NSObject
 /// Use this setting to change the UI language. If this is not
 /// specified, the default language determined by the system will be used.
-/// The supported values are <code>en</code>, <code>da</code>, <code>de</code>, <code>es</code>, <code>fi</code>, <code>fr</code>, <code>it</code>, <code>no</code>, <code>pt</code>, <code>sv</code> and <code>nil</code>.
+/// The supported values are <code>en</code>, <code>da</code>, <code>de</code>, <code>es</code>, <code>fi</code>, <code>fr</code>, <code>it</code>,  <code>nl</code>,<code>no</code>, <code>pt</code>, <code>sv</code> and <code>nil</code>.
 @property (nonatomic, copy) NSString * _Nullable language;
 /// Use this setting to display or hide critical errors.
 @property (nonatomic) BOOL suppressCriticalErrorDialog;
@@ -694,6 +694,8 @@ typedef SWIFT_ENUM_NAMED(NSInteger, DTPaymentMethodType, "PaymentMethodType", op
   DTPaymentMethodTypeHipercard = 24,
 /// Klarna payment method
   DTPaymentMethodTypeKlarna = 25,
+/// Dankort payment method
+  DTPaymentMethodTypeDankort = 26,
 };
 
 

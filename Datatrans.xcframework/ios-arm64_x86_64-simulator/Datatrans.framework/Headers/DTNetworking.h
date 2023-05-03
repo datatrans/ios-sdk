@@ -44,6 +44,7 @@ typedef enum {
 
 + (BOOL)isTechnicalError:(NSError *)error;
 + (BOOL)isSSLError:(NSError *)error;
++ (BOOL)isMobileTokenNotFoundError:(NSError *)error;
 
 - (instancetype)initWithMobileToken:(NSString *)mobileToken urls:(DTUrls *)urls certificatePinning:(BOOL)certificatePinning;
 

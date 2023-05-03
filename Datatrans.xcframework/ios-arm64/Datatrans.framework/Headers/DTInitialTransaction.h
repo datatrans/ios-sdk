@@ -17,12 +17,11 @@
 - (nonnull instancetype)init NS_UNAVAILABLE;
 - (nonnull instancetype)initWithDictionary:(nonnull NSDictionary *)jsonObject;
 
-- (void)addOptionsToPaymentOptions:(nonnull DTPaymentOptions *)paymentOptions;
+- (void)addOptionsToPaymentOptions:(nonnull DTPaymentOptions *)paymentOptions hasInternalMethod:(BOOL)hasInternalMethod;
 
 - (nonnull DTAliasRequest *)aliasRequest;
 - (nonnull NSArray<NSString *> *)paymentMethods;
 - (nonnull DTPaymentRequest *)paymentRequest;
 - (nullable DTSavedPaymentMethod *)savedPaymentMethod;
-- (BOOL)isPayment;
 
 @end
