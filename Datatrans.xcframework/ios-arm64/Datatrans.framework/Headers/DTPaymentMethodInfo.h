@@ -13,12 +13,9 @@
 
 typedef enum {
 	DTPaymentMethodCreditCard				= 1 << 0,
-	DTPaymentMethodNeedsCardExpiration		= 1 << 1,
-	DTPaymentMethodNeedsCardVerification	= 1 << 2,
-	DTPaymentMethodNeedsCardholder			= 1 << 3,
-	DTPaymentMethodWebPayment				= 1 << 5,
-	DTPaymentMethodWebPaymentExternal		= 1 << 7,
-	DTPaymentMethodRequiresCustomScheme		= 1 << 9,
+	DTPaymentMethodWebPayment				= 1 << 1,
+	DTPaymentMethodWebPaymentExternal		= 1 << 2,
+	DTPaymentMethodRequiresCustomScheme		= 1 << 3,
 } DTPaymentMethodFlags;
 
 @interface DTPaymentMethodInfo : NSObject
@@ -28,9 +25,7 @@ typedef enum {
 @property (nonatomic, readonly) BOOL isCreditCard;
 @property (nonatomic, readonly) BOOL isWebPayment;
 @property (nonatomic, readonly) BOOL isWebPaymentExternal;
-@property (nonatomic, readonly) BOOL needsCardExpiration;
 @property (nonatomic, readonly) BOOL needsCardVerification;
-@property (nonatomic, readonly) BOOL needsCardholder;
 @property (nonatomic, readonly) BOOL hasSavedPaymentMethodSupport;
 @property (nonatomic, readonly) BOOL requiresCustomScheme;
 

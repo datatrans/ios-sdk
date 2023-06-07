@@ -42,6 +42,10 @@
 @property (nullable, nonatomic, copy) DTSwissPassPaymentInfo* swissPassPaymentInfo;
 @property (nullable, nonatomic, copy) NSString* paysafecardMerchantClientId;
 @property (nullable, nonatomic, strong) DTPaycardPaymentInfo* paycardPaymentInfo;
+@property (nullable, nonatomic, strong) NSString* customerMobile;
+@property (nullable, nonatomic, strong) NSString* vippsPaymentText;
+@property (nonatomic, assign) BOOL isVippsAppInstalled;
+@property (nullable, nonatomic, strong) NSString* appCallbackUrl;
 @property (nonatomic, assign) BOOL isPayment;
 
 @end

@@ -33,6 +33,8 @@ extern NSString* const DTPaymentMethodElo;
 extern NSString* const DTPaymentMethodHipercard;
 extern NSString* const DTPaymentMethodKlarna;
 extern NSString* const DTPaymentMethodDankort;
+extern NSString* const DTPaymentMethodSwish;
+extern NSString* const DTPaymentMethodVipps;
 
 // reka alternative identifiers
 extern NSString* const DTPaymentMethodRekaRail;

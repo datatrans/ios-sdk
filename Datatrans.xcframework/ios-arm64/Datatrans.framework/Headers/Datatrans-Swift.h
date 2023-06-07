@@ -696,6 +696,10 @@ typedef SWIFT_ENUM_NAMED(NSInteger, DTPaymentMethodType, "PaymentMethodType", op
   DTPaymentMethodTypeKlarna = 25,
 /// Dankort payment method
   DTPaymentMethodTypeDankort = 26,
+/// Swish payment method
+  DTPaymentMethodTypeSwish = 27,
+/// Vipps payment method
+  DTPaymentMethodTypeVipps = 28,
 };
 
 

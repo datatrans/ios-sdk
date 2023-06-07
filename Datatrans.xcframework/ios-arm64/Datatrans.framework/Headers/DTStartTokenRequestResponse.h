@@ -12,5 +12,6 @@
 @property (nonatomic, copy) NSString* paymentMethodCategories; // Klarna only
 @property (nonatomic, copy) NSString* token;
 @property (nonatomic, copy) NSString* transactionId;
+@property (nonatomic, copy) NSString* redirectUrl;
 
 @end

@@ -55,3 +55,4 @@ FOUNDATION_EXPORT const unsigned char DatatransVersionString[];
 #import <Datatrans/DTWebCallbackUrls.h>
 #import <Datatrans/DTWebRequestFactory.h>
 #import <Datatrans/DTWebProcess.h>
+#import <Datatrans/DTBasicAPMAppDelegateProxy.h>
