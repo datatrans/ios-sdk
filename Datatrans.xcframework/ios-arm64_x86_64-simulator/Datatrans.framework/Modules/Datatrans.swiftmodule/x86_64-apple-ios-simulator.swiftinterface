@@ -9,6 +9,7 @@ import Foundation
 import PassKit
 import SafariServices
 import Swift
+import SwiftUI
 import UIKit
 import Vision
 import WebKit
@@ -121,17 +122,6 @@ import _Concurrency
   @objc func tokenizationDidFail(_ tokenization: Datatrans.PCIPTokenization, error: Datatrans.PCIPTokenizationError)
   @objc optional func tokenizationDidCancel(_ tokenization: Datatrans.PCIPTokenization)
 }
-@_hasMissingDesignatedInitializers @objc(DTBinRange) public class BinRange : ObjectiveC.NSObject {
-  @objc public class func range(start: Swift.String, end: Swift.String) -> Datatrans.BinRange
-  @objc public class func prefix(_ prefix: Swift.String) -> Datatrans.BinRange
-  @objc public func match(_ number: Swift.String) -> Datatrans.BinRangeMatch?
-  @objc deinit
-}
-@_hasMissingDesignatedInitializers @objc(DTBinRangeMatch) public class BinRangeMatch : ObjectiveC.NSObject {
-  @objc final public let matchLength: Swift.Int
-  @objc final public let complete: Swift.Bool
-  @objc deinit
-}
 @_inheritsConvenienceInitializers @objc(DTBackendError) public class BackendError : Foundation.NSError {
   @objc public var name: Swift.String {
     @objc get
@@ -167,7 +157,7 @@ import _Concurrency
   @objc override dynamic public init()
   @objc deinit
 }
-@objc(DTPaymentMethodType) public enum PaymentMethodType : Swift.Int {
+@objc(DTPaymentMethodType) public enum PaymentMethodType : Swift.Int, Swift.CaseIterable {
   case Visa
   case MasterCard
   case DinersClub
@@ -197,8 +187,17 @@ import _Concurrency
   case Dankort
   case Swish
   case Vipps
+  case Maestro
+  case ChinaUnionPay
+  public var identifier: Swift.String {
+    get
+  }
   public init?(rawValue: Swift.Int)
+  public typealias AllCases = [Datatrans.PaymentMethodType]
   public typealias RawValue = Swift.Int
+  public static var allCases: [Datatrans.PaymentMethodType] {
+    get
+  }
   public var rawValue: Swift.Int {
     get
   }
@@ -229,6 +228,13 @@ import _Concurrency
   @objc override public init(type: Datatrans.PaymentMethodType, alias: Swift.String)
   @objc required public init?(coder: Foundation.NSCoder)
   @objc deinit
+}
+@available(iOS 14.0, *)
+extension SwiftUI.View {
+  public func datatrans(startWithTransaction: SwiftUI.Binding<Datatrans.Transaction?>) -> some SwiftUI.View
+  
+  public func datatrans(startWithPCIPTokenization: SwiftUI.Binding<Datatrans.PCIPTokenization?>) -> some SwiftUI.View
+  
 }
 @_inheritsConvenienceInitializers @objc(DTPaymentMethodTypeMapper) public class PaymentMethodTypeMapper : ObjectiveC.NSObject {
   public static func toType(identifier: Swift.String) -> Datatrans.PaymentMethodType?
@@ -297,7 +303,8 @@ import _Concurrency
   }
   @objc public var showApplePayAsSavedPaymentMethod: Swift.Bool
   @objc public var showLargeButton: Swift.Bool
-  @objc public class func hasApplePay(withSupportedNetworks supportedNetworks: [PassKit.PKPaymentNetwork]) -> Swift.Bool
+  @objc public var existingCardRequired: Swift.Bool
+  @objc public class func hasApplePay(withSupportedNetworks supportedNetworks: [PassKit.PKPaymentNetwork], existingCardRequired: Swift.Bool) -> Swift.Bool
   @objc public init(applePayMerchantId: Swift.String, supportedNetworks: [PassKit.PKPaymentNetwork], countryCode: Swift.String)
   @objc convenience public init(applePayMerchantId: Swift.String, supportedNetworks: [PassKit.PKPaymentNetwork])
   @objc public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any

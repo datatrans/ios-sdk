@@ -17,7 +17,7 @@
     <a title="View Extension Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">Datatrans 3.0.0 Docs</a></p>
+        <p><a href="../index.html">Datatrans 3.2.0 Docs</a></p>
         <p class="header-right"><a href="https://github.com/datatrans/ios-sdk"><img src="../img/gh.png" alt="GitHub"/>View on GitHub</a></p>
         <div class="header-right">
           <form role="search" action="../search.json">
@@ -188,9 +188,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7SwiftUI4ViewP9DatatransE20datatransTransaction11isPresented_QrAA7BindingVySbG_AHyAD0F0CSgGtF"></a>
-                    <a name="//apple_ref/swift/Method/datatransTransaction(isPresented:_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7SwiftUI4ViewP9DatatransE20datatransTransaction11isPresented_QrAA7BindingVySbG_AHyAD0F0CSgGtF">datatransTransaction(isPresented:<wbr>_:<wbr>)</a>
+                    <a name="/s:7SwiftUI4ViewP9DatatransE9datatrans20startWithTransactionQrAA7BindingVyAD0H0CSgG_tF"></a>
+                    <a name="//apple_ref/swift/Method/datatrans(startWithTransaction:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP9DatatransE9datatrans20startWithTransactionQrAA7BindingVyAD0H0CSgG_tF">datatrans(startWithTransaction:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -198,16 +198,38 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Starts the payment SDK from a SwiftUI application.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">datatransTransaction</span><span class="p">(</span><span class="nv">isPresented</span><span class="p">:</span> <span class="kt">Binding</span><span class="o">&lt;</span><span class="kt">Bool</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">_</span> <span class="nv">transaction</span><span class="p">:</span> <span class="kt">Binding</span><span class="o">&lt;</span><span class="kt">Datatrans</span><span class="o">.</span><span class="kt"><a href="../Classes/Transaction.html">Transaction</a></span><span class="p">?</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">datatrans</span><span class="p">(</span><span class="nv">startWithTransaction</span><span class="p">:</span> <span class="kt">Binding</span><span class="o">&lt;</span><span class="kt">Datatrans</span><span class="o">.</span><span class="kt"><a href="../Classes/Transaction.html">Transaction</a></span><span class="p">?</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>startWithTransaction</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A  binding variable to a transaction object previously initialized and configured.
+When the transaction object is set to a non-nil value the transaction is started immediately.
+Make sure to fully configure the transaction before assigning it.
+The SDK sets the transaction to nil when it is finished.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -215,9 +237,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7SwiftUI4ViewP9DatatransE25datatransPCIPTokenization11isPresented_QrAA7BindingVySbG_AHyAD0F0CSgGtF"></a>
-                    <a name="//apple_ref/swift/Method/datatransPCIPTokenization(isPresented:_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7SwiftUI4ViewP9DatatransE25datatransPCIPTokenization11isPresented_QrAA7BindingVySbG_AHyAD0F0CSgGtF">datatransPCIPTokenization(isPresented:<wbr>_:<wbr>)</a>
+                    <a name="/s:7SwiftUI4ViewP9DatatransE9datatrans25startWithPCIPTokenizationQrAA7BindingVyAD0H0CSgG_tF"></a>
+                    <a name="//apple_ref/swift/Method/datatrans(startWithPCIPTokenization:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP9DatatransE9datatrans25startWithPCIPTokenizationQrAA7BindingVyAD0H0CSgG_tF">datatrans(startWithPCIPTokenization:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -225,16 +247,38 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Starts a PCI Proxy flow from a SwiftUI application.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">datatransPCIPTokenization</span><span class="p">(</span><span class="nv">isPresented</span><span class="p">:</span> <span class="kt">Binding</span><span class="o">&lt;</span><span class="kt">Bool</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">_</span> <span class="nv">tokenization</span><span class="p">:</span> <span class="kt">Binding</span><span class="o">&lt;</span><span class="kt">Datatrans</span><span class="o">.</span><span class="kt"><a href="../Classes/PCIPTokenization.html">PCIPTokenization</a></span><span class="p">?</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">datatrans</span><span class="p">(</span><span class="nv">startWithPCIPTokenization</span><span class="p">:</span> <span class="kt">Binding</span><span class="o">&lt;</span><span class="kt">Datatrans</span><span class="o">.</span><span class="kt"><a href="../Classes/PCIPTokenization.html">PCIPTokenization</a></span><span class="p">?</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>startWithPCIPTokenization</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A  binding variable to a PCIPTokenization object previously initialized and configured.
+When the PCIPTokenization object is set to a non-nil value the PCIPTokenization is started immediately.
+Make sure to fully configure the PCIPTokenization before assigning it.
+The SDK sets the PCIPTokenization to nil when it is finished.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>

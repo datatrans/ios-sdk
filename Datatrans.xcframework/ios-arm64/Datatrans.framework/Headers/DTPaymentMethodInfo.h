@@ -16,6 +16,7 @@ typedef enum {
 	DTPaymentMethodWebPayment				= 1 << 1,
 	DTPaymentMethodWebPaymentExternal		= 1 << 2,
 	DTPaymentMethodRequiresCustomScheme		= 1 << 3,
+	DTPaymentMethodCreditCardOptionalCvv	= 1 << 5,
 } DTPaymentMethodFlags;
 
 @interface DTPaymentMethodInfo : NSObject
@@ -28,6 +29,7 @@ typedef enum {
 @property (nonatomic, readonly) BOOL needsCardVerification;
 @property (nonatomic, readonly) BOOL hasSavedPaymentMethodSupport;
 @property (nonatomic, readonly) BOOL requiresCustomScheme;
+@property (nonatomic, readonly) BOOL isOptionalCvv;
 
 @property (nonatomic, readonly) NSString* _Nullable viewPortAdjustment;
 
@@ -43,7 +45,5 @@ typedef enum {
 
 - (void)updateWithOptions:(nonnull DTPaymentOptions *)options;
 - (nullable NSString *)validateOptions:(nonnull DTPaymentOptions *)options isAliasPayment:(BOOL)isAliasPayment hasKlarnaSDK:(BOOL)hasKlarnaSDK;
-
-+ (nonnull NSSet<DTPaymentMethodInfo *> *)methodsInMethods:(nonnull NSArray<DTPaymentMethodInfo *> *)methods forNumberStartingWith:(nonnull NSString *)number;
 
 @end

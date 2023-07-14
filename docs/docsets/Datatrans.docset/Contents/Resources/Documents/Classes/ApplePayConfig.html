@@ -17,7 +17,7 @@
     <a title="ApplePayConfig Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">Datatrans 3.1.1 Docs</a></p>
+        <p><a href="../index.html">Datatrans 3.2.0 Docs</a></p>
         <p class="header-right"><a href="https://github.com/datatrans/ios-sdk"><img src="../img/gh.png" alt="GitHub"/>View on GitHub</a></p>
         <div class="header-right">
           <form role="search" action="../search.json">
@@ -148,6 +148,14 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Classes/BackendError.html">BackendError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other%20Extensions.html">Other Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/View.html">View</a>
               </li>
             </ul>
           </li>
@@ -322,9 +330,9 @@ listed payment method.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@Datatrans@objc(cs)DTApplePayConfig(cm)hasApplePayWithSupportedNetworks:"></a>
-                    <a name="//apple_ref/swift/Method/hasApplePay(withSupportedNetworks:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTApplePayConfig(cm)hasApplePayWithSupportedNetworks:">hasApplePay(withSupportedNetworks:<wbr>)</a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTApplePayConfig(py)existingCardRequired"></a>
+                    <a name="//apple_ref/swift/Property/existingCardRequired" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTApplePayConfig(py)existingCardRequired">existingCardRequired</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -332,15 +340,46 @@ listed payment method.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Although the library automatically hides Apple Pay if no cards are supported,
-this shows if Apple Pay is available for the specified card acquirers.</p>
+                        <p>Use this option to hide and disable Apple Pay when the user hasn&rsquo;t yet set up
+a supported card with Apple Pay. By default Apple Pay is shown in any case.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kd">func</span> <span class="nf">hasApplePay</span><span class="p">(</span><span class="n">withSupportedNetworks</span> <span class="nv">supportedNetworks</span><span class="p">:</span> <span class="p">[</span><span class="kt">PKPaymentNetwork</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">existingCardRequired</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Datatrans@objc(cs)DTApplePayConfig(cm)hasApplePayWithSupportedNetworks:existingCardRequired:"></a>
+                    <a name="//apple_ref/swift/Method/hasApplePay(withSupportedNetworks:existingCardRequired:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTApplePayConfig(cm)hasApplePayWithSupportedNetworks:existingCardRequired:">hasApplePay(withSupportedNetworks:<wbr>existingCardRequired:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Use this method to determine the availability of Apple Pay for the specified parameters on a given device. Note that while the SDK automatically manages the visibility
+of Apple Pay and hides it when not available, if Apple Pay is the only payment option and it is not available, an error will be thrown.</p>
+
+<p>This method is commonly employed in scenarios where Apple Pay is presented as a fast checkout option on a product page or when the merchant displays
+the list of available payment methods.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kd">func</span> <span class="nf">hasApplePay</span><span class="p">(</span><span class="n">withSupportedNetworks</span> <span class="nv">supportedNetworks</span><span class="p">:</span> <span class="p">[</span><span class="kt">PKPaymentNetwork</span><span class="p">],</span> <span class="nv">existingCardRequired</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
@@ -357,6 +396,18 @@ this shows if Apple Pay is available for the specified card acquirers.</p>
                               <td>
                                 <div>
                                   <p>Supported card acquirers.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>existingCardRequired</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Determines whether Apple Pay should be exclusively available when at least one supported card is already set up by the user.</p>
                                 </div>
                               </td>
                             </tr>

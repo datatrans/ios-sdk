@@ -240,14 +240,21 @@ SWIFT_CLASS_NAMED("ApplePayConfig")
 /// Use this option to show Apple Pay as a payment button instead of a
 /// listed payment method.
 @property (nonatomic) BOOL showLargeButton;
-/// Although the library automatically hides Apple Pay if no cards are supported,
-/// this shows if Apple Pay is available for the specified card acquirers.
+/// Use this option to hide and disable Apple Pay when the user hasn’t yet set up
+/// a supported card with Apple Pay. By default Apple Pay is shown in any case.
+@property (nonatomic) BOOL existingCardRequired;
+/// Use this method to determine the availability of Apple Pay for the specified parameters on a given device. Note that while the SDK automatically manages the visibility
+/// of Apple Pay and hides it when not available, if Apple Pay is the only payment option and it is not available, an error will be thrown.
+/// This method is commonly employed in scenarios where Apple Pay is presented as a fast checkout option on a product page or when the merchant displays
+/// the list of available payment methods.
 /// \param supportedNetworks Supported card acquirers.
+///
+/// \param existingCardRequired Determines whether Apple Pay should be exclusively available when at least one supported card is already set up by the user.
 ///
 ///
 /// returns:
 /// True if Apple Pay is available on the device, false if it is unavailable.
-+ (BOOL)hasApplePayWithSupportedNetworks:(NSArray<PKPaymentNetwork> * _Nonnull)supportedNetworks SWIFT_WARN_UNUSED_RESULT;
++ (BOOL)hasApplePayWithSupportedNetworks:(NSArray<PKPaymentNetwork> * _Nonnull)supportedNetworks existingCardRequired:(BOOL)existingCardRequired SWIFT_WARN_UNUSED_RESULT;
 /// Creates a new Apple Pay configuration object with an Apple Pay country code.
 /// If no countryCode is specified, the SDK will set Switzerland as the country code.
 /// \param applePayMerchantId The merchant identifier (Merchant ID) at Apple,
@@ -279,28 +286,6 @@ SWIFT_CLASS_NAMED("BackendError")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-
-@class DTBinRangeMatch;
-
-/// :nodoc:
-SWIFT_CLASS_NAMED("BinRange")
-@interface DTBinRange : NSObject
-+ (DTBinRange * _Nonnull)rangeWithStart:(NSString * _Nonnull)start end:(NSString * _Nonnull)end SWIFT_WARN_UNUSED_RESULT;
-+ (DTBinRange * _Nonnull)prefix:(NSString * _Nonnull)prefix SWIFT_WARN_UNUSED_RESULT;
-- (DTBinRangeMatch * _Nullable)match:(NSString * _Nonnull)number SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
-/// :nodoc:
-SWIFT_CLASS_NAMED("BinRangeMatch")
-@interface DTBinRangeMatch : NSObject
-@property (nonatomic, readonly) NSInteger matchLength;
-@property (nonatomic, readonly) BOOL complete;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
 
 @class NSNumber;
 
@@ -427,6 +412,7 @@ typedef SWIFT_ENUM_NAMED(NSInteger, DTCardLabelType, "CardLabelType", open) {
 
 
 
+
 /// Callback invoked by the SDK when the custom initial loader must be dismissed.
 /// important:
 /// The SDK does not invoke the callback when nothing has to be shown throughout the process. Make sure you dismiss the loading animation at the end of the transaction if the SDK hasn’t done so already.
@@ -532,7 +518,7 @@ SWIFT_CLASS_NAMED("PCIPTokenization")
 - (nonnull instancetype)initWithMerchantId:(NSString * _Nonnull)merchantId paymentMethodTypes:(NSArray<NSNumber *> * _Nonnull)paymentMethodTypesObjc;
 /// Starts the SDK and displays any needed user interface using the provided
 /// <code>presentingController</code>. Note that a tokenization can only
-/// be started once.
+/// be started once. For SwiftUI, use <code>View.datatrans(startWithPCIPTokenization:)</code> instead.
 /// \param presentingController <code>UIViewController</code>
 /// used to present the user interface during an on-going tokenization.
 ///
@@ -702,6 +688,10 @@ typedef SWIFT_ENUM_NAMED(NSInteger, DTPaymentMethodType, "PaymentMethodType", op
   DTPaymentMethodTypeSwish = 27,
 /// Vipps payment method
   DTPaymentMethodTypeVipps = 28,
+/// Maestro payment method
+  DTPaymentMethodTypeMaestro = 29,
+/// China Union Pay payment method
+  DTPaymentMethodTypeChinaUnionPay = 30,
 };
 
 
@@ -1077,7 +1067,7 @@ SWIFT_CLASS_NAMED("Transaction")
 - (nonnull instancetype)initWithMobileToken:(NSString * _Nonnull)mobileToken savedPaymentMethods:(NSArray<DTSavedPaymentMethod *> * _Nonnull)savedPaymentMethods OBJC_DESIGNATED_INITIALIZER;
 /// Starts the SDK and displays any needed user interface using the
 /// provided <code>presentingController</code>. Note that a transaction
-/// can only be started once.
+/// can only be started once. For SwiftUI, use <code>View.datatrans(startWithTransaction:)</code> instead.
 /// \param presentingController <code>UIViewController</code>
 /// used to present the user interface during an on-going transaction
 ///
@@ -1480,14 +1470,21 @@ SWIFT_CLASS_NAMED("ApplePayConfig")
 /// Use this option to show Apple Pay as a payment button instead of a
 /// listed payment method.
 @property (nonatomic) BOOL showLargeButton;
-/// Although the library automatically hides Apple Pay if no cards are supported,
-/// this shows if Apple Pay is available for the specified card acquirers.
+/// Use this option to hide and disable Apple Pay when the user hasn’t yet set up
+/// a supported card with Apple Pay. By default Apple Pay is shown in any case.
+@property (nonatomic) BOOL existingCardRequired;
+/// Use this method to determine the availability of Apple Pay for the specified parameters on a given device. Note that while the SDK automatically manages the visibility
+/// of Apple Pay and hides it when not available, if Apple Pay is the only payment option and it is not available, an error will be thrown.
+/// This method is commonly employed in scenarios where Apple Pay is presented as a fast checkout option on a product page or when the merchant displays
+/// the list of available payment methods.
 /// \param supportedNetworks Supported card acquirers.
+///
+/// \param existingCardRequired Determines whether Apple Pay should be exclusively available when at least one supported card is already set up by the user.
 ///
 ///
 /// returns:
 /// True if Apple Pay is available on the device, false if it is unavailable.
-+ (BOOL)hasApplePayWithSupportedNetworks:(NSArray<PKPaymentNetwork> * _Nonnull)supportedNetworks SWIFT_WARN_UNUSED_RESULT;
++ (BOOL)hasApplePayWithSupportedNetworks:(NSArray<PKPaymentNetwork> * _Nonnull)supportedNetworks existingCardRequired:(BOOL)existingCardRequired SWIFT_WARN_UNUSED_RESULT;
 /// Creates a new Apple Pay configuration object with an Apple Pay country code.
 /// If no countryCode is specified, the SDK will set Switzerland as the country code.
 /// \param applePayMerchantId The merchant identifier (Merchant ID) at Apple,
@@ -1519,28 +1516,6 @@ SWIFT_CLASS_NAMED("BackendError")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-
-@class DTBinRangeMatch;
-
-/// :nodoc:
-SWIFT_CLASS_NAMED("BinRange")
-@interface DTBinRange : NSObject
-+ (DTBinRange * _Nonnull)rangeWithStart:(NSString * _Nonnull)start end:(NSString * _Nonnull)end SWIFT_WARN_UNUSED_RESULT;
-+ (DTBinRange * _Nonnull)prefix:(NSString * _Nonnull)prefix SWIFT_WARN_UNUSED_RESULT;
-- (DTBinRangeMatch * _Nullable)match:(NSString * _Nonnull)number SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
-/// :nodoc:
-SWIFT_CLASS_NAMED("BinRangeMatch")
-@interface DTBinRangeMatch : NSObject
-@property (nonatomic, readonly) NSInteger matchLength;
-@property (nonatomic, readonly) BOOL complete;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
 
 @class NSNumber;
 
@@ -1667,6 +1642,7 @@ typedef SWIFT_ENUM_NAMED(NSInteger, DTCardLabelType, "CardLabelType", open) {
 
 
 
+
 /// Callback invoked by the SDK when the custom initial loader must be dismissed.
 /// important:
 /// The SDK does not invoke the callback when nothing has to be shown throughout the process. Make sure you dismiss the loading animation at the end of the transaction if the SDK hasn’t done so already.
@@ -1772,7 +1748,7 @@ SWIFT_CLASS_NAMED("PCIPTokenization")
 - (nonnull instancetype)initWithMerchantId:(NSString * _Nonnull)merchantId paymentMethodTypes:(NSArray<NSNumber *> * _Nonnull)paymentMethodTypesObjc;
 /// Starts the SDK and displays any needed user interface using the provided
 /// <code>presentingController</code>. Note that a tokenization can only
-/// be started once.
+/// be started once. For SwiftUI, use <code>View.datatrans(startWithPCIPTokenization:)</code> instead.
 /// \param presentingController <code>UIViewController</code>
 /// used to present the user interface during an on-going tokenization.
 ///
@@ -1942,6 +1918,10 @@ typedef SWIFT_ENUM_NAMED(NSInteger, DTPaymentMethodType, "PaymentMethodType", op
   DTPaymentMethodTypeSwish = 27,
 /// Vipps payment method
   DTPaymentMethodTypeVipps = 28,
+/// Maestro payment method
+  DTPaymentMethodTypeMaestro = 29,
+/// China Union Pay payment method
+  DTPaymentMethodTypeChinaUnionPay = 30,
 };
 
 
@@ -2317,7 +2297,7 @@ SWIFT_CLASS_NAMED("Transaction")
 - (nonnull instancetype)initWithMobileToken:(NSString * _Nonnull)mobileToken savedPaymentMethods:(NSArray<DTSavedPaymentMethod *> * _Nonnull)savedPaymentMethods OBJC_DESIGNATED_INITIALIZER;
 /// Starts the SDK and displays any needed user interface using the
 /// provided <code>presentingController</code>. Note that a transaction
-/// can only be started once.
+/// can only be started once. For SwiftUI, use <code>View.datatrans(startWithTransaction:)</code> instead.
 /// \param presentingController <code>UIViewController</code>
 /// used to present the user interface during an on-going transaction
 ///
