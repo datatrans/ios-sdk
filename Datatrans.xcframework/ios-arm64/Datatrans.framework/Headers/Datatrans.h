@@ -28,6 +28,7 @@ FOUNDATION_EXPORT const unsigned char DatatransVersionString[];
 #import <Datatrans/DTAuthorizationRequestResponse.h>
 #import <Datatrans/DTByjunoPaymentInfo.h>
 #import <Datatrans/DTCardAliasRequestResponse.h>
+#import <Datatrans/DTDCCServiceResponse.h>
 #import <Datatrans/DTErrorHandler.h>
 #import <Datatrans/DTErrorPresenter.h>
 #import <Datatrans/DTExternalWebAppDelegateProxy.h>

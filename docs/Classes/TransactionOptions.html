@@ -17,7 +17,7 @@
     <a title="TransactionOptions Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">Datatrans 3.2.0 Docs</a></p>
+        <p><a href="../index.html">Datatrans 3.3.0 Docs</a></p>
         <p class="header-right"><a href="https://github.com/datatrans/ios-sdk"><img src="../img/gh.png" alt="GitHub"/>View on GitHub</a></p>
         <div class="header-right">
           <form role="search" action="../search.json">
@@ -44,6 +44,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/TransactionOptions.html">TransactionOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TransactionOptions/DCCShowMode.html">– DCCShowMode</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/TransactionDelegate.html">TransactionDelegate</a>
@@ -433,10 +436,15 @@ corporate networks with anti-malware/-theft/-espionage SSL proxying.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Sometimes, apps display a loading animation before starting the SDK. You can set the <code>customInitialLoaderDelegate</code> option if you want to keep showing this animation instead of the SDK&rsquo;s loader during initial SDK network requests.</p>
+                        <p>Sometimes, apps display a loading animation before starting the SDK.
+You can set the <code>customInitialLoaderDelegate</code> option if you
+want to keep showing this animation instead of the SDK&rsquo;s loader during
+initial SDK network requests.</p>
 <div class="aside aside-important">
     <p class="aside-title">Important</p>
-    Your loader must be visible before starting the SDK. Be aware that the SDK blocks user input. Your loading screen can not have a cancel button or give the impression that users can still interact with the UI.
+    Your loader must be visible before starting the SDK.
+Be aware that the SDK blocks user input. Your loading screen can not have a
+cancel button or give the impression that users can still interact with the UI.
 
 </div>
 
@@ -446,6 +454,65 @@ corporate networks with anti-malware/-theft/-espionage SSL proxying.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">customInitialLoaderDelegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/InitialLoaderDelegate.html">InitialLoaderDelegate</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9Datatrans18TransactionOptionsC11DCCShowModeO"></a>
+                    <a name="//apple_ref/swift/Enum/DCCShowMode" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9Datatrans18TransactionOptionsC11DCCShowModeO">DCCShowMode</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Mode to control when DCC is presented for saved card payments (alias/tokenized payments).</p>
+
+                        <a href="../Classes/TransactionOptions/DCCShowMode.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTDCCShowMode</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">enum</span> <span class="kt">DCCShowMode</span> <span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Datatrans@objc(cs)DTTransactionOptions(py)savedCardDCCShowMode"></a>
+                    <a name="//apple_ref/swift/Property/savedCardDCCShowMode" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTTransactionOptions(py)savedCardDCCShowMode">savedCardDCCShowMode</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Option to control when the DCC (Dynamic Currency Conversion) screen is presented
+for payments with saved cards (alias/tokenized payments).
+The default is <code><a href="../Classes/TransactionOptions/DCCShowMode.html#/s:9Datatrans18TransactionOptionsC11DCCShowModeO6alwaysyA2EmF">DCCShowMode.always</a></code>, meaning DCC is always shown when available.
+See <code><a href="../Classes/TransactionOptions/DCCShowMode.html">DCCShowMode</a></code> for additional information.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">savedCardDCCShowMode</span><span class="p">:</span> <span class="kt"><a href="../Classes/TransactionOptions/DCCShowMode.html">DCCShowMode</a></span></code></pre>
 
                         </div>
                       </div>

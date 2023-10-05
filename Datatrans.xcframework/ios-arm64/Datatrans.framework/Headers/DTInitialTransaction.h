@@ -15,7 +15,7 @@
 @interface DTInitialTransaction : NSObject
 
 - (nonnull instancetype)init NS_UNAVAILABLE;
-- (nonnull instancetype)initWithDictionary:(nonnull NSDictionary *)jsonObject;
+- (nonnull instancetype)initWithDictionary:(nonnull NSDictionary *)jsonObject dccObject:(nullable NSDictionary *)dccObject;
 
 - (void)addOptionsToPaymentOptions:(nonnull DTPaymentOptions *)paymentOptions hasInternalMethod:(BOOL)hasInternalMethod;
 
@@ -23,5 +23,6 @@
 - (nonnull NSArray<NSString *> *)paymentMethods;
 - (nonnull DTPaymentRequest *)paymentRequest;
 - (nullable DTSavedPaymentMethod *)savedPaymentMethod;
+- (nonnull NSArray<NSString *> *)dccEnabledMethods;
 
 @end

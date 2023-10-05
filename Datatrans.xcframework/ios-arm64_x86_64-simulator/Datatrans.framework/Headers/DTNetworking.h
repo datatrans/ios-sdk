@@ -13,6 +13,7 @@
 @class DTAuthorizationRequestResponse;
 @class DTCard;
 @class DTCardAliasRequestResponse;
+@class DTDCCServiceResponse;
 @class DTPaymentAuthorizationRequest;
 @class DTPaymentOptions;
 @class DTPaymentRequest;
@@ -50,7 +51,7 @@ typedef enum {
 
 - (void)requestInitialTransaction:(NSString *)mobileToken idempotencyKey:(NSString *)idempotencyKey completion:(void (^)(NSData *, NSError *))completion;
 - (void)requestCardAliasForMerchantId:(NSString *)merchantId card:(DTCard *)card options:(DTPaymentOptions *)options completion:(void (^)(DTCardAliasRequestResponse *, NSError *))completion;
-- (void)requestStatusForMerchantId:(NSString *)merchantId alias:(NSString *)alias currencyCode:(NSString *)currencyCode isAliasRequest:(BOOL)isAliasRequest completion:(void(^)(DTStatusRequestResponse *, NSError *))completion;
+- (void)requestStatusForMerchantId:(NSString *)merchantId alias:(NSString *)alias currencyCode:(NSString *)currencyCode isAliasRequest:(BOOL)isAliasRequest transactionId:(NSString *)transactionId isDCC:(BOOL)isDCC completion:(void(^)(DTStatusRequestResponse *, NSError *))completion;
 - (void)requestTokenizationWithJSONBody:(NSData *)body completion:(void (^)(NSData *, NSError *))completion;
 - (void)authorizeAliasPaymentRequest:(DTAliasPaymentAuthorizationRequest *)authorizationRequest completion:(void (^)(DTAuthorizationRequestResponse *, NSError *))completion;
 - (void)authorizePaymentRequest:(DTPaymentAuthorizationRequest *)authorizationRequest completion:(void (^)(DTAuthorizationRequestResponse *, NSError *))completion; // split web payment
@@ -60,6 +61,7 @@ typedef enum {
 - (void)TWINTStatusRequestForMerchantId:(NSString *)merchantId transactionId:(NSString *)transactionId options:(DTPaymentOptions *)options completion:(void (^)(DTTWINTStatusRequestResponse *, NSError *))completion;
 - (void)cancelRequest:(DTPaymentRequest *)paymentRequest transactionId:(NSString *)transactionId;
 - (void)startApplePayRequest:(DTPaymentRequest *)paymentRequest token:(NSString *)token options:(DTPaymentOptions *)options completion:(void (^)(DTStartApplePayRequestResponse *, NSError *))completion;
+- (void)dccInfoForMerchantId:(NSString *)merchantId paymentMethod:(NSString *)paymentMethod cardno:(NSString *)cardno alias:(NSString *)alias completion:(void (^)(DTDCCServiceResponse *, NSError *))completion;
 
 #pragma mark - Management
 typedef void (^DTManagementCompletion)(NSError* error);

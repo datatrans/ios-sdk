@@ -16,6 +16,7 @@
 - (nonnull NSString *)get3DStatusUrl:(BOOL)isAliasRequest;
 - (nonnull NSString *)getAliasUrl;
 - (nonnull NSString *)getApplePayUrl;
+- (nonnull NSString *)getDCCServiceUrl;
 - (nonnull NSString *)getAuthorizationUrl;
 - (nonnull NSString *)getAuthorizationSplitUrl;
 - (nonnull NSString *)getCancelUrl;

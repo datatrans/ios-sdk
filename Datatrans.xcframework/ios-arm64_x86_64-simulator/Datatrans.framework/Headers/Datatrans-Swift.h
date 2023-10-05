@@ -1155,6 +1155,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger authorizat
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+enum DTDCCShowMode : NSInteger;
 
 /// This class can be used to specify miscellaneous options related to the transaction.
 SWIFT_CLASS_NAMED("TransactionOptions")
@@ -1191,12 +1192,36 @@ SWIFT_CLASS_NAMED("TransactionOptions")
 /// Please be advised that enabling this option will break your app in many
 /// corporate networks with anti-malware/-theft/-espionage SSL proxying.
 @property (nonatomic) BOOL useCertificatePinning;
-/// Sometimes, apps display a loading animation before starting the SDK. You can set the <code>customInitialLoaderDelegate</code> option if you want to keep showing this animation instead of the SDK’s loader during initial SDK network requests.
+/// Sometimes, apps display a loading animation before starting the SDK.
+/// You can set the <code>customInitialLoaderDelegate</code> option if you
+/// want to keep showing this animation instead of the SDK’s loader during
+/// initial SDK network requests.
 /// important:
-/// Your loader must be visible before starting the SDK. Be aware that the SDK blocks user input. Your loading screen can not have a cancel button or give the impression that users can still interact with the UI.
+/// Your loader must be visible before starting the SDK.
+/// Be aware that the SDK blocks user input. Your loading screen can not have a
+/// cancel button or give the impression that users can still interact with the UI.
 @property (nonatomic, weak) id <DTInitialLoaderDelegate> _Nullable customInitialLoaderDelegate;
+/// Option to control when the DCC (Dynamic Currency Conversion) screen is presented
+/// for payments with saved cards (alias/tokenized payments).
+/// The default is <code>DCCShowMode.always</code>, meaning DCC is always shown when available.
+/// See <code>DCCShowMode</code> for additional information.
+@property (nonatomic) enum DTDCCShowMode savedCardDCCShowMode;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
+/// Mode to control when DCC is presented for saved card payments (alias/tokenized payments).
+typedef SWIFT_ENUM_NAMED(NSInteger, DTDCCShowMode, "DCCShowMode", open) {
+/// The DCC screen is always shown when the merchant is set up and the saved card is eligible for DCC.
+  DTDCCShowModeAlways = 0,
+/// DCC is initially shown repeatedly for each eligible card. The more often a user declines DCC
+/// for a given saved card, the less often the DCC screen is shown for that card.
+/// This mode is recommended when customers frequently pay with saved cards to enhance
+/// the user experience and reduce unnecessary clicks.
+/// Note: the information whether DCC was previously declined is stored on the device only.
+  DTDCCShowModeSmart = 1,
+/// Show DCC only in guest mode and not for payments with saved cards.
+  DTDCCShowModeNever = 2,
+};
 
 
 /// This class includes the success message and other details of a transaction.
@@ -2385,6 +2410,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger authorizat
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+enum DTDCCShowMode : NSInteger;
 
 /// This class can be used to specify miscellaneous options related to the transaction.
 SWIFT_CLASS_NAMED("TransactionOptions")
@@ -2421,12 +2447,36 @@ SWIFT_CLASS_NAMED("TransactionOptions")
 /// Please be advised that enabling this option will break your app in many
 /// corporate networks with anti-malware/-theft/-espionage SSL proxying.
 @property (nonatomic) BOOL useCertificatePinning;
-/// Sometimes, apps display a loading animation before starting the SDK. You can set the <code>customInitialLoaderDelegate</code> option if you want to keep showing this animation instead of the SDK’s loader during initial SDK network requests.
+/// Sometimes, apps display a loading animation before starting the SDK.
+/// You can set the <code>customInitialLoaderDelegate</code> option if you
+/// want to keep showing this animation instead of the SDK’s loader during
+/// initial SDK network requests.
 /// important:
-/// Your loader must be visible before starting the SDK. Be aware that the SDK blocks user input. Your loading screen can not have a cancel button or give the impression that users can still interact with the UI.
+/// Your loader must be visible before starting the SDK.
+/// Be aware that the SDK blocks user input. Your loading screen can not have a
+/// cancel button or give the impression that users can still interact with the UI.
 @property (nonatomic, weak) id <DTInitialLoaderDelegate> _Nullable customInitialLoaderDelegate;
+/// Option to control when the DCC (Dynamic Currency Conversion) screen is presented
+/// for payments with saved cards (alias/tokenized payments).
+/// The default is <code>DCCShowMode.always</code>, meaning DCC is always shown when available.
+/// See <code>DCCShowMode</code> for additional information.
+@property (nonatomic) enum DTDCCShowMode savedCardDCCShowMode;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
+/// Mode to control when DCC is presented for saved card payments (alias/tokenized payments).
+typedef SWIFT_ENUM_NAMED(NSInteger, DTDCCShowMode, "DCCShowMode", open) {
+/// The DCC screen is always shown when the merchant is set up and the saved card is eligible for DCC.
+  DTDCCShowModeAlways = 0,
+/// DCC is initially shown repeatedly for each eligible card. The more often a user declines DCC
+/// for a given saved card, the less often the DCC screen is shown for that card.
+/// This mode is recommended when customers frequently pay with saved cards to enhance
+/// the user experience and reduce unnecessary clicks.
+/// Note: the information whether DCC was previously declined is stored on the device only.
+  DTDCCShowModeSmart = 1,
+/// Show DCC only in guest mode and not for payments with saved cards.
+  DTDCCShowModeNever = 2,
+};
 
 
 /// This class includes the success message and other details of a transaction.

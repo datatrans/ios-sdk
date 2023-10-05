@@ -2,6 +2,7 @@
 #import <Foundation/Foundation.h>
 
 @class DTByjunoPaymentInfo;
+@class DTDCCModel;
 @class DTPaymentMethodInfo;
 @class DTPaymentRequest;
 @class DTSavedPaymentMethod;
@@ -17,5 +18,6 @@
 @property (nonatomic, nonnull, copy) NSString* reqType;
 @property (nonatomic, nonnull, copy) DTSavedPaymentMethod* savedPaymentMethod;
 @property (nonatomic, nullable, copy) NSString* transactionId;
+@property (nonatomic, nullable, copy) DTDCCModel* dccModel;
 
 @end

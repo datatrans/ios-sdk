@@ -47,5 +47,6 @@
 @property (nonatomic, assign) BOOL isVippsAppInstalled;
 @property (nullable, nonatomic, strong) NSString* appCallbackUrl;
 @property (nonatomic, assign) BOOL isPayment;
+@property (nonatomic, assign) NSInteger savedCardDCCShowMode;
 
 @end
