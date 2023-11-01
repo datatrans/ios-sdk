@@ -26,7 +26,7 @@ FOUNDATION_EXPORT const unsigned char DatatransVersionString[];
 #import <Datatrans/DTAliasRequest+Internal.h>
 #import <Datatrans/DTApplePayProcess.h>
 #import <Datatrans/DTAuthorizationRequestResponse.h>
-#import <Datatrans/DTByjunoPaymentInfo.h>
+#import <Datatrans/DTCembraPayPaymentInfo.h>
 #import <Datatrans/DTCardAliasRequestResponse.h>
 #import <Datatrans/DTDCCServiceResponse.h>
 #import <Datatrans/DTErrorHandler.h>
@@ -57,3 +57,4 @@ FOUNDATION_EXPORT const unsigned char DatatransVersionString[];
 #import <Datatrans/DTWebRequestFactory.h>
 #import <Datatrans/DTWebProcess.h>
 #import <Datatrans/DTBasicAPMAppDelegateProxy.h>
+#import <Datatrans/DT2FARequestResponse.h>

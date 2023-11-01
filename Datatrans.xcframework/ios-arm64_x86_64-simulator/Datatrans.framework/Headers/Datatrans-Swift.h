@@ -317,6 +317,8 @@ typedef SWIFT_ENUM_NAMED(NSInteger, DTBoncardType, "BoncardType", open) {
   DTBoncardTypeBoncard = 1,
 /// Displays as “Lunch-Check” with the Lunch-Check logo
   DTBoncardTypeLunchCheck = 2,
+/// Displays as “Voucher” with the SBB Voucher logo
+  DTBoncardTypeSbbVoucher = 3,
 };
 
 enum DTPaymentMethodType : NSInteger;
@@ -664,8 +666,8 @@ typedef SWIFT_ENUM_NAMED(NSInteger, DTPaymentMethodType, "PaymentMethodType", op
   DTPaymentMethodTypeApplePay = 15,
 /// Reka payment method
   DTPaymentMethodTypeReka = 16,
-/// Byjuno payment method
-  DTPaymentMethodTypeByjuno = 17,
+/// CembraPay payment method
+  DTPaymentMethodTypeCembraPay = 17,
 /// SwissPass payment method
   DTPaymentMethodTypeSwissPass = 18,
 /// Powerpay payment method
@@ -692,6 +694,8 @@ typedef SWIFT_ENUM_NAMED(NSInteger, DTPaymentMethodType, "PaymentMethodType", op
   DTPaymentMethodTypeMaestro = 29,
 /// China Union Pay payment method
   DTPaymentMethodTypeChinaUnionPay = 30,
+/// SBB Half Fare Travelcard PLUS payment method
+  DTPaymentMethodTypeHalfFarePlus = 31,
 };
 
 
@@ -730,7 +734,7 @@ SWIFT_CLASS_NAMED("PaymentMethodTypeMapper")
 /// <ul>
 ///   <li>
 ///     Easy payment methods: Swisscom Pay, SEPA (ELV), Twint,
-///     Apple Pay, Byjuno, SwissPass, Powerpay Invoice
+///     Apple Pay, CembraPay, SwissPass, Powerpay Invoice
 ///   </li>
 ///   <li>
 ///     Complex payment methods (requiring a <code>SavedPaymentMethod</code> subclass): Card payments,
@@ -1572,6 +1576,8 @@ typedef SWIFT_ENUM_NAMED(NSInteger, DTBoncardType, "BoncardType", open) {
   DTBoncardTypeBoncard = 1,
 /// Displays as “Lunch-Check” with the Lunch-Check logo
   DTBoncardTypeLunchCheck = 2,
+/// Displays as “Voucher” with the SBB Voucher logo
+  DTBoncardTypeSbbVoucher = 3,
 };
 
 enum DTPaymentMethodType : NSInteger;
@@ -1919,8 +1925,8 @@ typedef SWIFT_ENUM_NAMED(NSInteger, DTPaymentMethodType, "PaymentMethodType", op
   DTPaymentMethodTypeApplePay = 15,
 /// Reka payment method
   DTPaymentMethodTypeReka = 16,
-/// Byjuno payment method
-  DTPaymentMethodTypeByjuno = 17,
+/// CembraPay payment method
+  DTPaymentMethodTypeCembraPay = 17,
 /// SwissPass payment method
   DTPaymentMethodTypeSwissPass = 18,
 /// Powerpay payment method
@@ -1947,6 +1953,8 @@ typedef SWIFT_ENUM_NAMED(NSInteger, DTPaymentMethodType, "PaymentMethodType", op
   DTPaymentMethodTypeMaestro = 29,
 /// China Union Pay payment method
   DTPaymentMethodTypeChinaUnionPay = 30,
+/// SBB Half Fare Travelcard PLUS payment method
+  DTPaymentMethodTypeHalfFarePlus = 31,
 };
 
 
@@ -1985,7 +1993,7 @@ SWIFT_CLASS_NAMED("PaymentMethodTypeMapper")
 /// <ul>
 ///   <li>
 ///     Easy payment methods: Swisscom Pay, SEPA (ELV), Twint,
-///     Apple Pay, Byjuno, SwissPass, Powerpay Invoice
+///     Apple Pay, CembraPay, SwissPass, Powerpay Invoice
 ///   </li>
 ///   <li>
 ///     Complex payment methods (requiring a <code>SavedPaymentMethod</code> subclass): Card payments,

@@ -71,6 +71,7 @@ import _Concurrency
   case giftCard
   case boncard
   case lunchCheck
+  case sbbVoucher
   public init?(rawValue: Swift.Int)
   public typealias AllCases = [Datatrans.BoncardType]
   public typealias RawValue = Swift.Int
@@ -187,7 +188,7 @@ import _Concurrency
   case Twint
   case ApplePay
   case Reka
-  case Byjuno
+  case CembraPay
   case SwissPass
   case Powerpay
   case Paycard
@@ -201,6 +202,7 @@ import _Concurrency
   case Vipps
   case Maestro
   case ChinaUnionPay
+  case HalfFarePlus
   public var identifier: Swift.String {
     get
   }

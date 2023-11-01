@@ -10,7 +10,7 @@
 
 @class DTApplePayConfig;
 @class DTBoncardConfig;
-@class DTByjunoPaymentInfo;
+@class DTCembraPayPaymentInfo;
 @class DTKlarnaPaymentInfo;
 @class DTSwissBillingPaymentInfo;
 @class DTSwissPassPaymentInfo;
@@ -37,7 +37,7 @@
 @property (nullable, nonatomic, copy) DTApplePayConfig* applePayConfig;
 @property (nullable, nonatomic, copy) DTBoncardConfig* boncardConfig;
 @property (nonatomic, assign) BOOL authenticationOnly;
-@property (nullable, nonatomic, copy) DTByjunoPaymentInfo* byjunoPaymentInfo;
+@property (nullable, nonatomic, copy) DTCembraPayPaymentInfo* cembraPayPaymentInfo;
 @property (nullable, nonatomic, copy) DTCustomer* customer;
 @property (nullable, nonatomic, copy) DTSwissPassPaymentInfo* swissPassPaymentInfo;
 @property (nullable, nonatomic, copy) NSString* paysafecardMerchantClientId;

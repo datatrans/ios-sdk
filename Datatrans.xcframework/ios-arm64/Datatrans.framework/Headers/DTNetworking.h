@@ -23,6 +23,7 @@
 @class DTStatusRequestResponse;
 @class DTTWINTStatusRequestResponse;
 @class DTUrls;
+@class DT2FARequestResponse;
 
 typedef enum {
 	DT_ENROLLMENT_STATUS_NOT_ENROLLED,
@@ -56,6 +57,7 @@ typedef enum {
 - (void)authorizeAliasPaymentRequest:(DTAliasPaymentAuthorizationRequest *)authorizationRequest completion:(void (^)(DTAuthorizationRequestResponse *, NSError *))completion;
 - (void)authorizePaymentRequest:(DTPaymentAuthorizationRequest *)authorizationRequest completion:(void (^)(DTAuthorizationRequestResponse *, NSError *))completion; // split web payment
 - (void)startTokenRequest:(DTPaymentRequest *)paymentRequest paymentMethod:(NSString *)paymentMethod options:(DTPaymentOptions *)options completion:(void (^)(DTStartTokenRequestResponse *, NSError *))completion;
+- (void)start2FARequest:(DTPaymentRequest *)paymentRequest paymentMethod:(NSString *)paymentMethod alias:(NSString *)alias options:(DTPaymentOptions *)options completion:(void (^)(DT2FARequestResponse *, NSError *))completion;
 - (void)startTokenRequestForAlias:(DTAliasRequest *)aliasRequest paymentMethod:(NSString *)paymentMethod options:(DTPaymentOptions *)options completion:(void (^)(DTStartTokenRequestResponse *, NSError *))completion;
 - (void)startTWINTAliasRequest:(DTAliasRequest *)aliasRequest options:(DTPaymentOptions *)options completion:(void (^)(DTStartTWINTRequestResponse *, NSError *))completion;
 - (void)TWINTStatusRequestForMerchantId:(NSString *)merchantId transactionId:(NSString *)transactionId options:(DTPaymentOptions *)options completion:(void (^)(DTTWINTStatusRequestResponse *, NSError *))completion;

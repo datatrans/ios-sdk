@@ -1,12 +1,12 @@
 //
-//  DTByjunoPaymentInfo.h
+//  DTCembraPayPaymentInfo.h
 //  datatrans-iphone
 //
 //  Created by bacherma on 14/08/17.
 //  Copyright 2017 ieffects ag. All rights reserved.
 //
 //
-//  Class for configuring Byjuno payments. In the following example a possible Byjuno payment is configured:
+//  Class for configuring CembraPay payments. In the following example a possible CembraPay payment is configured:
 //
 //		DTAddress* address = [[DTAddress alloc] initWithFirstName:@"Mark"
 //														 lastName:@"Uber"
@@ -25,14 +25,14 @@
 //		customer.mailAddress = @"h.mustermann@intrum.com";
 //		paymentController.paymentOptions.customer = customer;
 //
-//		DTByjunoPaymentInfo* info = [[DTByjunoPaymentInfo alloc] init];
+//		DTCembraPayPaymentInfo* info = [[DTCembraPayPaymentInfo alloc] init];
 //		info.deviceFingerprintId = @"deviceFingerprintId-test";
-//      paymentController.paymentOptions.byjunoPaymentInfo = info;
+//      paymentController.paymentOptions.cembraPayPaymentInfo = info;
 //
 
 #import <Foundation/Foundation.h>
 
-@interface DTByjunoPaymentInfo : NSObject<NSCopying>
+@interface DTCembraPayPaymentInfo : NSObject<NSCopying>
 
 @property (nullable, nonatomic, copy) NSString* subtype; // "INVOICE", "INSTALLMENT", "BYJUNO_INVOICE" or "MONTHLY_INVOICE"
 @property (nullable, nonatomic, copy) NSNumber* customerEmailConfirmed; // BOOL

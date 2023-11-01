@@ -23,7 +23,7 @@ extern NSString* const DTPaymentMethodSwissBilling;
 extern NSString* const DTPaymentMethodTwint;
 extern NSString* const DTPaymentMethodApplePay;
 extern NSString* const DTPaymentMethodReka;
-extern NSString* const DTPaymentMethodByjuno;
+extern NSString* const DTPaymentMethodCembraPay;
 extern NSString* const DTPaymentMethodSwissPass;
 extern NSString* const DTPaymentMethodPowerpay;
 extern NSString* const DTPaymentMethodPaycard;
@@ -37,6 +37,7 @@ extern NSString* const DTPaymentMethodSwish;
 extern NSString* const DTPaymentMethodVipps;
 extern NSString* const DTPaymentMethodMaestro;
 extern NSString* const DTPaymentMethodChinaUnionPay;
+extern NSString* const DTPaymentMethodHalfFarePlus;
 
 // reka alternative identifiers
 extern NSString* const DTPaymentMethodRekaRail;

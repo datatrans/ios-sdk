@@ -1,7 +1,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class DTByjunoPaymentInfo;
+@class DTCembraPayPaymentInfo;
 @class DTDCCModel;
 @class DTPaymentMethodInfo;
 @class DTPaymentRequest;
@@ -9,7 +9,7 @@
 
 @interface DTAliasPaymentAuthorizationRequest : NSObject
 
-@property (nonatomic, nullable, copy) DTByjunoPaymentInfo* byjunoPaymentInfo;
+@property (nonatomic, nullable, copy) DTCembraPayPaymentInfo* cembraPayPaymentInfo;
 @property (nonatomic, nullable, copy) NSString* cvv;
 @property (nonatomic, nullable, copy) NSString* easypayPaymentInfo;
 @property (nonatomic, nullable, copy) NSDictionary* merchantProperties;
