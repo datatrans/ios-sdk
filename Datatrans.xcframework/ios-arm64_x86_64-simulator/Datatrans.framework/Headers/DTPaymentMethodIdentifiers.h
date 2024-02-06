@@ -35,6 +35,7 @@ extern NSString* const DTPaymentMethodKlarna;
 extern NSString* const DTPaymentMethodDankort;
 extern NSString* const DTPaymentMethodSwish;
 extern NSString* const DTPaymentMethodVipps;
+extern NSString* const DTPaymentMethodMobilePay;
 extern NSString* const DTPaymentMethodMaestro;
 extern NSString* const DTPaymentMethodChinaUnionPay;
 extern NSString* const DTPaymentMethodHalfFarePlus;

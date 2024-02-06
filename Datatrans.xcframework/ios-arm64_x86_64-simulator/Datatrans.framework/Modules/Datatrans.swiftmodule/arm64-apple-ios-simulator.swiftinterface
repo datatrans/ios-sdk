@@ -200,6 +200,7 @@ import _Concurrency
   case Dankort
   case Swish
   case Vipps
+  case MobilePay
   case Maestro
   case ChinaUnionPay
   case HalfFarePlus

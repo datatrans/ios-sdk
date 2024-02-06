@@ -688,12 +688,14 @@ typedef SWIFT_ENUM_NAMED(NSInteger, DTPaymentMethodType, "PaymentMethodType", op
   DTPaymentMethodTypeSwish = 27,
 /// Vipps payment method
   DTPaymentMethodTypeVipps = 28,
+/// MobilePay payment method
+  DTPaymentMethodTypeMobilePay = 29,
 /// Maestro payment method
-  DTPaymentMethodTypeMaestro = 29,
+  DTPaymentMethodTypeMaestro = 30,
 /// China Union Pay payment method
-  DTPaymentMethodTypeChinaUnionPay = 30,
+  DTPaymentMethodTypeChinaUnionPay = 31,
 /// SBB Half Fare Travelcard PLUS payment method
-  DTPaymentMethodTypeHalfFarePlus = 31,
+  DTPaymentMethodTypeHalfFarePlus = 32,
 };
 
 
