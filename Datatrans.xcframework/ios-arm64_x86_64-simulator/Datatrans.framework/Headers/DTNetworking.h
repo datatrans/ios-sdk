@@ -48,7 +48,7 @@ typedef enum {
 + (BOOL)isSSLError:(NSError *)error;
 + (BOOL)isMobileTokenNotFoundError:(NSError *)error;
 
-- (instancetype)initWithMobileToken:(NSString *)mobileToken urls:(DTUrls *)urls certificatePinning:(BOOL)certificatePinning;
+- (instancetype)initWithMobileToken:(NSString *)mobileToken urls:(DTUrls *)urls certificatePinning:(BOOL)certificatePinning testing:(BOOL)testing;
 
 - (void)requestInitialTransaction:(NSString *)mobileToken idempotencyKey:(NSString *)idempotencyKey completion:(void (^)(NSData *, NSError *))completion;
 - (void)requestCardAliasForMerchantId:(NSString *)merchantId card:(DTCard *)card options:(DTPaymentOptions *)options completion:(void (^)(DTCardAliasRequestResponse *, NSError *))completion;

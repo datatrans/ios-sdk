@@ -6,6 +6,6 @@ framework module Datatrans {
 }
 
 module Datatrans.Swift {
-    header "Datatrans-Swift.h"
-    requires objc
+  header "Datatrans-Swift.h"
+  requires objc
 }

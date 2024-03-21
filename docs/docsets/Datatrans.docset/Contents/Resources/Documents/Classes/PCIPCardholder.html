@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>CardLabelType Enumeration Reference</title>
+    <title>PCIPCardholder Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -13,8 +13,8 @@
     <script src="../js/jazzy.search.js" defer></script>
   </head>
   <body>
-    <a name="//apple_ref/swift/Enum/CardLabelType" class="dashAnchor"></a>
-    <a title="CardLabelType Enumeration Reference"></a>
+    <a name="//apple_ref/swift/Class/PCIPCardholder" class="dashAnchor"></a>
+    <a title="PCIPCardholder Class Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">Datatrans 3.6.0 Docs</a></p>
@@ -30,7 +30,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">Datatrans Reference</a>
         <img id="carat" src="../img/carat.png" alt=""/>
-        CardLabelType Enumeration Reference
+        PCIPCardholder Class Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -178,17 +178,17 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>CardLabelType</h1>
+            <h1>PCIPCardholder</h1>
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTCardLabelType</span><span class="p">)</span>
-<span class="kd">public</span> <span class="kd">enum</span> <span class="kt">CardLabelType</span> <span class="p">:</span> <span class="kt">Int</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTPCIPCardholder</span><span class="p">)</span>
+<span class="kd">@objcMembers</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">PCIPCardholder</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
 
                 </div>
               </div>
-            <p>Use this to choose which label to display for the card option
-in the payment method selection.</p>
+            <p>Undocumented</p>
 
           </section>
           <section class="section task-group-section">
@@ -197,9 +197,9 @@ in the payment method selection.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@Datatrans@E@DTCardLabelType@DTCardLabelTypeCreditOrDebitCard"></a>
-                    <a name="//apple_ref/swift/Element/creditOrDebitCard" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Datatrans@E@DTCardLabelType@DTCardLabelTypeCreditOrDebitCard">creditOrDebitCard</a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTPCIPCardholder(py)emailAddress"></a>
+                    <a name="//apple_ref/swift/Property/emailAddress" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTPCIPCardholder(py)emailAddress">emailAddress</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -207,14 +207,14 @@ in the payment method selection.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Displays as &ldquo;Credit or debit card&rdquo;.</p>
+                        <p>Undocumented</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">creditOrDebitCard</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">emailAddress</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -224,9 +224,9 @@ in the payment method selection.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@Datatrans@E@DTCardLabelType@DTCardLabelTypeCreditCard"></a>
-                    <a name="//apple_ref/swift/Element/creditCard" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Datatrans@E@DTCardLabelType@DTCardLabelTypeCreditCard">creditCard</a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTPCIPCardholder(py)phoneNumber"></a>
+                    <a name="//apple_ref/swift/Property/phoneNumber" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTPCIPCardholder(py)phoneNumber">phoneNumber</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -234,41 +234,14 @@ in the payment method selection.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Displays as &ldquo;Credit card&rdquo;.</p>
+                        <p>Undocumented</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">creditCard</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@Datatrans@E@DTCardLabelType@DTCardLabelTypeDebitCard"></a>
-                    <a name="//apple_ref/swift/Element/debitCard" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Datatrans@E@DTCardLabelType@DTCardLabelTypeDebitCard">debitCard</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Displays as &ldquo;Debit card&rdquo;.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">debitCard</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">phoneNumber</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>

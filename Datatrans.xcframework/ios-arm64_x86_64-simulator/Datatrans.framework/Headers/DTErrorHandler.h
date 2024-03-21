@@ -20,6 +20,7 @@
 - (void)handleCriticalWebError:(nonnull DTTransactionError *)error isPayment:(BOOL)isPayment;
 - (void)showAliasRegistrationError:(nonnull NSError *)error returnAuthorizationError:(BOOL)returnAuthorizationError;
 - (void)showAuthenticationError:(nonnull NSError *)error;
+- (void)showAuthentication3dsError:(nonnull NSError *)error;
 - (void)showAuthorizationError:(nonnull NSError *)error;
 - (void)showCriticalErrorWithTitle:(nonnull NSString *)title message:(nonnull NSString *)message error:(nonnull NSError *)error;
 

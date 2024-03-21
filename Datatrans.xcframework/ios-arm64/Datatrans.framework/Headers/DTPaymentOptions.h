@@ -48,5 +48,6 @@
 @property (nullable, nonatomic, strong) NSString* appCallbackUrl;
 @property (nonatomic, assign) BOOL isPayment;
 @property (nonatomic, assign) NSInteger savedCardDCCShowMode;
+@property (nonatomic, assign) NSInteger twintMaxIssuerNumber;
 
 @end

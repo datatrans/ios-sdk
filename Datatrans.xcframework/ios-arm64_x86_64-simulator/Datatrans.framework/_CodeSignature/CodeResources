@@ -14,7 +14,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		tkPLmhMIuXPyMe4azdBTYmY7aeg=
+		BmTy/Y4S7OMOkIwr94z29E++kqk=
 		</data>
 		<key>BON_boncard_1.pdf</key>
 		<data>
@@ -126,7 +126,7 @@
 		</data>
 		<key>Headers/DTErrorHandler.h</key>
 		<data>
-		+kiv6EGNdwYcn4GoDTgsVuLBouI=
+		+8ydXY01HjGer/MEASM3Ag25vXk=
 		</data>
 		<key>Headers/DTErrorHandlerDelegate.h</key>
 		<data>
@@ -162,7 +162,7 @@
 		</data>
 		<key>Headers/DTNetworking.h</key>
 		<data>
-		dwKh8+vOLM/Zs98wzrEy0xbhfAs=
+		i9R+rSZqcRESGO3ivMsMaEhzT1U=
 		</data>
 		<key>Headers/DTPPRiskComponentManager.h</key>
 		<data>
@@ -186,7 +186,7 @@
 		</data>
 		<key>Headers/DTPaymentOptions.h</key>
 		<data>
-		wOkYKxTlwKCAGUct3KnFG4PPn28=
+		dmriCg9majdWvcIE4HUPVKcl8Yk=
 		</data>
 		<key>Headers/DTPaymentRequest.h</key>
 		<data>
@@ -222,7 +222,7 @@
 		</data>
 		<key>Headers/DTUrls.h</key>
 		<data>
-		DvsnZwQWqwZpS7d1+v1qrmjQp1M=
+		CQRA1Y2JfZK5qAVNxpvx2bTwErc=
 		</data>
 		<key>Headers/DTVersion.h</key>
 		<data>
@@ -246,7 +246,7 @@
 		</data>
 		<key>Headers/Datatrans-Swift.h</key>
 		<data>
-		FMBOy+lUr2yZlPP8838+ragIg2k=
+		hfAE3K21M43b8mrDX9UpWMi2KZk=
 		</data>
 		<key>Headers/Datatrans.h</key>
 		<data>
@@ -258,7 +258,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		8d1hno6lLdYL2SlPuadUwNnnSnA=
+		0kG+WzZi2mWbmBbme2jv+YfO68E=
 		</data>
 		<key>JCB.pdf</key>
 		<data>
@@ -284,33 +284,49 @@
 		<data>
 		LR0zzhJzHEnqpRNooUHtznWdo3o=
 		</data>
+		<key>Modules/Datatrans.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
+		<data>
+		lsFWoblxkJUyTTlZJVb7HjZBNDo=
+		</data>
+		<key>Modules/Datatrans.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
+		<data>
+		mJZ5VgC7rNwJ4ibItJelq95VRLo=
+		</data>
 		<key>Modules/Datatrans.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		zp9lgT5GSJbCM5DDsyfs6lpH6no=
+		jJBml4qvSHhWl27rhJ4lnsadCyw=
 		</data>
 		<key>Modules/Datatrans.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		+3ADU80NyG2F7A7tWmnrsc9I6C0=
+		mJZ5VgC7rNwJ4ibItJelq95VRLo=
 		</data>
 		<key>Modules/Datatrans.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		+azjfBymKfH6opegoybd99BevhI=
+		gx0vsVmAEAc55AW8aCNY8+f75HA=
+		</data>
+		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
+		<data>
+		lsFWoblxkJUyTTlZJVb7HjZBNDo=
+		</data>
+		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
+		<data>
+		dbcIO6MHBjhCKBA9VLhYXwXnzVQ=
 		</data>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		JHFhWzFC/6vH2ilMai5F7FJOUOY=
+		NZavTIJBOAEkSu4l5GUAwl7ZYFs=
 		</data>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		IYjcM3o2SU2h9RAru0gotniwUCQ=
+		dbcIO6MHBjhCKBA9VLhYXwXnzVQ=
 		</data>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		+l9WqZ9m3K4dUCLEEyf888fyREY=
+		d4TY7cj8h+DId9P1ThYKylUFfJw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		sse55gfJDLdTUwZp/G1e3H7oNHc=
+		IzvjakiyNK9JE9sQI856RpgTI+o=
 		</data>
 		<key>PAP.pdf</key>
 		<data>
@@ -331,6 +347,10 @@
 		<key>PSC.pdf</key>
 		<data>
 		b1+UhCRd/BIB4EowBLCfEgiMPCU=
+		</data>
+		<key>PrivacyInfo.xcprivacy</key>
+		<data>
+		hRg+fvBiVfhuuPGjCXRIDiUqxHs=
 		</data>
 		<key>REKA.pdf</key>
 		<data>
@@ -372,7 +392,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			odXkzEmA1le0ks3rww8TF6lCO/4=
+			yNhSdxQCzBroONQ8OG9SLZyq2iM=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -381,7 +401,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Unfe5Of+6zTbChUJ4M6AI6KiAts=
+			41H0NQNnOwCahnN99pj7A9W+vQM=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -390,7 +410,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			+ZbpP1Kn1lgfL2xxjMeDeTh8Aq4=
+			iGESY40Em691CsTy+UGCS4r6OgY=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -399,7 +419,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Sq/00uNIT7TzSRuPJJ9dhhsjet4=
+			IWLse6TO5xYOQz5KKBSYd2crCdc=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -408,7 +428,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			gtWq3dQKjmL1yHJd4SnLsqRU5Vk=
+			soD1TBhqVnc1LXIyWLtcv5WWTEg=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -417,7 +437,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ePkgw9Zi3a2uJovEQ0GwC/NDQ2M=
+			YSxrncIsY82PKCj27HmN09hYLFg=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -426,7 +446,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			zTTtKzYk5i8p9ph5fDc/z3cnaOk=
+			gQSZk0DM0KKXerkPLFLMT2ossL4=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -435,7 +455,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			rHSnVccdStBWSkuvtPAB/ZPWStM=
+			Pv3lNB9YXo+O9kuBDxig3kTAmSw=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -444,7 +464,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			KaRilnqbYZKE7ZzHQeY0RgB3eF8=
+			PIrQEhyS8O2bYHg6oNUwooornec=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -453,7 +473,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			GBHPcoQL5BNYjX4fxMSbizz567Q=
+			LZzS6NSvPIUO5fSSbYd80pgABjQ=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -462,7 +482,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			6AnGAi3bbB+RcncFHmQ0FSPDOA4=
+			wn6d8pPwiT5EFpnW7WDevRRpPuA=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -492,7 +512,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			aYpskcvhlHiToB9A9PVQQsBE8ZhgPgdu1v0GwivyRzk=
+			xiDoqT3BPBh0Va1MFcENNnUU89EkpoynVZW5Bs+kbrs=
 			</data>
 		</dict>
 		<key>BON_boncard_1.pdf</key>
@@ -688,7 +708,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			wIsg6u9V57GcgTVlH2Y5hqkMk3TK5kBFYEIXR3nE8BA=
+			hilRq4I/+71WSF4FHjol4bBRg5lvjGAykfI/+haK0a4=
 			</data>
 		</dict>
 		<key>Headers/DTErrorHandlerDelegate.h</key>
@@ -751,7 +771,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ATv3g4/f6bS97aQY50vO09mYOe7C/dUikO1kVHUJ+aE=
+			sUJpBxKoA3rrYSG05N/qlGd4SJYTVNE3gdvch1vdxdw=
 			</data>
 		</dict>
 		<key>Headers/DTPPRiskComponentManager.h</key>
@@ -793,7 +813,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			yGJJKte74xuKOny649dDM7WRysSPyn8BBCW1xZCluNY=
+			JGKv3SPBYg9ZiTaCzjvnra68gCITUQPHmYVJRTrBsfo=
 			</data>
 		</dict>
 		<key>Headers/DTPaymentRequest.h</key>
@@ -856,7 +876,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			K5/VaL6x86+uvzncwYyBRIu/q+g6+hZj1FMkXJW2aj4=
+			PMJ6o3pmn6cD0AguuPhfpTjCF2ps2Uryr/WKMXsMVYU=
 			</data>
 		</dict>
 		<key>Headers/DTVersion.h</key>
@@ -898,7 +918,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Eb7plBhd6JpqWnl+kLp/vHO0pa7Y9njgL+znxMET7Mk=
+			mtPvr2S6Zl3EAfmQs59hqNIfQDhNEQvAEFME6A2aCPs=
 			</data>
 		</dict>
 		<key>Headers/Datatrans.h</key>
@@ -957,53 +977,81 @@
 			pvpzEy2yH+oB90eV6/1Cz4eYYOamQrmax1OEs+TdjLQ=
 			</data>
 		</dict>
+		<key>Modules/Datatrans.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ZV+TIPHnVLF6RYniM3fdDX8aNHobIQPboCtQ0Vf2YVI=
+			</data>
+		</dict>
+		<key>Modules/Datatrans.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			JfxDaLeIYihF7MAS/No2Gn1G3FMDVzgdP9UGD0vOwck=
+			</data>
+		</dict>
 		<key>Modules/Datatrans.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			AXsLDsojjfjnY6qAkjrC3Gw6S0oF1BxIgvCfL0kZN5I=
+			KiD6KmQMHsbhzU3xJ779vNUY0iehatMoTNkT4L+z6Sw=
 			</data>
 		</dict>
 		<key>Modules/Datatrans.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rWdb2JGb28l5l0rWWuhDC+bMLEf1PWmFTM8Q9WKLeyo=
+			JfxDaLeIYihF7MAS/No2Gn1G3FMDVzgdP9UGD0vOwck=
 			</data>
 		</dict>
 		<key>Modules/Datatrans.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			RiHWoEb1TtTocr2kRmqbKreKpkKAM9dS8JjoSz93T/U=
+			ZxXACubSRjZJDbPawYvtdjixftlDn618jY+ypOt+T1s=
+			</data>
+		</dict>
+		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ZV+TIPHnVLF6RYniM3fdDX8aNHobIQPboCtQ0Vf2YVI=
+			</data>
+		</dict>
+		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			c0ZoSDOJDsQlo4XlQzL1HeWYT5a68GBf9GQXWCL8j4s=
 			</data>
 		</dict>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			7C0EkP2GyQpfWo0hR+BA6fi0ziGbgKArSjmFoNK1qbw=
+			kQHGwp8VwWcoSdC4tNHx0/V+6n8442Fgmr8qHcVPmaw=
 			</data>
 		</dict>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			SzEvIpMR7oRIUQL5QjJftXVEVrIB5GGEtNmLdPqV1FY=
+			c0ZoSDOJDsQlo4XlQzL1HeWYT5a68GBf9GQXWCL8j4s=
 			</data>
 		</dict>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			RW9xwfOEWvdwUqUyx8Q4thpkHrzu5K76KQv/XTSA+oU=
+			OsBmak7r/bb1e5DULCyphwVxxkazxjBAALqfcmWQJxk=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			7p+OrvkdTNT8JtiV0n0N5IBDfhiyo+zyxBdAJEaJ9sA=
+			iPcPuDArpodWF2TbG1GwtjZ+ZbyzC8jxkY+KzuJ/UzI=
 			</data>
 		</dict>
 		<key>PAP.pdf</key>
@@ -1039,6 +1087,13 @@
 			<key>hash2</key>
 			<data>
 			HDVc4uLwDm/3vWTqxfC+9pbowiVZILnZRVTC1jR3wEs=
+			</data>
+		</dict>
+		<key>PrivacyInfo.xcprivacy</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			i/vPkjQMstb1tvwXOlkEVHrksRHSR/rqgVaT6Pirmes=
 			</data>
 		</dict>
 		<key>REKA.pdf</key>
@@ -1108,7 +1163,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			wM/6q60tHVTTBOtZA1AuHrGK2/TXbyuONa3xq6HhkpI=
+			mP5ljmrIpRtp6udCQ5WM29cp4IL8kkXYhzdPzgTYeTs=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -1117,7 +1172,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			EjrB0+a4/OqULzAUHu2WlD5e44R9iF6QENb2mPFX1R4=
+			ZkjwAoT3/+BocRh/6pditvnekrY+NJXugS/ofoQlmTs=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -1126,7 +1181,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			MlkTuhLGM9ZWQGBP20xeYWmrpkXHlz1H8hV+myiKOlg=
+			3ucN91m2/wWkAgHD6auDyAabBJc2htyglRMmlLC2MO8=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -1135,7 +1190,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			QRW/geXMsM5+bodBP0EXKWxxZtjwWMlm7IgdyYFEIDw=
+			iuTXDjd/yXFCdEsNw5vbPtrzher3H7KecLo6ebjIkx8=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -1144,7 +1199,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			NLg3fM6lcbOhQzbJi9Inuk0vyU//wXNWZ4Xcl/T7kjw=
+			0i9D2hKN1xtVQ8LAlELtKT7FG/mqLe6qbl2Lf+6pE0E=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -1153,7 +1208,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			rWnzwAeIhsd4LvW3JPjWAjYDseU7Bitia0avy+dCM+8=
+			sV0a4FE/1T5aOi+qXarTskVswzDF4M6HtScqYQixqeA=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -1162,7 +1217,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			iYEXBDbnYN22Kq9Ugh5NZ8RqvxQoXiTtYQJmbUNE7Tc=
+			b3idoCaBwB0VxxB50cesfJ4TQMdfcZxvu7racLDGZ84=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -1171,7 +1226,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/ycXrqGZ08MAAg4lII0K3zadDnv4kreq5/QJ1R8ea6I=
+			o6xLzrQYq3e341Zs8dSVvq9gZuSdSOW0ol+vlDWE53A=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -1180,7 +1235,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			rTTMSc1PlJFB0NV1ilw1hYwwaBqevvCjlfQ3rkcV24w=
+			SVXCBjcV3FdPa3Q9j1j4qqgoPTsWkLucJbPqC9xcRZg=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -1189,7 +1244,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			QF0XKmYLS16bFf02adstf/yGDFI6bksY2FSrL7bGSsA=
+			EsJI90gnvl51pjK82QvQ3kXLr3xN0x9HX7JR5VOgGUs=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -1198,7 +1253,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			EhXUAunN7dJ4Z83sg2m0VSaPHORQytWm2ft3HHvgEW8=
+			0cAr+O6yk6hnEuqd6DXB6KpmGY9lcKD4owbA4E9+Oos=
 			</data>
 			<key>optional</key>
 			<true/>

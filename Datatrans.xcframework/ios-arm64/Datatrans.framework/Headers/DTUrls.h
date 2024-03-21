@@ -25,6 +25,7 @@
 - (nonnull NSString *)getTokenizationUrl;
 - (nonnull NSString *)getTWINTRegistrationUrl;
 - (nonnull NSString *)getTWINTStatusUrl;
+- (nonnull NSString *)getBinRangesUrl;
 
 - (nonnull NSArray<NSString *> *)getHosts;
 - (void)switchUrl;

@@ -1,6 +1,26 @@
 {
   "warnings": [
-
+    {
+      "file": "/Users/serhiilibin/iOS/datatrans/iOS/datatrans-iphone/Classes/Tokenization/PublicAPI/PCIPCardholder.swift",
+      "line": 12,
+      "symbol": "PCIPCardholder",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/serhiilibin/iOS/datatrans/iOS/datatrans-iphone/Classes/Tokenization/PublicAPI/PCIPCardholder.swift",
+      "line": 13,
+      "symbol": "PCIPCardholder.emailAddress",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/serhiilibin/iOS/datatrans/iOS/datatrans-iphone/Classes/Tokenization/PublicAPI/PCIPCardholder.swift",
+      "line": 14,
+      "symbol": "PCIPCardholder.phoneNumber",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    }
   ],
   "source_directory": "/Users/serhiilibin/iOS/datatrans/iOS/datatrans-iphone"
 }
