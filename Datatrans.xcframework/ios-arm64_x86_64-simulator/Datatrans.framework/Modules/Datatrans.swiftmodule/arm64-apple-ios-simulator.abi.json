@@ -2389,6 +2389,276 @@
         ]
       },
       {
+        "kind": "TypeDecl",
+        "name": "AppCallbackHandler",
+        "printedName": "AppCallbackHandler",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "shared",
+            "printedName": "shared",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AppCallbackHandler",
+                "printedName": "Datatrans.AppCallbackHandler",
+                "usr": "c:@M@Datatrans@objc(cs)DTAppCallbackHandler"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Datatrans@objc(cs)DTAppCallbackHandler(cpy)shared",
+            "mangledName": "$s9Datatrans18AppCallbackHandlerC6sharedACvpZ",
+            "moduleName": "Datatrans",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AppCallbackHandler",
+                    "printedName": "Datatrans.AppCallbackHandler",
+                    "usr": "c:@M@Datatrans@objc(cs)DTAppCallbackHandler"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Datatrans@objc(cs)DTAppCallbackHandler(cm)shared",
+                "mangledName": "$s9Datatrans18AppCallbackHandlerC6sharedACvgZ",
+                "moduleName": "Datatrans",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "automaticCallbacks",
+            "printedName": "automaticCallbacks",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Datatrans@objc(cs)DTAppCallbackHandler(py)automaticCallbacks",
+            "mangledName": "$s9Datatrans18AppCallbackHandlerC18automaticCallbacksSbvp",
+            "moduleName": "Datatrans",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Datatrans@objc(cs)DTAppCallbackHandler(im)automaticCallbacks",
+                "mangledName": "$s9Datatrans18AppCallbackHandlerC18automaticCallbacksSbvg",
+                "moduleName": "Datatrans",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Datatrans@objc(cs)DTAppCallbackHandler(im)setAutomaticCallbacks:",
+                "mangledName": "$s9Datatrans18AppCallbackHandlerC18automaticCallbacksSbvs",
+                "moduleName": "Datatrans",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9Datatrans18AppCallbackHandlerC18automaticCallbacksSbvM",
+                "mangledName": "$s9Datatrans18AppCallbackHandlerC18automaticCallbacksSbvM",
+                "moduleName": "Datatrans",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "handleURL",
+            "printedName": "handleURL(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@Datatrans@objc(cs)DTAppCallbackHandler(im)handleURL:",
+            "mangledName": "$s9Datatrans18AppCallbackHandlerC9handleURLySb10Foundation0F0VF",
+            "moduleName": "Datatrans",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@Datatrans@objc(cs)DTAppCallbackHandler",
+        "mangledName": "$s9Datatrans18AppCallbackHandlerC",
+        "moduleName": "Datatrans",
+        "objc_name": "DTAppCallbackHandler",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "ObjCMembers",
+          "ObjC",
+          "RawDocComment"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "hasMissingDesignatedInitializers": true,
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "Datatrans",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
@@ -12548,6 +12818,7 @@
               "HasInitialValue",
               "HasStorage",
               "AccessControl",
+              "RawDocComment",
               "ObjC"
             ],
             "hasStorage": true,
@@ -12665,6 +12936,7 @@
               "HasInitialValue",
               "HasStorage",
               "AccessControl",
+              "RawDocComment",
               "ObjC"
             ],
             "hasStorage": true,
@@ -12789,7 +13061,8 @@
         "declAttributes": [
           "AccessControl",
           "ObjCMembers",
-          "ObjC"
+          "ObjC",
+          "RawDocComment"
         ],
         "superclassUsr": "c:objc(cs)NSObject",
         "inheritsConvenienceInitializers": true,
@@ -17908,6 +18181,13 @@
       "value": "false"
     },
     {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/PublicAPI\/AppCallbackHandler.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1075,
+      "length": 4,
+      "value": "true"
+    },
+    {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/DCC\/DCCView.swift",
       "kind": "StringLiteral",
       "offset": 351,
@@ -20052,14 +20332,14 @@
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Tokenization\/PublicAPI\/PCIPCardholder.swift",
       "kind": "StringLiteral",
-      "offset": 344,
+      "offset": 460,
       "length": 8,
       "value": "\"[ ()-]\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Tokenization\/PublicAPI\/PCIPCardholder.swift",
       "kind": "StringLiteral",
-      "offset": 360,
+      "offset": 476,
       "length": 2,
       "value": "\"\""
     },

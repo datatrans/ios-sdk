@@ -255,6 +255,29 @@ using UInt = size_t;
 #endif
 
 #if defined(__OBJC__)
+@class NSURL;
+
+/// Use this class if your app crashes when switching to/from external payment apps,
+/// such as TWINT, Swish, Vipps, and MobilePay. Our automatic app callback logic
+/// may interfere with other logic in your app and needs to be disabled.
+/// Globally set <code>AppCallbackHandler.shared.automaticCallbacks</code> to <code>false</code>.
+/// Then implement the <code>application(_:open:options:)</code> method in your AppDelegate
+/// and call <code>AppCallbackHandler.shared.handleURL(url)</code> with the URL received.
+SWIFT_CLASS_NAMED("AppCallbackHandler")
+@interface DTAppCallbackHandler : NSObject
+/// Returns the shared instance of this class.
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) DTAppCallbackHandler * _Nonnull shared;)
++ (DTAppCallbackHandler * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+/// Whether automatic callback handling is enabled or not. By default, automatic callback handling is enabled.
+/// Set this to <code>false</code> to disable automatic callbacks and implement them yourself using <code>handleURL(url)</code>.
+@property (nonatomic) BOOL automaticCallbacks;
+/// Invoke this method from your AppDelegate’s implementation of <code>application(_:open:options:)</code> with the URL received.
+/// The method returns <code>true</code> if the URL was handled by the SDK or <code>false</code> otherwise.
+- (BOOL)handleURL:(NSURL * _Nonnull)url SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 @protocol DTApplePayDelegate;
 @class NSString;
 @class PKPaymentRequest;
@@ -506,9 +529,12 @@ SWIFT_CLASS_NAMED("PCIPCardInfo")
 @end
 
 
+/// This class is used to add cardholder info.
 SWIFT_CLASS_NAMED("PCIPCardholder")
 @interface DTPCIPCardholder : NSObject
+/// Cardholder email address.
 @property (nonatomic, copy) NSString * _Nullable emailAddress;
+/// Cardholder phone number.
 @property (nonatomic, copy) NSString * _Nullable phoneNumber;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end

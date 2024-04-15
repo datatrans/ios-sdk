@@ -69,6 +69,12 @@ import _StringProcessing
 @objc(DTInitialLoaderDelegate) public protocol InitialLoaderDelegate {
   @objc func dismissLoader()
 }
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(DTAppCallbackHandler) @objcMembers final public class AppCallbackHandler : ObjectiveC.NSObject {
+  @objc public static let shared: Datatrans.AppCallbackHandler
+  @objc final public var automaticCallbacks: Swift.Bool
+  @objc final public func handleURL(_ url: Foundation.URL) -> Swift.Bool
+  @objc deinit
+}
 @objc(DTBoncardType) public enum BoncardType : Swift.Int, Swift.CaseIterable {
   case giftCard
   case boncard
