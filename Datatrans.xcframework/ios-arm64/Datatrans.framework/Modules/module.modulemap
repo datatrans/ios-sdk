@@ -1,7 +1,7 @@
 framework module Datatrans {
   umbrella header "Datatrans.h"
-  export *
 
+  export *
   module * { export * }
 }
 
