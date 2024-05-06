@@ -1,12 +1,12 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)
-// swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Datatrans
-// swift-module-flags-ignorable: -enable-bare-slash-regex
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name Datatrans
 import AVFoundation
 import AudioToolbox
 import CommonCrypto
 import CoreHaptics
 @_exported import Datatrans
+import DeveloperToolsSupport
 import Foundation
 import PassKit
 import SafariServices
@@ -17,6 +17,7 @@ import Vision
 import WebKit
 import _Concurrency
 import _StringProcessing
+import _SwiftConcurrencyShims
 @_inheritsConvenienceInitializers @objc(DTTransactionError) public class TransactionError : Foundation.NSError {
   @objc public static let technical: Swift.Int
   @objc public static let validation: Swift.Int
@@ -124,7 +125,7 @@ import _StringProcessing
   @objc public var testing: Swift.Bool
   @objc public var twintMaxIssuerNumber: Swift.Int
   @objc public var useCertificatePinning: Swift.Bool
-  @objc weak public var customInitialLoaderDelegate: Datatrans.InitialLoaderDelegate?
+  @objc weak public var customInitialLoaderDelegate: (any Datatrans.InitialLoaderDelegate)?
   @objc(DTDCCShowMode) public enum DCCShowMode : Swift.Int {
     case always
     case smart
@@ -162,7 +163,7 @@ import _StringProcessing
   @objc override dynamic public var description: Swift.String {
     @objc get
   }
-  override public func encode(to encoder: Swift.Encoder) throws
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc required public init?(coder: Foundation.NSCoder)
   @objc override public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
   @objc deinit
@@ -176,7 +177,7 @@ import _StringProcessing
   @objc public var testing: Swift.Bool
   @objc public var useCertificatePinning: Swift.Bool
   @objc public var cardholder: Datatrans.PCIPCardholder
-  @objc weak public var customInitialLoaderDelegate: Datatrans.InitialLoaderDelegate?
+  @objc weak public var customInitialLoaderDelegate: (any Datatrans.InitialLoaderDelegate)?
   @objc override dynamic public init()
   @objc deinit
 }
@@ -228,7 +229,7 @@ import _StringProcessing
   }
 }
 @objc(DTTransaction) public class Transaction : ObjectiveC.NSObject, Datatrans.DTErrorHandlerDelegate {
-  @objc weak public var delegate: Datatrans.TransactionDelegate?
+  @objc weak public var delegate: (any Datatrans.TransactionDelegate)?
   @objc public var options: Datatrans.TransactionOptions
   @objc public var theme: Datatrans.ThemeConfiguration
   @objc public init(mobileToken: Swift.String)
@@ -236,7 +237,7 @@ import _StringProcessing
   @objc public init(mobileToken: Swift.String, savedPaymentMethod: Datatrans.SavedPaymentMethod)
   @objc public init(mobileToken: Swift.String, savedPaymentMethods: [Datatrans.SavedPaymentMethod])
   @objc public func start(presentingController: UIKit.UIViewController)
-  @objc public func didHandleError(_ error: Swift.Error)
+  @objc public func didHandleError(_ error: any Swift.Error)
   @objc deinit
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(DTSavedSEPA) @objcMembers public class SavedSEPA : Datatrans.SavedPaymentMethod {
@@ -321,7 +322,7 @@ extension SwiftUI.View {
   @objc public var cardholder: Swift.String?
   @objc public init(type: Datatrans.PaymentMethodType, alias: Swift.String, cardExpiryDate: Datatrans.CardExpiryDate?, maskedCardNumber: Swift.String?, cardholder: Swift.String?)
   @objc override public func isValid() -> Swift.Bool
-  override public func encode(to encoder: Swift.Encoder) throws
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc required public init?(coder: Foundation.NSCoder)
   @objc override dynamic public var description: Swift.String {
     @objc get
@@ -330,7 +331,7 @@ extension SwiftUI.View {
   @objc deinit
 }
 @objc(DTApplePayConfig) @objcMembers public class ApplePayConfig : ObjectiveC.NSObject, Foundation.NSCopying {
-  @objc weak public var delegate: Datatrans.DTApplePayDelegate?
+  @objc weak public var delegate: (any Datatrans.DTApplePayDelegate)?
   @objc public var finalSummaryItemLabel: Swift.String?
   @objc public var request: PassKit.PKPaymentRequest {
     get
@@ -355,7 +356,7 @@ extension SwiftUI.View {
   }
 }
 @objc(DTPCIPTokenization) public class PCIPTokenization : ObjectiveC.NSObject {
-  @objc weak public var delegate: Datatrans.PCIPTokenizationDelegate?
+  @objc weak public var delegate: (any Datatrans.PCIPTokenizationDelegate)?
   @objc public var options: Datatrans.PCIPTokenizationOptions
   @objc public var theme: Datatrans.ThemeConfiguration
   @objc public init(merchantId: Swift.String, card: Datatrans.Card)
@@ -368,8 +369,8 @@ extension SwiftUI.View {
 @objc(DTPaymentMethod) @objcMembers public class PaymentMethod : ObjectiveC.NSObject, Swift.Codable, Foundation.NSCoding, Foundation.NSCopying {
   @objc final public let type: Datatrans.PaymentMethodType
   @objc public init(type: Datatrans.PaymentMethodType)
-  required public init(from decoder: Swift.Decoder) throws
-  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
   @objc public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
   @objc required public init?(coder: Foundation.NSCoder)
   @objc public func encode(with coder: Foundation.NSCoder)
@@ -391,8 +392,8 @@ extension SwiftUI.View {
     @objc set
   }
   @objc public init(month: Swift.Int, year: Swift.Int)
-  required public init(from decoder: Swift.Decoder) throws
-  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
   @objc override dynamic public var description: Swift.String {
     @objc get
   }
@@ -415,7 +416,7 @@ extension SwiftUI.View {
   @objc override dynamic public var description: Swift.String {
     @objc get
   }
-  override public func encode(to encoder: Swift.Encoder) throws
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc required public init?(coder: Foundation.NSCoder)
   @objc override public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
   @objc deinit
@@ -423,7 +424,7 @@ extension SwiftUI.View {
 @_hasMissingDesignatedInitializers @objc(DTSavedPayPal) @objcMembers public class SavedPayPal : Datatrans.SavedPaymentMethod {
   @objc public var payPalEmail: Swift.String?
   @objc public init(alias: Swift.String, payPalEmail: Swift.String?)
-  override public func encode(to encoder: Swift.Encoder) throws
+  override public func encode(to encoder: any Swift.Encoder) throws
   @objc required public init?(coder: Foundation.NSCoder)
   @objc override public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
   @objc deinit

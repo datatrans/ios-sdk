@@ -5388,7 +5388,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "WeakStorage",
-                "printedName": "Datatrans.InitialLoaderDelegate?"
+                "printedName": "(any Datatrans.InitialLoaderDelegate)?"
               }
             ],
             "declKind": "Var",
@@ -5414,12 +5414,12 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "Datatrans.InitialLoaderDelegate?",
+                    "printedName": "(any Datatrans.InitialLoaderDelegate)?",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "InitialLoaderDelegate",
-                        "printedName": "Datatrans.InitialLoaderDelegate",
+                        "printedName": "any Datatrans.InitialLoaderDelegate",
                         "usr": "c:@M@Datatrans@objc(pl)DTInitialLoaderDelegate"
                       }
                     ],
@@ -5449,12 +5449,12 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "Datatrans.InitialLoaderDelegate?",
+                    "printedName": "(any Datatrans.InitialLoaderDelegate)?",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "InitialLoaderDelegate",
-                        "printedName": "Datatrans.InitialLoaderDelegate",
+                        "printedName": "any Datatrans.InitialLoaderDelegate",
                         "usr": "c:@M@Datatrans@objc(pl)DTInitialLoaderDelegate"
                       }
                     ],
@@ -6784,7 +6784,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "Encoder",
-                "printedName": "Swift.Encoder",
+                "printedName": "any Swift.Encoder",
                 "usr": "s:s7EncoderP"
               }
             ],
@@ -7520,7 +7520,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "WeakStorage",
-                "printedName": "Datatrans.InitialLoaderDelegate?"
+                "printedName": "(any Datatrans.InitialLoaderDelegate)?"
               }
             ],
             "declKind": "Var",
@@ -7546,12 +7546,12 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "Datatrans.InitialLoaderDelegate?",
+                    "printedName": "(any Datatrans.InitialLoaderDelegate)?",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "InitialLoaderDelegate",
-                        "printedName": "Datatrans.InitialLoaderDelegate",
+                        "printedName": "any Datatrans.InitialLoaderDelegate",
                         "usr": "c:@M@Datatrans@objc(pl)DTInitialLoaderDelegate"
                       }
                     ],
@@ -7581,12 +7581,12 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "Datatrans.InitialLoaderDelegate?",
+                    "printedName": "(any Datatrans.InitialLoaderDelegate)?",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "InitialLoaderDelegate",
-                        "printedName": "Datatrans.InitialLoaderDelegate",
+                        "printedName": "any Datatrans.InitialLoaderDelegate",
                         "usr": "c:@M@Datatrans@objc(pl)DTInitialLoaderDelegate"
                       }
                     ],
@@ -9464,7 +9464,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "WeakStorage",
-                "printedName": "Datatrans.TransactionDelegate?"
+                "printedName": "(any Datatrans.TransactionDelegate)?"
               }
             ],
             "declKind": "Var",
@@ -9490,12 +9490,12 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "Datatrans.TransactionDelegate?",
+                    "printedName": "(any Datatrans.TransactionDelegate)?",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "TransactionDelegate",
-                        "printedName": "Datatrans.TransactionDelegate",
+                        "printedName": "any Datatrans.TransactionDelegate",
                         "usr": "c:@M@Datatrans@objc(pl)DTTransactionDelegate"
                       }
                     ],
@@ -9525,12 +9525,12 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "Datatrans.TransactionDelegate?",
+                    "printedName": "(any Datatrans.TransactionDelegate)?",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "TransactionDelegate",
-                        "printedName": "Datatrans.TransactionDelegate",
+                        "printedName": "any Datatrans.TransactionDelegate",
                         "usr": "c:@M@Datatrans@objc(pl)DTTransactionDelegate"
                       }
                     ],
@@ -9943,7 +9943,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "Error",
-                "printedName": "Swift.Error",
+                "printedName": "any Swift.Error",
                 "usr": "s:s5ErrorP"
               }
             ],
@@ -13502,7 +13502,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "Encoder",
-                "printedName": "Swift.Encoder",
+                "printedName": "any Swift.Encoder",
                 "usr": "s:s7EncoderP"
               }
             ],
@@ -13837,7 +13837,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "WeakStorage",
-                "printedName": "Datatrans.DTApplePayDelegate?"
+                "printedName": "(any Datatrans.DTApplePayDelegate)?"
               }
             ],
             "declKind": "Var",
@@ -13863,12 +13863,12 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "Datatrans.DTApplePayDelegate?",
+                    "printedName": "(any Datatrans.DTApplePayDelegate)?",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "DTApplePayDelegate",
-                        "printedName": "Datatrans.DTApplePayDelegate",
+                        "printedName": "any Datatrans.DTApplePayDelegate",
                         "usr": "c:objc(pl)DTApplePayDelegate"
                       }
                     ],
@@ -13898,12 +13898,12 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "Datatrans.DTApplePayDelegate?",
+                    "printedName": "(any Datatrans.DTApplePayDelegate)?",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "DTApplePayDelegate",
-                        "printedName": "Datatrans.DTApplePayDelegate",
+                        "printedName": "any Datatrans.DTApplePayDelegate",
                         "usr": "c:objc(pl)DTApplePayDelegate"
                       }
                     ],
@@ -14972,7 +14972,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "WeakStorage",
-                "printedName": "Datatrans.PCIPTokenizationDelegate?"
+                "printedName": "(any Datatrans.PCIPTokenizationDelegate)?"
               }
             ],
             "declKind": "Var",
@@ -14998,12 +14998,12 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "Datatrans.PCIPTokenizationDelegate?",
+                    "printedName": "(any Datatrans.PCIPTokenizationDelegate)?",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "PCIPTokenizationDelegate",
-                        "printedName": "Datatrans.PCIPTokenizationDelegate",
+                        "printedName": "any Datatrans.PCIPTokenizationDelegate",
                         "usr": "c:@M@Datatrans@objc(pl)DTPCIPTokenizationDelegate"
                       }
                     ],
@@ -15033,12 +15033,12 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "Datatrans.PCIPTokenizationDelegate?",
+                    "printedName": "(any Datatrans.PCIPTokenizationDelegate)?",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "PCIPTokenizationDelegate",
-                        "printedName": "Datatrans.PCIPTokenizationDelegate",
+                        "printedName": "any Datatrans.PCIPTokenizationDelegate",
                         "usr": "c:@M@Datatrans@objc(pl)DTPCIPTokenizationDelegate"
                       }
                     ],
@@ -15663,7 +15663,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "Decoder",
-                "printedName": "Swift.Decoder",
+                "printedName": "any Swift.Decoder",
                 "usr": "s:s7DecoderP"
               }
             ],
@@ -15692,7 +15692,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "Encoder",
-                "printedName": "Swift.Encoder",
+                "printedName": "any Swift.Encoder",
                 "usr": "s:s7EncoderP"
               }
             ],
@@ -16305,7 +16305,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "Decoder",
-                "printedName": "Swift.Decoder",
+                "printedName": "any Swift.Decoder",
                 "usr": "s:s7DecoderP"
               }
             ],
@@ -16334,7 +16334,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "Encoder",
-                "printedName": "Swift.Encoder",
+                "printedName": "any Swift.Encoder",
                 "usr": "s:s7EncoderP"
               }
             ],
@@ -16995,7 +16995,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "Encoder",
-                "printedName": "Swift.Encoder",
+                "printedName": "any Swift.Encoder",
                 "usr": "s:s7EncoderP"
               }
             ],
@@ -17406,7 +17406,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "Encoder",
-                "printedName": "Swift.Encoder",
+                "printedName": "any Swift.Encoder",
                 "usr": "s:s7EncoderP"
               }
             ],
@@ -17636,6 +17636,34 @@
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "Datatrans"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "Datatrans"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "Datatrans"
+      },
+      {
+        "kind": "Import",
+        "name": "SwiftUI",
+        "printedName": "SwiftUI",
+        "declKind": "Import",
+        "moduleName": "Datatrans"
+      },
+      {
+        "kind": "Import",
+        "name": "DeveloperToolsSupport",
+        "printedName": "DeveloperToolsSupport",
         "declKind": "Import",
         "moduleName": "Datatrans"
       },
@@ -18010,7 +18038,7 @@
       "kind": "IntegerLiteral",
       "offset": 690,
       "length": 3,
-      "value": "28"
+      "value": "-28"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/DCC\/DCCOptionView.swift",
@@ -18024,7 +18052,7 @@
       "kind": "IntegerLiteral",
       "offset": 763,
       "length": 2,
-      "value": "8"
+      "value": "-8"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/DCC\/DCCOptionView.swift",
@@ -20629,6 +20657,69 @@
       "offset": 25,
       "length": 8,
       "value": "\"Datatrans.LockView\""
+    },
+    {
+      "filePath": "\/var\/root\/Library\/Developer\/Xcode\/DerivedData\/Datatrans-cbwhmwllnucnwpdfyyaaiucfyfqi\/Build\/Intermediates.noindex\/ArchiveIntermediates\/Datatrans\/IntermediateBuildFilesPath\/Datatrans.build\/Release-iphonesimulator\/Datatrans.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 726,
+      "length": 9,
+      "value": "\"DT-hash\""
+    },
+    {
+      "filePath": "\/var\/root\/Library\/Developer\/Xcode\/DerivedData\/Datatrans-cbwhmwllnucnwpdfyyaaiucfyfqi\/Build\/Intermediates.noindex\/ArchiveIntermediates\/Datatrans\/IntermediateBuildFilesPath\/Datatrans.build\/Release-iphonesimulator\/Datatrans.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 894,
+      "length": 28,
+      "value": "\"arrow.clockwise.regular.17\""
+    },
+    {
+      "filePath": "\/var\/root\/Library\/Developer\/Xcode\/DerivedData\/Datatrans-cbwhmwllnucnwpdfyyaaiucfyfqi\/Build\/Intermediates.noindex\/ArchiveIntermediates\/Datatrans\/IntermediateBuildFilesPath\/Datatrans.build\/Release-iphonesimulator\/Datatrans.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 1073,
+      "length": 24,
+      "value": "\"camera.fill.regular.20\""
+    },
+    {
+      "filePath": "\/var\/root\/Library\/Developer\/Xcode\/DerivedData\/Datatrans-cbwhmwllnucnwpdfyyaaiucfyfqi\/Build\/Intermediates.noindex\/ArchiveIntermediates\/Datatrans\/IntermediateBuildFilesPath\/Datatrans.build\/Release-iphonesimulator\/Datatrans.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 1225,
+      "length": 11,
+      "value": "\"checkmark\""
+    },
+    {
+      "filePath": "\/var\/root\/Library\/Developer\/Xcode\/DerivedData\/Datatrans-cbwhmwllnucnwpdfyyaaiucfyfqi\/Build\/Intermediates.noindex\/ArchiveIntermediates\/Datatrans\/IntermediateBuildFilesPath\/Datatrans.build\/Release-iphonesimulator\/Datatrans.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 1422,
+      "length": 42,
+      "value": "\"exclamationmark.triangle.fill.regular.20\""
+    },
+    {
+      "filePath": "\/var\/root\/Library\/Developer\/Xcode\/DerivedData\/Datatrans-cbwhmwllnucnwpdfyyaaiucfyfqi\/Build\/Intermediates.noindex\/ArchiveIntermediates\/Datatrans\/IntermediateBuildFilesPath\/Datatrans.build\/Release-iphonesimulator\/Datatrans.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 1590,
+      "length": 10,
+      "value": "\"keyboard\""
+    },
+    {
+      "filePath": "\/var\/root\/Library\/Developer\/Xcode\/DerivedData\/Datatrans-cbwhmwllnucnwpdfyyaaiucfyfqi\/Build\/Intermediates.noindex\/ArchiveIntermediates\/Datatrans\/IntermediateBuildFilesPath\/Datatrans.build\/Release-iphonesimulator\/Datatrans.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 1747,
+      "length": 22,
+      "value": "\"lock.fill.regular.13\""
+    },
+    {
+      "filePath": "\/var\/root\/Library\/Developer\/Xcode\/DerivedData\/Datatrans-cbwhmwllnucnwpdfyyaaiucfyfqi\/Build\/Intermediates.noindex\/ArchiveIntermediates\/Datatrans\/IntermediateBuildFilesPath\/Datatrans.build\/Release-iphonesimulator\/Datatrans.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 1918,
+      "length": 23,
+      "value": "\"lock.fill.semibold.13\""
+    },
+    {
+      "filePath": "\/var\/root\/Library\/Developer\/Xcode\/DerivedData\/Datatrans-cbwhmwllnucnwpdfyyaaiucfyfqi\/Build\/Intermediates.noindex\/ArchiveIntermediates\/Datatrans\/IntermediateBuildFilesPath\/Datatrans.build\/Release-iphonesimulator\/Datatrans.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 2103,
+      "length": 30,
+      "value": "\"xmark.circle.fill.regular.17\""
     }
   ]
 }

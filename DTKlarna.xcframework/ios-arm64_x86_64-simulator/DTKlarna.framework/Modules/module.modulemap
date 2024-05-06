@@ -1,6 +1,6 @@
 framework module DTKlarna {
   umbrella header "DTKlarna.h"
-
   export *
+
   module * { export * }
 }
