@@ -19,3 +19,9 @@
 - (void)webProcessDidStartPFEPayment:(nonnull id<DTWebProcess>)webProcess url:(nonnull NSURL *)url;
 
 @end
+
+@protocol DTIDEALWebProcessDelegate <DTWebProcessDelegate>
+
+- (void)webProcessDidStartIDEALPayment:(nonnull id<DTWebProcess>)webProcess url:(nonnull NSURL *)url;
+
+@end

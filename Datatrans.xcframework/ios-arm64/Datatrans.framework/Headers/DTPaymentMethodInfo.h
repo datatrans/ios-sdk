@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <PassKit/PassKit.h>
 
 @class DTPaymentOptions;
 
@@ -36,6 +37,7 @@ typedef enum {
 @property (nonatomic, readonly) NSString* _Nonnull identifier;
 @property (nonatomic, readonly) NSString* _Nonnull imageName;
 @property (nonatomic, readonly) Class _Nullable savedPaymentMethodClass;
+@property (nonatomic, readonly) PKPaymentNetwork _Nullable pkPaymentNetworkIdentifier;
 
 @property (nonatomic, readonly) NSRange creditCardVerificationLengthRange;
 

@@ -10,24 +10,25 @@
 
 #pragma mark Payment request
 
-@interface DTPaymentRequest : NSObject <NSCopying> {
-	NSString* _merchantId;
-	NSString* _refno;
-	NSString* _refno2;
-	NSString* _refno3;
-	NSString* _currencyCode;
-	NSUInteger _amountInSmallestCurrencyUnit;
+@interface DTPaymentRequest : NSObject <NSCopying>
 
-	NSString *_localizedPriceDescription;
-}
-
-@property (nonatomic, copy) NSString* merchantId;
-@property (nonatomic, copy) NSString* refno;
-@property (nonatomic, copy) NSString* refno2;
-@property (nonatomic, copy) NSString* refno3;
-@property (nonatomic, copy) NSString* currencyCode;
+@property (nonatomic, copy, nonnull) NSString* merchantId;
+@property (nonatomic, copy, nonnull) NSString* refno;
+@property (nonatomic, copy, nullable) NSString* refno2;
+@property (nonatomic, copy, nullable) NSString* refno3;
+@property (nonatomic, copy, nonnull) NSString* currencyCode;
 @property (nonatomic, assign) NSUInteger amountInSmallestCurrencyUnit;
 
-@property (nonatomic, copy) NSString* localizedPriceDescription;
+@property (nonatomic, copy, nullable) NSString* localizedPriceDescription;
+
+- (nonnull instancetype)init NS_UNAVAILABLE;
+
+- (nonnull instancetype)initWithMerchantId:(nonnull NSString *)merchantId
+							 refno:(nonnull NSString *)refno
+							refno2:(nullable NSString *)refno2
+							refno3:(nullable NSString *)refno3
+					  currencyCode:(nonnull NSString *)currencyCode
+	  amountInSmallestCurrencyUnit:(NSUInteger)amountInSmallestCurrencyUnit
+		 localizedPriceDescription:(nullable NSString *)localizedPriceDescription;
 
 @end

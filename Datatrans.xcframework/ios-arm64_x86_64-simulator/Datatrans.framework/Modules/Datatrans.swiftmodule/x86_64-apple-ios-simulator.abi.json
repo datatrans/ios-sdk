@@ -2248,6 +2248,616 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "Datatrans",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SavedApplePay",
+        "printedName": "SavedApplePay",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "token",
+            "printedName": "token",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SavedCard",
+                "printedName": "Datatrans.SavedCard",
+                "usr": "c:@M@Datatrans@objc(cs)DTSavedCard"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Datatrans@objc(cs)DTSavedApplePay(py)token",
+            "mangledName": "$s9Datatrans13SavedApplePayC5tokenAA0B4CardCvp",
+            "moduleName": "Datatrans",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SavedCard",
+                    "printedName": "Datatrans.SavedCard",
+                    "usr": "c:@M@Datatrans@objc(cs)DTSavedCard"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Datatrans@objc(cs)DTSavedApplePay(im)token",
+                "mangledName": "$s9Datatrans13SavedApplePayC5tokenAA0B4CardCvg",
+                "moduleName": "Datatrans",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SavedCard",
+                    "printedName": "Datatrans.SavedCard",
+                    "usr": "c:@M@Datatrans@objc(cs)DTSavedCard"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Datatrans@objc(cs)DTSavedApplePay(im)setToken:",
+                "mangledName": "$s9Datatrans13SavedApplePayC5tokenAA0B4CardCvs",
+                "moduleName": "Datatrans",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9Datatrans13SavedApplePayC5tokenAA0B4CardCvM",
+                "mangledName": "$s9Datatrans13SavedApplePayC5tokenAA0B4CardCvM",
+                "moduleName": "Datatrans",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "last4",
+            "printedName": "last4",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Datatrans@objc(cs)DTSavedApplePay(py)last4",
+            "mangledName": "$s9Datatrans13SavedApplePayC5last4SSSgvp",
+            "moduleName": "Datatrans",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Datatrans@objc(cs)DTSavedApplePay(im)last4",
+                "mangledName": "$s9Datatrans13SavedApplePayC5last4SSSgvg",
+                "moduleName": "Datatrans",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Datatrans@objc(cs)DTSavedApplePay(im)setLast4:",
+                "mangledName": "$s9Datatrans13SavedApplePayC5last4SSSgvs",
+                "moduleName": "Datatrans",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9Datatrans13SavedApplePayC5last4SSSgvM",
+                "mangledName": "$s9Datatrans13SavedApplePayC5last4SSSgvM",
+                "moduleName": "Datatrans",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "displayTitle",
+            "printedName": "displayTitle",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Datatrans@objc(cs)DTSavedApplePay(py)displayTitle",
+            "mangledName": "$s9Datatrans13SavedApplePayC12displayTitleSSvp",
+            "moduleName": "Datatrans",
+            "overriding": true,
+            "objc_name": "displayTitle",
+            "declAttributes": [
+              "ObjC",
+              "AccessControl",
+              "Override",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Datatrans@objc(cs)DTSavedApplePay(im)displayTitle",
+                "mangledName": "$s9Datatrans13SavedApplePayC12displayTitleSSvg",
+                "moduleName": "Datatrans",
+                "overriding": true,
+                "objc_name": "displayTitle",
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "accessibilityTitle",
+            "printedName": "accessibilityTitle",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Datatrans@objc(cs)DTSavedApplePay(py)accessibilityTitle",
+            "mangledName": "$s9Datatrans13SavedApplePayC18accessibilityTitleSSvp",
+            "moduleName": "Datatrans",
+            "overriding": true,
+            "objc_name": "accessibilityTitle",
+            "declAttributes": [
+              "ObjC",
+              "AccessControl",
+              "Override",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Datatrans@objc(cs)DTSavedApplePay(im)accessibilityTitle",
+                "mangledName": "$s9Datatrans13SavedApplePayC18accessibilityTitleSSvg",
+                "moduleName": "Datatrans",
+                "overriding": true,
+                "objc_name": "accessibilityTitle",
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9Datatrans13SavedApplePayC6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s9Datatrans13SavedApplePayC6encode2toys7Encoder_p_tKF",
+            "moduleName": "Datatrans",
+            "overriding": true,
+            "declAttributes": [
+              "AccessControl",
+              "Override",
+              "RawDocComment"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(coder:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Datatrans.SavedApplePay?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SavedApplePay",
+                    "printedName": "Datatrans.SavedApplePay",
+                    "usr": "c:@M@Datatrans@objc(cs)DTSavedApplePay"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NSCoder",
+                "printedName": "Foundation.NSCoder",
+                "usr": "c:objc(cs)NSCoder"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@Datatrans@objc(cs)DTSavedApplePay(im)initWithCoder:",
+            "mangledName": "$s9Datatrans13SavedApplePayC5coderACSgSo7NSCoderC_tcfc",
+            "moduleName": "Datatrans",
+            "overriding": true,
+            "objc_name": "initWithCoder:",
+            "declAttributes": [
+              "ObjC",
+              "Required",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "copy",
+            "printedName": "copy(with:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ProtocolComposition",
+                "printedName": "Any"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "ObjectiveC.NSZone?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSZone",
+                    "printedName": "ObjectiveC.NSZone",
+                    "usr": "s:10ObjectiveC6NSZoneV"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@Datatrans@objc(cs)DTSavedApplePay(im)copyWithZone:",
+            "mangledName": "$s9Datatrans13SavedApplePayC4copy4withyp10ObjectiveC6NSZoneVSg_tF",
+            "moduleName": "Datatrans",
+            "overriding": true,
+            "objc_name": "copyWithZone:",
+            "declAttributes": [
+              "ObjC",
+              "AccessControl",
+              "Override",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "description",
+            "printedName": "description",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Datatrans@objc(cs)DTSavedApplePay(py)description",
+            "mangledName": "$s9Datatrans13SavedApplePayC11descriptionSSvp",
+            "moduleName": "Datatrans",
+            "overriding": true,
+            "objc_name": "description",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "AccessControl",
+              "Override",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Datatrans@objc(cs)DTSavedApplePay(im)description",
+                "mangledName": "$s9Datatrans13SavedApplePayC11descriptionSSvg",
+                "moduleName": "Datatrans",
+                "overriding": true,
+                "objc_name": "description",
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(type:alias:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SavedApplePay",
+                "printedName": "Datatrans.SavedApplePay",
+                "usr": "c:@M@Datatrans@objc(cs)DTSavedApplePay"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PaymentMethodType",
+                "printedName": "Datatrans.PaymentMethodType",
+                "usr": "c:@M@Datatrans@E@DTPaymentMethodType"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@Datatrans@objc(cs)DTSavedApplePay(im)initWithType:alias:",
+            "mangledName": "$s9Datatrans13SavedApplePayC4type5aliasAcA17PaymentMethodTypeO_SStcfc",
+            "moduleName": "Datatrans",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "initWithType:alias:",
+            "declAttributes": [
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@Datatrans@objc(cs)DTSavedApplePay",
+        "mangledName": "$s9Datatrans13SavedApplePayC",
+        "moduleName": "Datatrans",
+        "objc_name": "DTSavedApplePay",
+        "declAttributes": [
+          "AccessControl",
+          "ObjCMembers",
+          "ObjC",
+          "RawDocComment"
+        ],
+        "superclassUsr": "c:@M@Datatrans@objc(cs)DTSavedPaymentMethod",
+        "hasMissingDesignatedInitializers": true,
+        "superclassNames": [
+          "Datatrans.SavedPaymentMethod",
+          "Datatrans.PaymentMethod",
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
         "declKind": "Import",
@@ -9121,6 +9731,48 @@
           },
           {
             "kind": "Var",
+            "name": "IDEAL",
+            "printedName": "IDEAL",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Datatrans.PaymentMethodType.Type) -> Datatrans.PaymentMethodType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PaymentMethodType",
+                    "printedName": "Datatrans.PaymentMethodType",
+                    "usr": "c:@M@Datatrans@E@DTPaymentMethodType"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "Datatrans.PaymentMethodType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PaymentMethodType",
+                        "printedName": "Datatrans.PaymentMethodType",
+                        "usr": "c:@M@Datatrans@E@DTPaymentMethodType"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@Datatrans@E@DTPaymentMethodType@DTPaymentMethodTypeIDEAL",
+            "mangledName": "$s9Datatrans17PaymentMethodTypeO5IDEALyA2CmF",
+            "moduleName": "Datatrans",
+            "declAttributes": [
+              "RawDocComment",
+              "ObjC"
+            ],
+            "fixedbinaryorder": 33
+          },
+          {
+            "kind": "Var",
             "name": "identifier",
             "printedName": "identifier",
             "children": [
@@ -15984,6 +16636,16 @@
         ]
       },
       {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "Datatrans",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
         "kind": "TypeDecl",
         "name": "CardExpiryDate",
         "printedName": "CardExpiryDate",
@@ -17882,28 +18544,35 @@
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/WebController\/WebViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 258,
+      "offset": 264,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/WebController\/WebViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 297,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/WebController\/WebViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 298,
+      "offset": 337,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/WebController\/WebViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 342,
+      "offset": 381,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/WebController\/WebViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1142,
+      "offset": 1181,
       "length": 5,
       "value": "false"
     },
@@ -17972,6 +18641,20 @@
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/WebProcess\/WebProcess.swift",
+      "kind": "BooleanLiteral",
+      "offset": 724,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/WebProcess\/WebProcess.swift",
+      "kind": "BooleanLiteral",
+      "offset": 763,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/WebProcess\/WebProcess.swift",
       "kind": "StringLiteral",
       "offset": 53,
       "length": 10,
@@ -17983,6 +18666,13 @@
       "offset": 302,
       "length": 4,
       "value": "\"Datatrans.Card\""
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/PaymentMethods\/ApplePay\/SavedApplePay.swift",
+      "kind": "StringLiteral",
+      "offset": 587,
+      "length": 13,
+      "value": "\"Datatrans.SavedApplePay\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/DCC\/DCCOptionView.swift",
@@ -19723,6 +20413,13 @@
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/PaymentMethods\/PaymentMethodType.swift",
       "kind": "IntegerLiteral",
+      "offset": 2015,
+      "length": 5,
+      "value": "33"
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/PaymentMethods\/PaymentMethodType.swift",
+      "kind": "IntegerLiteral",
       "offset": 333,
       "length": 10,
       "value": "1"
@@ -19945,6 +20642,13 @@
       "value": "32"
     },
     {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/PaymentMethods\/PaymentMethodType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2015,
+      "length": 5,
+      "value": "33"
+    },
+    {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Error\/BackendErrorRule.swift",
       "kind": "StringLiteral",
       "offset": 478,
@@ -20087,7 +20791,7 @@
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/PublicAPI\/Transaction.swift",
       "kind": "BooleanLiteral",
-      "offset": 12494,
+      "offset": 12755,
       "length": 5,
       "value": "false"
     },

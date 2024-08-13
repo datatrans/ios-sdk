@@ -6,28 +6,11 @@
 //  Copyright 2020 ieffects ag. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+#import <Datatrans/DTUrlsProtocol.h>
 
-@interface DTUrls : NSObject
+@interface DTUrls : NSObject <DTUrlsProtocol>
 
-- (nonnull instancetype)init NS_UNAVAILABLE;
 - (nonnull instancetype)initWithTestingEnabled:(BOOL)testingEnabled;
-
-- (nonnull NSString *)get3DAuthenticationUrl;
-- (nonnull NSString *)get3DStatusUrl:(BOOL)isAliasRequest;
-- (nonnull NSString *)getAliasUrl;
-- (nonnull NSString *)getApplePayUrl;
-- (nonnull NSString *)getDCCServiceUrl;
-- (nonnull NSString *)getAuthorizationUrl;
-- (nonnull NSString *)getAuthorizationSplitUrl;
-- (nonnull NSString *)getCancelUrl;
-- (nonnull NSString *)getInitialTransactionRequestUrl;
-- (nonnull NSString *)getPaymentPostUrl:(BOOL)isResumed;
-- (nonnull NSString *)getTokenizationUrl;
-- (nonnull NSString *)getTWINTRegistrationUrl;
-- (nonnull NSString *)getTWINTStatusUrl;
-- (nonnull NSString *)getBinRangesUrl;
-
-- (nonnull NSArray<NSString *> *)getHosts;
-- (void)switchUrl;
 
 @end

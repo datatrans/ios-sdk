@@ -66,6 +66,23 @@ import _StringProcessing
   @objc required public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
+@_hasMissingDesignatedInitializers @objc(DTSavedApplePay) @objcMembers public class SavedApplePay : Datatrans.SavedPaymentMethod {
+  @objc public var token: Datatrans.SavedCard
+  @objc public var last4: Swift.String?
+  @objc override public var displayTitle: Swift.String {
+    @objc get
+  }
+  @objc override public var accessibilityTitle: Swift.String {
+    @objc get
+  }
+  override public func encode(to encoder: Swift.Encoder) throws
+  @objc required public init?(coder: Foundation.NSCoder)
+  @objc override public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+}
 @objc(DTInitialLoaderDelegate) public protocol InitialLoaderDelegate {
   @objc func dismissLoader()
 }
@@ -214,6 +231,7 @@ import _StringProcessing
   case Maestro
   case ChinaUnionPay
   case HalfFarePlus
+  case IDEAL
   public var identifier: Swift.String {
     get
   }

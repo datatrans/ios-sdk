@@ -774,6 +774,8 @@ typedef SWIFT_ENUM_NAMED(NSInteger, DTPaymentMethodType, "PaymentMethodType", op
   DTPaymentMethodTypeChinaUnionPay = 31,
 /// SBB Half Fare Travelcard PLUS payment method
   DTPaymentMethodTypeHalfFarePlus = 32,
+/// iDEAL payment method
+  DTPaymentMethodTypeIDEAL = 33,
 };
 
 
@@ -874,6 +876,39 @@ SWIFT_CLASS_NAMED("SavedPaymentMethod")
 /// :nodoc:
 - (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type SWIFT_UNAVAILABLE;
+@end
+
+@class DTSavedCard;
+
+/// This class contains saved Apple Pay payment method details.
+/// Like any other <code>SavedPaymentMethod</code> subclass, it can be used to initiate
+/// follow-up payments with the same method. Note: Using this class will still present
+/// the Apple Pay sheet to the user when they are in session.
+/// A <code>SavedApplePay</code> object can be created by successfully completing an Apple Pay
+/// payment or with a dedicated registration.
+SWIFT_CLASS_NAMED("SavedApplePay")
+@interface DTSavedApplePay : DTSavedPaymentMethod
+/// The Apple Pay device token associated with the previous transaction.
+/// <em>Important:</em> This data is strictly for use in merchant-initiated follow-up transactions (MIT)
+/// where the customer is not present during payment. Do not display any information such as
+/// <code>maskedCardNumber</code> or <code>cardExpiryDate</code> to users. These details are derived from
+/// the device token and do not represent the actual card information. For details about the real
+/// card, refer to <code>last4</code>.
+@property (nonatomic, strong) DTSavedCard * _Nonnull token;
+/// The last 4 digits of the real card number used in the transaction. Note: This information may
+/// not be available for all card types.
+@property (nonatomic, copy) NSString * _Nullable last4;
+/// A human readable title.
+@property (nonatomic, readonly, copy) NSString * _Nonnull displayTitle;
+/// For VoiceOver this title is used instead of displayTitle.
+@property (nonatomic, readonly, copy) NSString * _Nonnull accessibilityTitle;
+/// :nodoc:
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+/// :nodoc:
+- (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
+/// :nodoc:
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
+- (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type alias:(NSString * _Nonnull)alias SWIFT_UNAVAILABLE;
 @end
 
 
@@ -2120,6 +2155,8 @@ typedef SWIFT_ENUM_NAMED(NSInteger, DTPaymentMethodType, "PaymentMethodType", op
   DTPaymentMethodTypeChinaUnionPay = 31,
 /// SBB Half Fare Travelcard PLUS payment method
   DTPaymentMethodTypeHalfFarePlus = 32,
+/// iDEAL payment method
+  DTPaymentMethodTypeIDEAL = 33,
 };
 
 
@@ -2220,6 +2257,39 @@ SWIFT_CLASS_NAMED("SavedPaymentMethod")
 /// :nodoc:
 - (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type SWIFT_UNAVAILABLE;
+@end
+
+@class DTSavedCard;
+
+/// This class contains saved Apple Pay payment method details.
+/// Like any other <code>SavedPaymentMethod</code> subclass, it can be used to initiate
+/// follow-up payments with the same method. Note: Using this class will still present
+/// the Apple Pay sheet to the user when they are in session.
+/// A <code>SavedApplePay</code> object can be created by successfully completing an Apple Pay
+/// payment or with a dedicated registration.
+SWIFT_CLASS_NAMED("SavedApplePay")
+@interface DTSavedApplePay : DTSavedPaymentMethod
+/// The Apple Pay device token associated with the previous transaction.
+/// <em>Important:</em> This data is strictly for use in merchant-initiated follow-up transactions (MIT)
+/// where the customer is not present during payment. Do not display any information such as
+/// <code>maskedCardNumber</code> or <code>cardExpiryDate</code> to users. These details are derived from
+/// the device token and do not represent the actual card information. For details about the real
+/// card, refer to <code>last4</code>.
+@property (nonatomic, strong) DTSavedCard * _Nonnull token;
+/// The last 4 digits of the real card number used in the transaction. Note: This information may
+/// not be available for all card types.
+@property (nonatomic, copy) NSString * _Nullable last4;
+/// A human readable title.
+@property (nonatomic, readonly, copy) NSString * _Nonnull displayTitle;
+/// For VoiceOver this title is used instead of displayTitle.
+@property (nonatomic, readonly, copy) NSString * _Nonnull accessibilityTitle;
+/// :nodoc:
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+/// :nodoc:
+- (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
+/// :nodoc:
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
+- (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type alias:(NSString * _Nonnull)alias SWIFT_UNAVAILABLE;
 @end
 
 

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SavedApplePay Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/SavedApplePay" class="dashAnchor"></a>
+    <a title="SavedApplePay Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">Datatrans 3.7.0 Docs</a></p>
+        <p class="header-right"><a href="https://github.com/datatrans/ios-sdk"><img src="../img/gh.png" alt="GitHub"/>View on GitHub</a></p>
+        <div class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </div>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">Datatrans Reference</a>
+        <img id="carat" src="../img/carat.png" alt=""/>
+        SavedApplePay Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Transaction.html">Transaction</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/Transaction.html">Transaction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TransactionOptions.html">TransactionOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TransactionOptions/DCCShowMode.html">– DCCShowMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/TransactionDelegate.html">TransactionDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TransactionSuccess.html">TransactionSuccess</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TransactionError.html">TransactionError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Theme%20Options.html">Theme Options</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ThemeConfiguration.html">ThemeConfiguration</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Payment%20Method.html">Payment Method</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ApplePayConfig.html">ApplePayConfig</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BoncardConfig.html">BoncardConfig</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/BoncardType.html">BoncardType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Card.html">Card</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CardExpiryDate.html">CardExpiryDate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/CardLabelType.html">CardLabelType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PaymentMethod.html">PaymentMethod</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/PaymentMethodType.html">PaymentMethodType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PaymentMethodTypeMapper.html">PaymentMethodTypeMapper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SavedBoncard.html">SavedBoncard</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SavedCard.html">SavedCard</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SavedPaymentMethod.html">SavedPaymentMethod</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SavedPayPal.html">SavedPayPal</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SavedPostFinanceCard.html">SavedPostFinanceCard</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SavedReka.html">SavedReka</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SavedSEPA.html">SavedSEPA</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../PCI%20Proxy.html">PCI Proxy</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/PCIPTokenization.html">PCIPTokenization</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PCIPTokenizationOptions.html">PCIPTokenizationOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PCIPTokenizationDelegate.html">PCIPTokenizationDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PCIPTokenizationSuccess.html">PCIPTokenizationSuccess</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PCIPCardInfo.html">PCIPCardInfo</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PCIPTokenizationError.html">PCIPTokenizationError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PCIPCVVOnlyCard.html">PCIPCVVOnlyCard</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PCIPCardholder.html">PCIPCardholder</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other%20Classes.html">Other Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AppCallbackHandler.html">AppCallbackHandler</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BackendError.html">BackendError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SavedApplePay.html">SavedApplePay</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other%20Extensions.html">Other Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Other%20Extensions.html#/SlidingArray">SlidingArray</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other%20Protocols.html">Other Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/InitialLoaderDelegate.html">InitialLoaderDelegate</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>SavedApplePay</h1>
+            <p>This class contains saved Apple Pay payment method details.</p>
+
+<p>Like any other <code><a href="../Classes/SavedPaymentMethod.html">SavedPaymentMethod</a></code> subclass, it can be used to initiate
+follow-up payments with the same method. Note: Using this class will still present
+the Apple Pay sheet to the user when they are in session.</p>
+
+<p>A <code>SavedApplePay</code> object can be created by successfully completing an Apple Pay
+payment or with a dedicated registration.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Property/token" class="dashAnchor"></a>
+                    <a class="token" href="#/">token</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Apple Pay device token associated with the previous transaction.</p>
+
+<p><strong>Important:</strong> This data is strictly for use in merchant-initiated follow-up transactions (MIT)
+where the customer is not present during payment. Do not display any information such as
+<code>maskedCardNumber</code> or <code>cardExpiryDate</code> to users. These details are derived from
+the device token and do not represent the actual card information. For details about the real
+card, refer to <code><a href="../Classes/SavedApplePay.html#/last4">last4</a></code>.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Property/last4" class="dashAnchor"></a>
+                    <a class="token" href="#/">last4</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The last 4 digits of the real card number used in the transaction. Note: This information may
+not be available for all card types.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Property/displayTitle" class="dashAnchor"></a>
+                    <a class="token" href="#/">displayTitle</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A human readable title.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Property/accessibilityTitle" class="dashAnchor"></a>
+                    <a class="token" href="#/">accessibilityTitle</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>For VoiceOver this title is used instead of displayTitle.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</html>
