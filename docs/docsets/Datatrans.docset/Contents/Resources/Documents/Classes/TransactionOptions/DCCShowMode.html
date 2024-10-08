@@ -98,6 +98,9 @@
                 <a href="../../Classes/PaymentMethodTypeMapper.html">PaymentMethodTypeMapper</a>
               </li>
               <li class="nav-group-task">
+                <a href="../../Classes/SavedApplePay.html">SavedApplePay</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../../Classes/SavedBoncard.html">SavedBoncard</a>
               </li>
               <li class="nav-group-task">
@@ -158,16 +161,16 @@
               <li class="nav-group-task">
                 <a href="../../Classes/BackendError.html">BackendError</a>
               </li>
-              <li class="nav-group-task">
-                <a href="../../Classes/SavedApplePay.html">SavedApplePay</a>
-              </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="../../Other%20Extensions.html">Other Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../../Other%20Extensions.html#/SlidingArray">SlidingArray</a>
+                <a href="../../Other%20Extensions.html#/AppKit">AppKit</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Extensions/View.html">View</a>
               </li>
             </ul>
           </li>
@@ -185,6 +188,14 @@
         <section>
           <section class="section">
             <h1>DCCShowMode</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTDCCShowMode</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">enum</span> <span class="kt">DCCShowMode</span> <span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                </div>
+              </div>
             <p>Mode to control when DCC is presented for saved card payments (alias/tokenized payments).</p>
 
           </section>
@@ -194,9 +205,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/s:9Datatrans18TransactionOptionsC11DCCShowModeO6alwaysyA2EmF"></a>
                     <a name="//apple_ref/swift/Element/always" class="dashAnchor"></a>
-                    <a class="token" href="#/">always</a>
+                    <a class="token" href="#/s:9Datatrans18TransactionOptionsC11DCCShowModeO6alwaysyA2EmF">always</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -207,15 +218,23 @@
                         <p>The DCC screen is always shown when the merchant is set up and the saved card is eligible for DCC.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">always</span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/s:9Datatrans18TransactionOptionsC11DCCShowModeO5smartyA2EmF"></a>
                     <a name="//apple_ref/swift/Element/smart" class="dashAnchor"></a>
-                    <a class="token" href="#/">smart</a>
+                    <a class="token" href="#/s:9Datatrans18TransactionOptionsC11DCCShowModeO5smartyA2EmF">smart</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -230,15 +249,23 @@ the user experience and reduce unnecessary clicks.
 Note: the information whether DCC was previously declined is stored on the device only.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">smart</span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/s:9Datatrans18TransactionOptionsC11DCCShowModeO5neveryA2EmF"></a>
                     <a name="//apple_ref/swift/Element/never" class="dashAnchor"></a>
-                    <a class="token" href="#/">never</a>
+                    <a class="token" href="#/s:9Datatrans18TransactionOptionsC11DCCShowModeO5neveryA2EmF">never</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -248,6 +275,14 @@ Note: the information whether DCC was previously declined is stored on the devic
                       <div class="abstract">
                         <p>Show DCC only in guest mode and not for payments with saved cards.</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">never</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>

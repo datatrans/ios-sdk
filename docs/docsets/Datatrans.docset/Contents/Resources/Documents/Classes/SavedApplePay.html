@@ -98,6 +98,9 @@
                 <a href="../Classes/PaymentMethodTypeMapper.html">PaymentMethodTypeMapper</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Classes/SavedApplePay.html">SavedApplePay</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Classes/SavedBoncard.html">SavedBoncard</a>
               </li>
               <li class="nav-group-task">
@@ -158,16 +161,16 @@
               <li class="nav-group-task">
                 <a href="../Classes/BackendError.html">BackendError</a>
               </li>
-              <li class="nav-group-task">
-                <a href="../Classes/SavedApplePay.html">SavedApplePay</a>
-              </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="../Other%20Extensions.html">Other Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Other%20Extensions.html#/SlidingArray">SlidingArray</a>
+                <a href="../Other%20Extensions.html#/AppKit">AppKit</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/View.html">View</a>
               </li>
             </ul>
           </li>
@@ -185,6 +188,15 @@
         <section>
           <section class="section">
             <h1>SavedApplePay</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTSavedApplePay</span><span class="p">)</span>
+<span class="kd">@objcMembers</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">SavedApplePay</span> <span class="p">:</span> <span class="kt"><a href="../Classes/SavedPaymentMethod.html">SavedPaymentMethod</a></span></code></pre>
+
+                </div>
+              </div>
             <p>This class contains saved Apple Pay payment method details.</p>
 
 <p>Like any other <code><a href="../Classes/SavedPaymentMethod.html">SavedPaymentMethod</a></code> subclass, it can be used to initiate
@@ -201,9 +213,9 @@ payment or with a dedicated registration.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTSavedApplePay(py)token"></a>
                     <a name="//apple_ref/swift/Property/token" class="dashAnchor"></a>
-                    <a class="token" href="#/">token</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTSavedApplePay(py)token">token</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -217,8 +229,16 @@ payment or with a dedicated registration.</p>
 where the customer is not present during payment. Do not display any information such as
 <code>maskedCardNumber</code> or <code>cardExpiryDate</code> to users. These details are derived from
 the device token and do not represent the actual card information. For details about the real
-card, refer to <code><a href="../Classes/SavedApplePay.html#/last4">last4</a></code>.</p>
+card, refer to <code><a href="../Classes/SavedApplePay.html#/c:@M@Datatrans@objc(cs)DTSavedApplePay(py)last4">last4</a></code>.</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">token</span><span class="p">:</span> <span class="kt"><a href="../Classes/SavedCard.html">SavedCard</a></span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -226,9 +246,9 @@ card, refer to <code><a href="../Classes/SavedApplePay.html#/last4">last4</a></c
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTSavedApplePay(py)last4"></a>
                     <a name="//apple_ref/swift/Property/last4" class="dashAnchor"></a>
-                    <a class="token" href="#/">last4</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTSavedApplePay(py)last4">last4</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -240,15 +260,23 @@ card, refer to <code><a href="../Classes/SavedApplePay.html#/last4">last4</a></c
 not be available for all card types.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">last4</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTSavedApplePay(py)displayTitle"></a>
                     <a name="//apple_ref/swift/Property/displayTitle" class="dashAnchor"></a>
-                    <a class="token" href="#/">displayTitle</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTSavedApplePay(py)displayTitle">displayTitle</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -259,15 +287,23 @@ not be available for all card types.</p>
                         <p>A human readable title.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">public</span> <span class="k">var</span> <span class="nv">displayTitle</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTSavedApplePay(py)accessibilityTitle"></a>
                     <a name="//apple_ref/swift/Property/accessibilityTitle" class="dashAnchor"></a>
-                    <a class="token" href="#/">accessibilityTitle</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTSavedApplePay(py)accessibilityTitle">accessibilityTitle</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -277,6 +313,14 @@ not be available for all card types.</p>
                       <div class="abstract">
                         <p>For VoiceOver this title is used instead of displayTitle.</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">public</span> <span class="k">var</span> <span class="nv">accessibilityTitle</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>

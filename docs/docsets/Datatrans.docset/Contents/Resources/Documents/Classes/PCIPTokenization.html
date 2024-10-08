@@ -98,6 +98,9 @@
                 <a href="../Classes/PaymentMethodTypeMapper.html">PaymentMethodTypeMapper</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Classes/SavedApplePay.html">SavedApplePay</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Classes/SavedBoncard.html">SavedBoncard</a>
               </li>
               <li class="nav-group-task">
@@ -158,16 +161,16 @@
               <li class="nav-group-task">
                 <a href="../Classes/BackendError.html">BackendError</a>
               </li>
-              <li class="nav-group-task">
-                <a href="../Classes/SavedApplePay.html">SavedApplePay</a>
-              </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="../Other%20Extensions.html">Other Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Other%20Extensions.html#/SlidingArray">SlidingArray</a>
+                <a href="../Other%20Extensions.html#/AppKit">AppKit</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/View.html">View</a>
               </li>
             </ul>
           </li>
@@ -185,6 +188,14 @@
         <section>
           <section class="section">
             <h1>PCIPTokenization</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTPCIPTokenization</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">PCIPTokenization</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+
+                </div>
+              </div>
             <p>Use this class to start a PCI Proxy tokenization.</p>
 
 <p>After the tokenization has been completed - regardless if
@@ -204,9 +215,9 @@ if you want to register a saved payment method.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTPCIPTokenization(py)delegate"></a>
                     <a name="//apple_ref/swift/Property/delegate" class="dashAnchor"></a>
-                    <a class="token" href="#/">delegate</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTPCIPTokenization(py)delegate">delegate</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -218,15 +229,24 @@ if you want to register a saved payment method.
 successfully or not.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/PCIPTokenizationDelegate.html">PCIPTokenizationDelegate</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTPCIPTokenization(py)options"></a>
                     <a name="//apple_ref/swift/Property/options" class="dashAnchor"></a>
-                    <a class="token" href="#/">options</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTPCIPTokenization(py)options">options</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -237,15 +257,24 @@ successfully or not.</p>
                         <p>The available options for how a tokenization is handled by the mobile SDK.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">options</span><span class="p">:</span> <span class="kt"><a href="../Classes/PCIPTokenizationOptions.html">PCIPTokenizationOptions</a></span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTPCIPTokenization(py)theme"></a>
                     <a name="//apple_ref/swift/Property/theme" class="dashAnchor"></a>
-                    <a class="token" href="#/">theme</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTPCIPTokenization(py)theme">theme</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -256,15 +285,24 @@ successfully or not.</p>
                         <p>The theme to be used by the SDK.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">theme</span><span class="p">:</span> <span class="kt"><a href="../Classes/ThemeConfiguration.html">ThemeConfiguration</a></span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTPCIPTokenization(im)initWithMerchantId:card:"></a>
                     <a name="//apple_ref/swift/Method/init(merchantId:card:)" class="dashAnchor"></a>
-                    <a class="token" href="#/">init(merchantId:<wbr>card:<wbr>)</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTPCIPTokenization(im)initWithMerchantId:card:">init(merchantId:<wbr>card:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -273,9 +311,49 @@ successfully or not.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Use this init method if you use your own UI and already have a <code><a href="../Classes/Card.html">Card</a></code> instance with the
-card data to be tokenized. After this class is initialized, you should define its <code><a href="../Classes/PCIPTokenization.html#/delegate">delegate</a></code>,
-the <code><a href="../Classes/PCIPTokenization.html#/options">options</a></code> properties and a <code><a href="../Classes/PCIPTokenization.html#/theme">theme</a></code> if desired.</p>
+card data to be tokenized. After this class is initialized, you should define its <code><a href="../Classes/PCIPTokenization.html#/c:@M@Datatrans@objc(cs)DTPCIPTokenization(py)delegate">delegate</a></code>,
+the <code><a href="../Classes/PCIPTokenization.html#/c:@M@Datatrans@objc(cs)DTPCIPTokenization(py)options">options</a></code> properties and a <code><a href="../Classes/PCIPTokenization.html#/c:@M@Datatrans@objc(cs)DTPCIPTokenization(py)theme">theme</a></code> if desired.</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">merchantId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">card</span><span class="p">:</span> <span class="kt"><a href="../Classes/Card.html">Card</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>merchantId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Your merchantId.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>card</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Card object to tokenize.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -283,9 +361,9 @@ the <code><a href="../Classes/PCIPTokenization.html#/options">options</a></code>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/s:9Datatrans16PCIPTokenizationC10merchantId18paymentMethodTypesACSS_SayAA07PaymentF4TypeOGtcfc"></a>
                     <a name="//apple_ref/swift/Method/init(merchantId:paymentMethodTypes:)" class="dashAnchor"></a>
-                    <a class="token" href="#/">init(merchantId:<wbr>paymentMethodTypes:<wbr>)</a>
+                    <a class="token" href="#/s:9Datatrans16PCIPTokenizationC10merchantId18paymentMethodTypesACSS_SayAA07PaymentF4TypeOGtcfc">init(merchantId:<wbr>paymentMethodTypes:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -294,9 +372,48 @@ the <code><a href="../Classes/PCIPTokenization.html#/options">options</a></code>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Use this init method to allow the user to enter the card data to be tokenized. After this
-class is initialized, you should define its <code><a href="../Classes/PCIPTokenization.html#/delegate">delegate</a></code>, the <code><a href="../Classes/PCIPTokenization.html#/options">options</a></code> properties
-and a <code><a href="../Classes/PCIPTokenization.html#/theme">theme</a></code> if desired.</p>
+class is initialized, you should define its <code><a href="../Classes/PCIPTokenization.html#/c:@M@Datatrans@objc(cs)DTPCIPTokenization(py)delegate">delegate</a></code>, the <code><a href="../Classes/PCIPTokenization.html#/c:@M@Datatrans@objc(cs)DTPCIPTokenization(py)options">options</a></code> properties
+and a <code><a href="../Classes/PCIPTokenization.html#/c:@M@Datatrans@objc(cs)DTPCIPTokenization(py)theme">theme</a></code> if desired.</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">merchantId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">paymentMethodTypes</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/PaymentMethodType.html">PaymentMethodType</a></span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>merchantId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Your merchantId.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>paymentMethodTypes</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The allowed credit or debit card types.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -304,9 +421,9 @@ and a <code><a href="../Classes/PCIPTokenization.html#/theme">theme</a></code> i
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTPCIPTokenization(im)initWithMerchantId:cvvOnlyCard:"></a>
                     <a name="//apple_ref/swift/Method/init(merchantId:cvvOnlyCard:)" class="dashAnchor"></a>
-                    <a class="token" href="#/">init(merchantId:<wbr>cvvOnlyCard:<wbr>)</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTPCIPTokenization(im)initWithMerchantId:cvvOnlyCard:">init(merchantId:<wbr>cvvOnlyCard:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -315,9 +432,49 @@ and a <code><a href="../Classes/PCIPTokenization.html#/theme">theme</a></code> i
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Use this init method to tokenize the CVV of an already tokenized card. After this
-class is initialized, you should define its <code><a href="../Classes/PCIPTokenization.html#/delegate">delegate</a></code>, the <code><a href="../Classes/PCIPTokenization.html#/options">options</a></code> properties
-and a <code><a href="../Classes/PCIPTokenization.html#/theme">theme</a></code> if desired.</p>
+class is initialized, you should define its <code><a href="../Classes/PCIPTokenization.html#/c:@M@Datatrans@objc(cs)DTPCIPTokenization(py)delegate">delegate</a></code>, the <code><a href="../Classes/PCIPTokenization.html#/c:@M@Datatrans@objc(cs)DTPCIPTokenization(py)options">options</a></code> properties
+and a <code><a href="../Classes/PCIPTokenization.html#/c:@M@Datatrans@objc(cs)DTPCIPTokenization(py)theme">theme</a></code> if desired.</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">merchantId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">cvvOnlyCard</span><span class="p">:</span> <span class="kt"><a href="../Classes/PCIPCVVOnlyCard.html">PCIPCVVOnlyCard</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>merchantId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Your merchantId.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>cvvOnlyCard</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Previously tokenized card for which the CVV should be entered.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -325,9 +482,9 @@ and a <code><a href="../Classes/PCIPTokenization.html#/theme">theme</a></code> i
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTPCIPTokenization(im)initWithMerchantId:paymentMethodTypes:"></a>
                     <a name="//apple_ref/swift/Method/init(merchantId:paymentMethodTypesObjc:)" class="dashAnchor"></a>
-                    <a class="token" href="#/">init(merchantId:<wbr>paymentMethodTypesObjc:<wbr>)</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTPCIPTokenization(im)initWithMerchantId:paymentMethodTypes:">init(merchantId:<wbr>paymentMethodTypesObjc:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -336,8 +493,8 @@ and a <code><a href="../Classes/PCIPTokenization.html#/theme">theme</a></code> i
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Use this init method to allow the user to enter the  card data to be tokenized. After this
-class is initialized, you should define its <code><a href="../Classes/PCIPTokenization.html#/delegate">delegate</a></code>, the <code><a href="../Classes/PCIPTokenization.html#/options">options</a></code> properties
-and a <code><a href="../Classes/PCIPTokenization.html#/theme">theme</a></code> if desired.</p>
+class is initialized, you should define its <code><a href="../Classes/PCIPTokenization.html#/c:@M@Datatrans@objc(cs)DTPCIPTokenization(py)delegate">delegate</a></code>, the <code><a href="../Classes/PCIPTokenization.html#/c:@M@Datatrans@objc(cs)DTPCIPTokenization(py)options">options</a></code> properties
+and a <code><a href="../Classes/PCIPTokenization.html#/c:@M@Datatrans@objc(cs)DTPCIPTokenization(py)theme">theme</a></code> if desired.</p>
 
 <p>This initializer is for use from Objective-C only. Instead of <code>[PaymentMethodType]</code>, it
 takes <code>[NSNumber]</code> containing <code>rawValue</code>s of <code><a href="../Enums/PaymentMethodType.html">PaymentMethodType</a></code>.</p>
@@ -346,15 +503,55 @@ takes <code>[NSNumber]</code> containing <code>rawValue</code>s of <code><a href
 <code>[[DTPCIPTokenization alloc] initWithMerchantId:@&quot;...&quot; paymentMethodTypes:@[@(DTPaymentMethodTypeVisa), @(DTPaymentMethodTypeMasterCard)]];</code></p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="nv">initWithMerchantId</span><span class="p">:</span><span class="nv">paymentMethodTypes</span><span class="p">:)</span>
+<span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">merchantId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">paymentMethodTypesObjc</span><span class="p">:</span> <span class="p">[</span><span class="kt">NSNumber</span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>merchantId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Your merchantId.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>paymentMethodTypesObjc</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The allowed credit or debit card types.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTPCIPTokenization(im)startWithPresentingController:"></a>
                     <a name="//apple_ref/swift/Method/start(presentingController:)" class="dashAnchor"></a>
-                    <a class="token" href="#/">start(presentingController:<wbr>)</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTPCIPTokenization(im)startWithPresentingController:">start(presentingController:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -364,8 +561,37 @@ takes <code>[NSNumber]</code> containing <code>rawValue</code>s of <code><a href
                       <div class="abstract">
                         <p>Starts the SDK and displays any needed user interface using the provided
 <code>presentingController</code>. Note that a tokenization can only
-be started once. For SwiftUI, use <code>View.datatrans(startWithPCIPTokenization:)</code> instead.</p>
+be started once. For SwiftUI, use <code><a href="../Extensions/View.html#/s:7SwiftUI4ViewP9DatatransE9datatrans25startWithPCIPTokenizationQrAA7BindingVyAD0H0CSgG_tF">View.datatrans(startWithPCIPTokenization:)</a></code> instead.</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">start</span><span class="p">(</span><span class="nv">presentingController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>presentingController</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>UIViewController</code>
+used to present the user interface during an on-going tokenization.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>

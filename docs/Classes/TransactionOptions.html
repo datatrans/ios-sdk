@@ -98,6 +98,9 @@
                 <a href="../Classes/PaymentMethodTypeMapper.html">PaymentMethodTypeMapper</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Classes/SavedApplePay.html">SavedApplePay</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Classes/SavedBoncard.html">SavedBoncard</a>
               </li>
               <li class="nav-group-task">
@@ -158,16 +161,16 @@
               <li class="nav-group-task">
                 <a href="../Classes/BackendError.html">BackendError</a>
               </li>
-              <li class="nav-group-task">
-                <a href="../Classes/SavedApplePay.html">SavedApplePay</a>
-              </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="../Other%20Extensions.html">Other Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Other%20Extensions.html#/SlidingArray">SlidingArray</a>
+                <a href="../Other%20Extensions.html#/AppKit">AppKit</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/View.html">View</a>
               </li>
             </ul>
           </li>
@@ -185,6 +188,15 @@
         <section>
           <section class="section">
             <h1>TransactionOptions</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTTransactionOptions</span><span class="p">)</span>
+<span class="kd">@objcMembers</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">TransactionOptions</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+
+                </div>
+              </div>
             <p>This class can be used to specify miscellaneous options related to the transaction.</p>
 
           </section>
@@ -194,9 +206,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTTransactionOptions(py)appCallbackScheme"></a>
                     <a name="//apple_ref/swift/Property/appCallbackScheme" class="dashAnchor"></a>
-                    <a class="token" href="#/">appCallbackScheme</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTTransactionOptions(py)appCallbackScheme">appCallbackScheme</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -208,15 +220,23 @@
 to return to the merchant app.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">appCallbackScheme</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTTransactionOptions(py)applePayConfig"></a>
                     <a name="//apple_ref/swift/Property/applePayConfig" class="dashAnchor"></a>
-                    <a class="token" href="#/">applePayConfig</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTTransactionOptions(py)applePayConfig">applePayConfig</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -228,15 +248,23 @@ to return to the merchant app.</p>
 for Apple Pay transactions.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">applePayConfig</span><span class="p">:</span> <span class="kt"><a href="../Classes/ApplePayConfig.html">ApplePayConfig</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTTransactionOptions(py)boncardConfig"></a>
                     <a name="//apple_ref/swift/Property/boncardConfig" class="dashAnchor"></a>
-                    <a class="token" href="#/">boncardConfig</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTTransactionOptions(py)boncardConfig">boncardConfig</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -245,9 +273,17 @@ for Apple Pay transactions.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Specify the <code><a href="../Classes/BoncardConfig.html">BoncardConfig</a></code> object here. This can be used to configure
-how the <code><a href="../Enums/PaymentMethodType.html#/Boncard">PaymentMethodType.Boncard</a></code> payment method type
+how the <code><a href="../Enums/PaymentMethodType.html#/c:@M@Datatrans@E@DTPaymentMethodType@DTPaymentMethodTypeBoncard">PaymentMethodType.Boncard</a></code> payment method type
 should be displayed in the SDK. If not specified, a default value will be used.</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">boncardConfig</span><span class="p">:</span> <span class="kt"><a href="../Classes/BoncardConfig.html">BoncardConfig</a></span><span class="p">?</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -255,9 +291,9 @@ should be displayed in the SDK. If not specified, a default value will be used.<
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTTransactionOptions(py)cardLabelType"></a>
                     <a name="//apple_ref/swift/Property/cardLabelType" class="dashAnchor"></a>
-                    <a class="token" href="#/">cardLabelType</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTTransactionOptions(py)cardLabelType">cardLabelType</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -270,15 +306,23 @@ in the payment method selection: &ldquo;Credit card&rdquo;, &ldquo;Debit card&rd
 The latter is used by default.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">cardLabelType</span><span class="p">:</span> <span class="kt"><a href="../Enums/CardLabelType.html">CardLabelType</a></span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTTransactionOptions(py)customKlarnaPaymentMethodName"></a>
                     <a name="//apple_ref/swift/Property/customKlarnaPaymentMethodName" class="dashAnchor"></a>
-                    <a class="token" href="#/">customKlarnaPaymentMethodName</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTTransactionOptions(py)customKlarnaPaymentMethodName">customKlarnaPaymentMethodName</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -292,15 +336,23 @@ e.g. &ldquo;Lastschrift&rdquo;.</p>
 <p>If not specified, the name is &ldquo;Klarna&rdquo;.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">customKlarnaPaymentMethodName</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTTransactionOptions(py)suppressCriticalErrorDialog"></a>
                     <a name="//apple_ref/swift/Property/suppressCriticalErrorDialog" class="dashAnchor"></a>
-                    <a class="token" href="#/">suppressCriticalErrorDialog</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTTransactionOptions(py)suppressCriticalErrorDialog">suppressCriticalErrorDialog</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -311,15 +363,23 @@ e.g. &ldquo;Lastschrift&rdquo;.</p>
                         <p>Use this setting to display or hide critical and transaction errors.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">suppressCriticalErrorDialog</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTTransactionOptions(py)testing"></a>
                     <a name="//apple_ref/swift/Property/testing" class="dashAnchor"></a>
-                    <a class="token" href="#/">testing</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTTransactionOptions(py)testing">testing</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -331,15 +391,23 @@ e.g. &ldquo;Lastschrift&rdquo;.</p>
 the SDK will call the Datatrans production environment.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">testing</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTTransactionOptions(py)twintMaxIssuerNumber"></a>
                     <a name="//apple_ref/swift/Property/twintMaxIssuerNumber" class="dashAnchor"></a>
-                    <a class="token" href="#/">twintMaxIssuerNumber</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTTransactionOptions(py)twintMaxIssuerNumber">twintMaxIssuerNumber</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -358,15 +426,23 @@ under <code>LSApplicationQueriesSchemes</code>, use this setting to specify the 
 </div>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">twintMaxIssuerNumber</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTTransactionOptions(py)useCertificatePinning"></a>
                     <a name="//apple_ref/swift/Property/useCertificatePinning" class="dashAnchor"></a>
-                    <a class="token" href="#/">useCertificatePinning</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTTransactionOptions(py)useCertificatePinning">useCertificatePinning</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -383,15 +459,23 @@ and/or CAs will not work.</p>
 corporate networks with anti-malware/-theft/-espionage SSL proxying.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">useCertificatePinning</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTTransactionOptions(py)customInitialLoaderDelegate"></a>
                     <a name="//apple_ref/swift/Property/customInitialLoaderDelegate" class="dashAnchor"></a>
-                    <a class="token" href="#/">customInitialLoaderDelegate</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTTransactionOptions(py)customInitialLoaderDelegate">customInitialLoaderDelegate</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -412,15 +496,23 @@ cancel button or give the impression that users can still interact with the UI.
 </div>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">customInitialLoaderDelegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/InitialLoaderDelegate.html">InitialLoaderDelegate</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/s:9Datatrans18TransactionOptionsC11DCCShowModeO"></a>
                     <a name="//apple_ref/swift/Enum/DCCShowMode" class="dashAnchor"></a>
-                    <a class="token" href="#/">DCCShowMode</a>
+                    <a class="token" href="#/s:9Datatrans18TransactionOptionsC11DCCShowModeO">DCCShowMode</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -432,15 +524,24 @@ cancel button or give the impression that users can still interact with the UI.
 
                         <a href="../Classes/TransactionOptions/DCCShowMode.html" class="slightly-smaller">See more</a>
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTDCCShowMode</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">enum</span> <span class="kt">DCCShowMode</span> <span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTTransactionOptions(py)savedCardDCCShowMode"></a>
                     <a name="//apple_ref/swift/Property/savedCardDCCShowMode" class="dashAnchor"></a>
-                    <a class="token" href="#/">savedCardDCCShowMode</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTTransactionOptions(py)savedCardDCCShowMode">savedCardDCCShowMode</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -450,9 +551,17 @@ cancel button or give the impression that users can still interact with the UI.
                       <div class="abstract">
                         <p>Option to control when the DCC (Dynamic Currency Conversion) screen is presented
 for payments with saved cards (alias/tokenized payments).
-The default is <code><a href="../Classes/TransactionOptions/DCCShowMode.html#/always">DCCShowMode.always</a></code>, meaning DCC is always shown when available.
+The default is <code><a href="../Classes/TransactionOptions/DCCShowMode.html#/s:9Datatrans18TransactionOptionsC11DCCShowModeO6alwaysyA2EmF">DCCShowMode.always</a></code>, meaning DCC is always shown when available.
 See <code><a href="../Classes/TransactionOptions/DCCShowMode.html">DCCShowMode</a></code> for additional information.</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">savedCardDCCShowMode</span><span class="p">:</span> <span class="kt"><a href="../Classes/TransactionOptions/DCCShowMode.html">DCCShowMode</a></span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>

@@ -98,6 +98,9 @@
                 <a href="../Classes/PaymentMethodTypeMapper.html">PaymentMethodTypeMapper</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Classes/SavedApplePay.html">SavedApplePay</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Classes/SavedBoncard.html">SavedBoncard</a>
               </li>
               <li class="nav-group-task">
@@ -158,16 +161,16 @@
               <li class="nav-group-task">
                 <a href="../Classes/BackendError.html">BackendError</a>
               </li>
-              <li class="nav-group-task">
-                <a href="../Classes/SavedApplePay.html">SavedApplePay</a>
-              </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="../Other%20Extensions.html">Other Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Other%20Extensions.html#/SlidingArray">SlidingArray</a>
+                <a href="../Other%20Extensions.html#/AppKit">AppKit</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/View.html">View</a>
               </li>
             </ul>
           </li>
@@ -185,6 +188,15 @@
         <section>
           <section class="section">
             <h1>SavedPaymentMethod</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTSavedPaymentMethod</span><span class="p">)</span>
+<span class="kd">@objcMembers</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">SavedPaymentMethod</span> <span class="p">:</span> <span class="kt"><a href="../Classes/PaymentMethod.html">PaymentMethod</a></span></code></pre>
+
+                </div>
+              </div>
             <p>This is the base class to save a payment method and use it to process recurring payments
 or fast checkouts.</p>
 
@@ -211,9 +223,9 @@ during payment or require a dedicated registration.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTSavedPaymentMethod(py)alias"></a>
                     <a name="//apple_ref/swift/Property/alias" class="dashAnchor"></a>
-                    <a class="token" href="#/">alias</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTSavedPaymentMethod(py)alias">alias</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -224,15 +236,23 @@ during payment or require a dedicated registration.</p>
                         <p>The alias that can be used to process recurring payments or fast checkouts.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">alias</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTSavedPaymentMethod(py)displayTitle"></a>
                     <a name="//apple_ref/swift/Property/displayTitle" class="dashAnchor"></a>
-                    <a class="token" href="#/">displayTitle</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTSavedPaymentMethod(py)displayTitle">displayTitle</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -243,15 +263,23 @@ during payment or require a dedicated registration.</p>
                         <p>A human readable title.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">displayTitle</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTSavedPaymentMethod(py)accessibilityTitle"></a>
                     <a name="//apple_ref/swift/Property/accessibilityTitle" class="dashAnchor"></a>
-                    <a class="token" href="#/">accessibilityTitle</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTSavedPaymentMethod(py)accessibilityTitle">accessibilityTitle</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -262,15 +290,23 @@ during payment or require a dedicated registration.</p>
                         <p>For VoiceOver this title is used instead of displayTitle.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">accessibilityTitle</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTSavedPaymentMethod(im)initWithType:alias:"></a>
                     <a name="//apple_ref/swift/Method/init(type:alias:)" class="dashAnchor"></a>
-                    <a class="token" href="#/">init(type:<wbr>alias:<wbr>)</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTSavedPaymentMethod(im)initWithType:alias:">init(type:<wbr>alias:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -281,15 +317,54 @@ during payment or require a dedicated registration.</p>
                         <p>This init method has to be used to initialize a saved payment method.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../Enums/PaymentMethodType.html">PaymentMethodType</a></span><span class="p">,</span> <span class="nv">alias</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Payment method type, e.g. PayPal or Twint</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>alias</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The alias that can be used to process recurring payments or fast checkouts.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTSavedPaymentMethod(cm)createWithJsonString:"></a>
                     <a name="//apple_ref/swift/Method/create(jsonString:)" class="dashAnchor"></a>
-                    <a class="token" href="#/">create(jsonString:<wbr>)</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTSavedPaymentMethod(cm)createWithJsonString:">create(jsonString:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -300,10 +375,42 @@ during payment or require a dedicated registration.</p>
                         <p>Creates a <code>SavedPaymentMethod</code> from a JSON string.</p>
 
 <p>Use this method to deserialize a saved payment method. It takes a JSON string that has been
-created with <code><a href="../Classes/SavedPaymentMethod.html#/toJson()">toJson()</a></code>.</p>
+created with <code><a href="../Classes/SavedPaymentMethod.html#/c:@M@Datatrans@objc(cs)DTSavedPaymentMethod(im)toJson">toJson()</a></code>.</p>
 
 <p>The JSON string is compatible with the Android version of the Datatrans SDK.</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kd">func</span> <span class="nf">create</span><span class="p">(</span><span class="nv">jsonString</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">SavedPaymentMethod</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>jsonString</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The JSON string representation</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The decoded <code>SavedPaymentMethod</code> or one of its subclasses, if successful,
+nil if <code>jsonString</code> is invalid.</p>
                       </div>
                     </section>
                   </div>
@@ -311,9 +418,9 @@ created with <code><a href="../Classes/SavedPaymentMethod.html#/toJson()">toJson
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTSavedPaymentMethod(cm)createWithLegacySavedPaymentMethodData:"></a>
                     <a name="//apple_ref/swift/Method/create(legacySavedPaymentMethodData:)" class="dashAnchor"></a>
-                    <a class="token" href="#/">create(legacySavedPaymentMethodData:<wbr>)</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTSavedPaymentMethod(cm)createWithLegacySavedPaymentMethodData:">create(legacySavedPaymentMethodData:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -324,15 +431,49 @@ created with <code><a href="../Classes/SavedPaymentMethod.html#/toJson()">toJson
                         <p>Creates a <code>SavedPaymentMethod</code> from data encoded by the old payment library.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kd">func</span> <span class="nf">create</span><span class="p">(</span><span class="nv">legacySavedPaymentMethodData</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">SavedPaymentMethod</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>legacySavedPaymentMethodData</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Data encoded by
+<code>DTRecurringPaymentMethod.data()</code>, <code>DTCreditCard.data()</code>,
+<code>DTPostFinanceCard.data()</code>, <code>DTReka.data()</code>, <code>DTPayPal.data()</code> or <code>DTELV.data()</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The decoded <code>SavedPaymentMethod</code> or one of its subclasses, if successful,
+nil if <code>legacySavedPaymentMethodData</code> is invalid.</p>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTSavedPaymentMethod(im)toJson"></a>
                     <a name="//apple_ref/swift/Method/toJson()" class="dashAnchor"></a>
-                    <a class="token" href="#/">toJson()</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTSavedPaymentMethod(im)toJson">toJson()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -343,10 +484,22 @@ created with <code><a href="../Classes/SavedPaymentMethod.html#/toJson()">toJson
                         <p>Returns a JSON string representation of this saved payment method object.</p>
 
 <p>Use this method to serialize a saved payment method. The resulting JSON string can be deserialized with
-<code><a href="../Classes/SavedPaymentMethod.html#/create(jsonString:)">create(jsonString:)</a></code>.</p>
+<code><a href="../Classes/SavedPaymentMethod.html#/c:@M@Datatrans@objc(cs)DTSavedPaymentMethod(cm)createWithJsonString:">create(jsonString:)</a></code>.</p>
 
 <p>The JSON string is compatible with the Android version of the Datatrans SDK.</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">toJson</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The JSON string representation</p>
                       </div>
                     </section>
                   </div>
@@ -354,9 +507,9 @@ created with <code><a href="../Classes/SavedPaymentMethod.html#/toJson()">toJson
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTSavedPaymentMethod(im)isValid"></a>
                     <a name="//apple_ref/swift/Method/isValid()" class="dashAnchor"></a>
-                    <a class="token" href="#/">isValid()</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTSavedPaymentMethod(im)isValid">isValid()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -368,6 +521,14 @@ created with <code><a href="../Classes/SavedPaymentMethod.html#/toJson()">toJson
 
 <p>When e.g. called on a <code><a href="../Classes/SavedCard.html">SavedCard</a></code> it tells you if the expiration date is in the future or not.</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">isValid</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>

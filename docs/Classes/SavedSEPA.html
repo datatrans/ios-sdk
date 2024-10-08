@@ -98,6 +98,9 @@
                 <a href="../Classes/PaymentMethodTypeMapper.html">PaymentMethodTypeMapper</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Classes/SavedApplePay.html">SavedApplePay</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Classes/SavedBoncard.html">SavedBoncard</a>
               </li>
               <li class="nav-group-task">
@@ -158,16 +161,16 @@
               <li class="nav-group-task">
                 <a href="../Classes/BackendError.html">BackendError</a>
               </li>
-              <li class="nav-group-task">
-                <a href="../Classes/SavedApplePay.html">SavedApplePay</a>
-              </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="../Other%20Extensions.html">Other Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Other%20Extensions.html#/SlidingArray">SlidingArray</a>
+                <a href="../Other%20Extensions.html#/AppKit">AppKit</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/View.html">View</a>
               </li>
             </ul>
           </li>
@@ -185,6 +188,15 @@
         <section>
           <section class="section">
             <h1>SavedSEPA</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTSavedSEPA</span><span class="p">)</span>
+<span class="kd">@objcMembers</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">SavedSEPA</span> <span class="p">:</span> <span class="kt"><a href="../Classes/SavedPaymentMethod.html">SavedPaymentMethod</a></span></code></pre>
+
+                </div>
+              </div>
             <p>This class contains saved SEPA (ELV) payment method details.</p>
 
 <p>Just like any other <code><a href="../Classes/SavedPaymentMethod.html">SavedPaymentMethod</a></code> subclass, this class can be used
@@ -201,9 +213,9 @@ with a dedicated registration.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTSavedSEPA(py)bankCode"></a>
                     <a name="//apple_ref/swift/Property/bankCode" class="dashAnchor"></a>
-                    <a class="token" href="#/">bankCode</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTSavedSEPA(py)bankCode">bankCode</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -215,15 +227,23 @@ with a dedicated registration.</p>
 particular bank. This is required for aliases created before April 15th 2015.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">bankCode</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTSavedSEPA(py)alias"></a>
                     <a name="//apple_ref/swift/Property/alias" class="dashAnchor"></a>
-                    <a class="token" href="#/">alias</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTSavedSEPA(py)alias">alias</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -234,15 +254,23 @@ particular bank. This is required for aliases created before April 15th 2015.</p
                         <p>Alias for SEPA (ELV).</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">public</span> <span class="k">var</span> <span class="nv">alias</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTSavedSEPA(im)initWithAlias:"></a>
                     <a name="//apple_ref/swift/Method/init(alias:)" class="dashAnchor"></a>
-                    <a class="token" href="#/">init(alias:<wbr>)</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTSavedSEPA(im)initWithAlias:">init(alias:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -253,15 +281,42 @@ particular bank. This is required for aliases created before April 15th 2015.</p
                         <p>This init method has to be used to initialize a saved SEPA (ELV) payment method.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">alias</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>alias</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Alias for SEPA (ELV).</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTSavedSEPA(im)initWithAlias:bankCode:"></a>
                     <a name="//apple_ref/swift/Method/init(alias:bankCode:)" class="dashAnchor"></a>
-                    <a class="token" href="#/">init(alias:<wbr>bankCode:<wbr>)</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTSavedSEPA(im)initWithAlias:bankCode:">init(alias:<wbr>bankCode:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -270,8 +325,48 @@ particular bank. This is required for aliases created before April 15th 2015.</p
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>This init method has to be used with SEPA (ELV) aliases created before April 15th 2015.
-Please refer to <code><a href="../Classes/SavedSEPA.html#/init(alias:)">init(alias:)</a></code> for newer aliases.</p>
+Please refer to <code><a href="../Classes/SavedSEPA.html#/c:@M@Datatrans@objc(cs)DTSavedSEPA(im)initWithAlias:">init(alias:)</a></code> for newer aliases.</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">alias</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">bankCode</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>alias</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Alias for SEPA (ELV). This value was returned for aliases created before April 15th 2015.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>bankCode</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A bank code (German: Bankleitzahl) is a unique identification
+code for a particular bank. This is required for aliases created before April 15th 2015.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>

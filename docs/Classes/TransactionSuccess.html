@@ -98,6 +98,9 @@
                 <a href="../Classes/PaymentMethodTypeMapper.html">PaymentMethodTypeMapper</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Classes/SavedApplePay.html">SavedApplePay</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Classes/SavedBoncard.html">SavedBoncard</a>
               </li>
               <li class="nav-group-task">
@@ -158,16 +161,16 @@
               <li class="nav-group-task">
                 <a href="../Classes/BackendError.html">BackendError</a>
               </li>
-              <li class="nav-group-task">
-                <a href="../Classes/SavedApplePay.html">SavedApplePay</a>
-              </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="../Other%20Extensions.html">Other Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Other%20Extensions.html#/SlidingArray">SlidingArray</a>
+                <a href="../Other%20Extensions.html#/AppKit">AppKit</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/View.html">View</a>
               </li>
             </ul>
           </li>
@@ -185,6 +188,15 @@
         <section>
           <section class="section">
             <h1>TransactionSuccess</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTTransactionSuccess</span><span class="p">)</span>
+<span class="kd">@objcMembers</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">TransactionSuccess</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+
+                </div>
+              </div>
             <p>This class includes the success message and other details of a transaction.
 You will also obtain a transactionId that you can use for operations
 after the transaction (e.g. settlement, cancel or refund requests).</p>
@@ -196,9 +208,9 @@ after the transaction (e.g. settlement, cancel or refund requests).</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTTransactionSuccess(py)paymentMethodType"></a>
                     <a name="//apple_ref/swift/Property/paymentMethodType" class="dashAnchor"></a>
-                    <a class="token" href="#/">paymentMethodType</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTTransactionSuccess(py)paymentMethodType">paymentMethodType</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -209,15 +221,23 @@ after the transaction (e.g. settlement, cancel or refund requests).</p>
                         <p>The payment method used during the transaction.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">paymentMethodType</span><span class="p">:</span> <span class="kt"><a href="../Enums/PaymentMethodType.html">PaymentMethodType</a></span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTTransactionSuccess(py)savedPaymentMethod"></a>
                     <a name="//apple_ref/swift/Property/savedPaymentMethod" class="dashAnchor"></a>
-                    <a class="token" href="#/">savedPaymentMethod</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTTransactionSuccess(py)savedPaymentMethod">savedPaymentMethod</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -230,15 +250,23 @@ The saved payment method details are also returned to your webhook
 and can be accessed with a status server-to-server request.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">savedPaymentMethod</span><span class="p">:</span> <span class="kt"><a href="../Classes/SavedPaymentMethod.html">SavedPaymentMethod</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTTransactionSuccess(py)transactionId"></a>
                     <a name="//apple_ref/swift/Property/transactionId" class="dashAnchor"></a>
-                    <a class="token" href="#/">transactionId</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTTransactionSuccess(py)transactionId">transactionId</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -249,6 +277,14 @@ and can be accessed with a status server-to-server request.</p>
                         <p>The transactionId that you can use for operations after the
 transaction (eg. settlement, cancel or refund requests).</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">transactionId</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>

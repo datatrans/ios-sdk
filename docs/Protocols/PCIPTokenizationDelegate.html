@@ -98,6 +98,9 @@
                 <a href="../Classes/PaymentMethodTypeMapper.html">PaymentMethodTypeMapper</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Classes/SavedApplePay.html">SavedApplePay</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Classes/SavedBoncard.html">SavedBoncard</a>
               </li>
               <li class="nav-group-task">
@@ -158,16 +161,16 @@
               <li class="nav-group-task">
                 <a href="../Classes/BackendError.html">BackendError</a>
               </li>
-              <li class="nav-group-task">
-                <a href="../Classes/SavedApplePay.html">SavedApplePay</a>
-              </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="../Other%20Extensions.html">Other Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Other%20Extensions.html#/SlidingArray">SlidingArray</a>
+                <a href="../Other%20Extensions.html#/AppKit">AppKit</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/View.html">View</a>
               </li>
             </ul>
           </li>
@@ -185,6 +188,14 @@
         <section>
           <section class="section">
             <h1>PCIPTokenizationDelegate</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTPCIPTokenizationDelegate</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">PCIPTokenizationDelegate</span></code></pre>
+
+                </div>
+              </div>
             <p>Implement PCIPTokenizationDelegate to be notified when a tokenization
 ends. PCIPTokenizationDelegate will notify you about the success,
 error or cancel state of the processed tokenization.</p>
@@ -196,9 +207,9 @@ error or cancel state of the processed tokenization.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(pl)DTPCIPTokenizationDelegate(im)tokenizationDidFinish:result:"></a>
                     <a name="//apple_ref/swift/Method/tokenizationDidFinish(_:result:)" class="dashAnchor"></a>
-                    <a class="token" href="#/">tokenizationDidFinish(_:<wbr>result:<wbr>)</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(pl)DTPCIPTokenizationDelegate(im)tokenizationDidFinish:result:">tokenizationDidFinish(_:<wbr>result:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -210,15 +221,56 @@ error or cancel state of the processed tokenization.</p>
 completed. This callback provides details about the tokenization.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">tokenizationDidFinish</span><span class="p">(</span><span class="n">_</span> <span class="nv">tokenization</span><span class="p">:</span> <span class="kt"><a href="../Classes/PCIPTokenization.html">PCIPTokenization</a></span><span class="p">,</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Classes/PCIPTokenizationSuccess.html">PCIPTokenizationSuccess</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tokenization</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The object containing the information
+of the completed tokenization.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>result</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The result object containing the tokenization ID and
+other useful information, e.g. about the card.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(pl)DTPCIPTokenizationDelegate(im)tokenizationDidFail:error:"></a>
                     <a name="//apple_ref/swift/Method/tokenizationDidFail(_:error:)" class="dashAnchor"></a>
-                    <a class="token" href="#/">tokenizationDidFail(_:<wbr>error:<wbr>)</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(pl)DTPCIPTokenizationDelegate(im)tokenizationDidFail:error:">tokenizationDidFail(_:<wbr>error:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -236,15 +288,55 @@ the way you want when suppressing the error message within
 the <code><a href="../Classes/PCIPTokenizationOptions.html">PCIPTokenizationOptions</a></code>.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">tokenizationDidFail</span><span class="p">(</span><span class="n">_</span> <span class="nv">tokenization</span><span class="p">:</span> <span class="kt"><a href="../Classes/PCIPTokenization.html">PCIPTokenization</a></span><span class="p">,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Classes/PCIPTokenizationError.html">PCIPTokenizationError</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tokenization</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The object containing the information
+of the failed tokenization.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The error that occurred.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(pl)DTPCIPTokenizationDelegate(im)tokenizationDidCancel:"></a>
                     <a name="//apple_ref/swift/Method/tokenizationDidCancel(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/">tokenizationDidCancel(_:<wbr>)</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(pl)DTPCIPTokenizationDelegate(im)tokenizationDidCancel:">tokenizationDidCancel(_:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -255,6 +347,35 @@ the <code><a href="../Classes/PCIPTokenizationOptions.html">PCIPTokenizationOpti
                         <p>This is called after a tokenization has been cancelled. This callback
 can be used to cancel any on-going process involving the tokenization.</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">optional</span> <span class="kd">func</span> <span class="nf">tokenizationDidCancel</span><span class="p">(</span><span class="n">_</span> <span class="nv">tokenization</span><span class="p">:</span> <span class="kt"><a href="../Classes/PCIPTokenization.html">PCIPTokenization</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tokenization</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The object containing the
+information of the cancelled tokenization.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>

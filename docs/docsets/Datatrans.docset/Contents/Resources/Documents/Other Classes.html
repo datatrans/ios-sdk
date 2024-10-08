@@ -98,6 +98,9 @@
                 <a href="Classes/PaymentMethodTypeMapper.html">PaymentMethodTypeMapper</a>
               </li>
               <li class="nav-group-task">
+                <a href="Classes/SavedApplePay.html">SavedApplePay</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Classes/SavedBoncard.html">SavedBoncard</a>
               </li>
               <li class="nav-group-task">
@@ -158,16 +161,16 @@
               <li class="nav-group-task">
                 <a href="Classes/BackendError.html">BackendError</a>
               </li>
-              <li class="nav-group-task">
-                <a href="Classes/SavedApplePay.html">SavedApplePay</a>
-              </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="Other%20Extensions.html">Other Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Other%20Extensions.html#/SlidingArray">SlidingArray</a>
+                <a href="Other%20Extensions.html#/AppKit">AppKit</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/View.html">View</a>
               </li>
             </ul>
           </li>
@@ -194,9 +197,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTBackendError"></a>
                     <a name="//apple_ref/swift/Class/BackendError" class="dashAnchor"></a>
-                    <a class="token" href="#/">BackendError</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTBackendError">BackendError</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -208,32 +211,14 @@
 
                         <a href="Classes/BackendError.html" class="slightly-smaller">See more</a>
                       </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/"></a>
-                    <a name="//apple_ref/swift/Class/SavedApplePay" class="dashAnchor"></a>
-                    <a class="token" href="#/">SavedApplePay</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>This class contains saved Apple Pay payment method details.</p>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTBackendError</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">BackendError</span> <span class="p">:</span> <span class="kt">NSError</span></code></pre>
 
-<p>Like any other <code><a href="Classes/SavedPaymentMethod.html">SavedPaymentMethod</a></code> subclass, it can be used to initiate
-follow-up payments with the same method. Note: Using this class will still present
-the Apple Pay sheet to the user when they are in session.</p>
-
-<p>A <code>SavedApplePay</code> object can be created by successfully completing an Apple Pay
-payment or with a dedicated registration.</p>
-
-                        <a href="Classes/SavedApplePay.html" class="slightly-smaller">See more</a>
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -241,9 +226,9 @@ payment or with a dedicated registration.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTAppCallbackHandler"></a>
                     <a name="//apple_ref/swift/Class/AppCallbackHandler" class="dashAnchor"></a>
-                    <a class="token" href="#/">AppCallbackHandler</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTAppCallbackHandler">AppCallbackHandler</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -260,6 +245,16 @@ Then implement the <code>application(_:open:options:)</code> method in your AppD
 and call <code>AppCallbackHandler.shared.handleURL(url)</code> with the URL received.</p>
 
                         <a href="Classes/AppCallbackHandler.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTAppCallbackHandler</span><span class="p">)</span>
+<span class="kd">@objcMembers</span>
+<span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">AppCallbackHandler</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>

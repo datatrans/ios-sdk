@@ -98,6 +98,9 @@
                 <a href="../Classes/PaymentMethodTypeMapper.html">PaymentMethodTypeMapper</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Classes/SavedApplePay.html">SavedApplePay</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Classes/SavedBoncard.html">SavedBoncard</a>
               </li>
               <li class="nav-group-task">
@@ -158,16 +161,16 @@
               <li class="nav-group-task">
                 <a href="../Classes/BackendError.html">BackendError</a>
               </li>
-              <li class="nav-group-task">
-                <a href="../Classes/SavedApplePay.html">SavedApplePay</a>
-              </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="../Other%20Extensions.html">Other Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Other%20Extensions.html#/SlidingArray">SlidingArray</a>
+                <a href="../Other%20Extensions.html#/AppKit">AppKit</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/View.html">View</a>
               </li>
             </ul>
           </li>
@@ -185,6 +188,15 @@
         <section>
           <section class="section">
             <h1>ApplePayConfig</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTApplePayConfig</span><span class="p">)</span>
+<span class="kd">@objcMembers</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">ApplePayConfig</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">NSCopying</span></code></pre>
+
+                </div>
+              </div>
             <p>Configuration object for Apple Pay transactions.</p>
 
           </section>
@@ -194,9 +206,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTApplePayConfig(py)delegate"></a>
                     <a name="//apple_ref/swift/Property/delegate" class="dashAnchor"></a>
-                    <a class="token" href="#/">delegate</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTApplePayConfig(py)delegate">delegate</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -207,15 +219,23 @@
                         <p>Delegate object for callbacks during Apple Pay authorization</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt">DTApplePayDelegate</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTApplePayConfig(py)finalSummaryItemLabel"></a>
                     <a name="//apple_ref/swift/Property/finalSummaryItemLabel" class="dashAnchor"></a>
-                    <a class="token" href="#/">finalSummaryItemLabel</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTApplePayConfig(py)finalSummaryItemLabel">finalSummaryItemLabel</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -228,15 +248,23 @@ label is &ldquo;Total&rdquo;, but you can also replace it with the name of your 
 The string will then read: PAY YOURSHOP: XX.XX</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">finalSummaryItemLabel</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTApplePayConfig(py)request"></a>
                     <a name="//apple_ref/swift/Property/request" class="dashAnchor"></a>
-                    <a class="token" href="#/">request</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTApplePayConfig(py)request">request</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -248,15 +276,23 @@ The string will then read: PAY YOURSHOP: XX.XX</p>
 the official Apple Pay documentation for more information.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">request</span><span class="p">:</span> <span class="kt">PKPaymentRequest</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTApplePayConfig(py)showApplePayAsSavedPaymentMethod"></a>
                     <a name="//apple_ref/swift/Property/showApplePayAsSavedPaymentMethod" class="dashAnchor"></a>
-                    <a class="token" href="#/">showApplePayAsSavedPaymentMethod</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTApplePayConfig(py)showApplePayAsSavedPaymentMethod">showApplePayAsSavedPaymentMethod</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -267,15 +303,23 @@ the official Apple Pay documentation for more information.</p>
                         <p>Shows Apple Pay additionally on the saved payment method selection screen.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">showApplePayAsSavedPaymentMethod</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTApplePayConfig(py)showLargeButton"></a>
                     <a name="//apple_ref/swift/Property/showLargeButton" class="dashAnchor"></a>
-                    <a class="token" href="#/">showLargeButton</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTApplePayConfig(py)showLargeButton">showLargeButton</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -287,15 +331,23 @@ the official Apple Pay documentation for more information.</p>
 listed payment method.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">showLargeButton</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTApplePayConfig(py)existingCardRequired"></a>
                     <a name="//apple_ref/swift/Property/existingCardRequired" class="dashAnchor"></a>
-                    <a class="token" href="#/">existingCardRequired</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTApplePayConfig(py)existingCardRequired">existingCardRequired</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -307,15 +359,23 @@ listed payment method.</p>
 a supported card with Apple Pay. By default Apple Pay is shown in any case.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">existingCardRequired</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTApplePayConfig(cm)hasApplePayWithSupportedNetworks:existingCardRequired:"></a>
                     <a name="//apple_ref/swift/Method/hasApplePay(withSupportedNetworks:existingCardRequired:)" class="dashAnchor"></a>
-                    <a class="token" href="#/">hasApplePay(withSupportedNetworks:<wbr>existingCardRequired:<wbr>)</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTApplePayConfig(cm)hasApplePayWithSupportedNetworks:existingCardRequired:">hasApplePay(withSupportedNetworks:<wbr>existingCardRequired:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -330,15 +390,58 @@ of Apple Pay and hides it when not available, if Apple Pay is the only payment o
 the list of available payment methods.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kd">func</span> <span class="nf">hasApplePay</span><span class="p">(</span><span class="n">withSupportedNetworks</span> <span class="nv">supportedNetworks</span><span class="p">:</span> <span class="p">[</span><span class="kt">PKPaymentNetwork</span><span class="p">],</span> <span class="nv">existingCardRequired</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>supportedNetworks</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Supported card acquirers.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>existingCardRequired</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Determines whether Apple Pay should be exclusively available when at least one supported card is already set up by the user.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>True if Apple Pay is available on the device, false if it is unavailable.</p>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTApplePayConfig(im)initWithApplePayMerchantId:supportedNetworks:countryCode:"></a>
                     <a name="//apple_ref/swift/Method/init(applePayMerchantId:supportedNetworks:countryCode:)" class="dashAnchor"></a>
-                    <a class="token" href="#/">init(applePayMerchantId:<wbr>supportedNetworks:<wbr>countryCode:<wbr>)</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTApplePayConfig(im)initWithApplePayMerchantId:supportedNetworks:countryCode:">init(applePayMerchantId:<wbr>supportedNetworks:<wbr>countryCode:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -349,6 +452,58 @@ the list of available payment methods.</p>
                         <p>Creates a new Apple Pay configuration object with an Apple Pay country code.
 If no countryCode is specified, the SDK will set Switzerland as the country code.</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">applePayMerchantId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">supportedNetworks</span><span class="p">:</span> <span class="p">[</span><span class="kt">PKPaymentNetwork</span><span class="p">],</span> <span class="nv">countryCode</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>applePayMerchantId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The merchant identifier (Merchant ID) at Apple,
+which you created together with the CSR file provided by Datatrans.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>supportedNetworks</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Supported card acquirers.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>countryCode</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Apple Pay country code</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>

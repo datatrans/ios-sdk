@@ -98,6 +98,9 @@
                 <a href="../Classes/PaymentMethodTypeMapper.html">PaymentMethodTypeMapper</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Classes/SavedApplePay.html">SavedApplePay</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Classes/SavedBoncard.html">SavedBoncard</a>
               </li>
               <li class="nav-group-task">
@@ -158,16 +161,16 @@
               <li class="nav-group-task">
                 <a href="../Classes/BackendError.html">BackendError</a>
               </li>
-              <li class="nav-group-task">
-                <a href="../Classes/SavedApplePay.html">SavedApplePay</a>
-              </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="../Other%20Extensions.html">Other Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Other%20Extensions.html#/SlidingArray">SlidingArray</a>
+                <a href="../Other%20Extensions.html#/AppKit">AppKit</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/View.html">View</a>
               </li>
             </ul>
           </li>
@@ -185,6 +188,15 @@
         <section>
           <section class="section">
             <h1>SavedPayPal</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTSavedPayPal</span><span class="p">)</span>
+<span class="kd">@objcMembers</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">SavedPayPal</span> <span class="p">:</span> <span class="kt"><a href="../Classes/SavedPaymentMethod.html">SavedPaymentMethod</a></span></code></pre>
+
+                </div>
+              </div>
             <p>This class contains saved PayPal payment method details.</p>
 
 <p>Just like any other <code><a href="../Classes/SavedPaymentMethod.html">SavedPaymentMethod</a></code> subclass, this class can be used
@@ -201,9 +213,9 @@ with a dedicated registration.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTSavedPayPal(py)payPalEmail"></a>
                     <a name="//apple_ref/swift/Property/payPalEmail" class="dashAnchor"></a>
-                    <a class="token" href="#/">payPalEmail</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTSavedPayPal(py)payPalEmail">payPalEmail</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -214,15 +226,23 @@ with a dedicated registration.</p>
                         <p>PayPal e-mail address. This will be used for displaying purposes.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">payPalEmail</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTSavedPayPal(im)initWithAlias:payPalEmail:"></a>
                     <a name="//apple_ref/swift/Method/init(alias:payPalEmail:)" class="dashAnchor"></a>
-                    <a class="token" href="#/">init(alias:<wbr>payPalEmail:<wbr>)</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTSavedPayPal(im)initWithAlias:payPalEmail:">init(alias:<wbr>payPalEmail:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -232,6 +252,45 @@ with a dedicated registration.</p>
                       <div class="abstract">
                         <p>This init method has to be used to initialize a saved PayPal payment method.</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">alias</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">payPalEmail</span><span class="p">:</span> <span class="kt">String</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>alias</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Alias for a PayPal account.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>payPalEmail</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>PayPal e-mail address. This will be used for displaying purposes.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>

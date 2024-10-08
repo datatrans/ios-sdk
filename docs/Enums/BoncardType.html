@@ -98,6 +98,9 @@
                 <a href="../Classes/PaymentMethodTypeMapper.html">PaymentMethodTypeMapper</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Classes/SavedApplePay.html">SavedApplePay</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Classes/SavedBoncard.html">SavedBoncard</a>
               </li>
               <li class="nav-group-task">
@@ -158,16 +161,16 @@
               <li class="nav-group-task">
                 <a href="../Classes/BackendError.html">BackendError</a>
               </li>
-              <li class="nav-group-task">
-                <a href="../Classes/SavedApplePay.html">SavedApplePay</a>
-              </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="../Other%20Extensions.html">Other Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Other%20Extensions.html#/SlidingArray">SlidingArray</a>
+                <a href="../Other%20Extensions.html#/AppKit">AppKit</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/View.html">View</a>
               </li>
             </ul>
           </li>
@@ -185,7 +188,15 @@
         <section>
           <section class="section">
             <h1>BoncardType</h1>
-            <p>The different types of Boncard, for determining how the <code><a href="../Enums/PaymentMethodType.html#/Boncard">PaymentMethodType.Boncard</a></code>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTBoncardType</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">enum</span> <span class="kt">BoncardType</span> <span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="kt">CaseIterable</span></code></pre>
+
+                </div>
+              </div>
+            <p>The different types of Boncard, for determining how the <code><a href="../Enums/PaymentMethodType.html#/c:@M@Datatrans@E@DTPaymentMethodType@DTPaymentMethodTypeBoncard">PaymentMethodType.Boncard</a></code>
 payment method type is displayed in the payment selection.</p>
 
           </section>
@@ -195,9 +206,9 @@ payment method type is displayed in the payment selection.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@E@DTBoncardType@DTBoncardTypeGiftCard"></a>
                     <a name="//apple_ref/swift/Element/giftCard" class="dashAnchor"></a>
-                    <a class="token" href="#/">giftCard</a>
+                    <a class="token" href="#/c:@M@Datatrans@E@DTBoncardType@DTBoncardTypeGiftCard">giftCard</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -208,15 +219,23 @@ payment method type is displayed in the payment selection.</p>
                         <p>Displays as &ldquo;Gift card&rdquo; with a generic gift card icon</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">giftCard</span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@E@DTBoncardType@DTBoncardTypeBoncard"></a>
                     <a name="//apple_ref/swift/Element/boncard" class="dashAnchor"></a>
-                    <a class="token" href="#/">boncard</a>
+                    <a class="token" href="#/c:@M@Datatrans@E@DTBoncardType@DTBoncardTypeBoncard">boncard</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -227,15 +246,23 @@ payment method type is displayed in the payment selection.</p>
                         <p>Displays as &ldquo;Boncard&rdquo;</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">boncard</span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@E@DTBoncardType@DTBoncardTypeLunchCheck"></a>
                     <a name="//apple_ref/swift/Element/lunchCheck" class="dashAnchor"></a>
-                    <a class="token" href="#/">lunchCheck</a>
+                    <a class="token" href="#/c:@M@Datatrans@E@DTBoncardType@DTBoncardTypeLunchCheck">lunchCheck</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -246,15 +273,23 @@ payment method type is displayed in the payment selection.</p>
                         <p>Displays as &ldquo;Lunch-Check&rdquo; with the Lunch-Check logo</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">lunchCheck</span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@E@DTBoncardType@DTBoncardTypeSbbVoucher"></a>
                     <a name="//apple_ref/swift/Element/sbbVoucher" class="dashAnchor"></a>
-                    <a class="token" href="#/">sbbVoucher</a>
+                    <a class="token" href="#/c:@M@Datatrans@E@DTBoncardType@DTBoncardTypeSbbVoucher">sbbVoucher</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -264,6 +299,14 @@ payment method type is displayed in the payment selection.</p>
                       <div class="abstract">
                         <p>Displays as &ldquo;Voucher&rdquo; with the SBB Voucher logo</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">sbbVoucher</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>

@@ -98,6 +98,9 @@
                 <a href="Classes/PaymentMethodTypeMapper.html">PaymentMethodTypeMapper</a>
               </li>
               <li class="nav-group-task">
+                <a href="Classes/SavedApplePay.html">SavedApplePay</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Classes/SavedBoncard.html">SavedBoncard</a>
               </li>
               <li class="nav-group-task">
@@ -158,16 +161,16 @@
               <li class="nav-group-task">
                 <a href="Classes/BackendError.html">BackendError</a>
               </li>
-              <li class="nav-group-task">
-                <a href="Classes/SavedApplePay.html">SavedApplePay</a>
-              </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="Other%20Extensions.html">Other Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Other%20Extensions.html#/SlidingArray">SlidingArray</a>
+                <a href="Other%20Extensions.html#/AppKit">AppKit</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/View.html">View</a>
               </li>
             </ul>
           </li>
@@ -193,9 +196,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTApplePayConfig"></a>
                     <a name="//apple_ref/swift/Class/ApplePayConfig" class="dashAnchor"></a>
-                    <a class="token" href="#/">ApplePayConfig</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTApplePayConfig">ApplePayConfig</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -207,15 +210,25 @@
 
                         <a href="Classes/ApplePayConfig.html" class="slightly-smaller">See more</a>
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTApplePayConfig</span><span class="p">)</span>
+<span class="kd">@objcMembers</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">ApplePayConfig</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">NSCopying</span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTBoncardConfig"></a>
                     <a name="//apple_ref/swift/Class/BoncardConfig" class="dashAnchor"></a>
-                    <a class="token" href="#/">BoncardConfig</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTBoncardConfig">BoncardConfig</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -227,26 +240,14 @@
 
                         <a href="Classes/BoncardConfig.html" class="slightly-smaller">See more</a>
                       </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/"></a>
-                    <a name="//apple_ref/swift/Enum/BoncardType" class="dashAnchor"></a>
-                    <a class="token" href="#/">BoncardType</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The different types of Boncard, for determining how the <code><a href="Enums/PaymentMethodType.html#/Boncard">PaymentMethodType.Boncard</a></code>
-payment method type is displayed in the payment selection.</p>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTBoncardConfig</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">BoncardConfig</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">NSCopying</span></code></pre>
 
-                        <a href="Enums/BoncardType.html" class="slightly-smaller">See more</a>
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -254,9 +255,39 @@ payment method type is displayed in the payment selection.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@E@DTBoncardType"></a>
+                    <a name="//apple_ref/swift/Enum/BoncardType" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Datatrans@E@DTBoncardType">BoncardType</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The different types of Boncard, for determining how the <code><a href="Enums/PaymentMethodType.html#/c:@M@Datatrans@E@DTPaymentMethodType@DTPaymentMethodTypeBoncard">PaymentMethodType.Boncard</a></code>
+payment method type is displayed in the payment selection.</p>
+
+                        <a href="Enums/BoncardType.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTBoncardType</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">enum</span> <span class="kt">BoncardType</span> <span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="kt">CaseIterable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Datatrans@objc(cs)DTCard"></a>
                     <a name="//apple_ref/swift/Class/Card" class="dashAnchor"></a>
-                    <a class="token" href="#/">Card</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTCard">Card</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -269,15 +300,25 @@ this class if your app takes over the user interface for the card input fields.<
 
                         <a href="Classes/Card.html" class="slightly-smaller">See more</a>
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTCard</span><span class="p">)</span>
+<span class="kd">@objcMembers</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">Card</span> <span class="p">:</span> <span class="kt"><a href="Classes/PaymentMethod.html">PaymentMethod</a></span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTCardExpiryDate"></a>
                     <a name="//apple_ref/swift/Class/CardExpiryDate" class="dashAnchor"></a>
-                    <a class="token" href="#/">CardExpiryDate</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTCardExpiryDate">CardExpiryDate</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -289,15 +330,25 @@ this class if your app takes over the user interface for the card input fields.<
 
                         <a href="Classes/CardExpiryDate.html" class="slightly-smaller">See more</a>
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTCardExpiryDate</span><span class="p">)</span>
+<span class="kd">@objcMembers</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">CardExpiryDate</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">NSCopying</span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@E@DTCardLabelType"></a>
                     <a name="//apple_ref/swift/Enum/CardLabelType" class="dashAnchor"></a>
-                    <a class="token" href="#/">CardLabelType</a>
+                    <a class="token" href="#/c:@M@Datatrans@E@DTCardLabelType">CardLabelType</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -310,15 +361,24 @@ in the payment method selection.</p>
 
                         <a href="Enums/CardLabelType.html" class="slightly-smaller">See more</a>
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTCardLabelType</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">enum</span> <span class="kt">CardLabelType</span> <span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTPaymentMethod"></a>
                     <a name="//apple_ref/swift/Class/PaymentMethod" class="dashAnchor"></a>
-                    <a class="token" href="#/">PaymentMethod</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTPaymentMethod">PaymentMethod</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -331,15 +391,25 @@ payment method, e.g. Visa or Mastercard.</p>
 
                         <a href="Classes/PaymentMethod.html" class="slightly-smaller">See more</a>
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTPaymentMethod</span><span class="p">)</span>
+<span class="kd">@objcMembers</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">PaymentMethod</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">NSCoding</span><span class="p">,</span> <span class="kt">NSCopying</span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@E@DTPaymentMethodType"></a>
                     <a name="//apple_ref/swift/Enum/PaymentMethodType" class="dashAnchor"></a>
-                    <a class="token" href="#/">PaymentMethodType</a>
+                    <a class="token" href="#/c:@M@Datatrans@E@DTPaymentMethodType">PaymentMethodType</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -351,15 +421,24 @@ payment method, e.g. Visa or Mastercard.</p>
 
                         <a href="Enums/PaymentMethodType.html" class="slightly-smaller">See more</a>
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTPaymentMethodType</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">enum</span> <span class="kt">PaymentMethodType</span> <span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="kt">CaseIterable</span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTPaymentMethodTypeMapper"></a>
                     <a name="//apple_ref/swift/Class/PaymentMethodTypeMapper" class="dashAnchor"></a>
-                    <a class="token" href="#/">PaymentMethodTypeMapper</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTPaymentMethodTypeMapper">PaymentMethodTypeMapper</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -371,15 +450,61 @@ payment method, e.g. Visa or Mastercard.</p>
 
                         <a href="Classes/PaymentMethodTypeMapper.html" class="slightly-smaller">See more</a>
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTPaymentMethodTypeMapper</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">PaymentMethodTypeMapper</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTSavedApplePay"></a>
+                    <a name="//apple_ref/swift/Class/SavedApplePay" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTSavedApplePay">SavedApplePay</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This class contains saved Apple Pay payment method details.</p>
+
+<p>Like any other <code><a href="Classes/SavedPaymentMethod.html">SavedPaymentMethod</a></code> subclass, it can be used to initiate
+follow-up payments with the same method. Note: Using this class will still present
+the Apple Pay sheet to the user when they are in session.</p>
+
+<p>A <code>SavedApplePay</code> object can be created by successfully completing an Apple Pay
+payment or with a dedicated registration.</p>
+
+                        <a href="Classes/SavedApplePay.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTSavedApplePay</span><span class="p">)</span>
+<span class="kd">@objcMembers</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">SavedApplePay</span> <span class="p">:</span> <span class="kt"><a href="Classes/SavedPaymentMethod.html">SavedPaymentMethod</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Datatrans@objc(cs)DTSavedBoncard"></a>
                     <a name="//apple_ref/swift/Class/SavedBoncard" class="dashAnchor"></a>
-                    <a class="token" href="#/">SavedBoncard</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTSavedBoncard">SavedBoncard</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -398,15 +523,25 @@ with a dedicated registration.</p>
 
                         <a href="Classes/SavedBoncard.html" class="slightly-smaller">See more</a>
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTSavedBoncard</span><span class="p">)</span>
+<span class="kd">@objcMembers</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">SavedBoncard</span> <span class="p">:</span> <span class="kt"><a href="Classes/SavedPaymentMethod.html">SavedPaymentMethod</a></span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTSavedCard"></a>
                     <a name="//apple_ref/swift/Class/SavedCard" class="dashAnchor"></a>
-                    <a class="token" href="#/">SavedCard</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTSavedCard">SavedCard</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -425,15 +560,25 @@ with a dedicated registration.</p>
 
                         <a href="Classes/SavedCard.html" class="slightly-smaller">See more</a>
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTSavedCard</span><span class="p">)</span>
+<span class="kd">@objcMembers</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">SavedCard</span> <span class="p">:</span> <span class="kt"><a href="Classes/SavedPaymentMethod.html">SavedPaymentMethod</a></span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTSavedPaymentMethod"></a>
                     <a name="//apple_ref/swift/Class/SavedPaymentMethod" class="dashAnchor"></a>
-                    <a class="token" href="#/">SavedPaymentMethod</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTSavedPaymentMethod">SavedPaymentMethod</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -462,15 +607,25 @@ during payment or require a dedicated registration.</p>
 
                         <a href="Classes/SavedPaymentMethod.html" class="slightly-smaller">See more</a>
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTSavedPaymentMethod</span><span class="p">)</span>
+<span class="kd">@objcMembers</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">SavedPaymentMethod</span> <span class="p">:</span> <span class="kt"><a href="Classes/PaymentMethod.html">PaymentMethod</a></span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTSavedPayPal"></a>
                     <a name="//apple_ref/swift/Class/SavedPayPal" class="dashAnchor"></a>
-                    <a class="token" href="#/">SavedPayPal</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTSavedPayPal">SavedPayPal</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -489,15 +644,25 @@ with a dedicated registration.</p>
 
                         <a href="Classes/SavedPayPal.html" class="slightly-smaller">See more</a>
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTSavedPayPal</span><span class="p">)</span>
+<span class="kd">@objcMembers</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">SavedPayPal</span> <span class="p">:</span> <span class="kt"><a href="Classes/SavedPaymentMethod.html">SavedPaymentMethod</a></span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTSavedPostFinanceCard"></a>
                     <a name="//apple_ref/swift/Class/SavedPostFinanceCard" class="dashAnchor"></a>
-                    <a class="token" href="#/">SavedPostFinanceCard</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTSavedPostFinanceCard">SavedPostFinanceCard</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -516,15 +681,25 @@ PostFinance Card payment or with a dedicated registration.</p>
 
                         <a href="Classes/SavedPostFinanceCard.html" class="slightly-smaller">See more</a>
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTSavedPostFinanceCard</span><span class="p">)</span>
+<span class="kd">@objcMembers</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">SavedPostFinanceCard</span> <span class="p">:</span> <span class="kt"><a href="Classes/SavedCard.html">SavedCard</a></span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTSavedReka"></a>
                     <a name="//apple_ref/swift/Class/SavedReka" class="dashAnchor"></a>
-                    <a class="token" href="#/">SavedReka</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTSavedReka">SavedReka</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -543,15 +718,25 @@ with a dedicated registration.</p>
 
                         <a href="Classes/SavedReka.html" class="slightly-smaller">See more</a>
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTSavedReka</span><span class="p">)</span>
+<span class="kd">@objcMembers</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">SavedReka</span> <span class="p">:</span> <span class="kt"><a href="Classes/SavedCard.html">SavedCard</a></span></code></pre>
+
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTSavedSEPA"></a>
                     <a name="//apple_ref/swift/Class/SavedSEPA" class="dashAnchor"></a>
-                    <a class="token" href="#/">SavedSEPA</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTSavedSEPA">SavedSEPA</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -569,6 +754,16 @@ payment methods to the user for fast checkouts.</p>
 with a dedicated registration.</p>
 
                         <a href="Classes/SavedSEPA.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTSavedSEPA</span><span class="p">)</span>
+<span class="kd">@objcMembers</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">SavedSEPA</span> <span class="p">:</span> <span class="kt"><a href="Classes/SavedPaymentMethod.html">SavedPaymentMethod</a></span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>

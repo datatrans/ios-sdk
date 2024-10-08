@@ -98,6 +98,9 @@
                 <a href="../Classes/PaymentMethodTypeMapper.html">PaymentMethodTypeMapper</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Classes/SavedApplePay.html">SavedApplePay</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Classes/SavedBoncard.html">SavedBoncard</a>
               </li>
               <li class="nav-group-task">
@@ -158,16 +161,16 @@
               <li class="nav-group-task">
                 <a href="../Classes/BackendError.html">BackendError</a>
               </li>
-              <li class="nav-group-task">
-                <a href="../Classes/SavedApplePay.html">SavedApplePay</a>
-              </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="../Other%20Extensions.html">Other Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Other%20Extensions.html#/SlidingArray">SlidingArray</a>
+                <a href="../Other%20Extensions.html#/AppKit">AppKit</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/View.html">View</a>
               </li>
             </ul>
           </li>
@@ -185,6 +188,14 @@
         <section>
           <section class="section">
             <h1>BoncardConfig</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTBoncardConfig</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">BoncardConfig</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">NSCopying</span></code></pre>
+
+                </div>
+              </div>
             <p>Configuration object for Boncard transactions.</p>
 
           </section>
@@ -194,9 +205,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/s:9Datatrans13BoncardConfigC12boncardTypesACSayAA0B4TypeOG_tcfc"></a>
                     <a name="//apple_ref/swift/Method/init(boncardTypes:)" class="dashAnchor"></a>
-                    <a class="token" href="#/">init(boncardTypes:<wbr>)</a>
+                    <a class="token" href="#/s:9Datatrans13BoncardConfigC12boncardTypesACSayAA0B4TypeOG_tcfc">init(boncardTypes:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -207,15 +218,44 @@
                         <p>Creates a new Boncard configuration object.</p>
 
                       </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">boncardTypes</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/BoncardType.html">BoncardType</a></span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>boncardTypes</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The types of Boncard (and their order) to
+display in the payment method selection for the <code><a href="../Enums/PaymentMethodType.html#/c:@M@Datatrans@E@DTPaymentMethodType@DTPaymentMethodTypeBoncard">PaymentMethodType.Boncard</a></code>
+payment method type.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/"></a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTBoncardConfig(im)initWithBoncardTypes:"></a>
                     <a name="//apple_ref/swift/Method/init(boncardTypesObjc:)" class="dashAnchor"></a>
-                    <a class="token" href="#/">init(boncardTypesObjc:<wbr>)</a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTBoncardConfig(im)initWithBoncardTypes:">init(boncardTypesObjc:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -231,6 +271,36 @@ takes <code>[NSNumber]</code> containing <code>rawValue</code>s of <code><a href
 <p>Example:
 <code>[[DTBoncardConfig alloc] initWithBoncardTypes:@[@(DTBoncardTypeGiftCard), @(DTBoncardTypeBoncard)]];</code></p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="nv">initWithBoncardTypes</span><span class="p">:)</span>
+<span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">boncardTypesObjc</span><span class="p">:</span> <span class="p">[</span><span class="kt">NSNumber</span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>boncardTypesObjc</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The types of Boncard (and their order) to
+display in the payment method selection for the <code><a href="../Enums/PaymentMethodType.html#/c:@M@Datatrans@E@DTPaymentMethodType@DTPaymentMethodTypeBoncard">PaymentMethodType.Boncard</a></code>
+payment method type.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
