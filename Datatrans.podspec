@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name                 = "Datatrans"
-  spec.version              = "3.7.2"
+  spec.version              = "3.7.3"
   spec.summary              = "Datatrans iOS SDK - Accept payments on your iOS apps"
   spec.description          = <<-DESC
     Accept payments on your iOS apps: Our mobile SDKs support your entire payment and
