@@ -24,5 +24,6 @@
 - (nonnull DTPaymentRequest *)paymentRequest;
 - (nullable DTSavedPaymentMethod *)savedPaymentMethod;
 - (nonnull NSArray<NSString *> *)dccEnabledMethods;
+- (nonnull NSArray<NSString *> *)dccPreselectionEnabledMethods;
 
 @end

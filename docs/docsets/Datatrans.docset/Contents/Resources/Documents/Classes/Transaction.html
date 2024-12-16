@@ -17,7 +17,7 @@
     <a title="Transaction Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">Datatrans 3.7.3 Docs</a></p>
+        <p><a href="../index.html">Datatrans 3.8.0 Docs</a></p>
         <p class="header-right"><a href="https://github.com/datatrans/ios-sdk"><img src="../img/gh.png" alt="GitHub"/>View on GitHub</a></p>
         <div class="header-right">
           <form role="search" action="../search.json">
@@ -28,7 +28,9 @@
     </header>
     <div class="content-wrapper">
       <p id="breadcrumbs">
-        <a href="../index.html">Datatrans Reference</a>
+        <a href="../index.html">Datatrans</a>
+        <img id="carat" src="../img/carat.png" alt=""/>
+        <a href="../Transaction.html">Transaction</a>
         <img id="carat" src="../img/carat.png" alt=""/>
         Transaction Class Reference
       </p>
@@ -191,8 +193,7 @@
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTTransaction</span><span class="p">)</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="kt">Transaction</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">DTErrorHandlerDelegate</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Transaction</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">DTErrorHandlerDelegate</span></code></pre>
 
                 </div>
               </div>
@@ -228,8 +229,7 @@ successfully or not.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@objc</span>
-<span class="kd">public</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/TransactionDelegate.html">TransactionDelegate</a></span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/TransactionDelegate.html">TransactionDelegate</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -256,8 +256,7 @@ successfully or not.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@objc</span>
-<span class="kd">public</span> <span class="k">var</span> <span class="nv">options</span><span class="p">:</span> <span class="kt"><a href="../Classes/TransactionOptions.html">TransactionOptions</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">options</span> <span class="o">=</span> <span class="kt"><a href="../Classes/TransactionOptions.html">TransactionOptions</a></span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
@@ -284,8 +283,7 @@ successfully or not.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@objc</span>
-<span class="kd">public</span> <span class="k">var</span> <span class="nv">theme</span><span class="p">:</span> <span class="kt"><a href="../Classes/ThemeConfiguration.html">ThemeConfiguration</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">theme</span> <span class="o">=</span> <span class="kt"><a href="../Classes/ThemeConfiguration.html">ThemeConfiguration</a></span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
@@ -316,8 +314,7 @@ and a <code><a href="../Classes/Transaction.html#/c:@M@Datatrans@objc(cs)DTTrans
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@objc</span>
-<span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">mobileToken</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">mobileToken</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -367,8 +364,7 @@ Use this init method if you use your own UI fields for the card information.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@objc</span>
-<span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">mobileToken</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">card</span><span class="p">:</span> <span class="kt"><a href="../Classes/Card.html">Card</a></span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">mobileToken</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">card</span><span class="p">:</span> <span class="kt"><a href="../Classes/Card.html">Card</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -429,8 +425,7 @@ been initialized with a server-to-server init call.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@objc</span>
-<span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">mobileToken</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">savedPaymentMethod</span><span class="p">:</span> <span class="kt"><a href="../Classes/SavedPaymentMethod.html">SavedPaymentMethod</a></span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">mobileToken</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">savedPaymentMethod</span><span class="p">:</span> <span class="kt"><a href="../Classes/SavedPaymentMethod.html">SavedPaymentMethod</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -492,8 +487,7 @@ payment methods to display.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@objc</span>
-<span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">mobileToken</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">savedPaymentMethods</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/SavedPaymentMethod.html">SavedPaymentMethod</a></span><span class="p">])</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">mobileToken</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">savedPaymentMethods</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/SavedPaymentMethod.html">SavedPaymentMethod</a></span><span class="p">])</span></code></pre>
 
                         </div>
                       </div>
@@ -555,8 +549,7 @@ can only be started once. For SwiftUI, use <code><a href="../Extensions/View.htm
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@objc</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">start</span><span class="p">(</span><span class="nv">presentingController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">start</span><span class="p">(</span><span class="nv">presentingController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -589,7 +582,7 @@ used to present the user interface during an on-going transaction</p>
         </section>
         <section id="footer">
           
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>
     </div>

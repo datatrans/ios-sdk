@@ -17,7 +17,7 @@
     <a title="TransactionOptions Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">Datatrans 3.7.3 Docs</a></p>
+        <p><a href="../index.html">Datatrans 3.8.0 Docs</a></p>
         <p class="header-right"><a href="https://github.com/datatrans/ios-sdk"><img src="../img/gh.png" alt="GitHub"/>View on GitHub</a></p>
         <div class="header-right">
           <form role="search" action="../search.json">
@@ -28,7 +28,9 @@
     </header>
     <div class="content-wrapper">
       <p id="breadcrumbs">
-        <a href="../index.html">Datatrans Reference</a>
+        <a href="../index.html">Datatrans</a>
+        <img id="carat" src="../img/carat.png" alt=""/>
+        <a href="../Transaction.html">Transaction</a>
         <img id="carat" src="../img/carat.png" alt=""/>
         TransactionOptions Class Reference
       </p>
@@ -191,9 +193,7 @@
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTTransactionOptions</span><span class="p">)</span>
-<span class="kd">@objcMembers</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="kt">TransactionOptions</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">TransactionOptions</span><span class="p">:</span> <span class="kt">NSObject</span></code></pre>
 
                 </div>
               </div>
@@ -310,7 +310,7 @@ The latter is used by default.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">cardLabelType</span><span class="p">:</span> <span class="kt"><a href="../Enums/CardLabelType.html">CardLabelType</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">cardLabelType</span> <span class="o">=</span> <span class="kt"><a href="../Enums/CardLabelType.html">CardLabelType</a></span><span class="o">.</span><span class="n">creditOrDebitCard</span></code></pre>
 
                         </div>
                       </div>
@@ -367,7 +367,7 @@ e.g. &ldquo;Lastschrift&rdquo;.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">suppressCriticalErrorDialog</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">suppressCriticalErrorDialog</span> <span class="o">=</span> <span class="kc">false</span></code></pre>
 
                         </div>
                       </div>
@@ -395,7 +395,7 @@ the SDK will call the Datatrans production environment.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">testing</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">testing</span> <span class="o">=</span> <span class="kc">false</span></code></pre>
 
                         </div>
                       </div>
@@ -430,7 +430,7 @@ under <code>LSApplicationQueriesSchemes</code>, use this setting to specify the 
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">twintMaxIssuerNumber</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">twintMaxIssuerNumber</span> <span class="o">=</span> <span class="mi">39</span></code></pre>
 
                         </div>
                       </div>
@@ -463,7 +463,7 @@ corporate networks with anti-malware/-theft/-espionage SSL proxying.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">useCertificatePinning</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">useCertificatePinning</span> <span class="o">=</span> <span class="kc">false</span></code></pre>
 
                         </div>
                       </div>
@@ -528,8 +528,7 @@ cancel button or give the impression that users can still interact with the UI.
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTDCCShowMode</span><span class="p">)</span>
-<span class="kd">public</span> <span class="kd">enum</span> <span class="kt">DCCShowMode</span> <span class="p">:</span> <span class="kt">Int</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">DCCShowMode</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
 
                         </div>
                       </div>
@@ -559,7 +558,7 @@ See <code><a href="../Classes/TransactionOptions/DCCShowMode.html">DCCShowMode</
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">savedCardDCCShowMode</span><span class="p">:</span> <span class="kt"><a href="../Classes/TransactionOptions/DCCShowMode.html">DCCShowMode</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">savedCardDCCShowMode</span><span class="p">:</span> <span class="kt"><a href="../Classes/TransactionOptions/DCCShowMode.html">DCCShowMode</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">always</span></code></pre>
 
                         </div>
                       </div>
@@ -572,7 +571,7 @@ See <code><a href="../Classes/TransactionOptions/DCCShowMode.html">DCCShowMode</
         </section>
         <section id="footer">
           
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>
     </div>

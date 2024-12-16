@@ -1,12 +1,9 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
 // swift-module-flags: -target arm64-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name KlarnaMobileSDK
-import AVFoundation
 import AVKit
-import Accelerate
 import AuthenticationServices
 import CommonCrypto
-import CoreML
 import CryptoKit
 import DeveloperToolsSupport
 import Foundation
@@ -18,13 +15,10 @@ import Security
 import Swift
 import SwiftUI
 import UIKit
-import VideoToolbox
-import Vision
 import WebKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
-import os.log
 import os
 @available(*, deprecated, renamed: "KlarnaRegion", message: "Use KlarnaRegion instead.")
 public typealias KlarnaPostPurchaseRegion = KlarnaMobileSDK.KlarnaRegion
@@ -114,34 +108,6 @@ extension Swift.String {
 }
 @available(*, deprecated, renamed: "KlarnaEnvironment", message: "Use KlarnaEnvironment instead.")
 public typealias KlarnaOSMEnvironment = KlarnaMobileSDK.KlarnaEnvironment
-@_inheritsConvenienceInitializers @objc @_Concurrency.MainActor(unsafe) open class ScanBaseViewController : UIKit.UIViewController, AVFoundation.AVCaptureVideoDataOutputSampleBufferDelegate {
-  @objc @_Concurrency.MainActor(unsafe) open func onScannedCard(number: Swift.String, expiryYear: Swift.String?, expiryMonth: Swift.String?, scannedImage: UIKit.UIImage?)
-  @objc @_Concurrency.MainActor(unsafe) open func showCardNumber(_ number: Swift.String, expiry: Swift.String?)
-  @objc @_Concurrency.MainActor(unsafe) open func onCameraPermissionDenied(showedPrompt: Swift.Bool)
-  @objc @_Concurrency.MainActor(unsafe) open func useCurrentFrameNumber(errorCorrectedNumber: Swift.String?, currentFrameNumber: Swift.String) -> Swift.Bool
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open var shouldAutorotate: Swift.Bool {
-    @objc get
-  }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
-    @objc get
-  }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open var preferredInterfaceOrientationForPresentation: UIKit.UIInterfaceOrientation {
-    @objc get
-  }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
-    @objc get
-  }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLayoutSubviews()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillDisappear(_ animated: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidDisappear(_ animated: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) @objc public func captureOutput(_ output: AVFoundation.AVCaptureOutput, didOutput sampleBuffer: CoreMedia.CMSampleBuffer, from connection: AVFoundation.AVCaptureConnection)
-  @available(iOS 11.2, *)
-  @_Concurrency.MainActor(unsafe) open func blockingMlModel(fullCardImage: CoreGraphics.CGImage, roiRectangle: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @objc deinit
-}
 @objc public protocol KlarnaFullscreenEventListener {
   @objc func klarnaWillShowFullscreen(inWebView webView: any KlarnaMobileSDK.KlarnaWebView, completionHandler: @escaping () -> Swift.Void)
   @objc func klarnaDidShowFullscreen(inWebView webView: any KlarnaMobileSDK.KlarnaWebView, completionHandler: @escaping () -> Swift.Void)
@@ -177,6 +143,8 @@ extension Swift.String {
   public static let klarnaSignInAlreadyInProgress: Swift.String
   public static let klarnaSignInAuthorizationFailed: Swift.String
   public static let klarnaSignInCompletedWithoutToken: Swift.String
+  public static let klarnaSignInMissingTokenizationDelegate: Swift.String
+  public static let klarnaSignInTokenizationDelegateTimeout: Swift.String
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class KlarnaCheckoutViewDebug : KlarnaMobileSDK.KlarnaCheckoutView {
   @nonobjc @_Concurrency.MainActor(unsafe) public func registerTestAppDelegate(_ delegate: @escaping (KlarnaMobileSDK.KlarnaDebugEvent) -> Swift.Void)
@@ -275,6 +243,20 @@ extension UIKit.UIFont {
   required public init(from dictionary: [Swift.String : Swift.String])
   @objc deinit
 }
+@_hasMissingDesignatedInitializers @objc public class KlarnaTextStyleConfiguration : ObjectiveC.NSObject {
+  final public let textColor: UIKit.UIColor?
+  final public let textFont: UIKit.UIFont?
+  final public let textSize: CoreFoundation.CGFloat?
+  @_inheritsConvenienceInitializers @objc(KlarnaTextStyleBuilder) public class Builder : ObjectiveC.NSObject {
+    @objc public func setTextColor(_ color: UIKit.UIColor?) -> Self
+    @objc public func setTextFont(_ font: UIKit.UIFont?) -> Self
+    @objc public func setTextSize(_ size: CoreFoundation.CGFloat) -> Self
+    @objc public func build() -> KlarnaMobileSDK.KlarnaTextStyleConfiguration
+    @objc override dynamic public init()
+    @objc deinit
+  }
+  @objc deinit
+}
 @objc public enum KlarnaPostPurchaseRenderResult : Swift.Int, Swift.CustomDebugStringConvertible, Swift.Codable {
   case noStateChange = 1
   case stateChange = 2
@@ -347,7 +329,7 @@ extension Swift.String {
     @objc get
     @objc set
   }
-  @objc @_Concurrency.MainActor(unsafe) public init(clientId: Swift.String, scope: Swift.String, market: Swift.String, locale: Swift.String, presentationContext: any AuthenticationServices.ASWebAuthenticationPresentationContextProviding, theme: KlarnaMobileSDK.KlarnaTheme = .light, environment: KlarnaMobileSDK.KlarnaEnvironment = .production, region: KlarnaMobileSDK.KlarnaRegion = .eu, resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint = .alternative1, returnUrl: Foundation.URL, eventHandler: any KlarnaMobileSDK.KlarnaEventHandler, loggingLevel: KlarnaMobileSDK.KlarnaLoggingLevel = .off)
+  @objc @_Concurrency.MainActor(unsafe) public init(clientId: Swift.String, scope: Swift.String, market: Swift.String, locale: Swift.String, presentationContext: any AuthenticationServices.ASWebAuthenticationPresentationContextProviding, theme: KlarnaMobileSDK.KlarnaTheme = .light, environment: KlarnaMobileSDK.KlarnaEnvironment = .production, region: KlarnaMobileSDK.KlarnaRegion = .eu, resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint = .alternative1, returnUrl: Foundation.URL, eventHandler: any KlarnaMobileSDK.KlarnaEventHandler, loggingLevel: KlarnaMobileSDK.KlarnaLoggingLevel = .off, tokenizationDelegate: (any KlarnaMobileSDK.KlarnaSignInTokenizationDelegate)? = nil)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func willMove(toSuperview newSuperview: UIKit.UIView?)
@@ -492,7 +474,7 @@ public typealias KlarnaPostPurchaseEnvironment = KlarnaMobileSDK.KlarnaEnvironme
 @_hasMissingDesignatedInitializers @available(iOS 13.0, *)
 @objc public class KlarnaSignInSDK : ObjectiveC.NSObject {
   @objc public init(theme: KlarnaMobileSDK.KlarnaTheme = .light, environment: KlarnaMobileSDK.KlarnaEnvironment = .production, region: KlarnaMobileSDK.KlarnaRegion = .eu, resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint = .alternative1, returnUrl: Foundation.URL, eventHandler: any KlarnaMobileSDK.KlarnaEventHandler, loggingLevel: KlarnaMobileSDK.KlarnaLoggingLevel = .off)
-  @objc public func signIn(clientId: Swift.String, scope: Swift.String, market: Swift.String, locale: Swift.String? = nil, presentationContext: any AuthenticationServices.ASWebAuthenticationPresentationContextProviding)
+  @objc public func signIn(clientId: Swift.String, scope: Swift.String, market: Swift.String, locale: Swift.String? = nil, tokenizationId: Swift.String? = nil, presentationContext: any AuthenticationServices.ASWebAuthenticationPresentationContextProviding)
   @objc deinit
 }
 @available(*, deprecated, message: "Implement KlarnaSizingDelegate instead.")
@@ -775,8 +757,10 @@ public protocol KlarnaPaymentViewDelegate : KlarnaMobileSDK.KlarnaEventHandler {
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class KlarnaOSMView : UIKit.UIView {
   @objc @_Concurrency.MainActor(unsafe) weak public var hostViewController: UIKit.UIViewController?
+  @objc @_Concurrency.MainActor(unsafe) public var styleConfiguration: KlarnaMobileSDK.KlarnaOSMStyleConfiguration?
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func didMoveToWindow()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
   @objc deinit
 }
 @objc public protocol KlarnaSingleComponent : KlarnaMobileSDK.KlarnaComponent {
@@ -1245,34 +1229,22 @@ extension KlarnaMobileSDK.KlarnaStandaloneWebView : KlarnaMobileSDK.KlarnaStanda
   @objc func sendEvent(_ event: KlarnaMobileSDK.KlarnaProductEvent)
   @objc var productOptions: KlarnaMobileSDK.KlarnaProductOptions { get }
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class UIDotLoadingIndicator : UIKit.UIView {
-  @objc @IBInspectable @_Concurrency.MainActor(unsafe) final public var dotsCount: Swift.Int {
-    @objc get
-    @objc set
-  }
-  @objc @IBInspectable @_Concurrency.MainActor(unsafe) final public var dotsRadius: CoreFoundation.CGFloat {
-    @objc get
-    @objc set
-  }
-  @objc @IBInspectable @_Concurrency.MainActor(unsafe) final public var dotsSpacing: CoreFoundation.CGFloat {
-    @objc get
-    @objc set
-  }
-  @_Concurrency.MainActor(unsafe) @objc override final public var tintColor: UIKit.UIColor! {
-    @objc get
-    @objc set
-  }
-  @_Concurrency.MainActor(unsafe) final public func startAnimating()
-  @_Concurrency.MainActor(unsafe) final public func stopAnimating()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) @objc override final public func layoutSubviews()
-  @objc deinit
-}
 @objc @_inheritsConvenienceInitializers public class KlarnaCheckoutOptions : ObjectiveC.NSObject {
   public var merchantHandlesEPM: Swift.Bool
   public var merchantHandlesValidationErrors: Swift.Bool
   @objc override dynamic public init()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class KlarnaOSMStyleConfiguration : ObjectiveC.NSObject {
+  final public let backgroundColor: UIKit.UIColor?
+  final public let textStyleConfiguration: KlarnaMobileSDK.KlarnaTextStyleConfiguration?
+  @_inheritsConvenienceInitializers @objc(KlarnaOSMStyleBuilder) public class Builder : ObjectiveC.NSObject {
+    @objc override dynamic public init()
+    @objc public func setBackgroundColor(_ color: UIKit.UIColor?) -> Self
+    @objc public func setTextStyleConfiguration(_ configuration: KlarnaMobileSDK.KlarnaTextStyleConfiguration) -> Self
+    @objc public func build() -> KlarnaMobileSDK.KlarnaOSMStyleConfiguration
+    @objc deinit
+  }
   @objc deinit
 }
 public struct KlarnaSignInToken : Swift.Codable {
@@ -1304,7 +1276,7 @@ public struct KlarnaSignInToken : Swift.Codable {
 @_Concurrency.MainActor(unsafe) public class KlarnaSignInButtonDebug : KlarnaMobileSDK.KlarnaSignInButton {
   @_Concurrency.MainActor(unsafe) public func setEphemeralWebBrowserSession(enabled: Swift.Bool)
   @_Concurrency.MainActor(unsafe) public func setPrompt(_ query: Swift.String?)
-  @_Concurrency.MainActor(unsafe) @objc override public init(clientId: Swift.String, scope: Swift.String, market: Swift.String, locale: Swift.String, presentationContext: any AuthenticationServices.ASWebAuthenticationPresentationContextProviding, theme: KlarnaMobileSDK.KlarnaTheme = super, environment: KlarnaMobileSDK.KlarnaEnvironment = super, region: KlarnaMobileSDK.KlarnaRegion = super, resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint = super, returnUrl: Foundation.URL, eventHandler: any KlarnaMobileSDK.KlarnaEventHandler, loggingLevel: KlarnaMobileSDK.KlarnaLoggingLevel = super)
+  @_Concurrency.MainActor(unsafe) @objc override public init(clientId: Swift.String, scope: Swift.String, market: Swift.String, locale: Swift.String, presentationContext: any AuthenticationServices.ASWebAuthenticationPresentationContextProviding, theme: KlarnaMobileSDK.KlarnaTheme = super, environment: KlarnaMobileSDK.KlarnaEnvironment = super, region: KlarnaMobileSDK.KlarnaRegion = super, resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint = super, returnUrl: Foundation.URL, eventHandler: any KlarnaMobileSDK.KlarnaEventHandler, loggingLevel: KlarnaMobileSDK.KlarnaLoggingLevel = super, tokenizationDelegate: (any KlarnaMobileSDK.KlarnaSignInTokenizationDelegate)? = nil)
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(iOS 13.0, *)
@@ -1462,6 +1434,9 @@ public typealias KlarnaMobileSDKError = KlarnaMobileSDK.KlarnaError
   public func addCookie(name: Swift.String, value: Swift.String)
   @nonobjc public func registerTestAppDelegate(_ delegate: @escaping (KlarnaMobileSDK.KlarnaDebugEvent) -> Swift.Void)
   @objc deinit
+}
+@objc public protocol KlarnaSignInTokenizationDelegate {
+  @objc func onTokenization(_ klarnaComponent: any KlarnaMobileSDK.KlarnaComponent, completionHandler: @escaping (Swift.String) -> Swift.Void)
 }
 extension KlarnaMobileSDK.KlarnaButtonShape : Swift.Equatable {}
 extension KlarnaMobileSDK.KlarnaButtonShape : Swift.Hashable {}

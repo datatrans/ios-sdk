@@ -14,7 +14,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		78fRqDJ9S+7Ip3Rm3gvwtO31/gk=
+		Vp+KqxGaEWCdtkncRYyi9Jo/RSA=
 		</data>
 		<key>BON_boncard_1.pdf</key>
 		<data>
@@ -39,10 +39,6 @@
 		<key>CUP.pdf</key>
 		<data>
 		QEzsnsbZEpneT9lRFZG9nSWKaPM=
-		</data>
-		<key>CardBinRangeConfig.json</key>
-		<data>
-		B94n4I/p9m80fPn9DZMJTfeZPfY=
 		</data>
 		<key>DEA.pdf</key>
 		<data>
@@ -158,7 +154,7 @@
 		</data>
 		<key>Headers/DTInitialTransaction.h</key>
 		<data>
-		1cZdM4nijT+7IWTWEatp+7H8VNY=
+		0+/ZvF6dHG+mUY4vX1WGlj31RKk=
 		</data>
 		<key>Headers/DTInitialTransactionProcess.h</key>
 		<data>
@@ -262,7 +258,7 @@
 		</data>
 		<key>Headers/Datatrans-Swift.h</key>
 		<data>
-		3wwXxR7fPv9JkwY3+/B3H4XhEGQ=
+		n3hx03DHmtNd+bqnjX4uYX5Gfqo=
 		</data>
 		<key>Headers/Datatrans.h</key>
 		<data>
@@ -274,7 +270,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		nL/Lw4Kw3XQh8/T4r5hNOFTdO78=
+		Efj0NN4vVDlaZj6FMBh/kJpLcNk=
 		</data>
 		<key>JCB.pdf</key>
 		<data>
@@ -302,47 +298,47 @@
 		</data>
 		<key>Modules/Datatrans.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		C2LGicPeJSAsAY3lE1VvwGKN6Oo=
+		a1R+BVuT+FKE3XHo7hWojvs1ei0=
 		</data>
 		<key>Modules/Datatrans.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		IOU++Puxrw2GmfWqsrixRvVz5ek=
+		nrLKbyON7yKYJZi56uo36T1+o5o=
 		</data>
 		<key>Modules/Datatrans.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		4aTHzRciUoKrF1ZIBvbjat5aq+o=
+		PXatAqcxQCtR3xSCvSC7o8I2zU4=
 		</data>
 		<key>Modules/Datatrans.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		IOU++Puxrw2GmfWqsrixRvVz5ek=
+		nrLKbyON7yKYJZi56uo36T1+o5o=
 		</data>
 		<key>Modules/Datatrans.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		GnRDcbneVenNpfreqyp7wa2lJVE=
+		S8iy+7w5PaN/peAFyyFhQr7Lt6k=
 		</data>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		C2LGicPeJSAsAY3lE1VvwGKN6Oo=
+		a1R+BVuT+FKE3XHo7hWojvs1ei0=
 		</data>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		mHb60iI/T5CC/kOhWh8jVbIXqag=
+		IopknxtbDGVVk3kxPPmP2Jg2wV8=
 		</data>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		1dKZgdPGYXDW5D4PcoihDdgpAxM=
+		o6SIMNlhVUADxut9vXCxbTpbNec=
 		</data>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		mHb60iI/T5CC/kOhWh8jVbIXqag=
+		IopknxtbDGVVk3kxPPmP2Jg2wV8=
 		</data>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		QRgN7EbZDpy5BBsRQSBbTdzXv8w=
+		EEhIbKLfnzt4MjAHysxzvwzHlrw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		IzvjakiyNK9JE9sQI856RpgTI+o=
+		qmwj4ahGJhg35/8zgXy2D/dZhhg=
 		</data>
 		<key>PAP.pdf</key>
 		<data>
@@ -528,7 +524,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			+Hm3KgHtkzHlTvj7V763AofK7T+BDGope7GEE7kMVRQ=
+			txcJDB+qiDZD9X04fQlbpZNOOhkcSsEIA0uJ8ri3AAg=
 			</data>
 		</dict>
 		<key>BON_boncard_1.pdf</key>
@@ -571,13 +567,6 @@
 			<key>hash2</key>
 			<data>
 			DiHE4vMjlBJYPbnaEsfcGEwpjSGJtbPkHZfGtuCa12g=
-			</data>
-		</dict>
-		<key>CardBinRangeConfig.json</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			WKw0YzU4l/OxwYNZK0tBBNzDOq7JGCSbWK49NlzC04o=
 			</data>
 		</dict>
 		<key>DEA.pdf</key>
@@ -780,7 +769,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dWooU8V29yz7fPi/tTFuO8pD26DEUte+s+0f/Nq6iis=
+			3dVvxJ0JF8YlDAm58klnOKOYMTmNA0pPm2/ZczFaQFM=
 			</data>
 		</dict>
 		<key>Headers/DTInitialTransactionProcess.h</key>
@@ -962,7 +951,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/HpANG7/Cn549x/Rx9vNYWWjSIrkG5bcDLuvfZscgl4=
+			QDOFZHIqDZymDYK1/VDAZl4Nu8bqRj2md2G6eZylkGE=
 			</data>
 		</dict>
 		<key>Headers/Datatrans.h</key>
@@ -1025,77 +1014,77 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			f3/iwU96pTuClHo+XCC64Q8NqO9eWWYNRmFXABMAkOM=
+			dGbdGzI0LH6F1zpfjHpD6VYZ9fSfQbBdyKKIUCC5U8I=
 			</data>
 		</dict>
 		<key>Modules/Datatrans.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			lN/hEEXpr35g2ry/0zUXPZNgUwQ03q2xC6fd/axbXj0=
+			eQPDtqB5NcbHss1+K/5066iRu0NlU66pxp5/a4Wn2vU=
 			</data>
 		</dict>
 		<key>Modules/Datatrans.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			VG9dyIGdWyWy4atH/E0JEthMkUqESiTwT6UMOWHt+Hs=
+			e3Rkr2MQtN5yg0iU+IQl9pwDl+GPWInS7vW2WvMmCHs=
 			</data>
 		</dict>
 		<key>Modules/Datatrans.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			lN/hEEXpr35g2ry/0zUXPZNgUwQ03q2xC6fd/axbXj0=
+			eQPDtqB5NcbHss1+K/5066iRu0NlU66pxp5/a4Wn2vU=
 			</data>
 		</dict>
 		<key>Modules/Datatrans.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			UF07FC3tgRv2cwzRaPz0lYL13hJn8LKnRF8p8Qpju44=
+			2P9XPka3FBmdIUmwaCc6zuZjk8YB1KB9y624L/dXBi8=
 			</data>
 		</dict>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			f3/iwU96pTuClHo+XCC64Q8NqO9eWWYNRmFXABMAkOM=
+			dGbdGzI0LH6F1zpfjHpD6VYZ9fSfQbBdyKKIUCC5U8I=
 			</data>
 		</dict>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			VYHiLtQSfQmau0qyizXmcloRkt2Vc5doLV8cae9dqLA=
+			LkVNnN9eQnNFtHC1t+pXhZ+piPQkRVkXqfj2LEtGwaY=
 			</data>
 		</dict>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OUyKQksaZJZpHh5toI0v/3vOP6AKasHZ/7RYcWT8NqI=
+			axN/sMaV5w0ssHTDTUAqBUSMEkA93Y3Msg2iFKtKaDg=
 			</data>
 		</dict>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			VYHiLtQSfQmau0qyizXmcloRkt2Vc5doLV8cae9dqLA=
+			LkVNnN9eQnNFtHC1t+pXhZ+piPQkRVkXqfj2LEtGwaY=
 			</data>
 		</dict>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			C9OUR2Xl/YokJjXw3FP7sDtWIPMoHvkRqQkpFCiCbfI=
+			8E1qmgB2lOF5yyUP1wM9RMz3WXyeTXNxc2cKVq7Kfug=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			iPcPuDArpodWF2TbG1GwtjZ+ZbyzC8jxkY+KzuJ/UzI=
+			YtOR948GDRSFYRSpuV7i3SIJ9GPw77lcOBcWm9Npdbw=
 			</data>
 		</dict>
 		<key>PAP.pdf</key>

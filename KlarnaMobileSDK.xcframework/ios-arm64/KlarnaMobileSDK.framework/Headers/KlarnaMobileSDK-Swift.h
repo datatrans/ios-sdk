@@ -277,9 +277,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
-@import AVFoundation;
 @import CoreFoundation;
-@import CoreMedia;
 @import Foundation;
 @import ObjectiveC;
 @import UIKit;
@@ -1072,6 +1070,25 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaMobileSDKCommon")
 @end
 
 
+
+/// On Site Messaging placement style configuration.
+SWIFT_CLASS("_TtC15KlarnaMobileSDK27KlarnaOSMStyleConfiguration")
+@interface KlarnaOSMStyleConfiguration : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class UIColor;
+@class KlarnaTextStyleConfiguration;
+
+SWIFT_CLASS_NAMED("Builder")
+@interface KlarnaOSMStyleBuilder : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)setBackgroundColor:(UIColor * _Nullable)color SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)setTextStyleConfiguration:(KlarnaTextStyleConfiguration * _Nonnull)configuration SWIFT_WARN_UNUSED_RESULT;
+- (KlarnaOSMStyleConfiguration * _Nonnull)build SWIFT_WARN_UNUSED_RESULT;
+@end
+
 @class UIViewController;
 
 SWIFT_CLASS("_TtC15KlarnaMobileSDK13KlarnaOSMView")
@@ -1079,11 +1096,14 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK13KlarnaOSMView")
 /// View controller (or activity) that will be used to render placement
 /// details modally (required). Would be <code>hostActivity</code> on Android.
 @property (nonatomic, weak) UIViewController * _Nullable hostViewController;
+/// Style configuration for the KlarnaOSMView. When not nil it will take precedence over the Theme values and support for dark mode needs to be implemented.
+@property (nonatomic, strong) KlarnaOSMStyleConfiguration * _Nullable styleConfiguration;
 /// Initialize OSM view.
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 - (void)layoutSubviews;
 - (void)didMoveToWindow;
+- (void)traitCollectionDidChange:(UITraitCollection * _Nullable)previousTraitCollection;
 @end
 
 
@@ -1698,6 +1718,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) KlarnaResour
 
 
 @protocol ASWebAuthenticationPresentationContextProviding;
+@protocol KlarnaSignInTokenizationDelegate;
 @class UITouch;
 @class UIEvent;
 
@@ -1739,7 +1760,9 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaSignInButton") SWIFT_AVAILABILITY(ios,
 ///
 /// \param loggingLevel Level at which the SDK will log events at.
 ///
-- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nonnull)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext theme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler loggingLevel:(enum KlarnaLoggingLevel)loggingLevel OBJC_DESIGNATED_INITIALIZER;
+/// \param tokenizationDelegate delegate to inform Merchant app to get the tokenizationId
+///
+- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nonnull)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext theme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler loggingLevel:(enum KlarnaLoggingLevel)loggingLevel tokenizationDelegate:(id <KlarnaSignInTokenizationDelegate> _Nullable)tokenizationDelegate OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 - (void)layoutSubviews;
 - (void)traitCollectionDidChange:(UITraitCollection * _Nullable)previousTraitCollection;
@@ -1843,7 +1866,7 @@ SWIFT_AVAILABILITY(ios,introduced=13.0)
 
 SWIFT_CLASS("_TtC15KlarnaMobileSDK23KlarnaSignInButtonDebug") SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface KlarnaSignInButtonDebug : KlarnaSignInButton
-- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nonnull)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext theme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler loggingLevel:(enum KlarnaLoggingLevel)loggingLevel OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nonnull)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext theme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler loggingLevel:(enum KlarnaLoggingLevel)loggingLevel tokenizationDelegate:(id <KlarnaSignInTokenizationDelegate> _Nullable)tokenizationDelegate OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -1876,9 +1899,11 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaSignInSDK") SWIFT_AVAILABILITY(ios,int
 ///
 /// \param locale The language to be presented to the user.
 ///
+/// \param tokenizationId The id to enable Tokenization
+///
 /// \param presentationContext An interface the session uses to ask a delegate for a presentation context.
 ///
-- (void)signInClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nullable)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext;
+- (void)signInClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nullable)locale tokenizationId:(NSString * _Nullable)tokenizationId presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1933,6 +1958,12 @@ SWIFT_AVAILABILITY(ios,introduced=13.0)
 SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaSignInSDKDebug") SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface KlarnaSignInSDKDebug : KlarnaSignInSDK
 - (nonnull instancetype)initWithTheme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler loggingLevel:(enum KlarnaLoggingLevel)loggingLevel OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK32KlarnaSignInTokenizationDelegate_")
+@protocol KlarnaSignInTokenizationDelegate
+- (void)onTokenization:(id <KlarnaComponent> _Nonnull)klarnaComponent completionHandler:(void (^ _Nonnull)(NSString * _Nonnull))completionHandler;
 @end
 
 
@@ -2007,7 +2038,6 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK23KlarnaStandaloneWebView")
 @end
 
 @class WKNavigation;
-@class UIColor;
 @class WKFrameInfo;
 @class WKUserScript;
 @protocol WKScriptMessageHandler;
@@ -2114,6 +2144,25 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK31KlarnaStandaloneWebViewDelegate_")
 - (void)klarnaStandaloneWebView:(KlarnaStandaloneWebView * _Nonnull)webView requestMediaCapturePermissionFor:(WKSecurityOrigin * _Nonnull)origin initiatedByFrame:(WKFrameInfo * _Nonnull)frame ofType:(WKMediaCaptureType)type handler:(void (^ _Nonnull)(WKPermissionDecision))handler SWIFT_AVAILABILITY(ios,introduced=15.0);
 @end
 
+
+/// Text style configuration for text elements in Klarna components.
+SWIFT_CLASS("_TtC15KlarnaMobileSDK28KlarnaTextStyleConfiguration")
+@interface KlarnaTextStyleConfiguration : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class UIFont;
+
+SWIFT_CLASS_NAMED("Builder")
+@interface KlarnaTextStyleBuilder : NSObject
+- (nonnull instancetype)setTextColor:(UIColor * _Nullable)color SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)setTextFont:(UIFont * _Nullable)font SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)setTextSize:(CGFloat)size SWIFT_WARN_UNUSED_RESULT;
+- (KlarnaTextStyleConfiguration * _Nonnull)build SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 /// Defines the theme (or style) that components should use.
 /// The theme will always default to <code>light</code>. Automatic switching is opt-in. This is because both Klarna
 /// and many existing apps that integrate the SDK historically only support a light theme, and we don’t want
@@ -2145,47 +2194,6 @@ typedef SWIFT_ENUM(NSInteger, KlarnaWebViewOpeningBehavior, open) {
 };
 
 
-
-@class UIImage;
-@class AVCaptureOutput;
-@class AVCaptureConnection;
-@class NSBundle;
-
-SWIFT_CLASS("_TtC15KlarnaMobileSDK22ScanBaseViewController")
-@interface ScanBaseViewController : UIViewController <AVCaptureVideoDataOutputSampleBufferDelegate>
-- (void)onScannedCardWithNumber:(NSString * _Nonnull)number expiryYear:(NSString * _Nullable)expiryYear expiryMonth:(NSString * _Nullable)expiryMonth scannedImage:(UIImage * _Nullable)scannedImage;
-- (void)showCardNumber:(NSString * _Nonnull)number expiry:(NSString * _Nullable)expiry;
-- (void)onCameraPermissionDeniedWithShowedPrompt:(BOOL)showedPrompt;
-- (BOOL)useCurrentFrameNumberWithErrorCorrectedNumber:(NSString * _Nullable)errorCorrectedNumber currentFrameNumber:(NSString * _Nonnull)currentFrameNumber SWIFT_WARN_UNUSED_RESULT;
-@property (nonatomic, readonly) BOOL shouldAutorotate;
-@property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
-@property (nonatomic, readonly) UIInterfaceOrientation preferredInterfaceOrientationForPresentation;
-@property (nonatomic, readonly) UIStatusBarStyle preferredStatusBarStyle;
-- (void)viewWillAppear:(BOOL)animated;
-- (void)viewDidLayoutSubviews;
-- (void)viewWillDisappear:(BOOL)animated;
-- (void)viewDidDisappear:(BOOL)animated;
-- (void)captureOutput:(AVCaptureOutput * _Nonnull)output didOutputSampleBuffer:(CMSampleBufferRef _Nonnull)sampleBuffer fromConnection:(AVCaptureConnection * _Nonnull)connection;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-
-
-
-
-
-SWIFT_CLASS("_TtC15KlarnaMobileSDK21UIDotLoadingIndicator")
-@interface UIDotLoadingIndicator : UIView
-@property (nonatomic) IBInspectable NSInteger dotsCount;
-@property (nonatomic) IBInspectable CGFloat dotsRadius;
-@property (nonatomic) IBInspectable CGFloat dotsSpacing;
-@property (nonatomic, strong) UIColor * _Null_unspecified tintColor;
-- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-- (void)layoutSubviews;
-@end
 
 
 

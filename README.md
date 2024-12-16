@@ -1,5 +1,5 @@
 # **Datatrans iOS SDK**
-![Version](https://img.shields.io/badge/Version-3.7.3-5B728F)
+![Version](https://img.shields.io/badge/Version-3.8.0-5B728F)
 [![License](https://img.shields.io/badge/License-Datatrans-lightgrey)](https://raw.githubusercontent.com/datatrans/ios-sdk/master/LICENSE)
 [![Platform](https://img.shields.io/badge/platform-ios-0BAF73)](https://github.com/datatrans/ios-sdk)
 
@@ -22,4 +22,4 @@ Accept payments on your iOS apps: Our mobile SDKs support your entire payment an
 Get started with our [integration guide](https://docs.datatrans.ch/docs/mobile-sdk-2) and the [API reference](https://datatrans.github.io/ios-sdk/).
 
 ## **Requirements**
-The Datatrans iOS SDK requires Xcode 12 or later and is compatible with apps targeting iOS 11 or above.
+The Datatrans iOS SDK requires Xcode 15.2 or later and is compatible with apps targeting iOS 12 or above.
