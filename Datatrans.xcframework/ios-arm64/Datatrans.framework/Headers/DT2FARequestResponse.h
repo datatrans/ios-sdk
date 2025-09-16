@@ -11,5 +11,6 @@
 
 @property (nonatomic, copy) NSString* transactionId;
 @property (nonatomic, assign) BOOL requires2FAConfirmation;
+@property (nonatomic, copy) NSString* redirectUrl; // PostfinancePay only
 
 @end

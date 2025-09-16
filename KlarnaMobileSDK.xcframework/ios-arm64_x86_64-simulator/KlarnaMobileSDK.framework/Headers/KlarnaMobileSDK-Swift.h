@@ -320,7 +320,7 @@ typedef SWIFT_ENUM(NSInteger, KlarnaButtonShape, open) {
 };
 
 typedef SWIFT_ENUM(NSInteger, KlarnaButtonTheme, open) {
-/// Will render the button in the Klarna pink theme. This is the recommended theme as it has the highest brand recognition and likelihood of usage by your customers.
+/// This is no longer supported, thus will render the default theme.
   KlarnaButtonThemeKlarna = 0,
 /// Will render the button in white. It is recommended to use this theme on dark backgrounds.
   KlarnaButtonThemeLight = 1,
@@ -643,7 +643,11 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK11KlarnaError")
 @property (nonatomic, readonly, copy) NSString * _Nonnull message;
 /// Describes whether this error is fatal. This means some part of the flow failed permanently.
 @property (nonatomic, readonly) BOOL isFatal;
+/// SDK’s session ID
+@property (nonatomic, readonly, copy) NSString * _Nullable sessionId;
 @property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
+/// Function available only for objc
+- (NSDictionary<NSString *, NSString *> * _Nullable)getParams SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1660,10 +1664,12 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaProductEvent")
 /// When receiving an event, the component will be from a specific product or <code>KlarnaProduct.none</code>
 /// if the SDK can’t determine where the event is coming from.
 @property (nonatomic, readonly, copy) NSSet<NSString *> * _Nonnull products;
+/// SDK’s session ID
+@property (nonatomic, readonly, copy) NSString * _Nullable sessionId;
 /// Initializer available only for objc
 - (nullable instancetype)initWithAction:(NSString * _Nonnull)action products:(NSSet<NSString *> * _Nonnull)products params:(NSDictionary<NSString *, id <NSCoding>> * _Nonnull)params OBJC_DESIGNATED_INITIALIZER;
 /// Function available only for objc
-- (NSDictionary<NSString *, id <NSCoding>> * _Nullable)getParams SWIFT_WARN_UNUSED_RESULT;
+- (NSDictionary<NSString *, id> * _Nullable)getParams SWIFT_WARN_UNUSED_RESULT;
 @property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -1717,6 +1723,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) KlarnaResour
 @end
 
 
+enum KlarnaSignInButtonLogoAlignment : NSInteger;
 @protocol ASWebAuthenticationPresentationContextProviding;
 @protocol KlarnaSignInTokenizationDelegate;
 @class UITouch;
@@ -1730,6 +1737,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaSignInButton") SWIFT_AVAILABILITY(ios,
 @property (nonatomic) enum KlarnaButtonShape buttonShape;
 /// Defines the content of the button. For alternatives, see <code>KlarnaButtonLabel</code>.
 @property (nonatomic) enum KlarnaButtonLabel buttonLabel;
+@property (nonatomic) enum KlarnaSignInButtonLogoAlignment buttonLogoAlignment;
 /// Creates a an instance of this button.
 /// note:
 /// More information about presentation context <a href="https://developer.apple.com/documentation/authenticationservices/aswebauthenticationpresentationcontextproviding">here</a>.
@@ -1868,6 +1876,11 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK23KlarnaSignInButtonDebug") SWIFT_AVAILABILITY
 @interface KlarnaSignInButtonDebug : KlarnaSignInButton
 - (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nonnull)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext theme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler loggingLevel:(enum KlarnaLoggingLevel)loggingLevel tokenizationDelegate:(id <KlarnaSignInTokenizationDelegate> _Nullable)tokenizationDelegate OBJC_DESIGNATED_INITIALIZER;
 @end
+
+typedef SWIFT_ENUM(NSInteger, KlarnaSignInButtonLogoAlignment, open) {
+  KlarnaSignInButtonLogoAlignmentLeft = 0,
+  KlarnaSignInButtonLogoAlignmentCenter = 1,
+};
 
 
 SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaSignInSDK") SWIFT_AVAILABILITY(ios,introduced=13.0)
@@ -2192,7 +2205,6 @@ typedef SWIFT_ENUM(NSInteger, KlarnaWebViewOpeningBehavior, open) {
   KlarnaWebViewOpeningBehaviorSystemBrowser = 3,
   KlarnaWebViewOpeningBehaviorInternalBrowser = 4,
 };
-
 
 
 
@@ -2546,7 +2558,7 @@ typedef SWIFT_ENUM(NSInteger, KlarnaButtonShape, open) {
 };
 
 typedef SWIFT_ENUM(NSInteger, KlarnaButtonTheme, open) {
-/// Will render the button in the Klarna pink theme. This is the recommended theme as it has the highest brand recognition and likelihood of usage by your customers.
+/// This is no longer supported, thus will render the default theme.
   KlarnaButtonThemeKlarna = 0,
 /// Will render the button in white. It is recommended to use this theme on dark backgrounds.
   KlarnaButtonThemeLight = 1,
@@ -2869,7 +2881,11 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK11KlarnaError")
 @property (nonatomic, readonly, copy) NSString * _Nonnull message;
 /// Describes whether this error is fatal. This means some part of the flow failed permanently.
 @property (nonatomic, readonly) BOOL isFatal;
+/// SDK’s session ID
+@property (nonatomic, readonly, copy) NSString * _Nullable sessionId;
 @property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
+/// Function available only for objc
+- (NSDictionary<NSString *, NSString *> * _Nullable)getParams SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -3886,10 +3902,12 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaProductEvent")
 /// When receiving an event, the component will be from a specific product or <code>KlarnaProduct.none</code>
 /// if the SDK can’t determine where the event is coming from.
 @property (nonatomic, readonly, copy) NSSet<NSString *> * _Nonnull products;
+/// SDK’s session ID
+@property (nonatomic, readonly, copy) NSString * _Nullable sessionId;
 /// Initializer available only for objc
 - (nullable instancetype)initWithAction:(NSString * _Nonnull)action products:(NSSet<NSString *> * _Nonnull)products params:(NSDictionary<NSString *, id <NSCoding>> * _Nonnull)params OBJC_DESIGNATED_INITIALIZER;
 /// Function available only for objc
-- (NSDictionary<NSString *, id <NSCoding>> * _Nullable)getParams SWIFT_WARN_UNUSED_RESULT;
+- (NSDictionary<NSString *, id> * _Nullable)getParams SWIFT_WARN_UNUSED_RESULT;
 @property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -3943,6 +3961,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) KlarnaResour
 @end
 
 
+enum KlarnaSignInButtonLogoAlignment : NSInteger;
 @protocol ASWebAuthenticationPresentationContextProviding;
 @protocol KlarnaSignInTokenizationDelegate;
 @class UITouch;
@@ -3956,6 +3975,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaSignInButton") SWIFT_AVAILABILITY(ios,
 @property (nonatomic) enum KlarnaButtonShape buttonShape;
 /// Defines the content of the button. For alternatives, see <code>KlarnaButtonLabel</code>.
 @property (nonatomic) enum KlarnaButtonLabel buttonLabel;
+@property (nonatomic) enum KlarnaSignInButtonLogoAlignment buttonLogoAlignment;
 /// Creates a an instance of this button.
 /// note:
 /// More information about presentation context <a href="https://developer.apple.com/documentation/authenticationservices/aswebauthenticationpresentationcontextproviding">here</a>.
@@ -4094,6 +4114,11 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK23KlarnaSignInButtonDebug") SWIFT_AVAILABILITY
 @interface KlarnaSignInButtonDebug : KlarnaSignInButton
 - (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nonnull)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext theme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler loggingLevel:(enum KlarnaLoggingLevel)loggingLevel tokenizationDelegate:(id <KlarnaSignInTokenizationDelegate> _Nullable)tokenizationDelegate OBJC_DESIGNATED_INITIALIZER;
 @end
+
+typedef SWIFT_ENUM(NSInteger, KlarnaSignInButtonLogoAlignment, open) {
+  KlarnaSignInButtonLogoAlignmentLeft = 0,
+  KlarnaSignInButtonLogoAlignmentCenter = 1,
+};
 
 
 SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaSignInSDK") SWIFT_AVAILABILITY(ios,introduced=13.0)
@@ -4418,7 +4443,6 @@ typedef SWIFT_ENUM(NSInteger, KlarnaWebViewOpeningBehavior, open) {
   KlarnaWebViewOpeningBehaviorSystemBrowser = 3,
   KlarnaWebViewOpeningBehaviorInternalBrowser = 4,
 };
-
 
 
 

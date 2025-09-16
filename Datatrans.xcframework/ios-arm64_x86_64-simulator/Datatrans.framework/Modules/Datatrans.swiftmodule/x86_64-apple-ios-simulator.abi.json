@@ -2875,6 +2875,16 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "Datatrans",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
         "declKind": "Import",
@@ -9773,6 +9783,48 @@
           },
           {
             "kind": "Var",
+            "name": "PostFinancePay",
+            "printedName": "PostFinancePay",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Datatrans.PaymentMethodType.Type) -> Datatrans.PaymentMethodType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PaymentMethodType",
+                    "printedName": "Datatrans.PaymentMethodType",
+                    "usr": "c:@M@Datatrans@E@DTPaymentMethodType"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "Datatrans.PaymentMethodType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PaymentMethodType",
+                        "printedName": "Datatrans.PaymentMethodType",
+                        "usr": "c:@M@Datatrans@E@DTPaymentMethodType"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@Datatrans@E@DTPaymentMethodType@DTPaymentMethodTypePostFinancePay",
+            "mangledName": "$s9Datatrans17PaymentMethodTypeO14PostFinancePayyA2CmF",
+            "moduleName": "Datatrans",
+            "declAttributes": [
+              "RawDocComment",
+              "ObjC"
+            ],
+            "fixedbinaryorder": 34
+          },
+          {
+            "kind": "Var",
             "name": "identifier",
             "printedName": "identifier",
             "children": [
@@ -12603,6 +12655,516 @@
         "moduleName": "Datatrans",
         "declAttributes": [
           "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "Datatrans",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SavedPostFinancePay",
+        "printedName": "SavedPostFinancePay",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "maskedAccountNumber",
+            "printedName": "maskedAccountNumber",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Datatrans@objc(cs)DTSavedPostFinancePay(py)maskedAccountNumber",
+            "mangledName": "$s9Datatrans19SavedPostFinancePayC19maskedAccountNumberSSSgvp",
+            "moduleName": "Datatrans",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Datatrans@objc(cs)DTSavedPostFinancePay(im)maskedAccountNumber",
+                "mangledName": "$s9Datatrans19SavedPostFinancePayC19maskedAccountNumberSSSgvg",
+                "moduleName": "Datatrans",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Datatrans@objc(cs)DTSavedPostFinancePay(im)setMaskedAccountNumber:",
+                "mangledName": "$s9Datatrans19SavedPostFinancePayC19maskedAccountNumberSSSgvs",
+                "moduleName": "Datatrans",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9Datatrans19SavedPostFinancePayC19maskedAccountNumberSSSgvM",
+                "mangledName": "$s9Datatrans19SavedPostFinancePayC19maskedAccountNumberSSSgvM",
+                "moduleName": "Datatrans",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "displayTitle",
+            "printedName": "displayTitle",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Datatrans@objc(cs)DTSavedPostFinancePay(py)displayTitle",
+            "mangledName": "$s9Datatrans19SavedPostFinancePayC12displayTitleSSvp",
+            "moduleName": "Datatrans",
+            "overriding": true,
+            "objc_name": "displayTitle",
+            "declAttributes": [
+              "ObjC",
+              "AccessControl",
+              "Override",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Datatrans@objc(cs)DTSavedPostFinancePay(im)displayTitle",
+                "mangledName": "$s9Datatrans19SavedPostFinancePayC12displayTitleSSvg",
+                "moduleName": "Datatrans",
+                "overriding": true,
+                "objc_name": "displayTitle",
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(alias:maskedAccountNumber:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SavedPostFinancePay",
+                "printedName": "Datatrans.SavedPostFinancePay",
+                "usr": "c:@M@Datatrans@objc(cs)DTSavedPostFinancePay"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@Datatrans@objc(cs)DTSavedPostFinancePay(im)initWithAlias:maskedAccountNumber:",
+            "mangledName": "$s9Datatrans19SavedPostFinancePayC5alias19maskedAccountNumberACSS_SSSgtcfc",
+            "moduleName": "Datatrans",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment",
+              "ObjC"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(coder:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Datatrans.SavedPostFinancePay?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SavedPostFinancePay",
+                    "printedName": "Datatrans.SavedPostFinancePay",
+                    "usr": "c:@M@Datatrans@objc(cs)DTSavedPostFinancePay"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NSCoder",
+                "printedName": "Foundation.NSCoder",
+                "usr": "c:objc(cs)NSCoder"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@Datatrans@objc(cs)DTSavedPostFinancePay(im)initWithCoder:",
+            "mangledName": "$s9Datatrans19SavedPostFinancePayC5coderACSgSo7NSCoderC_tcfc",
+            "moduleName": "Datatrans",
+            "overriding": true,
+            "objc_name": "initWithCoder:",
+            "declAttributes": [
+              "ObjC",
+              "Required",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "description",
+            "printedName": "description",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Datatrans@objc(cs)DTSavedPostFinancePay(py)description",
+            "mangledName": "$s9Datatrans19SavedPostFinancePayC11descriptionSSvp",
+            "moduleName": "Datatrans",
+            "overriding": true,
+            "objc_name": "description",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "AccessControl",
+              "Override",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Datatrans@objc(cs)DTSavedPostFinancePay(im)description",
+                "mangledName": "$s9Datatrans19SavedPostFinancePayC11descriptionSSvg",
+                "moduleName": "Datatrans",
+                "overriding": true,
+                "objc_name": "description",
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9Datatrans19SavedPostFinancePayC6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s9Datatrans19SavedPostFinancePayC6encode2toys7Encoder_p_tKF",
+            "moduleName": "Datatrans",
+            "overriding": true,
+            "declAttributes": [
+              "AccessControl",
+              "Override",
+              "RawDocComment"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "copy",
+            "printedName": "copy(with:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ProtocolComposition",
+                "printedName": "Any"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "ObjectiveC.NSZone?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSZone",
+                    "printedName": "ObjectiveC.NSZone",
+                    "usr": "s:10ObjectiveC6NSZoneV"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@Datatrans@objc(cs)DTSavedPostFinancePay(im)copyWithZone:",
+            "mangledName": "$s9Datatrans19SavedPostFinancePayC4copy4withyp10ObjectiveC6NSZoneVSg_tF",
+            "moduleName": "Datatrans",
+            "overriding": true,
+            "objc_name": "copyWithZone:",
+            "declAttributes": [
+              "ObjC",
+              "AccessControl",
+              "Override",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(type:alias:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SavedPostFinancePay",
+                "printedName": "Datatrans.SavedPostFinancePay",
+                "usr": "c:@M@Datatrans@objc(cs)DTSavedPostFinancePay"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PaymentMethodType",
+                "printedName": "Datatrans.PaymentMethodType",
+                "usr": "c:@M@Datatrans@E@DTPaymentMethodType"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@Datatrans@objc(cs)DTSavedPostFinancePay(im)initWithType:alias:",
+            "mangledName": "$s9Datatrans19SavedPostFinancePayC4type5aliasAcA17PaymentMethodTypeO_SStcfc",
+            "moduleName": "Datatrans",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "initWithType:alias:",
+            "declAttributes": [
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@Datatrans@objc(cs)DTSavedPostFinancePay",
+        "mangledName": "$s9Datatrans19SavedPostFinancePayC",
+        "moduleName": "Datatrans",
+        "objc_name": "DTSavedPostFinancePay",
+        "declAttributes": [
+          "AccessControl",
+          "ObjCMembers",
+          "ObjC",
+          "RawDocComment"
+        ],
+        "superclassUsr": "c:@M@Datatrans@objc(cs)DTSavedPaymentMethod",
+        "hasMissingDesignatedInitializers": true,
+        "superclassNames": [
+          "Datatrans.SavedPaymentMethod",
+          "Datatrans.PaymentMethod",
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
         ]
       },
       {
@@ -17871,6 +18433,16 @@
       },
       {
         "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "Datatrans",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -19335,44 +19907,100 @@
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodFormatter.swift",
       "kind": "IntegerLiteral",
-      "offset": 165,
+      "offset": 166,
       "length": 1,
       "value": "4"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodFormatter.swift",
       "kind": "StringLiteral",
-      "offset": 292,
+      "offset": 294,
       "length": 40,
       "value": "\"accessibility_payment_method_ending_in\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodFormatter.swift",
       "kind": "IntegerLiteral",
-      "offset": 483,
+      "offset": 485,
       "length": 1,
       "value": "4"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodFormatter.swift",
       "kind": "IntegerLiteral",
-      "offset": 514,
+      "offset": 517,
       "length": 1,
       "value": "4"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodFormatter.swift",
       "kind": "StringLiteral",
-      "offset": 557,
+      "offset": 560,
       "length": 5,
       "value": "\"•\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodFormatter.swift",
       "kind": "StringLiteral",
-      "offset": 673,
+      "offset": 677,
       "length": 7,
       "value": "\"%@ %@\""
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodFormatter.swift",
+      "kind": "IntegerLiteral",
+      "offset": 831,
+      "length": 1,
+      "value": "6"
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodFormatter.swift",
+      "kind": "IntegerLiteral",
+      "offset": 864,
+      "length": 1,
+      "value": "4"
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodFormatter.swift",
+      "kind": "IntegerLiteral",
+      "offset": 896,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodFormatter.swift",
+      "kind": "StringLiteral",
+      "offset": 939,
+      "length": 5,
+      "value": "\"•\""
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodFormatter.swift",
+      "kind": "StringLiteral",
+      "offset": 1117,
+      "length": 10,
+      "value": "\"%@ %@ %@\""
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodFormatter.swift",
+      "kind": "StringLiteral",
+      "offset": 1339,
+      "length": 8,
+      "value": "\", IBAN\""
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodFormatter.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1378,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodFormatter.swift",
+      "kind": "StringLiteral",
+      "offset": 1504,
+      "length": 40,
+      "value": "\"accessibility_payment_method_ending_in\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Tokenization\/PublicAPI\/PCIPCardInfo.swift",
@@ -20299,6 +20927,132 @@
       "value": "[]"
     },
     {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Processes\/PostfinancePay\/PostFinancePayFlowCoordinator.swift",
+      "kind": "StringLiteral",
+      "offset": 813,
+      "length": 25,
+      "value": "\"postfinance-epayment:\/\/\""
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Processes\/PostfinancePay\/PostFinancePayFlowCoordinator.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1160,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Processes\/PostfinancePay\/PostFinancePayFlowCoordinator.swift",
+      "kind": "StringLiteral",
+      "offset": 1335,
+      "length": 49,
+      "value": "\"\/\""
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Processes\/PostfinancePay\/PostFinancePayFlowCoordinator.swift",
+      "kind": "StringLiteral",
+      "offset": 1383,
+      "length": 1,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Processes\/PostfinancePay\/PostFinancePayFlowCoordinator.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1494,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Processes\/PostfinancePay\/PostFinancePayFlowCoordinator.swift",
+      "kind": "StringLiteral",
+      "offset": 3149,
+      "length": 21,
+      "value": "\"error_title_generic\""
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Processes\/PostfinancePay\/PostFinancePayFlowCoordinator.swift",
+      "kind": "StringLiteral",
+      "offset": 3238,
+      "length": 23,
+      "value": "\"error_message_generic\""
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Processes\/PostfinancePay\/PostFinancePayFlowCoordinator.swift",
+      "kind": "StringLiteral",
+      "offset": 3381,
+      "length": 26,
+      "value": "\"Invalid server response.\""
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Processes\/PostfinancePay\/PostFinancePayFlowCoordinator.swift",
+      "kind": "StringLiteral",
+      "offset": 3903,
+      "length": 21,
+      "value": "\"error_title_generic\""
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Processes\/PostfinancePay\/PostFinancePayFlowCoordinator.swift",
+      "kind": "StringLiteral",
+      "offset": 3992,
+      "length": 23,
+      "value": "\"error_message_generic\""
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Processes\/PostfinancePay\/PostFinancePayFlowCoordinator.swift",
+      "kind": "StringLiteral",
+      "offset": 4135,
+      "length": 26,
+      "value": "\"Invalid server response.\""
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Processes\/PostfinancePay\/PostFinancePayFlowCoordinator.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5139,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Processes\/PostfinancePay\/PostFinancePayFlowCoordinator.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5372,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Processes\/PostfinancePay\/PostFinancePayFlowCoordinator.swift",
+      "kind": "StringLiteral",
+      "offset": 5595,
+      "length": 20,
+      "value": "\"twint_lock_message\""
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Processes\/PostfinancePay\/PostFinancePayFlowCoordinator.swift",
+      "kind": "Dictionary",
+      "offset": 5679,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Processes\/PostfinancePay\/PostFinancePayFlowCoordinator.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6012,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Processes\/PostfinancePay\/PostFinancePayFlowCoordinator.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6038,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Processes\/PostfinancePay\/PostFinancePayFlowCoordinator.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6069,
+      "length": 5,
+      "value": "false"
+    },
+    {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/DCC\/DCCOptionView.swift",
       "kind": "IntegerLiteral",
       "offset": 614,
@@ -20672,63 +21426,63 @@
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/CreditCardFlowCoordinator.swift",
       "kind": "StringLiteral",
-      "offset": 5800,
+      "offset": 5652,
       "length": 33,
       "value": "\"error_title_registration_failed\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/CreditCardFlowCoordinator.swift",
       "kind": "StringLiteral",
-      "offset": 5897,
+      "offset": 5749,
       "length": 35,
       "value": "\"error_message_invalid_credit_card\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/CreditCardFlowCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 7498,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/CreditCardFlowCoordinator.swift",
-      "kind": "StringLiteral",
-      "offset": 8391,
-      "length": 8,
-      "value": "\"cancel\""
-    },
-    {
-      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/CreditCardFlowCoordinator.swift",
-      "kind": "BooleanLiteral",
-      "offset": 9680,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/CreditCardFlowCoordinator.swift",
-      "kind": "BooleanLiteral",
-      "offset": 12500,
+      "offset": 6978,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/CreditCardFlowCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 12856,
-      "length": 5,
-      "value": "false"
+      "offset": 7472,
+      "length": 4,
+      "value": "true"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/CreditCardFlowCoordinator.swift",
       "kind": "StringLiteral",
-      "offset": 13431,
+      "offset": 8295,
       "length": 8,
       "value": "\"cancel\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/CreditCardFlowCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 13790,
+      "offset": 12299,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/CreditCardFlowCoordinator.swift",
+      "kind": "BooleanLiteral",
+      "offset": 12655,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/CreditCardFlowCoordinator.swift",
+      "kind": "StringLiteral",
+      "offset": 13161,
+      "length": 8,
+      "value": "\"cancel\""
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/CreditCardFlowCoordinator.swift",
+      "kind": "BooleanLiteral",
+      "offset": 13520,
       "length": 4,
       "value": "true"
     },
@@ -20786,7 +21540,7 @@
       "kind": "IntegerLiteral",
       "offset": 1714,
       "length": 2,
-      "value": "54"
+      "value": "64"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/DCC\/DCCView.swift",
@@ -21525,29 +22279,36 @@
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Authorization\/AuthorizationFlowCoordinator.swift",
-      "kind": "StringLiteral",
-      "offset": 2004,
-      "length": 39,
-      "value": "\"There always must be a paymentRequest\""
-    },
-    {
-      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Authorization\/AuthorizationFlowCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 3667,
+      "offset": 1859,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Authorization\/AuthorizationFlowCoordinator.swift",
       "kind": "StringLiteral",
-      "offset": 3946,
+      "offset": 2100,
+      "length": 39,
+      "value": "\"There always must be a paymentRequest\""
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Authorization\/AuthorizationFlowCoordinator.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4030,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Authorization\/AuthorizationFlowCoordinator.swift",
+      "kind": "StringLiteral",
+      "offset": 4309,
       "length": 23,
       "value": "\"com.google.HTTPStatus\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Authorization\/AuthorizationFlowCoordinator.swift",
       "kind": "IntegerLiteral",
-      "offset": 4648,
+      "offset": 5011,
       "length": 3,
       "value": "409"
     },
@@ -21680,112 +22441,112 @@
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/PlaceholderTextField.swift",
       "kind": "FloatLiteral",
-      "offset": 5721,
+      "offset": 6032,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/PlaceholderTextField.swift",
       "kind": "StringLiteral",
-      "offset": 6774,
+      "offset": 7085,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/PlaceholderTextField.swift",
       "kind": "StringLiteral",
-      "offset": 6824,
+      "offset": 7135,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/PlaceholderTextField.swift",
       "kind": "FloatLiteral",
-      "offset": 7461,
+      "offset": 7772,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/PlaceholderTextField.swift",
       "kind": "FloatLiteral",
-      "offset": 7662,
+      "offset": 7973,
       "length": 3,
       "value": "5.0"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/PlaceholderTextField.swift",
       "kind": "FloatLiteral",
-      "offset": 8335,
+      "offset": 8646,
       "length": 3,
       "value": "5.0"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/PlaceholderTextField.swift",
       "kind": "BooleanLiteral",
-      "offset": 8509,
+      "offset": 8820,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/PlaceholderTextField.swift",
       "kind": "BooleanLiteral",
-      "offset": 8750,
+      "offset": 9061,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/PlaceholderTextField.swift",
       "kind": "IntegerLiteral",
-      "offset": 9142,
+      "offset": 9453,
       "length": 3,
       "value": "-10"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/PlaceholderTextField.swift",
       "kind": "IntegerLiteral",
-      "offset": 9151,
+      "offset": 9462,
       "length": 3,
       "value": "-10"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/PlaceholderTextField.swift",
       "kind": "IntegerLiteral",
-      "offset": 9698,
+      "offset": 10009,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/PlaceholderTextField.swift",
       "kind": "IntegerLiteral",
-      "offset": 9770,
+      "offset": 10081,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/PlaceholderTextField.swift",
       "kind": "FloatLiteral",
-      "offset": 10389,
+      "offset": 10700,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/PlaceholderTextField.swift",
       "kind": "StringLiteral",
-      "offset": 10662,
+      "offset": 10973,
       "length": 3,
       "value": "\"0\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/PlaceholderTextField.swift",
       "kind": "IntegerLiteral",
-      "offset": 10679,
+      "offset": 10990,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/PlaceholderTextField.swift",
       "kind": "IntegerLiteral",
-      "offset": 10910,
+      "offset": 11221,
       "length": 1,
       "value": "0"
     },
@@ -21962,7 +22723,7 @@
       "kind": "IntegerLiteral",
       "offset": 1237,
       "length": 2,
-      "value": "20"
+      "value": "25"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/DateCVVInput\/CreditCardDateModel.swift",
@@ -23822,392 +24583,392 @@
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "StringLiteral",
-      "offset": 292,
+      "offset": 291,
       "length": 43,
       "value": "\"[^\\s]+[-–\\\/\\d]\\d\\d[-–\\\/][^\\s]+\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "StringLiteral",
-      "offset": 399,
+      "offset": 398,
       "length": 28,
       "value": "\"\\d\\d[\/–-](20)?[2-3]\\d\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "BooleanLiteral",
-      "offset": 937,
+      "offset": 936,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "IntegerLiteral",
-      "offset": 1308,
+      "offset": 1307,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "Array",
-      "offset": 1432,
+      "offset": 1431,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "Array",
-      "offset": 1478,
+      "offset": 1477,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "StringLiteral",
-      "offset": 1585,
+      "offset": 1584,
       "length": 3,
       "value": "\" \""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "StringLiteral",
-      "offset": 1596,
+      "offset": 1595,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "IntegerLiteral",
-      "offset": 2491,
+      "offset": 2490,
       "length": 1,
       "value": "4"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "IntegerLiteral",
-      "offset": 2495,
+      "offset": 2494,
       "length": 2,
       "value": "15"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "StringLiteral",
-      "offset": 3328,
+      "offset": 3326,
       "length": 7,
       "value": "\"[., ]\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "StringLiteral",
-      "offset": 3343,
+      "offset": 3341,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "Array",
-      "offset": 3413,
+      "offset": 3411,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "StringLiteral",
-      "offset": 3830,
+      "offset": 3828,
       "length": 3,
       "value": "\" \""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "StringLiteral",
-      "offset": 3859,
+      "offset": 3857,
       "length": 3,
       "value": "\" \""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "IntegerLiteral",
-      "offset": 3891,
+      "offset": 3889,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "IntegerLiteral",
-      "offset": 3990,
+      "offset": 3988,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "IntegerLiteral",
-      "offset": 4010,
+      "offset": 4008,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "IntegerLiteral",
-      "offset": 4084,
+      "offset": 4082,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "StringLiteral",
-      "offset": 4111,
+      "offset": 4109,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "IntegerLiteral",
-      "offset": 4133,
+      "offset": 4131,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "IntegerLiteral",
-      "offset": 4187,
+      "offset": 4185,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "StringLiteral",
-      "offset": 4228,
+      "offset": 4226,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "IntegerLiteral",
-      "offset": 4250,
+      "offset": 4248,
       "length": 1,
       "value": "3"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "IntegerLiteral",
-      "offset": 4304,
+      "offset": 4302,
       "length": 1,
       "value": "3"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "StringLiteral",
-      "offset": 4437,
+      "offset": 4435,
       "length": 34,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "StringLiteral",
-      "offset": 4446,
+      "offset": 4444,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "StringLiteral",
-      "offset": 4454,
+      "offset": 4452,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "StringLiteral",
-      "offset": 4462,
+      "offset": 4460,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "StringLiteral",
-      "offset": 4470,
+      "offset": 4468,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "StringLiteral",
-      "offset": 4511,
+      "offset": 4509,
       "length": 26,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "StringLiteral",
-      "offset": 4520,
+      "offset": 4518,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "StringLiteral",
-      "offset": 4528,
+      "offset": 4526,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "StringLiteral",
-      "offset": 4536,
+      "offset": 4534,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "StringLiteral",
-      "offset": 4577,
+      "offset": 4575,
       "length": 18,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "StringLiteral",
-      "offset": 4586,
+      "offset": 4584,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "StringLiteral",
-      "offset": 4594,
+      "offset": 4592,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "FloatLiteral",
-      "offset": 4685,
+      "offset": 4683,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "FloatLiteral",
-      "offset": 4821,
+      "offset": 4819,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "FloatLiteral",
-      "offset": 4957,
+      "offset": 4955,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "IntegerLiteral",
-      "offset": 5176,
+      "offset": 5174,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "IntegerLiteral",
-      "offset": 5204,
+      "offset": 5202,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "StringLiteral",
-      "offset": 5483,
+      "offset": 5481,
       "length": 8,
       "value": "\"[^0-9]\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "StringLiteral",
-      "offset": 5605,
+      "offset": 5603,
       "length": 3,
       "value": "\"\/\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "IntegerLiteral",
-      "offset": 5640,
+      "offset": 5638,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "IntegerLiteral",
-      "offset": 5685,
+      "offset": 5683,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "IntegerLiteral",
-      "offset": 5730,
+      "offset": 5728,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "IntegerLiteral",
-      "offset": 5766,
+      "offset": 5764,
       "length": 3,
       "value": "100"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "Array",
-      "offset": 5930,
+      "offset": 5928,
       "length": 17,
       "value": "[\"\/\", \"-\", \"–\"]"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "IntegerLiteral",
-      "offset": 5993,
+      "offset": 5991,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "IntegerLiteral",
-      "offset": 6038,
+      "offset": 6036,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "IntegerLiteral",
-      "offset": 6071,
+      "offset": 6069,
       "length": 2,
       "value": "12"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "IntegerLiteral",
-      "offset": 6085,
+      "offset": 6083,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "StringLiteral",
-      "offset": 6189,
+      "offset": 6187,
       "length": 3,
       "value": "\"\/\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "Array",
-      "offset": 6767,
+      "offset": 6765,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardRecognizeWorker.swift",
       "kind": "StringLiteral",
-      "offset": 6799,
+      "offset": 6797,
       "length": 2,
       "value": "\"\""
     },
@@ -24291,203 +25052,231 @@
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodSelectionFlowCoordinator.swift",
       "kind": "StringLiteral",
-      "offset": 949,
+      "offset": 868,
+      "length": 27,
+      "value": "\"setHidesSharedBackground:\""
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodSelectionFlowCoordinator.swift",
+      "kind": "BooleanLiteral",
+      "offset": 986,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodSelectionFlowCoordinator.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1068,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodSelectionFlowCoordinator.swift",
+      "kind": "StringLiteral",
+      "offset": 1082,
+      "length": 23,
+      "value": "\"hidesSharedBackground\""
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodSelectionFlowCoordinator.swift",
+      "kind": "StringLiteral",
+      "offset": 1241,
       "length": 8,
       "value": "\"cancel\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodSelectionFlowCoordinator.swift",
       "kind": "StringLiteral",
-      "offset": 1400,
+      "offset": 1692,
       "length": 30,
       "value": "\"saved_method_selection_title\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodSelectionFlowCoordinator.swift",
       "kind": "StringLiteral",
-      "offset": 1703,
+      "offset": 1995,
       "length": 28,
       "value": "\"new_method_selection_title\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodSelectionFlowCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 1828,
+      "offset": 2120,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodSelectionFlowCoordinator.swift",
       "kind": "IntegerLiteral",
-      "offset": 2250,
+      "offset": 2542,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodSelectionFlowCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 2591,
+      "offset": 2883,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodSelectionFlowCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 2938,
+      "offset": 3230,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodSelectionFlowCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 3557,
+      "offset": 3849,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodSelectionFlowCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 3685,
+      "offset": 3977,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodSelectionFlowCoordinator.swift",
       "kind": "StringLiteral",
-      "offset": 4405,
+      "offset": 4697,
       "length": 3,
       "value": "\" \""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodSelectionFlowCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 5646,
+      "offset": 5938,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodSelectionFlowCoordinator.swift",
       "kind": "StringLiteral",
-      "offset": 7602,
+      "offset": 7894,
       "length": 29,
       "value": "\"No payment method available\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodSelectionFlowCoordinator.swift",
       "kind": "IntegerLiteral",
-      "offset": 8456,
+      "offset": 8782,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodSelectionFlowCoordinator.swift",
       "kind": "IntegerLiteral",
-      "offset": 8476,
+      "offset": 8802,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodSelectionFlowCoordinator.swift",
       "kind": "Array",
-      "offset": 9093,
+      "offset": 9419,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodSelectionFlowCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 9231,
+      "offset": 9557,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodSelectionFlowCoordinator.swift",
       "kind": "StringLiteral",
-      "offset": 9769,
+      "offset": 10095,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodSelectionFlowCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 10258,
+      "offset": 10584,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodSelectionFlowCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 10426,
+      "offset": 10752,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodSelectionFlowCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 10454,
+      "offset": 10780,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodSelectionFlowCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 11031,
+      "offset": 11357,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodSelectionFlowCoordinator.swift",
       "kind": "StringLiteral",
-      "offset": 11365,
+      "offset": 11691,
       "length": 12,
       "value": "\"CC_generic\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodSelectionFlowCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 11446,
+      "offset": 11772,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodSelectionFlowCoordinator.swift",
       "kind": "StringLiteral",
-      "offset": 11967,
+      "offset": 12293,
       "length": 10,
       "value": "\"swish:\/\/\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodSelectionFlowCoordinator.swift",
       "kind": "StringLiteral",
-      "offset": 12284,
+      "offset": 12610,
       "length": 12,
       "value": "\"vippsMT:\/\/\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodSelectionFlowCoordinator.swift",
       "kind": "StringLiteral",
-      "offset": 12299,
+      "offset": 12625,
       "length": 10,
       "value": "\"vipps:\/\/\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodSelectionFlowCoordinator.swift",
       "kind": "StringLiteral",
-      "offset": 12912,
+      "offset": 13238,
       "length": 28,
       "value": "\"new_method_selection_title\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodSelectionFlowCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 13216,
+      "offset": 13542,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodSelectionFlowCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 13426,
+      "offset": 13752,
       "length": 4,
       "value": "true"
     },
@@ -25418,6 +26207,13 @@
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/PaymentMethods\/PaymentMethodType.swift",
       "kind": "IntegerLiteral",
+      "offset": 2054,
+      "length": 14,
+      "value": "34"
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/PaymentMethods\/PaymentMethodType.swift",
+      "kind": "IntegerLiteral",
       "offset": 333,
       "length": 10,
       "value": "1"
@@ -25645,6 +26441,13 @@
       "offset": 2015,
       "length": 5,
       "value": "33"
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/PaymentMethods\/PaymentMethodType.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2054,
+      "length": 14,
+      "value": "34"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Error\/BackendErrorRule.swift",
@@ -26208,36 +27011,43 @@
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/PublicAPI\/Transaction.swift",
-      "kind": "StringLiteral",
-      "offset": 17761,
-      "length": 7,
-      "value": "\"Error\""
-    },
-    {
-      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/PublicAPI\/Transaction.swift",
       "kind": "BooleanLiteral",
-      "offset": 17870,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/PublicAPI\/Transaction.swift",
-      "kind": "StringLiteral",
-      "offset": 17978,
-      "length": 4,
-      "value": "\"%@\""
-    },
-    {
-      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/PublicAPI\/Transaction.swift",
-      "kind": "BooleanLiteral",
-      "offset": 18055,
+      "offset": 16953,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/PublicAPI\/Transaction.swift",
       "kind": "StringLiteral",
-      "offset": 18425,
+      "offset": 17916,
+      "length": 7,
+      "value": "\"Error\""
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/PublicAPI\/Transaction.swift",
+      "kind": "BooleanLiteral",
+      "offset": 18025,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/PublicAPI\/Transaction.swift",
+      "kind": "StringLiteral",
+      "offset": 18133,
+      "length": 4,
+      "value": "\"%@\""
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/PublicAPI\/Transaction.swift",
+      "kind": "BooleanLiteral",
+      "offset": 18210,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/PublicAPI\/Transaction.swift",
+      "kind": "StringLiteral",
+      "offset": 18580,
       "length": 41,
       "value": "\"Alias must be provided for PLU payments\""
     },
@@ -26398,14 +27208,14 @@
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/DCC\/DCCViewController.swift",
       "kind": "StringLiteral",
-      "offset": 574,
+      "offset": 575,
       "length": 27,
       "value": "\"dcc_choose_currency_title\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/DCC\/DCCViewController.swift",
       "kind": "StringLiteral",
-      "offset": 667,
+      "offset": 668,
       "length": 39,
       "value": "\"init(coder:) has not been implemented\""
     },
@@ -26419,84 +27229,84 @@
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/DCC\/DCCViewController.swift",
       "kind": "StringLiteral",
-      "offset": 1478,
+      "offset": 1479,
       "length": 4,
       "value": "\"\n\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/DCC\/DCCViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1631,
+      "offset": 1632,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/DCC\/DCCViewController.swift",
       "kind": "StringLiteral",
-      "offset": 1699,
+      "offset": 1700,
       "length": 4,
       "value": "\"\n\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/DCC\/DCCViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1848,
+      "offset": 1849,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/DCC\/DCCViewController.swift",
       "kind": "StringLiteral",
-      "offset": 1919,
+      "offset": 1920,
       "length": 17,
       "value": "\"dcc_markup_info\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/DCC\/DCCViewController.swift",
       "kind": "StringLiteral",
-      "offset": 2162,
+      "offset": 2163,
       "length": 25,
       "value": "\"dcc_pay_button_inactive\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/DCC\/DCCViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 3593,
+      "offset": 3594,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/DCC\/DCCViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 3945,
+      "offset": 3946,
       "length": 2,
       "value": "17"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/DCC\/DCCViewController.swift",
       "kind": "StringLiteral",
-      "offset": 4190,
+      "offset": 4191,
       "length": 27,
       "value": "\"confirm_pay_amount_button\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/DCC\/DCCViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4438,
+      "offset": 4439,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/DCC\/DCCViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4671,
+      "offset": 4672,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/DCC\/DCCViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4820,
+      "offset": 4821,
       "length": 4,
       "value": "true"
     },
@@ -26853,14 +27663,14 @@
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/DCC\/DCC.swift",
       "kind": "StringLiteral",
-      "offset": 2835,
+      "offset": 2819,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/DCC\/DCC.swift",
       "kind": "IntegerLiteral",
-      "offset": 3193,
+      "offset": 3177,
       "length": 3,
       "value": "403"
     },
@@ -26870,6 +27680,83 @@
       "offset": 104,
       "length": 3,
       "value": "\"Datatrans.DCC\""
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/PaymentMethods\/PostFinancePay\/SavedPostFinancePay.swift",
+      "kind": "StringLiteral",
+      "offset": 1071,
+      "length": 4,
+      "value": "\": \""
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/PaymentMethods\/PostFinancePay\/SavedPostFinancePay.swift",
+      "kind": "StringLiteral",
+      "offset": 2906,
+      "length": 39,
+      "value": "\"init(coder:) has not been implemented\""
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/PaymentMethods\/PostFinancePay\/SavedPostFinancePay.swift",
+      "kind": "StringLiteral",
+      "offset": 3038,
+      "length": 10,
+      "value": "\"maskedCC\""
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/PaymentMethods\/PostFinancePay\/SavedPostFinancePay.swift",
+      "kind": "StringLiteral",
+      "offset": 3038,
+      "length": 10,
+      "value": "\"maskedCC\""
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/PaymentMethods\/PostFinancePay\/SavedPostFinancePay.swift",
+      "kind": "StringLiteral",
+      "offset": 3133,
+      "length": 121,
+      "value": "\"<\""
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/PaymentMethods\/PostFinancePay\/SavedPostFinancePay.swift",
+      "kind": "StringLiteral",
+      "offset": 3158,
+      "length": 1,
+      "value": "\": maskedAccountNumber=\""
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/PaymentMethods\/PostFinancePay\/SavedPostFinancePay.swift",
+      "kind": "StringLiteral",
+      "offset": 3205,
+      "length": 5,
+      "value": "\"nil\""
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/PaymentMethods\/PostFinancePay\/SavedPostFinancePay.swift",
+      "kind": "StringLiteral",
+      "offset": 3211,
+      "length": 1,
+      "value": "\", alias=\""
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/PaymentMethods\/PostFinancePay\/SavedPostFinancePay.swift",
+      "kind": "StringLiteral",
+      "offset": 3227,
+      "length": 1,
+      "value": "\", type=\""
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/PaymentMethods\/PostFinancePay\/SavedPostFinancePay.swift",
+      "kind": "StringLiteral",
+      "offset": 3252,
+      "length": 1,
+      "value": "\">\""
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/PaymentMethods\/PostFinancePay\/SavedPostFinancePay.swift",
+      "kind": "StringLiteral",
+      "offset": 618,
+      "length": 19,
+      "value": "\"Datatrans.SavedPostFinancePay\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Tokenization\/PublicAPI\/PCIPTokenizationSuccess.swift",
@@ -26895,238 +27782,238 @@
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/SheetNavigationController.swift",
       "kind": "IntegerLiteral",
-      "offset": 712,
+      "offset": 724,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/SheetNavigationController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1004,
+      "offset": 1016,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/SheetNavigationController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1093,
+      "offset": 1105,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/SheetNavigationController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1362,
+      "offset": 1374,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/SheetNavigationController.swift",
       "kind": "IntegerLiteral",
-      "offset": 1406,
+      "offset": 1418,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/SheetNavigationController.swift",
       "kind": "IntegerLiteral",
-      "offset": 1545,
+      "offset": 1557,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/SheetNavigationController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1789,
+      "offset": 1801,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/SheetNavigationController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1967,
+      "offset": 1979,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/SheetNavigationController.swift",
       "kind": "BooleanLiteral",
-      "offset": 2296,
+      "offset": 2308,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/SheetNavigationController.swift",
       "kind": "BooleanLiteral",
-      "offset": 2607,
+      "offset": 2619,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/SheetNavigationController.swift",
       "kind": "BooleanLiteral",
-      "offset": 2658,
+      "offset": 2670,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/SheetNavigationController.swift",
       "kind": "IntegerLiteral",
-      "offset": 2984,
+      "offset": 2996,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/SheetNavigationController.swift",
       "kind": "BooleanLiteral",
-      "offset": 3043,
+      "offset": 3055,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/SheetNavigationController.swift",
       "kind": "IntegerLiteral",
-      "offset": 3153,
+      "offset": 3165,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/SheetNavigationController.swift",
       "kind": "IntegerLiteral",
-      "offset": 3262,
+      "offset": 3274,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/SheetNavigationController.swift",
       "kind": "BooleanLiteral",
-      "offset": 3703,
+      "offset": 3715,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/SheetNavigationController.swift",
       "kind": "BooleanLiteral",
-      "offset": 5047,
+      "offset": 5059,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/SheetNavigationController.swift",
       "kind": "BooleanLiteral",
-      "offset": 5849,
+      "offset": 5861,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/SheetNavigationController.swift",
       "kind": "BooleanLiteral",
-      "offset": 6512,
+      "offset": 6524,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/SheetNavigationController.swift",
       "kind": "IntegerLiteral",
-      "offset": 6844,
+      "offset": 6856,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/SheetNavigationController.swift",
       "kind": "BooleanLiteral",
-      "offset": 8759,
+      "offset": 8771,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/SheetNavigationController.swift",
       "kind": "BooleanLiteral",
-      "offset": 9179,
+      "offset": 9191,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/SheetNavigationController.swift",
       "kind": "BooleanLiteral",
-      "offset": 9248,
+      "offset": 9260,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/SheetNavigationController.swift",
       "kind": "BooleanLiteral",
-      "offset": 9508,
+      "offset": 9520,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/SheetNavigationController.swift",
       "kind": "BooleanLiteral",
-      "offset": 9645,
+      "offset": 9657,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/SheetNavigationController.swift",
       "kind": "BooleanLiteral",
-      "offset": 9714,
+      "offset": 9726,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/SheetNavigationController.swift",
       "kind": "BooleanLiteral",
-      "offset": 10600,
+      "offset": 10612,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/SheetNavigationController.swift",
       "kind": "BooleanLiteral",
-      "offset": 10717,
+      "offset": 10729,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/SheetNavigationController.swift",
       "kind": "BooleanLiteral",
-      "offset": 10873,
+      "offset": 10885,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/SheetNavigationController.swift",
       "kind": "BooleanLiteral",
-      "offset": 10937,
+      "offset": 10949,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/SheetNavigationController.swift",
       "kind": "IntegerLiteral",
-      "offset": 11055,
+      "offset": 11067,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/SheetNavigationController.swift",
       "kind": "IntegerLiteral",
-      "offset": 11112,
+      "offset": 11124,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/SheetNavigationController.swift",
       "kind": "IntegerLiteral",
-      "offset": 11176,
+      "offset": 11188,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/SheetNavigationController.swift",
       "kind": "FloatLiteral",
-      "offset": 11186,
+      "offset": 11198,
       "length": 4,
       "value": "0.05"
     },
@@ -28370,20 +29257,6 @@
       "value": "\"cancel\""
     },
     {
-      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/DCC\/DCCModel.swift",
-      "kind": "BooleanLiteral",
-      "offset": 667,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/DCC\/DCCModel.swift",
-      "kind": "StringLiteral",
-      "offset": 140,
-      "length": 8,
-      "value": "\"Datatrans.DCCModel\""
-    },
-    {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/MethodSelection\/PaymentMethodTableViewCell.swift",
       "kind": "IntegerLiteral",
       "offset": 103,
@@ -29001,85 +29874,92 @@
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/LoaderView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1115,
+      "length": 2,
+      "value": "10"
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/LoaderView.swift",
       "kind": "StringLiteral",
-      "offset": 1219,
+      "offset": 1233,
       "length": 24,
       "value": "\"NSCoding not supported\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/LoaderView.swift",
       "kind": "BooleanLiteral",
-      "offset": 1378,
+      "offset": 1392,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/LoaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 1402,
+      "offset": 1416,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/LoaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 1434,
+      "offset": 1448,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/LoaderView.swift",
       "kind": "StringLiteral",
-      "offset": 1501,
+      "offset": 1515,
       "length": 23,
       "value": "\"accessibility_loading\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/LoaderView.swift",
       "kind": "BooleanLiteral",
-      "offset": 1729,
+      "offset": 1743,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/LoaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 1827,
+      "offset": 1841,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/LoaderView.swift",
       "kind": "BooleanLiteral",
-      "offset": 2029,
+      "offset": 2043,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/LoaderView.swift",
       "kind": "BooleanLiteral",
-      "offset": 2071,
+      "offset": 2085,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/LoaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 2230,
+      "offset": 2244,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/LoaderView.swift",
       "kind": "IntegerLiteral",
-      "offset": 2296,
+      "offset": 2310,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/LoaderView.swift",
       "kind": "BooleanLiteral",
-      "offset": 2551,
+      "offset": 2565,
       "length": 4,
       "value": "true"
     },
@@ -29093,35 +29973,35 @@
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/LoaderView.swift",
       "kind": "Array",
-      "offset": 3431,
+      "offset": 3445,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/LoaderView.swift",
       "kind": "StringLiteral",
-      "offset": 3557,
+      "offset": 3571,
       "length": 9,
       "value": "\"DT-hash\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/LoaderView.swift",
       "kind": "BooleanLiteral",
-      "offset": 3688,
+      "offset": 3702,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/LoaderView.swift",
       "kind": "StringLiteral",
-      "offset": 3932,
+      "offset": 3946,
       "length": 24,
       "value": "\"NSCoding not supported\""
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/LoaderView.swift",
       "kind": "StringLiteral",
-      "offset": 3189,
+      "offset": 3203,
       "length": 19,
       "value": "\"Datatrans.LoaderAnimationView\""
     },
@@ -29555,7 +30435,14 @@
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/WebProcess\/WebPaymentFlowCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 4222,
+      "offset": 3696,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/WebProcess\/WebPaymentFlowCoordinator.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4254,
       "length": 5,
       "value": "false"
     },
@@ -30041,6 +30928,41 @@
       "offset": 1017,
       "length": 18,
       "value": "\"Datatrans.SavedPaymentMethod\""
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/NavigationBarCover.swift",
+      "kind": "StringLiteral",
+      "offset": 352,
+      "length": 39,
+      "value": "\"init(coder:) has not been implemented\""
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/NavigationBarCover.swift",
+      "kind": "IntegerLiteral",
+      "offset": 959,
+      "length": 3,
+      "value": "-10"
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/NavigationBarCover.swift",
+      "kind": "IntegerLiteral",
+      "offset": 970,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/NavigationBarCover.swift",
+      "kind": "IntegerLiteral",
+      "offset": 981,
+      "length": 3,
+      "value": "-36"
+    },
+    {
+      "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Sheet\/NavigationBarCover.swift",
+      "kind": "IntegerLiteral",
+      "offset": 993,
+      "length": 1,
+      "value": "0"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/Processes\/HalfFarePlus\/HalfFarePlusFlowCoordinator.swift",

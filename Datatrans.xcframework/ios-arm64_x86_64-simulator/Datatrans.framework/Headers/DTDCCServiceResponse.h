@@ -9,7 +9,7 @@
 
 @interface DTDCCServiceResponse : NSObject<DTResponse>
 
-@property (nonatomic, nonnull, copy) NSString* transactionId;
+@property (nonatomic, nullable, copy) NSString* dccId;
 @property (nonatomic, nullable, copy) NSString* dccAmount;
 @property (nonatomic, nullable, copy) NSString* dccCurrency;
 @property (nonatomic, nullable, copy) NSString* dccRate;

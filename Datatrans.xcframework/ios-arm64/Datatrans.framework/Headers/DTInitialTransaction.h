@@ -15,7 +15,7 @@
 @interface DTInitialTransaction : NSObject
 
 - (nonnull instancetype)init NS_UNAVAILABLE;
-- (nonnull instancetype)initWithDictionary:(nonnull NSDictionary *)jsonObject dccObject:(nullable NSDictionary *)dccObject;
+- (nonnull instancetype)initWithDictionary:(nonnull NSDictionary *)jsonObject dccObject:(nullable NSDictionary *)dccObject pfpObject:(nullable NSDictionary *)pfpObject;
 
 - (void)addOptionsToPaymentOptions:(nonnull DTPaymentOptions *)paymentOptions hasInternalMethod:(BOOL)hasInternalMethod;
 

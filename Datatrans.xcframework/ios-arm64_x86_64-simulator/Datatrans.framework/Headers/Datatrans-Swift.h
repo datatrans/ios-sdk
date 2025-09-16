@@ -823,6 +823,8 @@ typedef SWIFT_ENUM_NAMED(NSInteger, DTPaymentMethodType, "PaymentMethodType", op
   DTPaymentMethodTypeHalfFarePlus = 32,
 /// iDEAL payment method
   DTPaymentMethodTypeIDEAL = 33,
+/// Postfinance Pay
+  DTPaymentMethodTypePostFinancePay = 34,
 };
 
 
@@ -1084,6 +1086,34 @@ SWIFT_CLASS_NAMED("SavedPostFinanceCard")
 /// :nodoc:
 - (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type alias:(NSString * _Nonnull)alias cardExpiryDate:(DTCardExpiryDate * _Nullable)cardExpiryDate maskedCardNumber:(NSString * _Nullable)maskedCardNumber cardholder:(NSString * _Nullable)cardholder SWIFT_UNAVAILABLE;
+@end
+
+
+/// This class contains saved PostFinance Pay payment method details.
+/// Like any other <code>SavedPaymentMethod</code> subclass, this class can be used
+/// to pay with a previously registered payment method or to present a list of saved
+/// payment methods to the user for fast checkouts.
+/// A <code>SavedPostFinancePay</code> object can be created either by successfully completing
+/// a PostFinance Pay payment or through a dedicated registration process.
+SWIFT_CLASS_NAMED("SavedPostFinancePay")
+@interface DTSavedPostFinancePay : DTSavedPaymentMethod
+/// Masked PostFinance account number (IBAN). This will be used for displaying purposes.
+@property (nonatomic, copy) NSString * _Nullable maskedAccountNumber;
+/// A human readable title.
+@property (nonatomic, readonly, copy) NSString * _Nonnull displayTitle;
+/// Initializes a <code>SavedPostFinancePay</code> object.
+/// \param alias Alias for a PostFinance account.
+///
+/// \param maskedAccountNumber Masked PostFinance account number (IBAN). This will be used for displaying purposes.
+///
+- (nonnull instancetype)initWithAlias:(NSString * _Nonnull)alias maskedAccountNumber:(NSString * _Nullable)maskedAccountNumber OBJC_DESIGNATED_INITIALIZER;
+/// :nodoc
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+/// :nodoc:
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
+/// :nodoc:
+- (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type alias:(NSString * _Nonnull)alias SWIFT_UNAVAILABLE;
 @end
 
 
@@ -2253,6 +2283,8 @@ typedef SWIFT_ENUM_NAMED(NSInteger, DTPaymentMethodType, "PaymentMethodType", op
   DTPaymentMethodTypeHalfFarePlus = 32,
 /// iDEAL payment method
   DTPaymentMethodTypeIDEAL = 33,
+/// Postfinance Pay
+  DTPaymentMethodTypePostFinancePay = 34,
 };
 
 
@@ -2514,6 +2546,34 @@ SWIFT_CLASS_NAMED("SavedPostFinanceCard")
 /// :nodoc:
 - (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type alias:(NSString * _Nonnull)alias cardExpiryDate:(DTCardExpiryDate * _Nullable)cardExpiryDate maskedCardNumber:(NSString * _Nullable)maskedCardNumber cardholder:(NSString * _Nullable)cardholder SWIFT_UNAVAILABLE;
+@end
+
+
+/// This class contains saved PostFinance Pay payment method details.
+/// Like any other <code>SavedPaymentMethod</code> subclass, this class can be used
+/// to pay with a previously registered payment method or to present a list of saved
+/// payment methods to the user for fast checkouts.
+/// A <code>SavedPostFinancePay</code> object can be created either by successfully completing
+/// a PostFinance Pay payment or through a dedicated registration process.
+SWIFT_CLASS_NAMED("SavedPostFinancePay")
+@interface DTSavedPostFinancePay : DTSavedPaymentMethod
+/// Masked PostFinance account number (IBAN). This will be used for displaying purposes.
+@property (nonatomic, copy) NSString * _Nullable maskedAccountNumber;
+/// A human readable title.
+@property (nonatomic, readonly, copy) NSString * _Nonnull displayTitle;
+/// Initializes a <code>SavedPostFinancePay</code> object.
+/// \param alias Alias for a PostFinance account.
+///
+/// \param maskedAccountNumber Masked PostFinance account number (IBAN). This will be used for displaying purposes.
+///
+- (nonnull instancetype)initWithAlias:(NSString * _Nonnull)alias maskedAccountNumber:(NSString * _Nullable)maskedAccountNumber OBJC_DESIGNATED_INITIALIZER;
+/// :nodoc
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+/// :nodoc:
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
+/// :nodoc:
+- (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type alias:(NSString * _Nonnull)alias SWIFT_UNAVAILABLE;
 @end
 
 

@@ -49,5 +49,10 @@
 @property (nonatomic, assign) BOOL isPayment;
 @property (nonatomic, assign) NSInteger savedCardDCCShowMode;
 @property (nonatomic, assign) NSInteger twintMaxIssuerNumber;
+@property (nonatomic, assign) BOOL isPostFinancePayAppInstalled;
+@property (nullable, nonatomic, strong) NSString* postFinancePayAppCallbackUrl;
+@property (nonatomic, assign) BOOL isPostfinancePayStepUp;
+@property (nonatomic, assign) BOOL isPostfinancePaySimulation;
+@property (nonatomic, assign) BOOL forceAuthorize;
 
 @end

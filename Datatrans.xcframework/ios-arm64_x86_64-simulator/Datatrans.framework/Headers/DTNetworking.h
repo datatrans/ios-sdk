@@ -52,10 +52,11 @@ typedef enum {
 
 - (void)requestInitialTransaction:(NSString *)mobileToken idempotencyKey:(NSString *)idempotencyKey completion:(void (^)(NSData *, NSError *))completion;
 - (void)requestCardAliasForMerchantId:(NSString *)merchantId card:(DTCard *)card options:(DTPaymentOptions *)options completion:(void (^)(DTCardAliasRequestResponse *, NSError *))completion;
-- (void)requestStatusForMerchantId:(NSString *)merchantId alias:(NSString *)alias currencyCode:(NSString *)currencyCode isAliasRequest:(BOOL)isAliasRequest transactionId:(NSString *)transactionId isDCC:(BOOL)isDCC completion:(void(^)(DTStatusRequestResponse *, NSError *))completion;
+- (void)requestStatusForMerchantId:(NSString *)merchantId alias:(NSString *)alias currencyCode:(NSString *)currencyCode isAliasRequest:(BOOL)isAliasRequest completion:(void(^)(DTStatusRequestResponse *, NSError *))completion;
 - (void)requestTokenizationWithJSONBody:(NSData *)body completion:(void (^)(NSData *, NSError *))completion;
 - (void)authorizeAliasPaymentRequest:(DTAliasPaymentAuthorizationRequest *)authorizationRequest completion:(void (^)(DTAuthorizationRequestResponse *, NSError *))completion;
 - (void)authorizePaymentRequest:(DTPaymentAuthorizationRequest *)authorizationRequest completion:(void (^)(DTAuthorizationRequestResponse *, NSError *))completion; // split web payment
+- (void)authorizePaymentRequestForFinishAuthentication:(DTPaymentAuthorizationRequest *)authorizationRequest completion:(void (^)(DTAuthorizationRequestResponse *, NSError *))completion;
 - (void)startTokenRequest:(DTPaymentRequest *)paymentRequest paymentMethod:(NSString *)paymentMethod options:(DTPaymentOptions *)options completion:(void (^)(DTStartTokenRequestResponse *, NSError *))completion;
 - (void)start2FARequest:(DTPaymentRequest *)paymentRequest paymentMethod:(NSString *)paymentMethod alias:(NSString *)alias options:(DTPaymentOptions *)options completion:(void (^)(DT2FARequestResponse *, NSError *))completion;
 - (void)startTokenRequestForAlias:(DTAliasRequest *)aliasRequest paymentMethod:(NSString *)paymentMethod options:(DTPaymentOptions *)options completion:(void (^)(DTStartTokenRequestResponse *, NSError *))completion;

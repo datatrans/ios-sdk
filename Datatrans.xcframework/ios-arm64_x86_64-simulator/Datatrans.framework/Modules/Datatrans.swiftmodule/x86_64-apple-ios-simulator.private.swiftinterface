@@ -234,6 +234,7 @@ import _SwiftConcurrencyShims
   case ChinaUnionPay
   case HalfFarePlus
   case IDEAL
+  case PostFinancePay
   public var identifier: Swift.String {
     get
   }
@@ -302,6 +303,20 @@ extension SwiftUI.View {
   @objc public var buttonTextColor: UIKit.UIColor?
   @objc public var linkColor: UIKit.UIColor?
   @objc override dynamic public init()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc(DTSavedPostFinancePay) @objcMembers public class SavedPostFinancePay : Datatrans.SavedPaymentMethod {
+  @objc public var maskedAccountNumber: Swift.String?
+  @objc override public var displayTitle: Swift.String {
+    @objc get
+  }
+  @objc public init(alias: Swift.String, maskedAccountNumber: Swift.String?)
+  @objc required public init?(coder: Foundation.NSCoder)
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  override public func encode(to encoder: any Swift.Encoder) throws
+  @objc override public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
   @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc(DTPCIPTokenizationSuccess) @objcMembers public class PCIPTokenizationSuccess : ObjectiveC.NSObject {
