@@ -21,4 +21,6 @@
 
 + (NSMutableDictionary *)statsProperties;
 
++ (BOOL)isSDK26Plus;
+
 @end

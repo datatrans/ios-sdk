@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
-// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Datatrans
-// swift-module-flags-ignorable: -enable-bare-slash-regex
+// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name Datatrans
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
 import AVFoundation
 import AudioToolbox
 import CommonCrypto
@@ -102,7 +102,7 @@ import _SwiftConcurrencyShims
   public init?(rawValue: Swift.Int)
   public typealias AllCases = [Datatrans.BoncardType]
   public typealias RawValue = Swift.Int
-  public static var allCases: [Datatrans.BoncardType] {
+  nonisolated public static var allCases: [Datatrans.BoncardType] {
     get
   }
   public var rawValue: Swift.Int {
@@ -241,7 +241,7 @@ import _SwiftConcurrencyShims
   public init?(rawValue: Swift.Int)
   public typealias AllCases = [Datatrans.PaymentMethodType]
   public typealias RawValue = Swift.Int
-  public static var allCases: [Datatrans.PaymentMethodType] {
+  nonisolated public static var allCases: [Datatrans.PaymentMethodType] {
     get
   }
   public var rawValue: Swift.Int {
@@ -276,10 +276,10 @@ import _SwiftConcurrencyShims
   @objc deinit
 }
 @available(iOS 14.0, *)
-extension SwiftUI.View {
-  public func datatrans(startWithTransaction: SwiftUI.Binding<Datatrans.Transaction?>) -> some SwiftUI.View
+extension SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public func datatrans(startWithTransaction: SwiftUICore.Binding<Datatrans.Transaction?>) -> some SwiftUICore.View
   
-  public func datatrans(startWithPCIPTokenization: SwiftUI.Binding<Datatrans.PCIPTokenization?>) -> some SwiftUI.View
+  @_Concurrency.MainActor @preconcurrency public func datatrans(startWithPCIPTokenization: SwiftUICore.Binding<Datatrans.PCIPTokenization?>) -> some SwiftUICore.View
   
 }
 @_inheritsConvenienceInitializers @objc(DTPaymentMethodTypeMapper) public class PaymentMethodTypeMapper : ObjectiveC.NSObject {
