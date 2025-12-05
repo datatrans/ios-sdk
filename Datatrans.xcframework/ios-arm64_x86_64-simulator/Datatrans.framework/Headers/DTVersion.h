@@ -21,6 +21,6 @@
 
 + (NSMutableDictionary *)statsProperties;
 
-+ (BOOL)isSDK26Plus;
++ (BOOL)isLiquidGlass;
 
 @end

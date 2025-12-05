@@ -1162,6 +1162,8 @@ SWIFT_CLASS_NAMED("ThemeConfiguration")
 @property (nonatomic, strong) UIColor * _Nullable barBackgroundColor;
 /// Color of the buttons in the navigation bars. If this is not specified,
 /// the color will be the color set in <code>linkColor</code>.
+/// important:
+/// Setting <code>UIColor.clear</code> will remove any navigationBarItems styling for Liquid Glass design. For non Liquid Glass design <code>UIColor.clear</code> is ignored and <code>linkColor</code> will be used.
 @property (nonatomic, strong) UIColor * _Nullable barLinkColor;
 /// Color of the title within the navigation bars. If this is not specified,
 /// the color will be the text color.
@@ -2581,6 +2583,8 @@ SWIFT_CLASS_NAMED("ThemeConfiguration")
 @property (nonatomic, strong) UIColor * _Nullable barBackgroundColor;
 /// Color of the buttons in the navigation bars. If this is not specified,
 /// the color will be the color set in <code>linkColor</code>.
+/// important:
+/// Setting <code>UIColor.clear</code> will remove any navigationBarItems styling for Liquid Glass design. For non Liquid Glass design <code>UIColor.clear</code> is ignored and <code>linkColor</code> will be used.
 @property (nonatomic, strong) UIColor * _Nullable barLinkColor;
 /// Color of the title within the navigation bars. If this is not specified,
 /// the color will be the text color.

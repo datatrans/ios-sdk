@@ -297,7 +297,10 @@ extension SwiftUICore.View {
 }
 @_inheritsConvenienceInitializers @objc(DTThemeConfiguration) @objcMembers public class ThemeConfiguration : ObjectiveC.NSObject {
   @objc public var barBackgroundColor: UIKit.UIColor?
-  @objc public var barLinkColor: UIKit.UIColor?
+  @objc public var barLinkColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
   @objc public var barTitleColor: UIKit.UIColor?
   @objc public var buttonColor: UIKit.UIColor?
   @objc public var buttonTextColor: UIKit.UIColor?

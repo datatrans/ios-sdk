@@ -17,7 +17,7 @@
     <a title="ThemeConfiguration Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">Datatrans 3.10.0 Docs</a></p>
+        <p><a href="../index.html">Datatrans 3.10.1 Docs</a></p>
         <p class="header-right"><a href="https://github.com/datatrans/ios-sdk"><img src="../img/gh.png" alt="GitHub"/>View on GitHub</a></p>
         <div class="header-right">
           <form role="search" action="../search.json">
@@ -256,6 +256,11 @@ navigation bars will be transparent.</p>
                       <div class="abstract">
                         <p>Color of the buttons in the navigation bars. If this is not specified,
 the color will be the color set in <code><a href="../Classes/ThemeConfiguration.html#/c:@M@Datatrans@objc(cs)DTThemeConfiguration(py)linkColor">linkColor</a></code>.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    Setting <code>UIColor.clear</code> will remove any navigationBarItems styling for Liquid Glass design. For non Liquid Glass design <code>UIColor.clear</code> is ignored and <code><a href="../Classes/ThemeConfiguration.html#/c:@M@Datatrans@objc(cs)DTThemeConfiguration(py)linkColor">linkColor</a></code> will be used.
+
+</div>
 
                       </div>
                       <div class="declaration">
