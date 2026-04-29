@@ -170,7 +170,7 @@
 		</data>
 		<key>Headers/DTNetworking.h</key>
 		<data>
-		1TUP3pSEef9WbcT1Ncap1cIJSDo=
+		wDMWILgFOspWFGbpJFATCEW3iac=
 		</data>
 		<key>Headers/DTPPRiskComponentManager.h</key>
 		<data>
@@ -186,7 +186,7 @@
 		</data>
 		<key>Headers/DTPaymentMethodInfo.h</key>
 		<data>
-		4ECMc6HgTrTojP3P9Tp5/hEl1ZM=
+		dmOp/ABnUTMU4mEVpULb8UXhrs8=
 		</data>
 		<key>Headers/DTPaymentModel.h</key>
 		<data>
@@ -258,7 +258,7 @@
 		</data>
 		<key>Headers/Datatrans-Swift.h</key>
 		<data>
-		eEiJA/uNeK/od9raXNEkC3BjqY0=
+		y7vgxOGR1inKrd2E80PbBEDvjZE=
 		</data>
 		<key>Headers/Datatrans.h</key>
 		<data>
@@ -270,7 +270,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		9VcWufVwO00di8jLk6Or483kU6c=
+		DiA8ej+NPQ6bSH25j3FXHK5UslI=
 		</data>
 		<key>JCB.pdf</key>
 		<data>
@@ -298,43 +298,43 @@
 		</data>
 		<key>Modules/Datatrans.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		+p7RFXS/Yp2B+tQFoZEqfYsQmlQ=
+		W/q4ZZhnEHVztOLnH7/SFUsGGJU=
 		</data>
 		<key>Modules/Datatrans.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		zWhl1CCgDv4+crBi0E2ApnesTXE=
+		AVatWpfHQnEhvsz9T0DV8NOa/to=
 		</data>
 		<key>Modules/Datatrans.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		rtsA8aY9Oz5NmHl/+FG0HBAOwtI=
+		aXGLJYEF/b7C6By/j2Jkxvy0r9g=
 		</data>
 		<key>Modules/Datatrans.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		zWhl1CCgDv4+crBi0E2ApnesTXE=
+		AVatWpfHQnEhvsz9T0DV8NOa/to=
 		</data>
 		<key>Modules/Datatrans.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		KhUWuJMI7+Jz+v+L7GmdnNXrw8M=
+		VDvrUZvtKzNAHcx6wL+5MbsO9d0=
 		</data>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		+p7RFXS/Yp2B+tQFoZEqfYsQmlQ=
+		W/q4ZZhnEHVztOLnH7/SFUsGGJU=
 		</data>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		qb/LAagJEs4lrWDAraAShX93Jn8=
+		GY7N9TYNbP910A2YLSgZ7iDdOCc=
 		</data>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		5CW3ILCXTktt5UfFRiY8twFgqZo=
+		vWsn+RKQfoGUJCSN0/2PH/Lzx0M=
 		</data>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		qb/LAagJEs4lrWDAraAShX93Jn8=
+		GY7N9TYNbP910A2YLSgZ7iDdOCc=
 		</data>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		VApwJ30JMsKMEo8WFeC+ttSfA6M=
+		VHbNh5RjQRNJcReU1VRdzlPleGc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -801,7 +801,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			SYS86/TtAe2vab3xPw2Lf7sKIes9mw/91yMeCK3HJNM=
+			iJ5+wDwZw2IfN3tLkSCrwtWOjq0e2K6wtMVMv3l9zuE=
 			</data>
 		</dict>
 		<key>Headers/DTPPRiskComponentManager.h</key>
@@ -829,7 +829,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			UKDCtbNHbRjTWFnS9WBanm3TNCizFOB8Y1o9xPR1/kM=
+			sA680O1TMyENcYV/+ufd0daSarj9TuwgRqY7iZ/7kCM=
 			</data>
 		</dict>
 		<key>Headers/DTPaymentModel.h</key>
@@ -955,7 +955,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			lHI9R6qO4jNOK0oX1L90S8BYxodxOXRHEMCKDYjk8uo=
+			r3nW5AtJhMo4+eeyFaCIpbUw+TWNTItKde+tcKpJ/hY=
 			</data>
 		</dict>
 		<key>Headers/Datatrans.h</key>
@@ -1018,70 +1018,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2eb92DDtJBNXsj+4YenQjIEbOBH1aM/ZNpyWt4V3+48=
+			Uu2RxrG7qM+CMOGu7g8lk4SYuPvOUY5IGy5s9CTZBEA=
 			</data>
 		</dict>
 		<key>Modules/Datatrans.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zeamHg0wsQTNMRFi+eGfMqIXW0XIR+4/qNOutdTSlp0=
+			iZI3QsTex6x2QSeTQhuqu2IBEflRyNIEqmkIZPUQLJw=
 			</data>
 		</dict>
 		<key>Modules/Datatrans.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OaYjPES9KbzCOo1gYgh2WP/RkGvJjNw/1rSEbfi8tqE=
+			elSvwSFQxUwCOLcCc6JISVMuo/bFgUdRWyaBWzbxnhY=
 			</data>
 		</dict>
 		<key>Modules/Datatrans.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zeamHg0wsQTNMRFi+eGfMqIXW0XIR+4/qNOutdTSlp0=
+			iZI3QsTex6x2QSeTQhuqu2IBEflRyNIEqmkIZPUQLJw=
 			</data>
 		</dict>
 		<key>Modules/Datatrans.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fqHKcl2+K5FzDgny5iCKRAEeCeGEie8eiFLs/LT6jL4=
+			fqhaPoLkFD6UMhlnQcsiXqnPXBNRR0SYtDU6O3lrqHQ=
 			</data>
 		</dict>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			2eb92DDtJBNXsj+4YenQjIEbOBH1aM/ZNpyWt4V3+48=
+			Uu2RxrG7qM+CMOGu7g8lk4SYuPvOUY5IGy5s9CTZBEA=
 			</data>
 		</dict>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wmTLtwhCsP2Txvlq7bt2cw4F3F88AIXziMgxO5+L74I=
+			pipQw4s7PkkQON99laDafPh1Nhy772ACp9r4qhQdceU=
 			</data>
 		</dict>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			RMNRGMhKBlHgs2/keFgiltw23s/5U5myij9adgLwFQM=
+			1azpY58X/F1Ed6Ozhwf0kIpXrLeinXSjLeXU054TMuc=
 			</data>
 		</dict>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wmTLtwhCsP2Txvlq7bt2cw4F3F88AIXziMgxO5+L74I=
+			pipQw4s7PkkQON99laDafPh1Nhy772ACp9r4qhQdceU=
 			</data>
 		</dict>
 		<key>Modules/Datatrans.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			N/KgJCZKNo+Bj75jwso0A2E6BqSkME2ckddKqjFlit8=
+			8bXpV+NUc0a6RNCAqBKyQZRHYHw3MNtlzZVKM55uAl8=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

@@ -113,6 +113,7 @@ import _SwiftConcurrencyShims
   @objc public var maskedCardNumber: Swift.String
   @objc public var expiryDate: Datatrans.CardExpiryDate
   @objc public init(type: Datatrans.PaymentMethodType, maskedCardNumber: Swift.String, expiryDate: Datatrans.CardExpiryDate)
+  @objc convenience public init(type: Datatrans.PaymentMethodType, maskedCardNumber: Swift.String, expiryDate: Datatrans.CardExpiryDate, cvv: Swift.String)
   @objc deinit
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(DTSavedReka) @objcMembers public class SavedReka : Datatrans.SavedCard {

@@ -2947,6 +2947,13 @@
       },
       {
         "kind": "Import",
+        "name": "PassKit",
+        "printedName": "PassKit",
+        "declKind": "Import",
+        "moduleName": "Datatrans"
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -4083,6 +4090,54 @@
               "ObjC"
             ],
             "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(type:maskedCardNumber:expiryDate:cvv:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PCIPCVVOnlyCard",
+                "printedName": "Datatrans.PCIPCVVOnlyCard",
+                "usr": "c:@M@Datatrans@objc(cs)DTPCIPCVVOnlyCard"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PaymentMethodType",
+                "printedName": "Datatrans.PaymentMethodType",
+                "usr": "c:@M@Datatrans@E@DTPaymentMethodType"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CardExpiryDate",
+                "printedName": "Datatrans.CardExpiryDate",
+                "usr": "c:@M@Datatrans@objc(cs)DTCardExpiryDate"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@Datatrans@objc(cs)DTPCIPCVVOnlyCard(im)initWithType:maskedCardNumber:expiryDate:cvv:",
+            "mangledName": "$s9Datatrans15PCIPCVVOnlyCardC4type06maskedC6Number10expiryDate3cvvAcA17PaymentMethodTypeO_SSAA0c6ExpiryH0CSStcfc",
+            "moduleName": "Datatrans",
+            "declAttributes": [
+              "Convenience",
+              "AccessControl",
+              "RawDocComment",
+              "ObjC"
+            ],
+            "init_kind": "Convenience"
           },
           {
             "kind": "Constructor",
@@ -20501,49 +20556,49 @@
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardScannerController.swift",
       "kind": "IntegerLiteral",
-      "offset": 10880,
+      "offset": 11099,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardScannerController.swift",
       "kind": "IntegerLiteral",
-      "offset": 10933,
+      "offset": 11152,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardScannerController.swift",
       "kind": "FloatLiteral",
-      "offset": 11006,
+      "offset": 11225,
       "length": 3,
       "value": "3.0"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardScannerController.swift",
       "kind": "FloatLiteral",
-      "offset": 11062,
+      "offset": 11281,
       "length": 3,
       "value": "0.9"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardScannerController.swift",
       "kind": "FloatLiteral",
-      "offset": 11128,
+      "offset": 11347,
       "length": 3,
       "value": "5.0"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardScannerController.swift",
       "kind": "FloatLiteral",
-      "offset": 11184,
+      "offset": 11403,
       "length": 3,
       "value": "0.9"
     },
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/CreditCard\/NumberInput\/CardScanner\/CardScannerController.swift",
       "kind": "IntegerLiteral",
-      "offset": 11244,
+      "offset": 11463,
       "length": 2,
       "value": "10"
     },
@@ -22062,7 +22117,7 @@
     {
       "filePath": "\/Users\/serhiilibin\/iOS\/datatrans\/iOS\/datatrans-iphone\/Classes\/PaymentMethods\/ApplePay\/ApplePayConfig.swift",
       "kind": "BooleanLiteral",
-      "offset": 1343,
+      "offset": 1333,
       "length": 5,
       "value": "false"
     },

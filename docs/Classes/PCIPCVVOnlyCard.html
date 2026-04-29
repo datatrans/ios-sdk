@@ -17,7 +17,7 @@
     <a title="PCIPCVVOnlyCard Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">Datatrans 3.10.1 Docs</a></p>
+        <p><a href="../index.html">Datatrans 3.11.0 Docs</a></p>
         <p class="header-right"><a href="https://github.com/datatrans/ios-sdk"><img src="../img/gh.png" alt="GitHub"/>View on GitHub</a></p>
         <div class="header-right">
           <form role="search" action="../search.json">
@@ -196,7 +196,9 @@
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">PCIPCVVOnlyCard</span><span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTPCIPCVVOnlyCard</span><span class="p">)</span>
+<span class="kd">@objcMembers</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">PCIPCVVOnlyCard</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
 
                 </div>
               </div>
@@ -273,7 +275,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Use this to initialize a CVV only object.</p>
+                        <p>Use this init method to display a CVV input screen and tokenize the entered CVV.</p>
 
                       </div>
                       <div class="declaration">
@@ -330,13 +332,95 @@
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Datatrans@objc(cs)DTPCIPCVVOnlyCard(im)initWithType:maskedCardNumber:expiryDate:cvv:"></a>
+                    <a name="//apple_ref/swift/Method/init(type:maskedCardNumber:expiryDate:cvv:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTPCIPCVVOnlyCard(im)initWithType:maskedCardNumber:expiryDate:cvv:">init(type:<wbr>maskedCardNumber:<wbr>expiryDate:<wbr>cvv:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Use this init method to tokenize a provided CVV value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../Enums/PaymentMethodType.html">PaymentMethodType</a></span><span class="p">,</span> <span class="nv">maskedCardNumber</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">expiryDate</span><span class="p">:</span> <span class="kt"><a href="../Classes/CardExpiryDate.html">CardExpiryDate</a></span><span class="p">,</span> <span class="nv">cvv</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>e.g. Visa or Mastercard</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>maskedCardNumber</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The masked card number, e.g. &ldquo;489537xxxxxx6287&rdquo;</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>expiryDate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Expiry date</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>cvv</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The CVV value to tokenize</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
           </section>
         </section>
         <section id="footer">
           
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>
     </div>

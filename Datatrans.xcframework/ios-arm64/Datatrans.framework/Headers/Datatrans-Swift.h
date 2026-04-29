@@ -351,7 +351,7 @@ SWIFT_CLASS_NAMED("ApplePayConfig")
 /// listed payment method.
 @property (nonatomic) BOOL showLargeButton;
 /// Use this option to hide and disable Apple Pay when the user hasn’t yet set up
-/// a supported card with Apple Pay. By default Apple Pay is shown in any case.
+/// a card with Apple Pay. By default Apple Pay is shown in any case.
 @property (nonatomic) BOOL existingCardRequired;
 /// Use this method to determine the availability of Apple Pay for the specified parameters on a given device. Note that while the SDK automatically manages the visibility
 /// of Apple Pay and hides it when not available, if Apple Pay is the only payment option and it is not available, an error will be thrown.
@@ -532,7 +532,7 @@ SWIFT_CLASS_NAMED("PCIPCVVOnlyCard")
 @property (nonatomic, copy) NSString * _Nonnull maskedCardNumber;
 /// Expiry date
 @property (nonatomic, strong) DTCardExpiryDate * _Nonnull expiryDate;
-/// Use this to initialize a CVV only object.
+/// Use this init method to display a CVV input screen and tokenize the entered CVV.
 /// \param type e.g. Visa or Mastercard
 ///
 /// \param maskedCardNumber The masked card number, e.g. “489537xxxxxx6287”
@@ -540,6 +540,16 @@ SWIFT_CLASS_NAMED("PCIPCVVOnlyCard")
 /// \param expiryDate Expiry date
 ///
 - (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type maskedCardNumber:(NSString * _Nonnull)maskedCardNumber expiryDate:(DTCardExpiryDate * _Nonnull)expiryDate OBJC_DESIGNATED_INITIALIZER;
+/// Use this init method to tokenize a provided CVV value.
+/// \param type e.g. Visa or Mastercard
+///
+/// \param maskedCardNumber The masked card number, e.g. “489537xxxxxx6287”
+///
+/// \param expiryDate Expiry date
+///
+/// \param cvv The CVV value to tokenize
+///
+- (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type maskedCardNumber:(NSString * _Nonnull)maskedCardNumber expiryDate:(DTCardExpiryDate * _Nonnull)expiryDate cvv:(NSString * _Nonnull)cvv;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -610,7 +620,7 @@ SWIFT_CLASS_NAMED("PCIPTokenization")
 /// and a <code>theme</code> if desired.
 /// \param merchantId Your merchantId.
 ///
-/// \param cvvOnlyCard Previously tokenized card for which the CVV should be entered.
+/// \param cvvOnlyCard Previously tokenized card for which the CVV should be entered/tokenized.
 ///
 - (nonnull instancetype)initWithMerchantId:(NSString * _Nonnull)merchantId cvvOnlyCard:(DTPCIPCVVOnlyCard * _Nonnull)cvvOnlyCard OBJC_DESIGNATED_INITIALIZER;
 /// Use this init method to allow the user to enter the  card data to be tokenized. After this

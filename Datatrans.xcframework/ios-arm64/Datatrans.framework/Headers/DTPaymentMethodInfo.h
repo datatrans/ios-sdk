@@ -44,4 +44,8 @@ typedef enum {
 - (void)updateWithOptions:(nonnull DTPaymentOptions *)options;
 - (nullable NSString *)validateOptions:(nonnull DTPaymentOptions *)options isAliasPayment:(BOOL)isAliasPayment hasKlarnaSDK:(BOOL)hasKlarnaSDK;
 
+/// Returns the DTPaymentMethodInfo identifier for a given PKPaymentNetwork.
+/// Implemented in DTPaymentMethodInfo+Extensions.swift
++ (nullable NSString *)identifierForPaymentNetwork:(nonnull PKPaymentNetwork)network NS_SWIFT_NAME(identifier(forPaymentNetwork:));
+
 @end

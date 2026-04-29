@@ -63,7 +63,7 @@ typedef enum {
 - (void)startTWINTAliasRequest:(DTAliasRequest *)aliasRequest options:(DTPaymentOptions *)options completion:(void (^)(DTStartTWINTRequestResponse *, NSError *))completion;
 - (void)TWINTStatusRequestForMerchantId:(NSString *)merchantId transactionId:(NSString *)transactionId options:(DTPaymentOptions *)options completion:(void (^)(DTTWINTStatusRequestResponse *, NSError *))completion;
 - (void)cancelRequest:(DTPaymentRequest *)paymentRequest transactionId:(NSString *)transactionId;
-- (void)startApplePayRequest:(DTPaymentRequest *)paymentRequest token:(NSString *)token displayName:(NSString *)displayName options:(DTPaymentOptions *)options completion:(void (^)(DTStartApplePayRequestResponse *, NSError *))completion;
+- (void)startApplePayRequest:(DTPaymentRequest *)paymentRequest token:(NSString *)token displayName:(NSString *)displayName paymentMethod:(NSString *)paymentMethod options:(DTPaymentOptions *)options completion:(void (^)(DTStartApplePayRequestResponse *, NSError *))completion;
 - (void)dccInfoForMerchantId:(NSString *)merchantId paymentMethod:(NSString *)paymentMethod cardno:(NSString *)cardno alias:(NSString *)alias completion:(void (^)(DTDCCServiceResponse *, NSError *))completion;
 
 #pragma mark - Management
