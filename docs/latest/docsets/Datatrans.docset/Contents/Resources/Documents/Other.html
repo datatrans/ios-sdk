@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Transaction  Reference</title>
+    <title>Other  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset='utf-8'>
@@ -13,8 +13,8 @@
     <script src="js/jazzy.search.js" defer></script>
   </head>
   <body>
-    <a name="//apple_ref/swift/Section/Transaction" class="dashAnchor"></a>
-    <a title="Transaction  Reference"></a>
+    <a name="//apple_ref/swift/Section/Other" class="dashAnchor"></a>
+    <a title="Other  Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="index.html">Datatrans 4.0.0 Docs</a></p>
@@ -30,7 +30,7 @@
       <p id="breadcrumbs">
         <a href="index.html">Datatrans</a>
         <img id="carat" src="img/carat.png" alt=""/>
-        Transaction  Reference
+        Other  Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -157,7 +157,7 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>Transaction</h1>
+            <h1>Other</h1>
             
           </section>
           <section class="section task-group-section">
@@ -166,9 +166,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@Datatrans@objc(cs)DTTransaction"></a>
-                    <a name="//apple_ref/swift/Class/Transaction" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTTransaction">Transaction</a>
+                    <a name="/c:@M@Datatrans@objc(cs)DTAppCallbackHandler"></a>
+                    <a name="//apple_ref/swift/Class/AppCallbackHandler" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTAppCallbackHandler">AppCallbackHandler</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -176,51 +176,23 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Use this class to start a transaction with a <code>transactionId</code> that has previously been initialized
-with a server-to-server init call.</p>
+                        <p>Use this class if your app crashes when switching to/from external payment apps,
+such as TWINT, Swish, Vipps, and MobilePay. Our automatic app callback logic
+may interfere with other logic in your app and needs to be disabled.</p>
 
-<p>This class is the main class to start any operation with the SDK.
-After the transaction has been completed - regardless if successful or not - <code>delegate</code> will
-be called with some basic information about the success or failure.</p>
+<p>Globally set <code>AppCallbackHandler.shared.automaticCallbacks</code> to <code>false</code>.
+Then implement the <code>application(_:open:options:)</code> method in your AppDelegate
+and call <code>AppCallbackHandler.shared.handleURL(url)</code> with the URL received.</p>
 
-                        <a href="Classes/Transaction.html" class="slightly-smaller">See more</a>
+                        <a href="Classes/AppCallbackHandler.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTTransaction</span><span class="p">)</span>
-<span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Transaction</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@Datatrans@objc(cs)DTTransactionOptions"></a>
-                    <a name="//apple_ref/swift/Class/TransactionOptions" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTTransactionOptions">TransactionOptions</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>This class can be used to specify miscellaneous options related to the transaction.</p>
-
-                        <a href="Classes/TransactionOptions.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTTransactionOptions</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTAppCallbackHandler</span><span class="p">)</span>
 <span class="kd">@objcMembers</span>
-<span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">TransactionOptions</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+<span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">AppCallbackHandler</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
 
                         </div>
                       </div>
@@ -230,9 +202,9 @@ be called with some basic information about the success or failure.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@Datatrans@objc(pl)DTTransactionDelegate"></a>
-                    <a name="//apple_ref/swift/Protocol/TransactionDelegate" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Datatrans@objc(pl)DTTransactionDelegate">TransactionDelegate</a>
+                    <a name="/c:@M@Datatrans@E@DTDCCShowMode"></a>
+                    <a name="//apple_ref/swift/Enum/DCCShowMode" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Datatrans@E@DTDCCShowMode">DCCShowMode</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -240,18 +212,16 @@ be called with some basic information about the success or failure.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Implement TransactionDelegate to be notified when a transaction
-ends. TransactionDelegate will notify you about the success, error
-or cancel state of the processed transaction.</p>
+                        <p>Mode to control when DCC is presented for saved card payments (alias/tokenized payments).</p>
 
-                        <a href="Protocols/TransactionDelegate.html" class="slightly-smaller">See more</a>
+                        <a href="Enums/DCCShowMode.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTTransactionDelegate</span><span class="p">)</span>
-<span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">TransactionDelegate</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTDCCShowMode</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">enum</span> <span class="kt">DCCShowMode</span> <span class="p">:</span> <span class="kt">Int</span></code></pre>
 
                         </div>
                       </div>
@@ -261,9 +231,9 @@ or cancel state of the processed transaction.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@Datatrans@objc(cs)DTTransactionSuccess"></a>
-                    <a name="//apple_ref/swift/Class/TransactionSuccess" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTTransactionSuccess">TransactionSuccess</a>
+                    <a name="/c:@M@Datatrans@objc(pl)DTInitialLoaderDelegate"></a>
+                    <a name="//apple_ref/swift/Protocol/InitialLoaderDelegate" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(pl)DTInitialLoaderDelegate">InitialLoaderDelegate</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -271,19 +241,51 @@ or cancel state of the processed transaction.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This class includes the success message and other details of a transaction.
-You will also obtain a transactionId that you can use for operations
-after the transaction (e.g. settlement, cancel or refund requests).</p>
+                        <p>Callback invoked by the SDK when the custom initial loader must be dismissed.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    The SDK does not invoke the callback when nothing has to be shown throughout the process. Make sure you dismiss the loading animation at the end of the transaction if the SDK hasn&rsquo;t done so already.
 
-                        <a href="Classes/TransactionSuccess.html" class="slightly-smaller">See more</a>
+</div>
+
+                        <a href="Protocols/InitialLoaderDelegate.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTTransactionSuccess</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTInitialLoaderDelegate</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">InitialLoaderDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Datatrans@objc(cs)DTVersion"></a>
+                    <a name="//apple_ref/swift/Class/Version" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTVersion">Version</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Provides SDK version information.</p>
+
+                        <a href="Classes/Version.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTVersion</span><span class="p">)</span>
 <span class="kd">@objcMembers</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="kt">TransactionSuccess</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">Version</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
 
                         </div>
                       </div>
@@ -293,9 +295,9 @@ after the transaction (e.g. settlement, cancel or refund requests).</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@Datatrans@objc(cs)DTTransactionError"></a>
-                    <a name="//apple_ref/swift/Class/TransactionError" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTTransactionError">TransactionError</a>
+                    <a name="/s:7SwiftUI4ViewP"></a>
+                    <a name="//apple_ref/swift/Extension/View" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP">View</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -303,49 +305,14 @@ after the transaction (e.g. settlement, cancel or refund requests).</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This class provides error information about a failed transaction.</p>
-
-                        <a href="Classes/TransactionError.html" class="slightly-smaller">See more</a>
+                        
+                        <a href="Extensions/View.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTTransactionError</span><span class="p">)</span>
-<span class="kd">@objcMembers</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="kt">TransactionError</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">NSCopying</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@Datatrans@objc(cs)DTThemeConfiguration"></a>
-                    <a name="//apple_ref/swift/Class/ThemeConfiguration" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTThemeConfiguration">ThemeConfiguration</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>This class is used to customize the SDK&rsquo;s accent color to match your app&rsquo;s color scheme.</p>
-
-<p>Make sure to specify your colors using <code>UIColor.init(dynamicProvider:)</code> to support light and dark mode colors.</p>
-
-                        <a href="Classes/ThemeConfiguration.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTThemeConfiguration</span><span class="p">)</span>
-<span class="kd">@objcMembers</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="kt">ThemeConfiguration</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">View</span></code></pre>
 
                         </div>
                       </div>

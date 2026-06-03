@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>BoncardConfig Class Reference</title>
+    <title>DCCShowMode Enumeration Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -13,11 +13,11 @@
     <script src="../js/jazzy.search.js" defer></script>
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/BoncardConfig" class="dashAnchor"></a>
-    <a title="BoncardConfig Class Reference"></a>
+    <a name="//apple_ref/swift/Enum/DCCShowMode" class="dashAnchor"></a>
+    <a title="DCCShowMode Enumeration Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">Datatrans 3.10.1 Docs</a></p>
+        <p><a href="../index.html">Datatrans 4.0.0 Docs</a></p>
         <p class="header-right"><a href="https://github.com/datatrans/ios-sdk"><img src="../img/gh.png" alt="GitHub"/>View on GitHub</a></p>
         <div class="header-right">
           <form role="search" action="../search.json">
@@ -30,9 +30,9 @@
       <p id="breadcrumbs">
         <a href="../index.html">Datatrans</a>
         <img id="carat" src="../img/carat.png" alt=""/>
-        <a href="../Payment%20Method.html">Payment Method</a>
+        <a href="../Other.html">Other</a>
         <img id="carat" src="../img/carat.png" alt=""/>
-        BoncardConfig Class Reference
+        DCCShowMode Enumeration Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -48,9 +48,6 @@
                 <a href="../Classes/TransactionOptions.html">TransactionOptions</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/TransactionOptions/DCCShowMode.html">– DCCShowMode</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Protocols/TransactionDelegate.html">TransactionDelegate</a>
               </li>
               <li class="nav-group-task">
@@ -59,33 +56,25 @@
               <li class="nav-group-task">
                 <a href="../Classes/TransactionError.html">TransactionError</a>
               </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="../Theme%20Options.html">Theme Options</a>
-            <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Classes/ThemeConfiguration.html">ThemeConfiguration</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Payment%20Method.html">Payment Method</a>
+            <a href="../Payment%20Methods.html">Payment Methods</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Classes/ApplePayConfig.html">ApplePayConfig</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/BoncardConfig.html">BoncardConfig</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Enums/BoncardType.html">BoncardType</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/Card.html">Card</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/CardExpiryDate.html">CardExpiryDate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CardInfo.html">CardInfo</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Enums/CardLabelType.html">CardLabelType</a>
@@ -100,31 +89,19 @@
                 <a href="../Classes/PaymentMethodTypeMapper.html">PaymentMethodTypeMapper</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/SavedApplePay.html">SavedApplePay</a>
+                <a href="../Classes/SavedPaymentMethod.html">SavedPaymentMethod</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/SavedBoncard.html">SavedBoncard</a>
+                <a href="../Classes/SavedApplePay.html">SavedApplePay</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/SavedCard.html">SavedCard</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/SavedPaymentMethod.html">SavedPaymentMethod</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Classes/SavedPayPal.html">SavedPayPal</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/SavedPostFinanceCard.html">SavedPostFinanceCard</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Classes/SavedPostFinancePay.html">SavedPostFinancePay</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/SavedReka.html">SavedReka</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/SavedSEPA.html">SavedSEPA</a>
               </li>
             </ul>
           </li>
@@ -144,13 +121,13 @@
                 <a href="../Classes/PCIPTokenizationSuccess.html">PCIPTokenizationSuccess</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/PCIPCardInfo.html">PCIPCardInfo</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Classes/PCIPTokenizationError.html">PCIPTokenizationError</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/PCIPCVVOnlyCard.html">PCIPCVVOnlyCard</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PCIPCardInfo.html">PCIPCardInfo</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/PCIPCardholder.html">PCIPCardholder</a>
@@ -158,32 +135,22 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Other%20Classes.html">Other Classes</a>
+            <a href="../Other.html">Other</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Classes/AppCallbackHandler.html">AppCallbackHandler</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/BackendError.html">BackendError</a>
+                <a href="../Enums/DCCShowMode.html">DCCShowMode</a>
               </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="../Other%20Extensions.html">Other Extensions</a>
-            <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Other%20Extensions.html#/AppKit">AppKit</a>
+                <a href="../Protocols/InitialLoaderDelegate.html">InitialLoaderDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Version.html">Version</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/View.html">View</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="../Other%20Protocols.html">Other Protocols</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Protocols/InitialLoaderDelegate.html">InitialLoaderDelegate</a>
               </li>
             </ul>
           </li>
@@ -192,15 +159,16 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>BoncardConfig</h1>
+            <h1>DCCShowMode</h1>
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">BoncardConfig</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">NSCopying</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTDCCShowMode</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">enum</span> <span class="kt">DCCShowMode</span> <span class="p">:</span> <span class="kt">Int</span></code></pre>
 
                 </div>
               </div>
-            <p>Configuration object for Boncard transactions.</p>
+            <p>Mode to control when DCC is presented for saved card payments (alias/tokenized payments).</p>
 
           </section>
           <section class="section task-group-section">
@@ -209,9 +177,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9Datatrans13BoncardConfigC12boncardTypesACSayAA0B4TypeOG_tcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(boncardTypes:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9Datatrans13BoncardConfigC12boncardTypesACSayAA0B4TypeOG_tcfc">init(boncardTypes:<wbr>)</a>
+                    <a name="/c:@M@Datatrans@E@DTDCCShowMode@DTDCCShowModeAlways"></a>
+                    <a name="//apple_ref/swift/Element/always" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Datatrans@E@DTDCCShowMode@DTDCCShowModeAlways">always</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -219,37 +187,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Creates a new Boncard configuration object.</p>
+                        <p>The DCC screen is always shown when the merchant is set up and the saved card is eligible for DCC.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">boncardTypes</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/BoncardType.html">BoncardType</a></span><span class="p">])</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">always</span></code></pre>
 
                         </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>boncardTypes</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The types of Boncard (and their order) to
-display in the payment method selection for the <code><a href="../Enums/PaymentMethodType.html#/c:@M@Datatrans@E@DTPaymentMethodType@DTPaymentMethodTypeBoncard">PaymentMethodType.Boncard</a></code>
-payment method type.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
                       </div>
                     </section>
                   </div>
@@ -257,9 +204,9 @@ payment method type.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@Datatrans@objc(cs)DTBoncardConfig(im)initWithBoncardTypes:"></a>
-                    <a name="//apple_ref/swift/Method/init(boncardTypesObjc:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTBoncardConfig(im)initWithBoncardTypes:">init(boncardTypesObjc:<wbr>)</a>
+                    <a name="/c:@M@Datatrans@E@DTDCCShowMode@DTDCCShowModeSmart"></a>
+                    <a name="//apple_ref/swift/Element/smart" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Datatrans@E@DTDCCShowMode@DTDCCShowModeSmart">smart</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -267,43 +214,47 @@ payment method type.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Creates a new Boncard configuration object.</p>
-
-<p>This initializer is for use from Objective-C only. Instead of <code>[BoncardType]</code>, it
-takes <code>[NSNumber]</code> containing <code>rawValue</code>s of <code><a href="../Enums/BoncardType.html">BoncardType</a></code>.</p>
-
-<p>Example:
-<code>[[DTBoncardConfig alloc] initWithBoncardTypes:@[@(DTBoncardTypeGiftCard), @(DTBoncardTypeBoncard)]];</code></p>
+                        <p>DCC is initially shown repeatedly for each eligible card. The more often a user declines DCC
+for a given saved card, the less often the DCC screen is shown for that card.
+This mode is recommended when customers frequently pay with saved cards to enhance
+the user experience and reduce unnecessary clicks.
+Note: the information whether DCC was previously declined is stored on the device only.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">boncardTypesObjc</span><span class="p">:</span> <span class="p">[</span><span class="kt">NSNumber</span><span class="p">])</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">smart</span></code></pre>
 
                         </div>
                       </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>boncardTypesObjc</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The types of Boncard (and their order) to
-display in the payment method selection for the <code><a href="../Enums/PaymentMethodType.html#/c:@M@Datatrans@E@DTPaymentMethodType@DTPaymentMethodTypeBoncard">PaymentMethodType.Boncard</a></code>
-payment method type.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Datatrans@E@DTDCCShowMode@DTDCCShowModeNever"></a>
+                    <a name="//apple_ref/swift/Element/never" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Datatrans@E@DTDCCShowMode@DTDCCShowModeNever">never</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Show DCC only in guest mode and not for payments with saved cards.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">never</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -314,7 +265,7 @@ payment method type.</p>
         </section>
         <section id="footer">
           
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>
     </div>
