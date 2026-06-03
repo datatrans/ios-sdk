@@ -19,7 +19,7 @@ Accept payments on your iOS apps: Our mobile SDKs support your entire payment an
 **Theme Support**: Style various items according to your corporate identity if needed. We also support the iOS dark theme.
 
 ## **Integration**
-Get started with our [integration guide](https://docs.datatrans.ch/docs/mobile-sdk-2) and the [API reference](https://datatrans.github.io/ios-sdk/).
+Get started with our [integration guide](https://docs.datatrans.ch/docs/mobile-sdk-3x) and the [API reference](https://datatrans.github.io/ios-sdk/3.x/).
 
 ## **Requirements**
 The Datatrans iOS SDK requires Xcode 16.4 or later and is compatible with apps targeting iOS 12 or above.
