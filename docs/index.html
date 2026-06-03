@@ -1,8 +1,117 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta http-equiv="refresh" content="0; url=3.x/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datatrans Mobile SDK Documentation</title>
+
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f7f8fa;
+            color: #222;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            padding: 32px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 12px;
+            font-size: 2rem;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .versions {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .version-card {
+            display: block;
+            padding: 24px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            background: white;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.15s ease;
+        }
+
+        .version-card:hover {
+            border-color: #0066cc;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .version-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .version-description {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .badge {
+            display: inline-block;
+            margin-left: 8px;
+            padding: 2px 8px;
+            font-size: 0.75rem;
+            border-radius: 999px;
+            background: #e7f3ff;
+            color: #0066cc;
+            vertical-align: middle;
+        }
+    </style>
 </head>
 <body>
+
+<div class="container">
+    <h1>Mobile SDK Documentation</h1>
+
+    <p class="subtitle">
+        Select the documentation version you would like to view.
+    </p>
+
+    <div class="versions">
+        <a class="version-card" href="latest/">
+            <div class="version-title">
+                Mobile SDK 4
+                <span class="badge">Recommended</span>
+            </div>
+            <div class="version-description">
+                Next-generation SDK architecture with transactionId-based integrations and a modernized user experience.
+            </div>
+        </a>
+
+        <a class="version-card" href="3.x/">
+            <div class="version-title">
+                Mobile SDK 3.x
+            </div>
+            <div class="version-description">
+                Previous generation SDK. Still supported and recommended for
+                integrations requiring payment methods or features not yet available
+                in version 4.
+            </div>
+        </a>
+    </div>
+</div>
+
 </body>
 </html>
