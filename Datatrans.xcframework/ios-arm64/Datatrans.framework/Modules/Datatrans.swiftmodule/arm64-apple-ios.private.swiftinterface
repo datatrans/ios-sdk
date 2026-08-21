@@ -30,6 +30,7 @@ import os
   }
   @objc final public var suppressCriticalErrorDialog: Swift.Bool
   @objc final public var testing: Swift.Bool
+  @objc final public var noCVV: Swift.Bool
   @objc final public var cardholder: Datatrans.PCIPCardholder
   @objc weak final public var customInitialLoaderDelegate: (any Datatrans.InitialLoaderDelegate)?
   @objc override dynamic public init()

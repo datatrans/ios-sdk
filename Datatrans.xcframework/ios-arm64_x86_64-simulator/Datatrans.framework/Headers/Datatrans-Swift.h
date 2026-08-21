@@ -728,6 +728,8 @@ SWIFT_CLASS_NAMED("PCIPTokenizationOptions")
 /// Use this setting to switch from production to sandbox. If not specified,
 /// the SDK will call the Datatrans production environment.
 @property (nonatomic) BOOL testing;
+/// Use this setting to not tokenize the CVV. This option is ignored in CVV-only tokenization flows.
+@property (nonatomic) BOOL noCVV;
 /// Use this setting to pass cardholder information for network tokens.
 /// important:
 /// For AMEX network tokens, either the phone number or email
@@ -1967,6 +1969,8 @@ SWIFT_CLASS_NAMED("PCIPTokenizationOptions")
 /// Use this setting to switch from production to sandbox. If not specified,
 /// the SDK will call the Datatrans production environment.
 @property (nonatomic) BOOL testing;
+/// Use this setting to not tokenize the CVV. This option is ignored in CVV-only tokenization flows.
+@property (nonatomic) BOOL noCVV;
 /// Use this setting to pass cardholder information for network tokens.
 /// important:
 /// For AMEX network tokens, either the phone number or email
