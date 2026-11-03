@@ -526,6 +526,27 @@ typedef SWIFT_ENUM_NAMED(NSInteger, DTDCCShowMode, "DCCShowMode", open) {
   DTDCCShowModeNever = 2,
 };
 
+@class NSNumber;
+@class CLLocation;
+/// Represents a geographical location with latitude, longitude, and optional accuracy in meters.
+SWIFT_CLASS_NAMED("GeoLocation")
+@interface DTGeoLocation : NSObject
+/// The latitude in degrees.
+@property (nonatomic, readonly) double latitude;
+/// The longitude in degrees.
+@property (nonatomic, readonly) double longitude;
+/// :nodoc:
+@property (nonatomic, readonly, strong) NSNumber * _Nullable accuracyMeters;
+/// Creates a location without accuracy information.
+- (nonnull instancetype)initWithLatitude:(double)latitude longitude:(double)longitude;
+/// Creates a location with a radius of uncertainty in meters.
+- (nonnull instancetype)initWithLatitude:(double)latitude longitude:(double)longitude accuracyMeters:(double)accuracyMeters;
+/// Creates a location from a <code>CLLocation</code>.
+- (nullable instancetype)initWithLocation:(CLLocation * _Nonnull)location;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 /// Callback invoked by the SDK when the custom initial loader must be dismissed.
 /// important:
 /// The SDK does not invoke the callback when nothing has to be shown throughout the process. Make sure you dismiss the loading animation at the end of the transaction if the SDK hasn’t done so already.
@@ -602,7 +623,6 @@ SWIFT_CLASS_NAMED("PCIPCardholder")
 @protocol DTPCIPTokenizationDelegate;
 @class DTPCIPTokenizationOptions;
 @class DTThemeConfiguration;
-@class NSNumber;
 @class UIViewController;
 /// Use this class to start a PCI Proxy tokenization.
 /// After the tokenization has been completed - regardless if
@@ -721,7 +741,7 @@ SWIFT_CLASS_NAMED("PCIPTokenizationOptions")
 @interface DTPCIPTokenizationOptions : NSObject
 /// Use this setting to change the UI language. If this is not
 /// specified, the default language determined by the system will be used.
-/// The supported values are <code>en</code>, <code>da</code>, <code>de</code>, <code>es</code>, <code>fi</code>, <code>fr</code>, <code>it</code>,  <code>nl</code>,<code>no</code>, <code>pt</code>, <code>sv</code> and <code>nil</code>.
+/// The supported values are <code>en</code>, <code>da</code>, <code>de</code>, <code>es</code>, <code>et</code>, <code>fi</code>, <code>fr</code>, <code>it</code>, <code>lt</code>, <code>lv</code>, <code>nl</code>, <code>no</code>, <code>pt</code>, <code>sv</code> and <code>nil</code>.
 @property (nonatomic, copy) NSString * _Nullable language;
 /// Use this setting to display or hide critical errors.
 @property (nonatomic) BOOL suppressCriticalErrorDialog;
@@ -791,6 +811,22 @@ typedef SWIFT_ENUM_NAMED(NSInteger, DTPaymentMethodType, "PaymentMethodType", op
   DTPaymentMethodTypeTwint = 14,
 /// PostFinance Pay payment method
   DTPaymentMethodTypePostFinancePay = 15,
+/// Dimoco payment method
+  DTPaymentMethodTypeDimoco = 16,
+/// Halbtax PLUS payment method
+  DTPaymentMethodTypeHalfFarePlus = 17,
+/// SEPA (ELV) payment method
+  DTPaymentMethodTypeSEPA = 18,
+/// Alipay+ payment method
+  DTPaymentMethodTypeAlipayPlus = 19,
+/// iDEAL payment method
+  DTPaymentMethodTypeIDEAL = 20,
+/// Klarna payment method
+  DTPaymentMethodTypeKlarna = 21,
+/// UPI payment method
+  DTPaymentMethodTypeUPI = 22,
+/// EPS payment method
+  DTPaymentMethodTypeEPS = 23,
 };
 
 /// Provides Objective-C–compatible access to <code>DTPaymentMethodType</code> conversions.
@@ -824,12 +860,11 @@ SWIFT_CLASS_NAMED("PaymentMethodTypeMapper")
 /// Please refer to this list to see if you need to use one of the subclasses for your payments:
 /// <ul>
 ///   <li>
-///     Easy payment methods: Swisscom Pay, SEPA (ELV), Twint,
-///     Apple Pay, CembraPay, SwissPass, Powerpay Invoice
+///     Easy payment methods: Twint, Apple Pay, Dimoco, Halbtax PLUS
 ///   </li>
 ///   <li>
 ///     Complex payment methods (requiring a <code>SavedPaymentMethod</code> subclass): Card payments,
-///     PayPal, PostFinance, Reka, Boncard
+///     PayPal, PostFinance Pay, SEPA (ELV)
 ///   </li>
 /// </ul>
 /// Please refer to the Datatrans documentation to see if you can register a payment method
@@ -998,6 +1033,56 @@ SWIFT_CLASS_NAMED("SavedPostFinancePay")
 - (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type alias:(NSString * _Nonnull)alias SWIFT_UNAVAILABLE;
 @end
 
+/// This class contains saved SEPA (ELV) payment method details.
+/// Like any other <code>SavedPaymentMethod</code> subclass, this class can be used
+/// to pay with a previously registered payment method or to present a list of saved
+/// payment methods to the user for fast checkouts.
+/// A <code>SavedSEPA</code> object can be created either by successfully completing
+/// a SEPA payment or through a dedicated registration process.
+SWIFT_CLASS_NAMED("SavedSEPA")
+@interface DTSavedSEPA : DTSavedPaymentMethod
+/// Masked account number (IBAN). This will be used for displaying purposes.
+@property (nonatomic, copy) NSString * _Nullable maskedAccountNumber;
+/// A human readable title.
+@property (nonatomic, readonly, copy) NSString * _Nonnull displayTitle;
+/// Initializes a <code>SavedSEPA</code> object.
+/// \param alias Alias for SEPA (ELV).
+///
+/// \param maskedAccountNumber Masked account number (IBAN). This will be used for displaying purposes.
+///
+- (nonnull instancetype)initWithAlias:(NSString * _Nonnull)alias maskedAccountNumber:(NSString * _Nullable)maskedAccountNumber OBJC_DESIGNATED_INITIALIZER;
+/// :nodoc:
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
+/// :nodoc:
+- (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type alias:(NSString * _Nonnull)alias SWIFT_UNAVAILABLE;
+@end
+
+/// A card shown as a one-tap autofill shortcut in the sandbox test panel of the card entry screen.
+/// The panel and therefore this class are only ever used in the sandbox environment,
+/// they have no effect in production.
+/// seealso:
+/// <code>TransactionOptions/testCards</code>
+SWIFT_CLASS_NAMED("TestCard")
+@interface DTTestCard : NSObject
+/// The scenario this card is used for, e.g. “3-D Secure · frictionless”.
+@property (nonatomic, readonly, copy) NSString * _Nonnull title;
+/// The card number. Spaces are allowed and are used as displayed.
+@property (nonatomic, readonly, copy) NSString * _Nonnull number;
+/// The expiry date to autofill. If <code>nil</code>, only the number is filled in.
+@property (nonatomic, readonly, strong) DTCardExpiryDate * _Nullable expiryDate;
+/// Creates a test card shortcut.
+/// \param title The scenario this card is used for.
+///
+/// \param number The card number.
+///
+/// \param expiryDate The expiry date, or <code>nil</code> to only fill in the number. Must not be in the past.
+///
+- (nonnull instancetype)initWithTitle:(NSString * _Nonnull)title number:(NSString * _Nonnull)number expiryDate:(DTCardExpiryDate * _Nullable)expiryDate OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 @class UIColor;
 /// This class is used to customize the SDK’s accent color to match your app’s color scheme.
 /// Make sure to specify your colors using <code>UIColor.init(dynamicProvider:)</code> to support light and dark mode colors.
@@ -1163,6 +1248,12 @@ SWIFT_CLASS_NAMED("TransactionOptions")
 /// in the payment method selection: “Credit card”, “Debit card”, or “Credit or debit card”.
 /// The latter is used by default.
 @property (nonatomic) enum DTCardLabelType cardLabelType;
+/// Optional geographic location associated with the transaction.
+/// If provided, the location is transmitted with the transaction request and used only for fraud prevention/risk evaluation.
+/// Datatrans does not persist the location value after the risk evaluation.
+/// Set this value only if the host app already has access to the user’s location and is permitted to use it for fraud prevention.
+/// The SDK does not request location permission, access location services, or collect location automatically.
+@property (nonatomic, strong) DTGeoLocation * _Nullable geoLocation;
 /// :nodoc:
 @property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nullable merchantProperties;
 /// Use this setting to display or hide critical and transaction errors.
@@ -1196,6 +1287,13 @@ SWIFT_CLASS_NAMED("TransactionOptions")
 /// be notified by the SDK about the transaction status. Please make sure to check whether a previously started transaction has been completed
 /// while your app was in the background and update your UI accordingly.
 @property (nonatomic) BOOL autoAuthorize;
+/// Use this setting to replace the cards offered as one-tap autofill shortcuts in the
+/// sandbox test panel of the card entry screen.
+/// If <code>nil</code> (the default), the SDK’s own test cards are offered. Cards whose brand is not
+/// supported by the transaction, and cards whose expiry date has passed, are not displayed.
+/// important:
+/// This option only has an effect in the sandbox environment.
+@property (nonatomic, copy) NSArray<DTTestCard *> * _Nullable testCards;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 

@@ -6,10 +6,10 @@ import AVFoundation
 import AudioToolbox
 import CommonCrypto
 import CoreHaptics
+import CoreLocation
 @_exported import Datatrans
 import DeveloperToolsSupport
 import Foundation
-import PDFKit
 import PassKit
 import SafariServices
 import Security
@@ -34,6 +34,22 @@ import os
   @objc final public var cardholder: Datatrans.PCIPCardholder
   @objc weak final public var customInitialLoaderDelegate: (any Datatrans.InitialLoaderDelegate)?
   @objc override dynamic public init()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc(DTGeoLocation) final public class GeoLocation : ObjectiveC.NSObject {
+  @objc final public let latitude: Swift.Double
+  @objc final public let longitude: Swift.Double
+  final public let accuracyMeters: Swift.Double?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc(accuracyMeters) final public var accuracyMetersNumber: Foundation.NSNumber? {
+    @objc get
+  }
+  #endif
+  @objc(initWithLatitude:longitude:) convenience public init(latitude: Swift.Double, longitude: Swift.Double)
+  @objc(initWithLatitude:longitude:accuracyMeters:) convenience public init(latitude: Swift.Double, longitude: Swift.Double, accuracyMeters: Swift.Double)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc(initWithLocation:) convenience public init?(_ location: _LocationEssentials.CLLocation)
+  #endif
   @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc(DTSavedPostFinancePay) @objcMembers public class SavedPostFinancePay : Datatrans.SavedPaymentMethod {
@@ -135,6 +151,14 @@ extension Datatrans.Transaction {
   case ApplePay
   case Twint
   case PostFinancePay
+  case Dimoco
+  case HalfFarePlus
+  case SEPA
+  case AlipayPlus
+  case IDEAL
+  case Klarna
+  case UPI
+  case EPS
   #if compiler(>=5.3) && $NonescapableTypes
   public static func from(identifier: Swift.String) -> Datatrans.PaymentMethodType?
   #endif
@@ -170,6 +194,23 @@ extension Datatrans.Transaction {
   #endif
   @objc public func toJson() -> Swift.String
   @objc public func isValid() -> Swift.Bool
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  override public func encode(to encoder: any Swift.Encoder) throws
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc override public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
+  #endif
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc(DTSavedSEPA) @objcMembers public class SavedSEPA : Datatrans.SavedPaymentMethod {
+  @objc public var maskedAccountNumber: Swift.String?
+  @objc override public var displayTitle: Swift.String {
+    @objc get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(alias: Swift.String, maskedAccountNumber: Swift.String?)
+  #endif
   @objc override dynamic public var description: Swift.String {
     @objc get
   }
@@ -224,6 +265,15 @@ extension Datatrans.Transaction {
   #endif
   @objc deinit
 }
+@objc(DTTestCard) @objcMembers final public class TestCard : ObjectiveC.NSObject {
+  @objc final public let title: Swift.String
+  @objc final public let number: Swift.String
+  @objc final public let expiryDate: Datatrans.CardExpiryDate?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(title: Swift.String, number: Swift.String, expiryDate: Datatrans.CardExpiryDate?)
+  #endif
+  @objc deinit
+}
 @_inheritsConvenienceInitializers @objc(DTTransactionOptions) @objcMembers final public class TransactionOptions : ObjectiveC.NSObject {
   @objc final public var appCallbackScheme: Swift.String? {
     @objc get
@@ -235,12 +285,14 @@ extension Datatrans.Transaction {
   }
   @objc final public var applePayConfig: Datatrans.ApplePayConfig?
   @objc final public var cardLabelType: Datatrans.CardLabelType
+  @objc final public var geoLocation: Datatrans.GeoLocation?
   @objc final public var merchantProperties: [Swift.String : Swift.String]?
   @objc final public var suppressCriticalErrorDialog: Swift.Bool
   @objc final public var twintMaxIssuerNumber: Swift.Int
   @objc weak final public var customInitialLoaderDelegate: (any Datatrans.InitialLoaderDelegate)?
   @objc final public var savedCardDCCShowMode: Datatrans.DCCShowMode
   @objc final public var autoAuthorize: Swift.Bool
+  @objc final public var testCards: [Datatrans.TestCard]?
   @objc override dynamic public init()
   @objc deinit
 }
