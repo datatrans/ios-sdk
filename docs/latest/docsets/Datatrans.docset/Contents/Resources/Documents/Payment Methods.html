@@ -17,7 +17,7 @@
     <a title="Payment Methods  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">Datatrans 4.1.0 Docs</a></p>
+        <p><a href="index.html">Datatrans 4.2.0 Docs</a></p>
         <p class="header-right"><a href="https://github.com/datatrans/ios-sdk"><img src="img/gh.png" alt="GitHub"/>View on GitHub</a></p>
         <div class="header-right">
           <form role="search" action="search.json">
@@ -101,6 +101,9 @@
               <li class="nav-group-task">
                 <a href="Classes/SavedPostFinancePay.html">SavedPostFinancePay</a>
               </li>
+              <li class="nav-group-task">
+                <a href="Classes/SavedSEPA.html">SavedSEPA</a>
+              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -140,6 +143,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="Enums/DCCShowMode.html">DCCShowMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/GeoLocation.html">GeoLocation</a>
               </li>
               <li class="nav-group-task">
                 <a href="Protocols/InitialLoaderDelegate.html">InitialLoaderDelegate</a>
@@ -429,10 +435,9 @@ subclass (e.g. card payments, PostFinance, etc.).</p>
 <p>Please refer to this list to see if you need to use one of the subclasses for your payments:</p>
 
 <ul>
-<li>Easy payment methods: Swisscom Pay, SEPA (ELV), Twint,
-Apple Pay, CembraPay, SwissPass, Powerpay Invoice</li>
+<li>Easy payment methods: Twint, Apple Pay, Dimoco, Halbtax PLUS</li>
 <li>Complex payment methods (requiring a <code>SavedPaymentMethod</code> subclass): Card payments,
-PayPal, PostFinance, Reka, Boncard</li>
+PayPal, PostFinance Pay, SEPA (ELV)</li>
 </ul>
 
 <p>Please refer to the Datatrans documentation to see if you can register a payment method
@@ -595,6 +600,43 @@ a PostFinance Pay payment or through a dedicated registration process.</p>
                           <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTSavedPostFinancePay</span><span class="p">)</span>
 <span class="kd">@objcMembers</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="kt">SavedPostFinancePay</span> <span class="p">:</span> <span class="kt"><a href="Classes/SavedPaymentMethod.html">SavedPaymentMethod</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Datatrans@objc(cs)DTSavedSEPA"></a>
+                    <a name="//apple_ref/swift/Class/SavedSEPA" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTSavedSEPA">SavedSEPA</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This class contains saved SEPA (ELV) payment method details.</p>
+
+<p>Like any other <code><a href="Classes/SavedPaymentMethod.html">SavedPaymentMethod</a></code> subclass, this class can be used
+to pay with a previously registered payment method or to present a list of saved
+payment methods to the user for fast checkouts.</p>
+
+<p>A <code>SavedSEPA</code> object can be created either by successfully completing
+a SEPA payment or through a dedicated registration process.</p>
+
+                        <a href="Classes/SavedSEPA.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DTSavedSEPA</span><span class="p">)</span>
+<span class="kd">@objcMembers</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">SavedSEPA</span> <span class="p">:</span> <span class="kt"><a href="Classes/SavedPaymentMethod.html">SavedPaymentMethod</a></span></code></pre>
 
                         </div>
                       </div>

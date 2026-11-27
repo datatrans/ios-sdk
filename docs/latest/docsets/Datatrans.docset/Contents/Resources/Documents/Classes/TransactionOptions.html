@@ -17,7 +17,7 @@
     <a title="TransactionOptions Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">Datatrans 4.1.0 Docs</a></p>
+        <p><a href="../index.html">Datatrans 4.2.0 Docs</a></p>
         <p class="header-right"><a href="https://github.com/datatrans/ios-sdk"><img src="../img/gh.png" alt="GitHub"/>View on GitHub</a></p>
         <div class="header-right">
           <form role="search" action="../search.json">
@@ -103,6 +103,9 @@
               <li class="nav-group-task">
                 <a href="../Classes/SavedPostFinancePay.html">SavedPostFinancePay</a>
               </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SavedSEPA.html">SavedSEPA</a>
+              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -142,6 +145,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Enums/DCCShowMode.html">DCCShowMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/GeoLocation.html">GeoLocation</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/InitialLoaderDelegate.html">InitialLoaderDelegate</a>
@@ -295,6 +301,38 @@ The latter is used by default.</p>
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/c:@M@Datatrans@objc(cs)DTTransactionOptions(py)geoLocation"></a>
+                    <a name="//apple_ref/swift/Property/geoLocation" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTTransactionOptions(py)geoLocation">geoLocation</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Optional geographic location associated with the transaction.
+If provided, the location is transmitted with the transaction request and used only for fraud prevention/risk evaluation.
+Datatrans does not persist the location value after the risk evaluation.</p>
+
+<p>Set this value only if the host app already has access to the user’s location and is permitted to use it for fraud prevention.
+The SDK does not request location permission, access location services, or collect location automatically.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">geoLocation</span><span class="p">:</span> <span class="kt"><a href="../Classes/GeoLocation.html">GeoLocation</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/c:@M@Datatrans@objc(cs)DTTransactionOptions(py)suppressCriticalErrorDialog"></a>
                     <a name="//apple_ref/swift/Property/suppressCriticalErrorDialog" class="dashAnchor"></a>
                     <a class="token" href="#/c:@M@Datatrans@objc(cs)DTTransactionOptions(py)suppressCriticalErrorDialog">suppressCriticalErrorDialog</a>
@@ -313,41 +351,6 @@ The latter is used by default.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">suppressCriticalErrorDialog</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@Datatrans@objc(cs)DTTransactionOptions(py)twintMaxIssuerNumber"></a>
-                    <a name="//apple_ref/swift/Property/twintMaxIssuerNumber" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Datatrans@objc(cs)DTTransactionOptions(py)twintMaxIssuerNumber">twintMaxIssuerNumber</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>In case you use Twint and can&rsquo;t list all Twint app schemes from &ldquo;twint-issuer1&rdquo; to &ldquo;twint-issuer39&rdquo;
-under <code>LSApplicationQueriesSchemes</code>, use this setting to specify the highest one you do list.</p>
-
-<p>The default value is 39. Listing &ldquo;twint-extended&rdquo; is always required to use Twint.</p>
-<div class="aside aside-important">
-    <p class="aside-title">Important</p>
-    Reducing <code>twintMaxIssuerNumber</code> has an adverse effect on the user experience.
-
-</div>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">twintMaxIssuerNumber</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
 
                         </div>
                       </div>
