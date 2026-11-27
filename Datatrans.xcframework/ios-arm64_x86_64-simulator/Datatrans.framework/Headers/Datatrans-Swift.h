@@ -526,6 +526,27 @@ typedef SWIFT_ENUM_NAMED(NSInteger, DTDCCShowMode, "DCCShowMode", open) {
   DTDCCShowModeNever = 2,
 };
 
+@class NSNumber;
+@class CLLocation;
+/// Represents a geographical location with latitude, longitude, and optional accuracy in meters.
+SWIFT_CLASS_NAMED("GeoLocation")
+@interface DTGeoLocation : NSObject
+/// The latitude in degrees.
+@property (nonatomic, readonly) double latitude;
+/// The longitude in degrees.
+@property (nonatomic, readonly) double longitude;
+/// :nodoc:
+@property (nonatomic, readonly, strong) NSNumber * _Nullable accuracyMeters;
+/// Creates a location without accuracy information.
+- (nonnull instancetype)initWithLatitude:(double)latitude longitude:(double)longitude;
+/// Creates a location with a radius of uncertainty in meters.
+- (nonnull instancetype)initWithLatitude:(double)latitude longitude:(double)longitude accuracyMeters:(double)accuracyMeters;
+/// Creates a location from a <code>CLLocation</code>.
+- (nullable instancetype)initWithLocation:(CLLocation * _Nonnull)location;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 /// Callback invoked by the SDK when the custom initial loader must be dismissed.
 /// important:
 /// The SDK does not invoke the callback when nothing has to be shown throughout the process. Make sure you dismiss the loading animation at the end of the transaction if the SDK hasn’t done so already.
@@ -602,7 +623,6 @@ SWIFT_CLASS_NAMED("PCIPCardholder")
 @protocol DTPCIPTokenizationDelegate;
 @class DTPCIPTokenizationOptions;
 @class DTThemeConfiguration;
-@class NSNumber;
 @class UIViewController;
 /// Use this class to start a PCI Proxy tokenization.
 /// After the tokenization has been completed - regardless if
@@ -721,7 +741,7 @@ SWIFT_CLASS_NAMED("PCIPTokenizationOptions")
 @interface DTPCIPTokenizationOptions : NSObject
 /// Use this setting to change the UI language. If this is not
 /// specified, the default language determined by the system will be used.
-/// The supported values are <code>en</code>, <code>da</code>, <code>de</code>, <code>es</code>, <code>fi</code>, <code>fr</code>, <code>it</code>,  <code>nl</code>,<code>no</code>, <code>pt</code>, <code>sv</code> and <code>nil</code>.
+/// The supported values are <code>en</code>, <code>da</code>, <code>de</code>, <code>es</code>, <code>et</code>, <code>fi</code>, <code>fr</code>, <code>it</code>, <code>lt</code>, <code>lv</code>, <code>nl</code>, <code>no</code>, <code>pt</code>, <code>sv</code> and <code>nil</code>.
 @property (nonatomic, copy) NSString * _Nullable language;
 /// Use this setting to display or hide critical errors.
 @property (nonatomic) BOOL suppressCriticalErrorDialog;
@@ -791,6 +811,20 @@ typedef SWIFT_ENUM_NAMED(NSInteger, DTPaymentMethodType, "PaymentMethodType", op
   DTPaymentMethodTypeTwint = 14,
 /// PostFinance Pay payment method
   DTPaymentMethodTypePostFinancePay = 15,
+/// Dimoco payment method
+  DTPaymentMethodTypeDimoco = 16,
+/// Halbtax PLUS payment method
+  DTPaymentMethodTypeHalfFarePlus = 17,
+/// SEPA (ELV) payment method
+  DTPaymentMethodTypeSEPA = 18,
+/// Klarna payment method
+  DTPaymentMethodTypeKlarna = 19,
+/// Alipay+ payment method
+  DTPaymentMethodTypeAlipayPlus = 20,
+/// EPS payment method
+  DTPaymentMethodTypeEPS = 21,
+/// iDEAL payment method
+  DTPaymentMethodTypeIDEAL = 22,
 };
 
 /// Provides Objective-C–compatible access to <code>DTPaymentMethodType</code> conversions.
@@ -824,12 +858,11 @@ SWIFT_CLASS_NAMED("PaymentMethodTypeMapper")
 /// Please refer to this list to see if you need to use one of the subclasses for your payments:
 /// <ul>
 ///   <li>
-///     Easy payment methods: Swisscom Pay, SEPA (ELV), Twint,
-///     Apple Pay, CembraPay, SwissPass, Powerpay Invoice
+///     Easy payment methods: Twint, Apple Pay, Dimoco, Halbtax PLUS
 ///   </li>
 ///   <li>
 ///     Complex payment methods (requiring a <code>SavedPaymentMethod</code> subclass): Card payments,
-///     PayPal, PostFinance, Reka, Boncard
+///     PayPal, PostFinance Pay, SEPA (ELV)
 ///   </li>
 /// </ul>
 /// Please refer to the Datatrans documentation to see if you can register a payment method
@@ -989,6 +1022,31 @@ SWIFT_CLASS_NAMED("SavedPostFinancePay")
 /// \param alias Alias for a PostFinance account.
 ///
 /// \param maskedAccountNumber Masked PostFinance account number (IBAN). This will be used for displaying purposes.
+///
+- (nonnull instancetype)initWithAlias:(NSString * _Nonnull)alias maskedAccountNumber:(NSString * _Nullable)maskedAccountNumber OBJC_DESIGNATED_INITIALIZER;
+/// :nodoc:
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
+/// :nodoc:
+- (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type alias:(NSString * _Nonnull)alias SWIFT_UNAVAILABLE;
+@end
+
+/// This class contains saved SEPA (ELV) payment method details.
+/// Like any other <code>SavedPaymentMethod</code> subclass, this class can be used
+/// to pay with a previously registered payment method or to present a list of saved
+/// payment methods to the user for fast checkouts.
+/// A <code>SavedSEPA</code> object can be created either by successfully completing
+/// a SEPA payment or through a dedicated registration process.
+SWIFT_CLASS_NAMED("SavedSEPA")
+@interface DTSavedSEPA : DTSavedPaymentMethod
+/// Masked account number (IBAN). This will be used for displaying purposes.
+@property (nonatomic, copy) NSString * _Nullable maskedAccountNumber;
+/// A human readable title.
+@property (nonatomic, readonly, copy) NSString * _Nonnull displayTitle;
+/// Initializes a <code>SavedSEPA</code> object.
+/// \param alias Alias for SEPA (ELV).
+///
+/// \param maskedAccountNumber Masked account number (IBAN). This will be used for displaying purposes.
 ///
 - (nonnull instancetype)initWithAlias:(NSString * _Nonnull)alias maskedAccountNumber:(NSString * _Nullable)maskedAccountNumber OBJC_DESIGNATED_INITIALIZER;
 /// :nodoc:
@@ -1163,16 +1221,16 @@ SWIFT_CLASS_NAMED("TransactionOptions")
 /// in the payment method selection: “Credit card”, “Debit card”, or “Credit or debit card”.
 /// The latter is used by default.
 @property (nonatomic) enum DTCardLabelType cardLabelType;
+/// Optional geographic location associated with the transaction.
+/// If provided, the location is transmitted with the transaction request and used only for fraud prevention/risk evaluation.
+/// Datatrans does not persist the location value after the risk evaluation.
+/// Set this value only if the host app already has access to the user’s location and is permitted to use it for fraud prevention.
+/// The SDK does not request location permission, access location services, or collect location automatically.
+@property (nonatomic, strong) DTGeoLocation * _Nullable geoLocation;
 /// :nodoc:
 @property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nullable merchantProperties;
 /// Use this setting to display or hide critical and transaction errors.
 @property (nonatomic) BOOL suppressCriticalErrorDialog;
-/// In case you use Twint and can’t list all Twint app schemes from “twint-issuer1” to “twint-issuer39”
-/// under <code>LSApplicationQueriesSchemes</code>, use this setting to specify the highest one you do list.
-/// The default value is 39. Listing “twint-extended” is always required to use Twint.
-/// important:
-/// Reducing <code>twintMaxIssuerNumber</code> has an adverse effect on the user experience.
-@property (nonatomic) NSInteger twintMaxIssuerNumber;
 /// Sometimes, apps display a loading animation before starting the SDK.
 /// You can set the <code>customInitialLoaderDelegate</code> option if you
 /// want to keep showing this animation instead of the SDK’s loader during
@@ -1767,6 +1825,27 @@ typedef SWIFT_ENUM_NAMED(NSInteger, DTDCCShowMode, "DCCShowMode", open) {
   DTDCCShowModeNever = 2,
 };
 
+@class NSNumber;
+@class CLLocation;
+/// Represents a geographical location with latitude, longitude, and optional accuracy in meters.
+SWIFT_CLASS_NAMED("GeoLocation")
+@interface DTGeoLocation : NSObject
+/// The latitude in degrees.
+@property (nonatomic, readonly) double latitude;
+/// The longitude in degrees.
+@property (nonatomic, readonly) double longitude;
+/// :nodoc:
+@property (nonatomic, readonly, strong) NSNumber * _Nullable accuracyMeters;
+/// Creates a location without accuracy information.
+- (nonnull instancetype)initWithLatitude:(double)latitude longitude:(double)longitude;
+/// Creates a location with a radius of uncertainty in meters.
+- (nonnull instancetype)initWithLatitude:(double)latitude longitude:(double)longitude accuracyMeters:(double)accuracyMeters;
+/// Creates a location from a <code>CLLocation</code>.
+- (nullable instancetype)initWithLocation:(CLLocation * _Nonnull)location;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 /// Callback invoked by the SDK when the custom initial loader must be dismissed.
 /// important:
 /// The SDK does not invoke the callback when nothing has to be shown throughout the process. Make sure you dismiss the loading animation at the end of the transaction if the SDK hasn’t done so already.
@@ -1843,7 +1922,6 @@ SWIFT_CLASS_NAMED("PCIPCardholder")
 @protocol DTPCIPTokenizationDelegate;
 @class DTPCIPTokenizationOptions;
 @class DTThemeConfiguration;
-@class NSNumber;
 @class UIViewController;
 /// Use this class to start a PCI Proxy tokenization.
 /// After the tokenization has been completed - regardless if
@@ -1962,7 +2040,7 @@ SWIFT_CLASS_NAMED("PCIPTokenizationOptions")
 @interface DTPCIPTokenizationOptions : NSObject
 /// Use this setting to change the UI language. If this is not
 /// specified, the default language determined by the system will be used.
-/// The supported values are <code>en</code>, <code>da</code>, <code>de</code>, <code>es</code>, <code>fi</code>, <code>fr</code>, <code>it</code>,  <code>nl</code>,<code>no</code>, <code>pt</code>, <code>sv</code> and <code>nil</code>.
+/// The supported values are <code>en</code>, <code>da</code>, <code>de</code>, <code>es</code>, <code>et</code>, <code>fi</code>, <code>fr</code>, <code>it</code>, <code>lt</code>, <code>lv</code>, <code>nl</code>, <code>no</code>, <code>pt</code>, <code>sv</code> and <code>nil</code>.
 @property (nonatomic, copy) NSString * _Nullable language;
 /// Use this setting to display or hide critical errors.
 @property (nonatomic) BOOL suppressCriticalErrorDialog;
@@ -2032,6 +2110,20 @@ typedef SWIFT_ENUM_NAMED(NSInteger, DTPaymentMethodType, "PaymentMethodType", op
   DTPaymentMethodTypeTwint = 14,
 /// PostFinance Pay payment method
   DTPaymentMethodTypePostFinancePay = 15,
+/// Dimoco payment method
+  DTPaymentMethodTypeDimoco = 16,
+/// Halbtax PLUS payment method
+  DTPaymentMethodTypeHalfFarePlus = 17,
+/// SEPA (ELV) payment method
+  DTPaymentMethodTypeSEPA = 18,
+/// Klarna payment method
+  DTPaymentMethodTypeKlarna = 19,
+/// Alipay+ payment method
+  DTPaymentMethodTypeAlipayPlus = 20,
+/// EPS payment method
+  DTPaymentMethodTypeEPS = 21,
+/// iDEAL payment method
+  DTPaymentMethodTypeIDEAL = 22,
 };
 
 /// Provides Objective-C–compatible access to <code>DTPaymentMethodType</code> conversions.
@@ -2065,12 +2157,11 @@ SWIFT_CLASS_NAMED("PaymentMethodTypeMapper")
 /// Please refer to this list to see if you need to use one of the subclasses for your payments:
 /// <ul>
 ///   <li>
-///     Easy payment methods: Swisscom Pay, SEPA (ELV), Twint,
-///     Apple Pay, CembraPay, SwissPass, Powerpay Invoice
+///     Easy payment methods: Twint, Apple Pay, Dimoco, Halbtax PLUS
 ///   </li>
 ///   <li>
 ///     Complex payment methods (requiring a <code>SavedPaymentMethod</code> subclass): Card payments,
-///     PayPal, PostFinance, Reka, Boncard
+///     PayPal, PostFinance Pay, SEPA (ELV)
 ///   </li>
 /// </ul>
 /// Please refer to the Datatrans documentation to see if you can register a payment method
@@ -2230,6 +2321,31 @@ SWIFT_CLASS_NAMED("SavedPostFinancePay")
 /// \param alias Alias for a PostFinance account.
 ///
 /// \param maskedAccountNumber Masked PostFinance account number (IBAN). This will be used for displaying purposes.
+///
+- (nonnull instancetype)initWithAlias:(NSString * _Nonnull)alias maskedAccountNumber:(NSString * _Nullable)maskedAccountNumber OBJC_DESIGNATED_INITIALIZER;
+/// :nodoc:
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
+/// :nodoc:
+- (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)initWithType:(enum DTPaymentMethodType)type alias:(NSString * _Nonnull)alias SWIFT_UNAVAILABLE;
+@end
+
+/// This class contains saved SEPA (ELV) payment method details.
+/// Like any other <code>SavedPaymentMethod</code> subclass, this class can be used
+/// to pay with a previously registered payment method or to present a list of saved
+/// payment methods to the user for fast checkouts.
+/// A <code>SavedSEPA</code> object can be created either by successfully completing
+/// a SEPA payment or through a dedicated registration process.
+SWIFT_CLASS_NAMED("SavedSEPA")
+@interface DTSavedSEPA : DTSavedPaymentMethod
+/// Masked account number (IBAN). This will be used for displaying purposes.
+@property (nonatomic, copy) NSString * _Nullable maskedAccountNumber;
+/// A human readable title.
+@property (nonatomic, readonly, copy) NSString * _Nonnull displayTitle;
+/// Initializes a <code>SavedSEPA</code> object.
+/// \param alias Alias for SEPA (ELV).
+///
+/// \param maskedAccountNumber Masked account number (IBAN). This will be used for displaying purposes.
 ///
 - (nonnull instancetype)initWithAlias:(NSString * _Nonnull)alias maskedAccountNumber:(NSString * _Nullable)maskedAccountNumber OBJC_DESIGNATED_INITIALIZER;
 /// :nodoc:
@@ -2404,16 +2520,16 @@ SWIFT_CLASS_NAMED("TransactionOptions")
 /// in the payment method selection: “Credit card”, “Debit card”, or “Credit or debit card”.
 /// The latter is used by default.
 @property (nonatomic) enum DTCardLabelType cardLabelType;
+/// Optional geographic location associated with the transaction.
+/// If provided, the location is transmitted with the transaction request and used only for fraud prevention/risk evaluation.
+/// Datatrans does not persist the location value after the risk evaluation.
+/// Set this value only if the host app already has access to the user’s location and is permitted to use it for fraud prevention.
+/// The SDK does not request location permission, access location services, or collect location automatically.
+@property (nonatomic, strong) DTGeoLocation * _Nullable geoLocation;
 /// :nodoc:
 @property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nullable merchantProperties;
 /// Use this setting to display or hide critical and transaction errors.
 @property (nonatomic) BOOL suppressCriticalErrorDialog;
-/// In case you use Twint and can’t list all Twint app schemes from “twint-issuer1” to “twint-issuer39”
-/// under <code>LSApplicationQueriesSchemes</code>, use this setting to specify the highest one you do list.
-/// The default value is 39. Listing “twint-extended” is always required to use Twint.
-/// important:
-/// Reducing <code>twintMaxIssuerNumber</code> has an adverse effect on the user experience.
-@property (nonatomic) NSInteger twintMaxIssuerNumber;
 /// Sometimes, apps display a loading animation before starting the SDK.
 /// You can set the <code>customInitialLoaderDelegate</code> option if you
 /// want to keep showing this animation instead of the SDK’s loader during
