@@ -516,6 +516,26 @@ typedef SWIFT_ENUM_NAMED(NSInteger, DTCardLabelType, "CardLabelType", open) {
   DTCardLabelTypeDebitCard = 2,
 };
 
+@class CLLocation;
+/// Represents a geographical location with latitude, longitude, and optional accuracy in meters.
+SWIFT_CLASS_NAMED("GeoLocation")
+@interface DTGeoLocation : NSObject
+/// The latitude in degrees.
+@property (nonatomic, readonly) double latitude;
+/// The longitude in degrees.
+@property (nonatomic, readonly) double longitude;
+/// :nodoc:
+@property (nonatomic, readonly, strong) NSNumber * _Nullable accuracyMeters;
+/// Creates a location without accuracy information.
+- (nonnull instancetype)initWithLatitude:(double)latitude longitude:(double)longitude;
+/// Creates a location with a radius of uncertainty in meters.
+- (nonnull instancetype)initWithLatitude:(double)latitude longitude:(double)longitude accuracyMeters:(double)accuracyMeters;
+/// Creates a location from a <code>CLLocation</code>.
+- (nullable instancetype)initWithLocation:(CLLocation * _Nonnull)location;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 /// Callback invoked by the SDK when the custom initial loader must be dismissed.
 /// important:
 /// The SDK does not invoke the callback when nothing has to be shown throughout the process. Make sure you dismiss the loading animation at the end of the transaction if the SDK hasn’t done so already.
@@ -1352,6 +1372,12 @@ SWIFT_CLASS_NAMED("TransactionOptions")
 /// e.g. “Lastschrift”.
 /// If not specified, the name is “Klarna”.
 @property (nonatomic, copy) NSString * _Nullable customKlarnaPaymentMethodName;
+/// Optional geographic location associated with the transaction.
+/// If provided, the location is transmitted with the transaction request and used only for fraud prevention/risk evaluation.
+/// Datatrans does not persist the location value after the risk evaluation.
+/// Set this value only if the host app already has access to the user’s location and is permitted to use it for fraud prevention.
+/// The SDK does not request location permission, access location services, or collect location automatically.
+@property (nonatomic, strong) DTGeoLocation * _Nullable geoLocation;
 /// :nodoc:
 @property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nullable merchantProperties;
 /// Use this setting to display or hide critical and transaction errors.
@@ -1359,12 +1385,7 @@ SWIFT_CLASS_NAMED("TransactionOptions")
 /// Use this setting to switch from production to sandbox. If not specified,
 /// the SDK will call the Datatrans production environment.
 @property (nonatomic) BOOL testing;
-/// In case you use Twint and can’t list all Twint app schemes from “twint-issuer1” to “twint-issuer39”
-/// under <code>LSApplicationQueriesSchemes</code>, use this setting to specify the highest one you do list.
-/// The default value is 39. Listing “twint-extended” is always required to use Twint.
-/// important:
-/// Reducing <code>twintMaxIssuerNumber</code> has an adverse effect on the user experience.
-@property (nonatomic) NSInteger twintMaxIssuerNumber;
+@property (nonatomic) NSInteger twintMaxIssuerNumber SWIFT_UNAVAILABLE_MSG("Twint now detects this automatically.");
 /// Whether secure connections to datatrans servers require a certificate
 /// chain signed with a specific CA private key. The device’s trust settings
 /// are explicitly ignored, i.e. custom installed/white-listed certificates

@@ -6,6 +6,7 @@ import AVFoundation
 import AudioToolbox
 import CommonCrypto
 import CoreHaptics
+import CoreLocation
 @_exported import Datatrans
 import DeveloperToolsSupport
 import Foundation
@@ -139,10 +140,15 @@ import _SwiftConcurrencyShims
   @objc public var boncardConfig: Datatrans.BoncardConfig?
   @objc public var cardLabelType: Datatrans.CardLabelType
   @objc public var customKlarnaPaymentMethodName: Swift.String?
+  @objc public var geoLocation: Datatrans.GeoLocation?
   @objc public var merchantProperties: [Swift.String : Swift.String]?
   @objc public var suppressCriticalErrorDialog: Swift.Bool
   @objc public var testing: Swift.Bool
-  @objc public var twintMaxIssuerNumber: Swift.Int
+  @objc @available(*, unavailable, message: "Twint now detects this automatically.")
+  public var twintMaxIssuerNumber: Swift.Int {
+    @objc get
+    @objc set
+  }
   @objc public var useCertificatePinning: Swift.Bool
   @objc weak public var customInitialLoaderDelegate: (any Datatrans.InitialLoaderDelegate)?
   @objc(DTDCCShowMode) public enum DCCShowMode : Swift.Int {
@@ -248,6 +254,18 @@ import _SwiftConcurrencyShims
   public var rawValue: Swift.Int {
     get
   }
+}
+@_hasMissingDesignatedInitializers @objc(DTGeoLocation) final public class GeoLocation : ObjectiveC.NSObject {
+  @objc final public let latitude: Swift.Double
+  @objc final public let longitude: Swift.Double
+  final public let accuracyMeters: Swift.Double?
+  @objc(accuracyMeters) final public var accuracyMetersNumber: Foundation.NSNumber? {
+    @objc get
+  }
+  @objc(initWithLatitude:longitude:) convenience public init(latitude: Swift.Double, longitude: Swift.Double)
+  @objc(initWithLatitude:longitude:accuracyMeters:) convenience public init(latitude: Swift.Double, longitude: Swift.Double, accuracyMeters: Swift.Double)
+  @objc(initWithLocation:) convenience public init?(_ location: CoreLocation.CLLocation)
+  @objc deinit
 }
 @objc(DTTransaction) public class Transaction : ObjectiveC.NSObject, Datatrans.DTErrorHandlerDelegate {
   @objc weak public var delegate: (any Datatrans.TransactionDelegate)?
